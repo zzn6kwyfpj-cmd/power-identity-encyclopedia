@@ -125,7 +125,7 @@ export default function Home() {
               letterSpacing: "0.05em",
               marginBottom: 4,
             }}>
-              Dedicated to Luka Strickland, a Native American
+              Dedicated to my family, friends, and loved ones
             </p>
             <p style={{
               fontFamily: "Cormorant Garamond, serif",
@@ -134,7 +134,7 @@ export default function Home() {
               letterSpacing: "0.05em",
               fontStyle: "italic",
             }}>
-              and to all those who came before us
+              I just wanted to make everyone proud
             </p>
           </div>
 

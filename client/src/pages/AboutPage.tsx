@@ -16,7 +16,10 @@ export default function AboutPage() {
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px 40px", marginBottom: 24, textAlign: "center" }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.3em", marginBottom: 16 }}>DEDICATION</div>
             <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", color: "#e2e8f0", fontSize: "1.2rem", lineHeight: 1.8, marginBottom: 16 }}>
-              "For Luka Strickland — my grandmother, a Native American. Your blood, your land, and your truth are on every page of this manuscript. This is for you, and for every generation that comes after."
+              "Dedicated to my family, friends, and loved ones. I just wanted to make everyone proud."
+            </p>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, marginBottom: 16 }}>
+              And in loving memory of Luka Strickland — my grandmother, a Native American. Your blood, your land, and your truth are on every page of this work. This is for you, and for every generation that comes after.
             </p>
             <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 12, letterSpacing: "0.1em" }}>— LaDarious Strickland, July 2026</p>
           </div>
@@ -48,7 +51,7 @@ export default function AboutPage() {
           {/* About the Work */}
           <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.1rem", lineHeight: 1.9, marginBottom: 40 }}>
             <p style={{ marginBottom: 20 }}>
-              This encyclopedia was created for a very specific reason: the true history of America is rarely told in full, and the history of my own bloodline has been systematically obscured. I wrote this for my grandmother, Luka Strickland, a Native American whose life and lineage represent the suppressed truths that this document brings to light.
+              This encyclopedia was created for a very specific reason: the true history of America is rarely told in full, and the history of my own bloodline has been systematically obscured. I created this for my family, friends, and loved ones — to make everyone proud. And I created it in honor of my grandmother, Luka Strickland, a Native American, whose life and lineage represent the suppressed truths that this document brings to light.
             </p>
             <p style={{ marginBottom: 20 }}>
               This manuscript does not tell you what to think. It presents documented history — primary sources, court rulings, census records, and peer-reviewed scholarship — and allows the evidence to speak for itself. The events documented here are not matters of opinion; they are matters of record. The connections between them are not conspiracy; they are chronology.

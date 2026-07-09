@@ -12,11 +12,11 @@ export default function Footer() {
         By LaDarious Strickland
       </div>
       <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginBottom: 2 }}>
-        Dedicated to Luka Strickland, a Native American
-      </div>
-      <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 11, fontStyle: "italic", marginBottom: 8 }}>
-        and to all those who came before us
-      </div>
+          Dedicated to my family, friends, and loved ones
+        </div>
+        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 11, fontStyle: "italic", marginBottom: 8 }}>
+          I just wanted to make everyone proud
+        </div>
       <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#334155", fontSize: 11 }}>
         © 2026 LaDarious Strickland. All rights reserved. Fair Use: 17 U.S.C. § 107
       </div>
