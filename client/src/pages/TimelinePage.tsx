@@ -1,8 +1,10 @@
 import { useState, useMemo } from "react";
+import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { TIMELINE_EVENTS, ERAS } from "@/lib/manuscriptData";
-import { Search, Share2, Filter, ChevronDown, ChevronUp } from "lucide-react";
+import { TIMELINE_DETAILS } from "@/lib/timelineDetails";
+import { Search, Share2, Filter, ChevronDown, ChevronUp, BookOpen, X } from "lucide-react";
 
 // Categorize each event for filtering
 const EVENT_CATEGORIES: Record<string, string> = {
@@ -358,27 +360,69 @@ export default function TimelinePage() {
                         </div>
                       </div>
 
-                      {/* Expanded details */}
-                      {isExpanded && (
-                        <div style={{ marginTop: 12, paddingTop: 12, borderTop: `1px solid ${catColor}20` }}>
-                          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
-                            <div>
-                              <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9, letterSpacing: "0.15em", marginBottom: 4 }}>CATEGORY</div>
-                              <div style={{ fontFamily: "Cormorant Garamond, serif", color: catColor, fontSize: 13 }}>{CATEGORY_LABELS[event.category]}</div>
-                            </div>
-                            <div>
-                              <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9, letterSpacing: "0.15em", marginBottom: 4 }}>ERA</div>
-                              <div style={{ fontFamily: "Cormorant Garamond, serif", color: eraColors[event.era - 1], fontSize: 13 }}>{ERAS[event.era - 1]?.name}</div>
-                            </div>
-                            <div>
-                              <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9, letterSpacing: "0.15em", marginBottom: 4 }}>SHARE LINK</div>
-                              <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 11, wordBreak: "break-all" }}>
-                                {window.location.origin}/timeline#event-{event.year}-{i}
+                      {/* Expanded details — rich panel */}
+                      {isExpanded && (() => {
+                        const detail = TIMELINE_DETAILS[event.year.toString()];
+                        return (
+                          <div style={{ marginTop: 12, paddingTop: 16, borderTop: `1px solid ${catColor}20` }}>
+                            {/* Visual aid if available */}
+                            {detail?.image && (
+                              <div style={{ height: 180, overflow: "hidden", marginBottom: 16, position: "relative" }}>
+                                <img src={detail.image} alt={event.event} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.85 }} />
+                                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,17,24,0.8) 0%, transparent 60%)" }} />
                               </div>
-                            </div>
+                            )}
+
+                            {/* Full description */}
+                            {detail?.description ? (
+                              <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1rem", lineHeight: 1.85, marginBottom: 16 }}>
+                                {detail.description}
+                              </p>
+                            ) : (
+                              <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.85, marginBottom: 16 }}>
+                                {event.event}
+                              </p>
+                            )}
+
+                            {/* Key Fact */}
+                            {detail?.keyFact && (
+                              <div style={{ background: `${catColor}08`, borderLeft: `3px solid ${catColor}`, padding: "12px 16px", marginBottom: 16 }}>
+                                <div style={{ fontFamily: "Cinzel, serif", color: catColor, fontSize: 9, letterSpacing: "0.2em", marginBottom: 6 }}>✦ KEY FINDING</div>
+                                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "0.95rem", lineHeight: 1.7, fontStyle: "italic", margin: 0 }}>
+                                  {detail.keyFact}
+                                </p>
+                              </div>
+                            )}
+
+                            {/* Primary Source */}
+                            {detail?.primarySource && (
+                              <div style={{ marginBottom: 16 }}>
+                                <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9, letterSpacing: "0.15em", marginBottom: 4 }}>PRIMARY SOURCE</div>
+                                <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12, lineHeight: 1.6 }}>{detail.primarySource}</div>
+                              </div>
+                            )}
+
+                            {/* Read Full Chapter CTA */}
+                            {detail?.chapterSlug && (
+                              <Link href={`/chapter/${detail.chapterSlug}`}>
+                                <button style={{
+                                  display: "inline-flex", alignItems: "center", gap: 8,
+                                  background: `${catColor}15`,
+                                  border: `1px solid ${catColor}40`,
+                                  color: catColor,
+                                  fontFamily: "Cinzel, serif",
+                                  fontSize: 10, letterSpacing: "0.1em",
+                                  padding: "10px 18px",
+                                  cursor: "pointer",
+                                }}>
+                                  <BookOpen size={11} />
+                                  READ FULL CHAPTER: {detail.chapterTitle?.toUpperCase()}
+                                </button>
+                              </Link>
+                            )}
                           </div>
-                        </div>
-                      )}
+                        );
+                      })()}
                     </div>
                   </div>
                   </>
