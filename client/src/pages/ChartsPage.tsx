@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -150,8 +150,92 @@ function EvidenceTierChart() {
   return <canvas ref={canvasRef} />;
 }
 
+const YEAR_LEGISLATION: Record<string, { title: string; tier: string; description: string; source: string }> = {
+  "1970": {
+    title: "Nixon's War on Drugs Begins",
+    tier: "Tier 1",
+    description: "President Nixon declares drug abuse 'public enemy number one.' John Ehrlichman later admitted in 2016 that the campaign was designed to target Black communities and anti-war protesters.",
+    source: "Ehrlichman admission, Harper's Magazine (2016); Nixon Presidential Library"
+  },
+  "1975": {
+    title: "Rockefeller Drug Laws (1973) Take Effect",
+    tier: "Tier 1",
+    description: "New York's Rockefeller Drug Laws mandate 15-year minimum sentences for drug possession. Disproportionately impact Black and Latino communities. Became the national template for mandatory minimum sentencing.",
+    source: "New York Penal Law § 220; Human Rights Watch, Cruel and Usual (1997)"
+  },
+  "1980": {
+    title: "Reagan Elected; War on Drugs Escalates",
+    tier: "Tier 1",
+    description: "Reagan administration dramatically escalates the War on Drugs. Federal drug control budget increases from $1.5 billion (1981) to $6.6 billion (1989). Black arrest rates begin accelerating.",
+    source: "Office of National Drug Control Policy budget records; BJS Prisoners in 2023 (NCJ 310197)"
+  },
+  "1983": {
+    title: "CCA (CoreCivic) Founded — Private Prison Industry Born",
+    tier: "Tier 1",
+    description: "Corrections Corporation of America (now CoreCivic) is founded in Nashville, Tennessee — the first private prison company in the United States. The private prison industry is born at the exact moment Black incarceration rates begin their steepest climb.",
+    source: "CoreCivic corporate history; SEC EDGAR CIK 1070985"
+  },
+  "1985": {
+    title: "Crack Cocaine Epidemic Accelerates",
+    tier: "Tier 1",
+    description: "Crack cocaine spreads rapidly through urban communities. The Kerry Committee (1989) later documents CIA awareness of Contra drug trafficking networks. The crack epidemic devastates Black communities already destabilized by Vietnam veteran trauma and redlining.",
+    source: "Kerry Committee Report (1989); CDC epidemiological data"
+  },
+  "1990": {
+    title: "Anti-Drug Abuse Act (1986) Impact Peaks",
+    tier: "Tier 1",
+    description: "The 100:1 crack/powder cocaine sentencing disparity established by the 1986 Anti-Drug Abuse Act reaches its full impact. In FY1990, 78.7% of crack cocaine defendants are Black. Black imprisonment rate reaches 1,860 per 100,000 — 3x the 1970 rate.",
+    source: "U.S. Sentencing Commission; BJS Prisoners in 2023 (NCJ 310197)"
+  },
+  "1995": {
+    title: "1994 Crime Bill Mandatory Minimums Take Effect",
+    tier: "Tier 1",
+    description: "The Violent Crime Control and Law Enforcement Act of 1994 (the Crime Bill) mandates truth-in-sentencing and three-strikes provisions. States receive $12.5B in grants to adopt these laws. Black imprisonment rate peaks at 2,200 per 100,000.",
+    source: "Violent Crime Control and Law Enforcement Act, 18 U.S.C. § 3559(c); BJS data"
+  },
+  "2000": {
+    title: "Mass Incarceration Peaks",
+    tier: "Tier 1",
+    description: "U.S. prison population reaches 2 million for the first time. Black imprisonment rate peaks at 2,400 per 100,000 — 10x the white rate. Private prison industry revenue exceeds $1.2 billion annually.",
+    source: "BJS Prisoners in 2023 (NCJ 310197); CoreCivic and GEO Group annual reports"
+  },
+  "2005": {
+    title: "Prison Population Continues to Grow",
+    tier: "Tier 1",
+    description: "U.S. incarcerates more people than any nation on earth. Black men are incarcerated at 6x the rate of white men. Private prison industry lobbying intensifies — CoreCivic and GEO Group spend millions on state and federal lobbying.",
+    source: "BJS data; OpenSecrets lobbying records"
+  },
+  "2010": {
+    title: "Fair Sentencing Act — Crack/Powder Disparity Reduced to 18:1",
+    tier: "Tier 1",
+    description: "The Fair Sentencing Act of 2010 reduces the crack/powder cocaine sentencing disparity from 100:1 to 18:1. Black imprisonment rate begins declining from its 2,400 peak. The First Step Act (2018) makes this retroactive, resulting in 3,705 sentence reductions.",
+    source: "Fair Sentencing Act of 2010, Pub. L. 111-220; U.S. Sentencing Commission"
+  },
+  "2015": {
+    title: "Black Lives Matter Movement; Sentencing Reform Debate",
+    tier: "Tier 1",
+    description: "Black Lives Matter movement gains national attention following documented police killings. Black imprisonment rate continues declining. Bipartisan criminal justice reform debate begins in Congress.",
+    source: "BJS data; Equal Justice Initiative reports"
+  },
+  "2020": {
+    title: "COVID-19 and George Floyd — Accelerated Decline",
+    tier: "Tier 1",
+    description: "COVID-19 forces prison population reductions. George Floyd's murder by Minneapolis police officer Derek Chauvin (documented on video) triggers global protests. Black imprisonment rate falls to 1,240 per 100,000 — lowest since 1990, but still 5x the white rate.",
+    source: "BJS Prisoners in 2023 (NCJ 310197); Chauvin trial records"
+  },
+  "2024": {
+    title: "Private Prison Industry at Peak Revenue",
+    tier: "Tier 1",
+    description: "CoreCivic and GEO Group together generate $4.38 billion in revenue. Their own SEC filings document that their profitability depends on high incarceration rates. Black Americans are still incarcerated at 5x the rate of white Americans.",
+    source: "CoreCivic Form 10-K (2024), SEC EDGAR CIK 1070985; GEO Group Form 10-K (2024)"
+  },
+};
+
 function ModernChainChart() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [selectedYear, setSelectedYear] = useState<string | null>(null);
+  const [selectedLegislation, setSelectedLegislation] = useState<typeof YEAR_LEGISLATION[string] | null>(null);
+
   useEffect(() => {
     if (!canvasRef.current || typeof Chart === "undefined") return;
     const ctx = canvasRef.current.getContext("2d");
@@ -168,24 +252,51 @@ function ModernChainChart() {
             tension: 0.4,
             fill: true,
             yAxisID: "y",
+            pointRadius: 7,
+            pointHoverRadius: 10,
+            pointBackgroundColor: "#8b1a1a",
+            pointBorderColor: "#d4af37",
+            pointBorderWidth: 2,
           },
           {
-            label: "Private Prison Revenue Index (1983=100)",
+            label: "Private Prison Revenue ($ millions)",
             data: [0, 0, 0, 100, 280, 600, 1200, 2100, 3200, 3800, 3600, 4380],
             borderColor: "#d4af37",
             backgroundColor: "rgba(212,175,55,0.1)",
             tension: 0.4,
             fill: true,
             yAxisID: "y1",
+            pointRadius: 5,
+            pointHoverRadius: 8,
+            pointBackgroundColor: "#d4af37",
           }
         ]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        onClick: (_event: any, elements: any[]) => {
+          if (elements.length > 0) {
+            const index = elements[0].index;
+            const labels = ["1970", "1975", "1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2024"];
+            const year = labels[index];
+            setSelectedYear(year);
+            setSelectedLegislation(YEAR_LEGISLATION[year] || null);
+          }
+        },
         plugins: {
           legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif" } } },
-          title: { display: true, text: "Black Incarceration Rate vs. Private Prison Revenue Growth (1970–2024)", color: "#d4af37", font: { size: 13, family: "Cinzel, serif" } }
+          title: { display: true, text: "Click any data point to see the legislation tied to that year", color: "#64748b", font: { size: 11, family: "Cinzel, serif" } },
+          tooltip: {
+            callbacks: {
+              afterBody: (items: any[]) => {
+                const year = items[0]?.label;
+                const leg = YEAR_LEGISLATION[year];
+                if (leg) return [`\u2726 Click to see: ${leg.title}`];
+                return [];
+              }
+            }
+          }
         },
         scales: {
           y: { ticks: { color: "#f87171" }, grid: { color: "rgba(212,175,55,0.1)" }, title: { display: true, text: "Black Imprisonment Rate (per 100,000)", color: "#f87171" } },
@@ -196,7 +307,53 @@ function ModernChainChart() {
     });
     return () => chart.destroy();
   }, []);
-  return <canvas ref={canvasRef} />;
+
+  return (
+    <div>
+      <canvas ref={canvasRef} style={{ cursor: "pointer" }} />
+      {selectedYear && selectedLegislation && (
+        <div style={{
+          marginTop: 20,
+          background: "#0a1118",
+          border: "1px solid rgba(212,175,55,0.3)",
+          borderLeft: "4px solid #d4af37",
+          padding: "20px 24px",
+          transition: "all 0.3s ease",
+        }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 16, letterSpacing: "0.05em" }}>
+              {selectedYear}
+            </div>
+            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <span style={{ fontFamily: "Cinzel, serif", color: "#4ade80", fontSize: 9, letterSpacing: "0.1em", border: "1px solid rgba(74,222,128,0.3)", padding: "2px 8px" }}>
+                {selectedLegislation.tier}
+              </span>
+              <button
+                onClick={() => { setSelectedYear(null); setSelectedLegislation(null); }}
+                style={{ background: "transparent", border: "none", color: "#64748b", cursor: "pointer", fontSize: 16, padding: "0 4px" }}
+              >
+                ×
+              </button>
+            </div>
+          </div>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#e2e8f0", fontSize: 14, marginBottom: 10, letterSpacing: "0.03em" }}>
+            {selectedLegislation.title}
+          </div>
+          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, marginBottom: 10 }}>
+            {selectedLegislation.description}
+          </p>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.1em" }}>
+            SOURCE: {selectedLegislation.source}
+          </div>
+        </div>
+      )}
+      {!selectedYear && (
+        <div style={{ textAlign: "center", marginTop: 12, fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 13, fontStyle: "italic" }}>
+          ✦ Click any data point on the chart to reveal the legislation tied to that year
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default function ChartsPage() {
