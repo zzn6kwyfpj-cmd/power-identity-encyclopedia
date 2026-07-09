@@ -205,6 +205,33 @@ export default function Home() {
         </p>
       </section>
 
+      {/* Evidence Tier Explanation */}
+      <section style={{ padding: "40px 0", backgroundColor: "#050b10", borderBottom: "1px solid rgba(212,175,55,0.1)" }}>
+        <div className="container" style={{ maxWidth: 900 }}>
+          <div className="text-center" style={{ marginBottom: 24 }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 8 }}>HOW TO READ THIS ENCYCLOPEDIA</div>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1rem" }}>
+              Every claim is labeled by evidence tier. This is what makes this encyclopedia credible.
+            </p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12 }}>
+            {[
+              { tier: "TIER 1", color: "#4ade80", label: "Primary Source", desc: "National Archives, court rulings, peer-reviewed studies, census records, SEC filings. Verifiable fact." },
+              { tier: "TIER 2", color: "#d4af37", label: "Scholarly Analysis", desc: "Peer-reviewed academic works, Pulitzer Prize journalism, rigorous historical synthesis drawing on primary sources." },
+              { tier: "TIER 3", color: "#f87171", label: "Community Historical Tradition", desc: "Reclamation narratives and oral traditions. Included for cultural significance. Clearly labeled to distinguish from primary evidence." },
+            ].map(({ tier, color, label, desc }) => (
+              <div key={tier} style={{ background: "#0f1923", borderLeft: `3px solid ${color}`, padding: "14px 16px", display: "flex", gap: 12, alignItems: "flex-start" }}>
+                <span style={{ fontFamily: "Cinzel, serif", color, fontSize: 9, letterSpacing: "0.1em", border: `1px solid ${color}40`, padding: "2px 6px", flexShrink: 0, marginTop: 2 }}>{tier}</span>
+                <div>
+                  <div style={{ fontFamily: "Cinzel, serif", color, fontSize: 11, letterSpacing: "0.05em", marginBottom: 4 }}>{label}</div>
+                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, lineHeight: 1.6, margin: 0 }}>{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Quick Nav Cards */}
       <section style={{ padding: "60px 0", backgroundColor: "#0a1118" }}>
         <div className="container" style={{ maxWidth: 1100 }}>
@@ -246,7 +273,7 @@ export default function Home() {
               ✦ BROWSE THE ENCYCLOPEDIA ✦
             </div>
             <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", marginBottom: 16 }}>
-              All 23 Chapters
+              All 47 Chapters
             </h2>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 600, margin: "0 auto" }}>
               From the Papal Bulls of 1452 to the Emmett Till Antilynching Act of 2022 — an unbroken chain of causation.
