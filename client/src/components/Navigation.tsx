@@ -36,11 +36,10 @@ export default function Navigation() {
                 <span style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontWeight: 700, fontSize: 14, letterSpacing: "0.05em" }}>✦</span>
               </div>
               <div className="hidden sm:block">
-                <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 15, letterSpacing: "0.2em", lineHeight: 1.2 }}>
-                  ARCHIVE
-                </div>
-                <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.05em" }}>
-                  American Records of Contested History
+                <div style={{ lineHeight: 1 }}>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#94a3b8", fontSize: 9, letterSpacing: "0.4em", lineHeight: 1 }}>THE</div>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 15, letterSpacing: "0.2em", lineHeight: 1.1 }}>ARCHIVE</div>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#8b1a1a", fontSize: 7, letterSpacing: "0.25em", lineHeight: 1 }}>ENCYCLOPEDIA</div>
                 </div>
               </div>
             </div>

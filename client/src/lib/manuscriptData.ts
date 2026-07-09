@@ -306,7 +306,7 @@ export const FIGURES: Figure[] = [
     heritage: "Cherokee Nation",
     role: "Inventor of the Cherokee Syllabary",
     quote: "I will try. If I succeed, I will be a great man.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663605007568/dUgbbogrefGeDRlw.png",
+    image: "/manus-storage/portrait_sequoyah_068e5e05.png",
     connection: "Created the Cherokee syllabary in 1821, making the Cherokee Phoenix newspaper possible — an act of intellectual sovereignty that proved literacy is the prerequisite for liberation."
   },
   {
@@ -315,7 +315,7 @@ export const FIGURES: Figure[] = [
     heritage: "Cherokee Nation",
     role: "Warrior and Resistance Leader",
     quote: "If I had known Jackson would drive us from our homes, I would have killed him that day at Horseshoe Bend.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663605007568/dUgbbogrefGeDRlw.png",
+    image: "/manus-storage/portrait_junaluska_92f279a2.png",
     connection: "Saved Andrew Jackson's life at the Battle of Horseshoe Bend, only to be betrayed by him — the ultimate symbol of the enforcement gap."
   },
   {
@@ -324,7 +324,7 @@ export const FIGURES: Figure[] = [
     heritage: "Black Seminole (African-Seminole)",
     role: "Military Leader and Freedom Fighter",
     quote: "We will fight until we die or are free.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663605007568/dUgbbogrefGeDRlw.png",
+    image: "/manus-storage/portrait_john_horse_d4725fa7.png",
     connection: "Led Black Seminole resistance against the U.S. Army, proving that Black and Indigenous communities formed powerful alliances against colonial power."
   },
   {
@@ -333,7 +333,7 @@ export const FIGURES: Figure[] = [
     heritage: "Cherokee Nation",
     role: "Principal Chief of the Cherokee Nation",
     quote: "The perpetrator of a wrong never forgives his victim.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663605007568/dUgbbogrefGeDRlw.png",
+    image: "/manus-storage/portrait_john_ross_b051df54.png",
     connection: "Led the Cherokee Nation's legal and political resistance against removal, using the U.S. legal system to challenge Georgia's illegal seizure of Cherokee territory."
   },
   {

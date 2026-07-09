@@ -32,39 +32,61 @@ export default function Home() {
         paddingBottom: 60,
       }}>
         <div className="container text-center" style={{ maxWidth: 900 }}>
-          {/* ARCHIVE Brand */}
-          <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 16 }}>
-            ✦ A ROYAL MANUSCRIPT ENCYCLOPEDIA ✦
+          {/* THE ARCHIVE ENCYCLOPEDIA Brand */}
+          <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>
+            ✦ AMERICAN RECORDS OF CONTESTED HISTORY ✦
           </div>
 
+          {/* THE */}
+          <div style={{
+            fontFamily: "Cinzel, serif",
+            fontSize: "clamp(1rem, 2.5vw, 1.6rem)",
+            fontWeight: 400,
+            color: "#94a3b8",
+            letterSpacing: "0.6em",
+            marginBottom: 0,
+            lineHeight: 1,
+          }}>
+            THE
+          </div>
+
+          {/* ARCHIVE */}
           <h1 style={{
             fontFamily: "Cinzel, serif",
-            fontSize: "clamp(3rem, 8vw, 7rem)",
+            fontSize: "clamp(3.5rem, 9vw, 8rem)",
             fontWeight: 900,
             color: "#d4af37",
-            lineHeight: 1.0,
-            letterSpacing: "0.3em",
-            marginBottom: 8,
+            lineHeight: 0.9,
+            letterSpacing: "0.25em",
+            marginBottom: 4,
+            textShadow: "0 0 40px rgba(212,175,55,0.3)",
           }}>
             ARCHIVE
           </h1>
-          <p style={{
-            fontFamily: "Cormorant Garamond, serif",
-            fontSize: "clamp(0.8rem, 1.5vw, 1rem)",
-            color: "#64748b",
-            letterSpacing: "0.15em",
-            marginBottom: 20,
-          }}>
-            American Records of Contested History, Identity, and Verified Encyclopedia
-          </p>
-          <h2 style={{
+
+          {/* ENCYCLOPEDIA — spread to match ARCHIVE width */}
+          <div style={{
             fontFamily: "Cinzel, serif",
-            fontSize: "clamp(1rem, 2.5vw, 1.8rem)",
+            fontSize: "clamp(0.65rem, 1.2vw, 1rem)",
             fontWeight: 400,
-            color: "#e2e8f0",
-            lineHeight: 1.3,
+            color: "#8b1a1a",
+            letterSpacing: "clamp(0.4em, 2.5vw, 1.2em)",
+            marginBottom: 20,
+            lineHeight: 1,
+            textTransform: "uppercase",
+          }}>
+            ENCYCLOPEDIA
+          </div>
+
+          <h2 style={{
+            fontFamily: "Cormorant Garamond, serif",
+            fontSize: "clamp(1rem, 2.2vw, 1.5rem)",
+            fontWeight: 400,
+            color: "#94a3b8",
+            lineHeight: 1.4,
             letterSpacing: "0.05em",
-            marginBottom: 32,
+            marginBottom: 8,
+            fontStyle: "italic",
           }}>
             Power, Identity, and Contested Origins
           </h2>
