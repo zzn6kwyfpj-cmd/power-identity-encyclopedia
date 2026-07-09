@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Search, ChevronRight, BookOpen, Clock, Users, BookMarked } from "lucide-react";
+import { Search, ChevronRight, BookOpen, Clock, Users, BookMarked, Database } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { CHAPTERS, ERAS } from "@/lib/manuscriptData";
 
@@ -167,8 +167,8 @@ export default function Home() {
             {[
               { href: "/timeline", icon: Clock, title: "Master Timeline", desc: "572 years of documented history" },
               { href: "/figures", icon: Users, title: "Figures of Resistance", desc: "8 portraits of resistance and legacy" },
-              { href: "/bibliography", icon: BookMarked, title: "Primary Sources", desc: "85+ verified citations" },
-              { href: "/about", icon: BookOpen, title: "About This Work", desc: "Methodology and evidence tiers" },
+              { href: "/resources", icon: BookMarked, title: "Research Tools", desc: "Genealogy, archives, and advocacy" },
+              { href: "/search", icon: BookOpen, title: "Search ARCHIVE", desc: "Full-text search across all chapters" },
             ].map(({ href, icon: Icon, title, desc }) => (
               <Link key={href} href={href}>
                 <div style={{

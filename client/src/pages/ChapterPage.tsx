@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { CHAPTERS } from "@/lib/manuscriptData";
 import { CHAPTER_CONTENT } from "@/lib/manuscriptContent";
+import { EXTRA_CHAPTER_CONTENT } from "@/lib/manuscriptContentExtra";
 
 export default function ChapterPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -70,7 +71,7 @@ export default function ChapterPage() {
       {/* Chapter Content */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="container" style={{ maxWidth: 900 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 280px", gap: 48 }} className="chapter-layout">
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) 280px", gap: 48, gridTemplateAreas: '"main sidebar"' }} className="chapter-layout">
             {/* Main Content */}
             <div>
               {/* Key Fact Box */}
@@ -89,7 +90,7 @@ export default function ChapterPage() {
 
               {/* Full Chapter Content */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug];
+                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug];
                 if (content && content.fullText.length > 0) {
                   return (
                     <div>
@@ -156,6 +157,34 @@ export default function ChapterPage() {
                   </p>
                 </div>
               )}
+
+              {/* Key Documents Section */}
+              {(() => {
+                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug];
+                if (content?.keyDocuments && content.keyDocuments.length > 0) {
+                  return (
+                    <div style={{ marginTop: 40, marginBottom: 32 }}>
+                      <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 16 }}>✦ KEY DOCUMENTS</div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                        {content.keyDocuments.map((doc, i) => (
+                          <div key={i} style={{ background: "#0f1923", padding: "12px 16px", borderLeft: "2px solid rgba(212,175,55,0.3)" }}>
+                            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 14, margin: 0 }}>{doc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+                return null;
+              })()}
+
+              {/* Cite This Article */}
+              <div style={{ background: "rgba(212,175,55,0.03)", border: "1px solid rgba(212,175,55,0.1)", padding: "16px 20px", marginTop: 24, marginBottom: 32 }}>
+                <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.2em", marginBottom: 8 }}>CITE THIS CHAPTER</div>
+                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12, lineHeight: 1.6, margin: 0, fontStyle: "italic" }}>
+                  Strickland, LaDarious. "{chapter.title}." <em>ARCHIVE: American Records of Contested History, Identity, and Verified Encyclopedia</em>. 2026. Dedicated to Luka Strickland. {window.location.href}
+                </p>
+              </div>
 
               {/* Read Full Manuscript CTA */}
               <div style={{

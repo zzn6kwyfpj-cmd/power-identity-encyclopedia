@@ -183,6 +183,14 @@
     transform: translateX(4px);
   }
 
+  /* Mobile responsive chapter layout */
+  @media (max-width: 768px) {
+    .chapter-layout {
+      grid-template-columns: 1fr !important;
+      grid-template-areas: 'main' 'sidebar' !important;
+    }
+  }
+
   .pull-quote {
     border-left: 4px solid #8b1a1a;
     padding: 1rem 1.5rem;

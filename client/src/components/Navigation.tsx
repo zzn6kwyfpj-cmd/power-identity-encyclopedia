@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, BookOpen, Users, Clock, BookMarked, Info } from "lucide-react";
+import { Menu, X, BookOpen, Users, Clock, BookMarked, Info, Search } from "lucide-react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,8 +8,10 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Home", icon: BookOpen },
+    { href: "/search", label: "Search", icon: Search },
     { href: "/timeline", label: "Timeline", icon: Clock },
     { href: "/figures", label: "Figures", icon: Users },
+    { href: "/resources", label: "Resources", icon: BookMarked },
     { href: "/bibliography", label: "Sources", icon: BookMarked },
     { href: "/about", label: "About", icon: Info },
   ];
