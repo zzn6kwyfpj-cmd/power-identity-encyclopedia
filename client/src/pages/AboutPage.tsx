@@ -19,8 +19,11 @@ export default function AboutPage() {
             <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", color: "#e2e8f0", fontSize: "1.2rem", lineHeight: 1.8, marginBottom: 16 }}>
               "Dedicated to my family, friends, and loved ones. I just wanted to make everyone proud."
             </p>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, marginBottom: 16 }}>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, marginBottom: 12 }}>
               And in loving memory of Luka Strickland — my grandmother, a Native American. Your blood, your land, and your truth are on every page of this work. This is for you, and for every generation that comes after.
+            </p>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, marginBottom: 16 }}>
+              In loving memory of <strong style={{ color: "#e2e8f0" }}>Carolyn Strickland</strong> and <strong style={{ color: "#e2e8f0" }}>Pauline Pasley</strong> — whose lives, whose love, and whose loss shaped everything that followed.
             </p>
             <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 12, letterSpacing: "0.1em" }}>— LaDarious Strickland, July 2026</p>
           </div>
@@ -122,16 +125,22 @@ export default function AboutPage() {
             <div style={{ padding: "24px 32px" }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 20 }}>WHERE THIS BEGAN</div>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
-              I grew up in Cartersville, Georgia — the home of the Etowah Mounds, one of the most significant ancient Mississippian ceremonial sites in North America. As a child, I used to look at those mounds and wonder: is there a connection between myself and the people who built them? I never had an answer. I still don’t.
+              I am originally from Kingston, Georgia. When I was five years old, my house burned down. In that fire, I lost my grandmother Carolyn Strickland and her mother Pauline Pasley. My family had nothing. We moved to Cartersville, Georgia — into the housing projects. We got our clothes from the Salvation Army. My mother raised me and my three sisters alone, with no house, no financial support, and no safety net. And she made it. We made it.
+            </p>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
+              Growing up in Cartersville, I used to look at the Etowah Mounds — one of the most significant ancient Mississippian ceremonial sites in North America — and wonder: is there a connection between myself and the people who built them? I never had an answer. I still don’t. But that question never left me.
             </p>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
               That question is why this encyclopedia begins where it does — with the Etowah Mounds, with the 1732 Georgia Charter that described the land as “waste and desolate,” with the Creek and Cherokee nations who were removed from that same land, with the Dawes Rolls that erased the identity of thousands of mixed Black-Indigenous people, and with the 1930 Census instructions that classified them as Negro by default.
             </p>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
+              This encyclopedia was not built in a university. It was not funded by a grant. It was built by the firstborn son on both sides of his family, who grew up without a house, who learned along the way, who paid attention, and who refused to accept that the story he was given was the whole story. I am a DJ by craft — known in my community for music, for making people move, for making people smile. This is the other side of that same person. Because you can command a crowd and command a library. You can make people feel something and make people think something. Both matter.
+            </p>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 0 }}>
-              I may never know if I am descended from the people who built those mounds. But I have built something that I hope will help someone else get closer to their own answer. If this encyclopedia helps one person understand their history, one researcher find a primary source they were looking for, or one family reclaim an identity that was taken from them — then every hour of work was worth it.
+              I may never know if I am descended from the people who built those mounds. But I have built something that I hope will help someone else get closer to their own answer. If this encyclopedia helps one person understand their history, one researcher find a primary source they were looking for, or one child who grew up the way I grew up see themselves as capable, confident, and connected to something ancient and powerful — then every hour of work was worth it.
             </p>
             <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.1em", marginTop: 16 }}>
-              — LaDarious Strickland, Cartersville, Georgia, July 2026
+              — LaDarious Strickland, Kingston & Cartersville, Georgia, July 2026
             </p>
             </div>
           </div>
