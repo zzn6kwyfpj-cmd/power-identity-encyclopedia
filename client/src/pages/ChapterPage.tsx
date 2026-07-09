@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link, useParams } from "wouter";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Share2, Check } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { CHAPTERS } from "@/lib/manuscriptData";
@@ -10,6 +11,17 @@ import { VIETNAM_CHAPTER_CONTENT } from "@/lib/manuscriptContentVietnam";
 
 export default function ChapterPage() {
   const { slug } = useParams<{ slug: string }>();
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = () => {
+    const url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      });
+    }
+  };
   const chapter = CHAPTERS.find(c => c.slug === slug);
   const currentIndex = CHAPTERS.findIndex(c => c.slug === slug);
   const prevChapter = currentIndex > 0 ? CHAPTERS[currentIndex - 1] : null;
@@ -65,9 +77,29 @@ export default function ChapterPage() {
           <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 700, lineHeight: 1.2, marginBottom: 12 }}>
             {chapter.title}
           </h1>
-          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.2rem", fontStyle: "italic" }}>
+          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.2rem", fontStyle: "italic", marginBottom: 20 }}>
             {chapter.subtitle}
           </p>
+          <button
+            onClick={handleShare}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: copied ? "rgba(74,222,128,0.1)" : "rgba(212,175,55,0.08)",
+              border: `1px solid ${copied ? "rgba(74,222,128,0.4)" : "rgba(212,175,55,0.3)"}`,
+              color: copied ? "#4ade80" : "#d4af37",
+              fontFamily: "Cinzel, serif",
+              fontSize: 10,
+              letterSpacing: "0.15em",
+              padding: "10px 20px",
+              cursor: "pointer",
+              transition: "all 0.2s",
+            }}
+          >
+            {copied ? <Check size={12} /> : <Share2 size={12} />}
+            {copied ? "LINK COPIED TO CLIPBOARD" : "SHARE THIS CHAPTER"}
+          </button>
         </div>
       </section>
 
