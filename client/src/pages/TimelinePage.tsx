@@ -92,6 +92,13 @@ export default function TimelinePage() {
   const [showFilters, setShowFilters] = useState(false);
 
   const eraColors = ["#8b1a1a", "#d4af37", "#2d6a4f", "#6b3fa0", "#1d6fa4"];
+  const eraBanners = [
+    "/manus-storage/era_banner_1_1ad8b855.png",
+    "/manus-storage/era_banner_2_76655c44.png",
+    "/manus-storage/era_banner_3_83f1354b.png",
+    "/manus-storage/era_banner_4_c8b87503.png",
+    "/manus-storage/era_banner_5_f842cd88.png",
+  ];
 
   // Sort events chronologically and add categories
   const enrichedEvents = useMemo(() => {
@@ -246,11 +253,30 @@ export default function TimelinePage() {
               <div style={{ position: "absolute", left: 20, top: 0, bottom: 0, width: 2, background: "linear-gradient(to bottom, #8b1a1a, #d4af37, #2d6a4f, #6b3fa0, #1d6fa4)" }} />
 
               {filteredEvents.map((event, i) => {
+                // Show era banner when era changes
+                const prevEra = i > 0 ? filteredEvents[i - 1].era : null;
+                const showEraBanner = !selectedEra && !selectedCategory && !searchQuery && prevEra !== event.era;
                 const catColor = CATEGORY_COLORS[event.category];
                 const isExpanded = expandedEvent === i;
                 const isCopied = copiedIndex === i;
 
                 return (
+                  <>
+                  {showEraBanner && (
+                    <div style={{ marginLeft: -48, marginBottom: 24, marginTop: i > 0 ? 32 : 0, position: "relative", overflow: "hidden", height: 120 }}>
+                      <img
+                        src={eraBanners[event.era - 1]}
+                        alt={`Era ${event.era}`}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.6 }}
+                      />
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(10,17,24,0.8), rgba(10,17,24,0.3), rgba(10,17,24,0.8))", display: "flex", alignItems: "center", paddingLeft: 64 }}>
+                        <div>
+                          <div style={{ fontFamily: "Cinzel, serif", color: eraColors[event.era - 1], fontSize: 10, letterSpacing: "0.3em", marginBottom: 4 }}>ERA {["I","II","III","IV","V"][event.era - 1]}</div>
+                          <div style={{ fontFamily: "Cinzel, serif", color: "#e2e8f0", fontSize: 18 }}>{ERAS[event.era - 1]?.name}</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   <div key={i} id={`event-${event.year}-${i}`} style={{ position: "relative", marginBottom: 20 }}>
                     {/* Timeline dot */}
                     <div style={{
@@ -355,6 +381,7 @@ export default function TimelinePage() {
                       )}
                     </div>
                   </div>
+                  </>
                 );
               })}
             </div>

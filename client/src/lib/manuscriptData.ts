@@ -59,6 +59,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "Andrew Jackson's refusal to enforce Worcester v. Georgia established the precedent that state power could override federal law when the federal government lacked the will to enforce it.",
     primarySource: "Worcester v. Georgia, 31 U.S. 515 (1832)",
+    image: "/manus-storage/scene_sovereignty_b501ba4d.png",
   },
   {
     id: 4, slug: "haitian-revolution", title: "The Haitian Revolution",
@@ -68,6 +69,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Haitian Revolution caused the U.S. to enact draconian restrictions on free Black people in New Orleans and tighten slave codes across the South.",
     primarySource: "Thomas Jefferson, Embargo Act correspondence (1806), National Archives",
+    image: "/manus-storage/scene_haitian_revolution_f378b7ef.png",
   },
   {
     id: 5, slug: "identity-erasure", title: "The Paper Genocide",
@@ -96,6 +98,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 3,
     keyFact: "The Washitaw Nation's claims to pre-Columbian sovereignty are grounded in the Maison Rouge land grant of 1795 — a Tier 1 primary source wrapped in a Tier 3 interpretive framework.",
     primarySource: "Verdiacee Washitaw-Turner Goston El-Bey, Return of the Ancient Ones (1993)",
+    image: "/manus-storage/scene_reclamation_6e6eb4af.png",
   },
   {
     id: 8, slug: "reconstruction", title: "The Reconstruction Betrayal",
@@ -125,6 +128,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "Recent federal reports identified marked and unmarked burial sites at 65 of the more than 400 Indian boarding schools, documenting the deaths of nearly 1,000 Native children.",
     primarySource: "U.S. Department of the Interior, Federal Indian Boarding School Initiative (2022)",
+    image: "/manus-storage/scene_boarding_schools_5cee82d4.png",
   },
   {
     id: 11, slug: "sleeping-giant", title: "The Sleeping Giant",
@@ -134,6 +138,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 2,
     keyFact: "African Americans possess $1.6–1.9 trillion in annual spending power yet hold less than 5% of the nation's wealth — the mathematical result of centuries of systematic extraction.",
     primarySource: "Dr. Claud Anderson, PowerNomics (2001); McKinsey & Company, The Economic Impact of Closing the Racial Wealth Gap (2019)",
+    image: "/manus-storage/scene_sleeping_giant_33743358.png",
   },
   {
     id: 12, slug: "wealth-extraction", title: "Wealth Extraction",
@@ -153,6 +158,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "Granville T. Woods invented the multiplex telegraph system used on railroads — at the exact same time Black men were being leased as convicts to build those same railroad tracks.",
     primarySource: "U.S. Patent Office Records, National Archives",
+    image: "/manus-storage/scene_builders_america_419c6cdc.png",
   },
   {
     id: 14, slug: "intellectual-resistance", title: "The Intellectual Resistance",
@@ -182,6 +188,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "From Georgia alone, 74,000 Black residents departed between 1910 and 1920. Chicago's Black population grew 148% in a decade. Detroit's grew 611%.",
     primarySource: "Isabel Wilkerson, The Warmth of Other Suns (2010)",
+    image: "/manus-storage/scene_great_migration_e8da5b75.png",
   },
   {
     id: 17, slug: "psychological-warfare", title: "The Architecture of Psychological Warfare",
@@ -191,6 +198,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Dyer Anti-Lynching Bill passed the House in 1921 but was killed by a Senate filibuster. The U.S. did not pass a federal anti-lynching law until the Emmett Till Antilynching Act of 2022 — 101 years later.",
     primarySource: "Equal Justice Initiative, Lynching in America (2017); FBI Vault, COINTELPRO Black Extremist Part 01 (1967)",
+    image: "/manus-storage/scene_psychological_warfare_055e1d78.png",
   },
   {
     id: 18, slug: "entertainment-industry", title: "The Industrialization of Dehumanization",
@@ -200,6 +208,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The CIA's Congress for Cultural Freedom (1950–1967) and Operation Mockingbird proved the government's willingness to use cultural production as an instrument of psychological warfare.",
     primarySource: "Donald Bogle, Toms, Coons, Mulattoes, Mammies, and Bucks (1973); Church Committee Report (1976)",
+    image: "/manus-storage/scene_entertainment_industry_decebfa1.png",
   },
   {
     id: 19, slug: "epigenetics", title: "The Biology of History",
@@ -209,6 +218,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "A 2017 peer-reviewed study (Janusek et al., Brain, Behavior, and Immunity) found that childhood adversity in young African American men directly alters the methylation of the IL6 gene, causing chronic inflammation.",
     primarySource: "Janusek et al., Brain, Behavior, and Immunity (2017); Dr. Rachel Yehuda, Biological Psychiatry (2015)",
+    image: "/manus-storage/scene_epigenetics_f7558ed1.png",
   },
   {
     id: 20, slug: "women-of-resistance", title: "Women of Resistance",
@@ -228,6 +238,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The National Park Service's 2020 report 'Black Lives and Whitened Stories' formally acknowledged that its own historical sites had systematically erased Black history — proving that autonomous institutions of preservation are a historical necessity.",
     primarySource: "Whisnant & Whisnant, Black Lives and Whitened Stories (NPS, 2020)",
+    image: "/manus-storage/scene_institutions_b1af24f2.png",
   },
   {
     id: 22, slug: "accountability", title: "Accountability and Tangible Action",
@@ -237,6 +248,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "University of Connecticut economist Thomas Craemer calculated that the value of enslaved labor, compounded at 3% interest, equals approximately $14 trillion.",
     primarySource: "Thomas Craemer, Estimating Slavery Reparations (2015); Germany Holocaust Reparations, Federal Ministry of Finance",
+    image: "/manus-storage/scene_accountability_df6df22b.png",
   },
   {
     id: 23, slug: "chinese-exclusion", title: "The Chinese Exclusion Act",
@@ -286,6 +298,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "By 1860, the Five Civilized Tribes collectively held over 7,300 enslaved Black people. The Chickasaw Nation had the highest proportion — 18% of their total population — comparable to white slaveholders in neighboring Tennessee.",
     primarySource: "Doran, Michael F. 'Negro Slaves of the Five Civilized Tribes.' Annals of the Association of American Geographers (1978)",
+    image: "/manus-storage/scene_five_tribes_slavery_7a38ec83.png",
   },
   {
     id: 25, slug: "black-cowboys", title: "The Black Cowboys",
@@ -304,6 +317,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "Project 100,000 drafted 354,000 men who had previously been deemed unfit for service. 40.6% were Black. They experienced a 20% combat casualty rate — double the rate of other recruits.",
     primarySource: "ERIC Document ED031634, Project One Hundred Thousand; American War Library, Vietnam War Casualties by Race",
+    image: "/manus-storage/scene_vietnam_veterans_7979260f.png",
   },
   {
     id: 30, slug: "crack-epidemic-iran-contra", title: "The Crack Epidemic",
@@ -313,6 +327,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Kerry Committee Report (1989) concluded that 'foreign policy considerations interfered with the U.S.'s ability to fight the war on drugs' and found 'considerable evidence' that Contra supporters were involved in drug trafficking.",
     primarySource: "Kerry Committee Report (1989), U.S. Senate; CIA Inspector General's Report, Volume II: The Contra Story (1998)",
+    image: "/manus-storage/scene_crack_epidemic_21efacb0.png",
   },
   {
     id: 31, slug: "iron-pipeline-gun-violence", title: "The Iron Pipeline",
@@ -322,6 +337,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "57% of all crime guns traced by the ATF were sold by just 1.2% of licensed dealers — but the 1986 Firearm Owners Protection Act limited ATF to one unannounced inspection per year per dealer.",
     primarySource: "ATF Crime Gun Trace Reports (annual); House Committee on Oversight, Fast and Furious Final Report (2012)",
+    image: "/manus-storage/scene_iron_pipeline_7f7bf656.png",
   },
   {
     id: 32, slug: "kerner-commission", title: "The Kerner Commission Report",
@@ -331,6 +347,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Kerner Commission concluded in 1968: 'Our nation is moving toward two societies, one Black, one white — separate and unequal.' The report explicitly identified 'white racism' as the primary cause. President Johnson refused to meet with the commission and buried the report.",
     primarySource: "National Advisory Commission on Civil Disorders, Report of the National Advisory Commission on Civil Disorders (1968) — Kerner Commission Report, National Archives",
+    image: "/manus-storage/scene_kerner_commission_9fcefbff.png",
   },
   {
     id: 33, slug: "aids-epidemic-federal-delay", title: "The AIDS Epidemic and the Federal Delay",
@@ -340,6 +357,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "Reagan's press secretary Larry Speakes laughed when asked about AIDS in 1982. Reagan did not publicly mention AIDS until May 31, 1987 — six years after the first cases were reported. By then, 41,000 Americans had died.",
     primarySource: "Reagan Presidential Library records; CDC Morbidity and Mortality Weekly Report (1981); Randy Shilts, And the Band Played On (1987)",
+    image: "/manus-storage/scene_aids_epidemic_eda8556d.png",
   },
   {
     id: 34, slug: "subprime-mortgage-crisis", title: "The 2008 Subprime Mortgage Crisis",
@@ -349,6 +367,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "Wells Fargo paid $175 million in 2012 in the largest fair lending settlement in DOJ history. The DOJ documented that Wells Fargo loan officers referred to Black borrowers as 'mud people' and subprime loans as 'ghetto loans.'",
     primarySource: "U.S. Department of Justice, United States v. Wells Fargo Bank, N.A. (2012); Federal Reserve, Survey of Consumer Finances (2010)",
+    image: "/manus-storage/scene_subprime_crisis_0d53149f.png",
   },
   {
     id: 35, slug: "prison-industrial-complex", title: "The Economics of Incarceration",
@@ -358,6 +377,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "CoreCivic's 2024 SEC filing explicitly lists 'leniency in conviction or parole standards' as a financial risk to their business — proving in their own words that their profitability depends on high incarceration rates.",
     primarySource: "CoreCivic Form 10-K (2024), SEC EDGAR CIK 1070985; Bureau of Justice Statistics, Prisoners in 2023 (NCJ 310197)",
+    image: "/manus-storage/scene_prison_industrial_1280a940.png",
   },
   {
     id: 30, slug: "school-to-prison-pipeline", title: "The School-to-Prison Pipeline",
@@ -367,6 +387,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "According to the U.S. Department of Education Civil Rights Data Collection, Black boys constitute 8% of K-12 enrollment but account for 18% of out-of-school suspensions and 18% of expulsions.",
     primarySource: "U.S. Department of Education, 2020-21 Civil Rights Data Collection; King v. Smith, 392 U.S. 309 (1968)",
+    image: "/manus-storage/scene_school_prison_2607bf6d.png",
   },
   {
     id: 31, slug: "redlining-housing-discrimination", title: "Redlining and the Housing Wealth Gap",
@@ -385,6 +406,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "John Ehrlichman, Nixon's domestic policy chief, admitted in 2016: 'Did we know we were lying about the drugs? Of course we did.' This is a direct, first-person admission of racial intent in the War on Drugs.",
     primarySource: "Baum, Dan. 'Legalize It All.' Harper's Magazine (April 2016); Steele & Aronson, Journal of Personality and Social Psychology (1995)",
+    image: "/manus-storage/scene_media_propaganda_8d641aba.png",
   },
   {
     id: 33, slug: "dyer-antilynching-bill", title: "The Dyer Anti-Lynching Bill",
@@ -394,6 +416,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Dyer Anti-Lynching Bill passed the House in 1922 with 230 votes to 119. It was killed by a Senate filibuster. The U.S. did not pass a federal anti-lynching law until the Emmett Till Antilynching Act of 2022 — 101 years later.",
     primarySource: "H.R. 13 (67th Congress, 1921); Congressional Record, Senate filibuster proceedings (1922); Emmett Till Antilynching Act, Pub. L. 117-107 (2022)",
+    image: "/manus-storage/scene_dyer_bill_ae1bd76d.png",
   },
   {
     id: 34, slug: "moynihan-report", title: "The Moynihan Report",
@@ -403,6 +426,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Moynihan Report (1965) documented that 23.6% of Black births were to unmarried mothers. It failed to connect this to the documented policies that structurally excluded Black men from families — the man-in-the-house rules struck down by King v. Smith (1968) three years later.",
     primarySource: "Moynihan, Daniel Patrick. 'The Negro Family: The Case for National Action.' U.S. Department of Labor (1965) — National Archives",
+    image: "/manus-storage/scene_moynihan_report_0e889c9f.png",
   },
   {
     id: 35, slug: "george-floyd-justice-act", title: "The George Floyd Justice in Policing Act",
@@ -412,6 +436,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The George Floyd Justice in Policing Act passed the House in 2021 but died in the Senate — the same pattern as the Dyer Anti-Lynching Bill of 1921. The enforcement gap is not history. It is the present.",
     primarySource: "H.R. 1280 (117th Congress, 2021); Congressional Record; Senate vote records",
+    image: "/manus-storage/scene_george_floyd_act_efd5f198.png",
   },
   {
     id: 36, slug: "living-legacy", title: "The Living Legacy",
