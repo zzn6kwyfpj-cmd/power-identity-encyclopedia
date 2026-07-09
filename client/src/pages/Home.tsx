@@ -141,7 +141,7 @@ export default function Home() {
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "clamp(24px, 5vw, 60px)", flexWrap: "wrap", marginBottom: 48 }}>
             {[
-              { value: "33", label: "Chapters" },
+              { value: "36", label: "Chapters" },
               { value: "572", label: "Years Documented" },
               { value: "90+", label: "Primary Sources" },
               { value: "1452", label: "to 2024" },
