@@ -108,6 +108,43 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Origin Story */}
+          <div style={{ marginBottom: 32, padding: "32px 40px", background: "#0f1923", borderLeft: "4px solid rgba(212,175,55,0.3)" }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 20 }}>WHERE THIS BEGAN</div>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
+              I grew up in Cartersville, Georgia — the home of the Etowah Mounds, one of the most significant ancient Mississippian ceremonial sites in North America. As a child, I used to look at those mounds and wonder: is there a connection between myself and the people who built them? I never had an answer. I still don’t.
+            </p>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
+              That question is why this encyclopedia begins where it does — with the Etowah Mounds, with the 1732 Georgia Charter that described the land as “waste and desolate,” with the Creek and Cherokee nations who were removed from that same land, with the Dawes Rolls that erased the identity of thousands of mixed Black-Indigenous people, and with the 1930 Census instructions that classified them as Negro by default.
+            </p>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 0 }}>
+              I may never know if I am descended from the people who built those mounds. But I have built something that I hope will help someone else get closer to their own answer. If this encyclopedia helps one person understand their history, one researcher find a primary source they were looking for, or one family reclaim an identity that was taken from them — then every hour of work was worth it.
+            </p>
+            <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.1em", marginTop: 16 }}>
+              — LaDarious Strickland, Cartersville, Georgia, July 2026
+            </p>
+          </div>
+
+          {/* Project Scope */}
+          <div style={{ marginBottom: 32, padding: "24px 32px", background: "rgba(212,175,55,0.03)", border: "1px solid rgba(212,175,55,0.1)" }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 16 }}>THE SCOPE OF THIS WORK</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16 }}>
+              {[
+                { number: "47", label: "Chapters" },
+                { number: "56", label: "Timeline Events" },
+                { number: "90+", label: "Primary Source Citations" },
+                { number: "13", label: "Portrait Illustrations" },
+                { number: "572", label: "Years Documented" },
+                { number: "40+", label: "Hours of Research" },
+              ].map(({ number, label }) => (
+                <div key={label} style={{ textAlign: "center" }}>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.5rem", fontWeight: 700 }}>{number}</div>
+                  <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase" }}>{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Copyright */}
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", padding: "24px", textAlign: "center" }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 12 }}>COPYRIGHT & FAIR USE</div>
