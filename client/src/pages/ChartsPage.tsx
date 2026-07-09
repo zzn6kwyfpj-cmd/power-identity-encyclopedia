@@ -5,29 +5,101 @@ import Footer from "@/components/Footer";
 // Chart.js loaded via CDN in index.html — declare global
 declare const Chart: any;
 
+const TREATY_DATA: Record<number, { nation: string; treaty: string; year: number; acresLost: string; mechanism: string; consequence: string; resistance: string; source: string }> = {
+  0: {
+    nation: "Muscogee (Creek) Nation",
+    treaty: "Treaty of Fort Jackson",
+    year: 1814,
+    acresLost: "23 million acres",
+    mechanism: "Forced cession following the Creek War (1813–1814). Andrew Jackson demanded the land as 'war reparations' after the Battle of Horseshoe Bend — a battle in which Creek warriors had fought alongside Jackson against the Red Sticks faction.",
+    consequence: "The Creek Nation lost 23 million acres — more than half of present-day Alabama and part of Georgia. The fraudulent Treaty of Indian Springs (1825) ceded the remaining Creek territory. By 1836, the Creek Nation had been forcibly marched to Indian Territory.",
+    resistance: "William McIntosh, who signed the Treaty of Indian Springs, was executed by Creek warriors for his betrayal. The Creek Nation filed legal challenges that were ignored by the federal government.",
+    source: "Treaty of Fort Jackson (1814), National Archives; Kappler, Indian Affairs: Laws and Treaties, Vol. II"
+  },
+  1: {
+    nation: "Cherokee Nation",
+    treaty: "Treaty of New Echota",
+    year: 1835,
+    acresLost: "7 million acres",
+    mechanism: "Signed by a minority faction of the Cherokee Nation without authorization from Principal Chief John Ross or the Cherokee National Council. The treaty was explicitly repudiated by 15,000 Cherokee — representing approximately 90% of the nation — in a petition to Congress.",
+    consequence: "The Trail of Tears. Between 1838 and 1839, approximately 16,000 Cherokee were forcibly removed from their homeland. An estimated 4,000 to 8,000 died of cold, hunger, and disease during the march. The land was distributed to white settlers via the Georgia Land Lottery.",
+    resistance: "Principal Chief John Ross led the legal and political resistance, using the U.S. legal system to challenge the treaty. Worcester v. Georgia (1832) had already ruled in the Cherokee's favor — a ruling Jackson refused to enforce.",
+    source: "Treaty of New Echota (1835), National Archives; Worcester v. Georgia, 31 U.S. 515 (1832)"
+  },
+  2: {
+    nation: "Choctaw Nation",
+    treaty: "Treaty of Dancing Rabbit Creek",
+    year: 1830,
+    acresLost: "10.4 million acres",
+    mechanism: "The first removal treaty signed under the Indian Removal Act of 1830. Choctaw leaders were pressured to sign by U.S. commissioners who threatened that if they did not cede their lands, they would lose federal protection and be subject to Mississippi state laws.",
+    consequence: "Approximately 17,000 Choctaw were removed to Indian Territory between 1831 and 1833. An estimated 2,500 to 6,000 died during the removal. The Choctaw Nation's removal was the model for all subsequent removals.",
+    resistance: "Chief Pushmataha had previously allied with Andrew Jackson at the Battle of New Orleans (1815). His successor, Chief Greenwood LeFlore, negotiated the treaty but remained in Mississippi. Many Choctaw refused to leave and remained in Mississippi.",
+    source: "Treaty of Dancing Rabbit Creek (1830), National Archives; Kappler, Indian Affairs: Laws and Treaties, Vol. II"
+  },
+  3: {
+    nation: "Chickasaw Nation",
+    treaty: "Treaty of Pontotoc Creek",
+    year: 1832,
+    acresLost: "6.4 million acres",
+    mechanism: "The Chickasaw ceded all their lands east of the Mississippi in exchange for a promise of equivalent territory west of the river. The U.S. government delayed fulfilling this promise for years, leaving the Chickasaw in legal limbo.",
+    consequence: "The Chickasaw removal (1837–1838) was one of the most organized, as the Chickasaw were given more time to prepare. However, they were forced to pay the Choctaw Nation for the right to settle in their territory — a financial burden that lasted decades.",
+    resistance: "The Chickasaw Nation negotiated more favorable terms than other tribes but were still ultimately removed. Their legal and financial sophistication allowed them to preserve more of their institutional structure.",
+    source: "Treaty of Pontotoc Creek (1832), National Archives; Kappler, Indian Affairs: Laws and Treaties, Vol. II"
+  },
+  4: {
+    nation: "All Five Civilized Tribes",
+    treaty: "Dawes Act (General Allotment Act)",
+    year: 1887,
+    acresLost: "90 million acres",
+    mechanism: "The Dawes Act broke up communally held tribal reservation land into individual allotments. Any land remaining after allotments were assigned was declared 'surplus' and sold to non-Native settlers, railroads, and corporations at below-market prices.",
+    consequence: "Between 1887 and 1934, Native Americans lost approximately 90 million acres — nearly two-thirds of all the territory they held in 1887. The Dawes Rolls created a racial classification system that erased the identity of thousands of mixed Black-Indigenous people.",
+    resistance: "Redbird Smith led the Keetoowah Society in refusing to enroll in the Dawes Rolls. The Indian Reorganization Act (1934) formally ended the allotment policy but did not return the 90 million acres already stolen.",
+    source: "General Allotment Act (Dawes Act), 24 Stat. 388 (1887), National Archives; Meriam Report (1928)"
+  },
+};
+
 function LandLossChart() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [selectedBar, setSelectedBar] = useState<number | null>(null);
+
   useEffect(() => {
     if (!canvasRef.current || typeof Chart === "undefined") return;
     const ctx = canvasRef.current.getContext("2d");
     const chart = new Chart(ctx, {
       type: "bar",
       data: {
-        labels: ["Creek Nation\n(Treaty of Fort Jackson, 1814)", "Cherokee Nation\n(Treaty of New Echota, 1835)", "Choctaw Nation\n(Treaty of Dancing Rabbit, 1830)", "Chickasaw Nation\n(Treaty of Pontotoc, 1832)", "All Five Tribes\n(Dawes Act, 1887–1934)"],
+        labels: ["Creek Nation\n(1814)", "Cherokee Nation\n(1835)", "Choctaw Nation\n(1830)", "Chickasaw Nation\n(1832)", "All Five Tribes\n(Dawes Act, 1887)"],
         datasets: [{
           label: "Acres Lost (Millions)",
           data: [23, 7, 10.4, 6.4, 90],
           backgroundColor: ["rgba(139,26,26,0.7)", "rgba(212,175,55,0.7)", "rgba(45,106,79,0.7)", "rgba(107,63,160,0.7)", "rgba(29,111,164,0.7)"],
           borderColor: ["#8b1a1a", "#d4af37", "#2d6a4f", "#6b3fa0", "#1d6fa4"],
           borderWidth: 2,
+          hoverBorderWidth: 4,
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        onClick: (_event: any, elements: any[]) => {
+          if (elements.length > 0) {
+            const index = elements[0].index;
+            setSelectedBar(selectedBar === index ? null : index);
+          }
+        },
         plugins: {
           legend: { display: false },
-          title: { display: true, text: "Indigenous Land Cessions in the Southeast (Millions of Acres)", color: "#d4af37", font: { size: 14, family: "Cinzel, serif" } }
+          title: { display: true, text: "Click any bar to see the treaty details — Indigenous Land Cessions (Millions of Acres)", color: "#d4af37", font: { size: 13, family: "Cinzel, serif" } },
+          tooltip: {
+            callbacks: {
+              afterBody: (items: any[]) => {
+                const idx = items[0]?.dataIndex;
+                const t = TREATY_DATA[idx];
+                if (t) return [`\u2726 Click to see: ${t.treaty} (${t.year})`];
+                return [];
+              }
+            }
+          }
         },
         scales: {
           y: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(212,175,55,0.1)" }, title: { display: true, text: "Acres Lost (Millions)", color: "#64748b" } },
@@ -37,7 +109,53 @@ function LandLossChart() {
     });
     return () => chart.destroy();
   }, []);
-  return <canvas ref={canvasRef} />;
+
+  const treaty = selectedBar !== null ? TREATY_DATA[selectedBar] : null;
+  const barColors = ["#8b1a1a", "#d4af37", "#2d6a4f", "#6b3fa0", "#1d6fa4"];
+
+  return (
+    <div>
+      <canvas ref={canvasRef} style={{ cursor: "pointer" }} />
+      {treaty && (
+        <div style={{
+          marginTop: 20,
+          background: "#0a1118",
+          border: `1px solid ${barColors[selectedBar!]}60`,
+          borderLeft: `4px solid ${barColors[selectedBar!]}`,
+          padding: "20px 24px",
+        }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+            <div>
+              <div style={{ fontFamily: "Cinzel, serif", color: barColors[selectedBar!], fontSize: 13, letterSpacing: "0.05em", marginBottom: 2 }}>{treaty.nation}</div>
+              <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 16 }}>{treaty.treaty} ({treaty.year})</div>
+            </div>
+            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <span style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 11, letterSpacing: "0.05em" }}>{treaty.acresLost} lost</span>
+              <button onClick={() => setSelectedBar(null)} style={{ background: "transparent", border: "none", color: "#64748b", cursor: "pointer", fontSize: 16, padding: "0 4px" }}>×</button>
+            </div>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16, marginTop: 12 }}>
+            {[
+              { label: "MECHANISM", text: treaty.mechanism, color: "#f87171" },
+              { label: "CONSEQUENCE", text: treaty.consequence, color: "#94a3b8" },
+              { label: "RESISTANCE", text: treaty.resistance, color: "#4ade80" },
+            ].map(({ label, text, color }) => (
+              <div key={label}>
+                <div style={{ fontFamily: "Cinzel, serif", color, fontSize: 9, letterSpacing: "0.2em", marginBottom: 6 }}>{label}</div>
+                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, lineHeight: 1.7, margin: 0 }}>{text}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 10, letterSpacing: "0.1em", marginTop: 12 }}>SOURCE: {treaty.source}</div>
+        </div>
+      )}
+      {selectedBar === null && (
+        <div style={{ textAlign: "center", marginTop: 12, fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 13, fontStyle: "italic" }}>
+          ✦ Click any bar to reveal the treaty details, mechanism of dispossession, and resistance
+        </div>
+      )}
+    </div>
+  );
 }
 
 function WealthGapChart() {
