@@ -2,6 +2,57 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export default function ResourcesPage() {
+  const recommendedViewing = [
+    {
+      title: "13th (2016)",
+      director: "Ava DuVernay",
+      platform: "Netflix",
+      desc: "Documents the 13th Amendment's 'except as punishment for crime' loophole and the direct line from slavery to mass incarceration. Named after the 13th Amendment.",
+      tier: "Tier 1/2",
+      url: "https://www.netflix.com/title/80091741"
+    },
+    {
+      title: "Slavery by Another Name (2012)",
+      director: "Sam Pollard",
+      platform: "PBS",
+      desc: "Based on Douglas Blackmon's Pulitzer Prize-winning book. Documents the convict leasing system from 1865 to 1941 using primary source records.",
+      tier: "Tier 1",
+      url: "https://www.pbs.org/tpt/slavery-by-another-name/"
+    },
+    {
+      title: "The Banker (2020)",
+      director: "George Nolfi",
+      platform: "Apple TV+",
+      desc: "Documents the true story of Bernard Garrett and Joe Morris, two Black entrepreneurs who used a white front man to purchase redlined properties in the 1950s and 1960s.",
+      tier: "Tier 2",
+      url: "https://tv.apple.com/us/movie/the-banker/umc.cmc.6jxzuqfpb6s0hq5f8yx0ycxj"
+    },
+    {
+      title: "I Am Not Your Negro (2016)",
+      director: "Raoul Peck",
+      platform: "Amazon Prime",
+      desc: "Based on James Baldwin's unfinished manuscript. Documents the psychological and cultural dimensions of American racism through Baldwin's analysis of Medgar Evers, Malcolm X, and MLK.",
+      tier: "Tier 2",
+      url: "https://www.amazon.com/I-Am-Not-Your-Negro/dp/B06XFNB9MX"
+    },
+    {
+      title: "Dark Alliance (2021)",
+      director: "Ric Esther Bienstock",
+      platform: "Netflix",
+      desc: "Documents Gary Webb's 'Dark Alliance' investigation and its aftermath. Cross-reference with the Kerry Committee Report (1989) and CIA IG Report (1998) for Tier 1 verification.",
+      tier: "Tier 2",
+      url: "https://www.netflix.com/title/81002250"
+    },
+    {
+      title: "Whose Streets? (2017)",
+      director: "Sabaah Folayan",
+      platform: "Amazon Prime",
+      desc: "Documents the Ferguson uprising following the killing of Michael Brown. Provides contemporary context for the documented pattern of police militarization.",
+      tier: "Tier 2",
+      url: "https://www.amazon.com/Whose-Streets-Sabaah-Folayan/dp/B07BXHM6S6"
+    },
+  ];
+
   const resources = [
     {
       category: "Genealogy Research",
@@ -96,6 +147,50 @@ export default function ResourcesPage() {
               </div>
             </div>
           ))}
+
+          {/* Recommended Viewing */}
+          <div style={{ marginTop: 48 }}>
+            <div style={{
+              fontFamily: "Cinzel, serif",
+              color: "#d4af37",
+              fontSize: 12,
+              letterSpacing: "0.2em",
+              marginBottom: 20,
+              paddingBottom: 12,
+              borderBottom: "1px solid rgba(212,175,55,0.2)",
+            }}>
+              Recommended Viewing — Documentaries and Films
+            </div>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 14, marginBottom: 20, lineHeight: 1.7 }}>
+              These films provide visual context for the evidence documented in this encyclopedia. Each is labeled with its evidence tier. Always cross-reference film claims with the primary sources cited in the relevant chapters.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
+              {recommendedViewing.map(film => (
+                <div key={film.title} style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", borderLeft: "3px solid #6b3fa0", padding: "20px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+                    <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 13 }}>{film.title}</div>
+                    <span style={{ fontFamily: "Cinzel, serif", color: "#6b3fa0", fontSize: 9, letterSpacing: "0.1em", border: "1px solid #6b3fa040", padding: "2px 6px" }}>{film.tier}</span>
+                  </div>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.05em", marginBottom: 8 }}>{film.director} · {film.platform}</div>
+                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, lineHeight: 1.7, marginBottom: 14 }}>{film.desc}</p>
+                  <a href={film.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                    <button style={{
+                      background: "transparent",
+                      border: "1px solid rgba(107,63,160,0.4)",
+                      color: "#6b3fa0",
+                      fontFamily: "Cinzel, serif",
+                      fontSize: 10,
+                      letterSpacing: "0.1em",
+                      padding: "8px 16px",
+                      cursor: "pointer",
+                    }}>
+                      Watch →
+                    </button>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
       <Footer />

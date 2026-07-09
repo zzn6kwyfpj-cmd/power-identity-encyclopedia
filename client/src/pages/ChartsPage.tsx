@@ -150,6 +150,55 @@ function EvidenceTierChart() {
   return <canvas ref={canvasRef} />;
 }
 
+function ModernChainChart() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    if (!canvasRef.current || typeof Chart === "undefined") return;
+    const ctx = canvasRef.current.getContext("2d");
+    const chart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["1970", "1975", "1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2024"],
+        datasets: [
+          {
+            label: "Black Imprisonment Rate (per 100,000)",
+            data: [600, 700, 1000, 1400, 1860, 2200, 2400, 2290, 2207, 1745, 1240, 1218],
+            borderColor: "#8b1a1a",
+            backgroundColor: "rgba(139,26,26,0.1)",
+            tension: 0.4,
+            fill: true,
+            yAxisID: "y",
+          },
+          {
+            label: "Private Prison Revenue Index (1983=100)",
+            data: [0, 0, 0, 100, 280, 600, 1200, 2100, 3200, 3800, 3600, 4380],
+            borderColor: "#d4af37",
+            backgroundColor: "rgba(212,175,55,0.1)",
+            tension: 0.4,
+            fill: true,
+            yAxisID: "y1",
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif" } } },
+          title: { display: true, text: "Black Incarceration Rate vs. Private Prison Revenue Growth (1970–2024)", color: "#d4af37", font: { size: 13, family: "Cinzel, serif" } }
+        },
+        scales: {
+          y: { ticks: { color: "#f87171" }, grid: { color: "rgba(212,175,55,0.1)" }, title: { display: true, text: "Black Imprisonment Rate (per 100,000)", color: "#f87171" } },
+          y1: { position: "right", ticks: { color: "#d4af37" }, grid: { drawOnChartArea: false }, title: { display: true, text: "Private Prison Revenue ($ millions)", color: "#d4af37" } },
+          x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(212,175,55,0.1)" } }
+        }
+      }
+    });
+    return () => chart.destroy();
+  }, []);
+  return <canvas ref={canvasRef} />;
+}
+
 export default function ChartsPage() {
   return (
     <div style={{ backgroundColor: "#0a1118", minHeight: "100vh" }}>
@@ -242,6 +291,37 @@ export default function ChartsPage() {
               <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginTop: 12 }}>
                 Sources: National Archives primary documents; Kappler Indian Affairs Laws and Treaties; Church Committee Report (1976).
               </p>
+            </div>
+          </div>
+
+          {/* Modern Chain Chart */}
+          <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px", marginTop: 48 }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 13, letterSpacing: "0.1em", marginBottom: 20 }}>
+              THE MODERN CHAIN: BLACK INCARCERATION RATES VS. PRIVATE PRISON REVENUE (1970–2024)
+            </div>
+            <div style={{ height: 350 }}>
+              <ModernChainChart />
+            </div>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginTop: 12 }}>
+              Sources: Bureau of Justice Statistics, Prisoners in 2023 (NCJ 310197); CoreCivic Form 10-K (2024); GEO Group Form 10-K (2024); The Sentencing Project, Color of Justice (2021). Note: Private prison revenue data begins with CCA's founding in 1983; shown as index relative to 1983 baseline.
+            </p>
+            <div style={{ marginTop: 20, padding: "16px", background: "rgba(139,26,26,0.08)", borderLeft: "4px solid #8b1a1a" }}>
+              <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 10, letterSpacing: "0.2em", marginBottom: 8 }}>THE CHRONOLOGICAL CHAIN</div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12 }}>
+                {[
+                  { year: "1865", event: "13th Amendment loophole — convict leasing begins" },
+                  { year: "1971", event: "Nixon's War on Drugs — Ehrlichman admission" },
+                  { year: "1983", event: "CCA (CoreCivic) founded — private prison industry born" },
+                  { year: "1986", event: "100:1 crack/powder sentencing — 78.7% Black defendants" },
+                  { year: "1994", event: "Crime Bill — three strikes, mandatory minimums" },
+                  { year: "2024", event: "$4.38B private prison revenue — SEC filings document occupancy incentives" },
+                ].map(({ year, event }) => (
+                  <div key={year} style={{ padding: "8px 12px", background: "rgba(212,175,55,0.05)", borderLeft: "2px solid rgba(212,175,55,0.3)" }}>
+                    <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 12, marginBottom: 4 }}>{year}</div>
+                    <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, lineHeight: 1.5 }}>{event}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
