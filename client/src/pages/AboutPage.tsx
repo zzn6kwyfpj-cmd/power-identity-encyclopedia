@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { LightboxImage } from "@/components/Lightbox";
+import { AudioPlayer } from "@/components/AudioPlayer";
 
 export default function AboutPage() {
   return (
@@ -195,6 +196,26 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Audio Section */}
+          <div style={{ marginBottom: 32 }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 16 }}>AUDIO — SPOKEN INTRODUCTION & THEMATIC MUSIC</div>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>
+              Upload a spoken introduction or a thematic background track to accompany this page. Audio files can be added by updating the <code style={{ color: "#d4af37", fontSize: 11 }}>src</code> prop in the AudioPlayer component with a public URL to your audio file.
+            </p>
+            <AudioPlayer
+              title="Spoken Introduction"
+              subtitle="A personal introduction from LaDarious Strickland"
+              type="spoken"
+              placeholder={true}
+            />
+            <AudioPlayer
+              title="Thematic Background Track"
+              subtitle="Music to accompany your reading of The Archive Encyclopedia"
+              type="music"
+              placeholder={true}
+            />
           </div>
 
           {/* Copyright */}
