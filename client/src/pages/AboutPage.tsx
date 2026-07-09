@@ -50,6 +50,36 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Enlightened Perspective */}
+          <div style={{ marginBottom: 40 }}>
+            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.5rem", marginBottom: 24 }}>Afterword: The Enlightened Perspective</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              {[
+                {
+                  label: "The Single Most Important Truth",
+                  text: "The system of oppression documented here was not a failure of American ideals — it was the precise, mathematical execution of its economic design. The poverty of Black and Indigenous communities is not a symptom of their inadequacy; it is the required fuel for the engine of American capitalism. The system is not broken; it is operating exactly as engineered."
+                },
+                {
+                  label: "The Single Most Important Action",
+                  text: "The most critical action a reader can take is to reject the psychological conditioning of the 'ward of the state' mentality. Action begins with internal decolonization — recognizing that the labels, the statistics, and the entertainment industry are all mechanisms designed to suppress sovereign consciousness. Reclaiming one's genealogy, practicing group economics, and building autonomous institutions are not just political acts; they are spiritual imperatives."
+                },
+                {
+                  label: "The Unasked Question",
+                  text: "The question that no academic institution has yet been willing to formally ask is this: If the legal and economic architecture of the United States was built entirely upon the non-consensual extraction of land and labor, at what point does the accumulated debt exceed the total value of the nation itself? And if that point has already been passed, what is the mathematical formula for a truly just society?"
+                },
+                {
+                  label: "The Systemic Question",
+                  text: "The evidence assembled in this encyclopedia raises a question that each reader must answer for themselves: whether the consistency, precision, and durability of this system across five centuries represents the accumulated effect of individual self-interest, or something more deliberately organized. The primary sources do not answer that question. They simply make it impossible to avoid asking."
+                },
+              ].map(({ label, text }) => (
+                <div key={label} style={{ background: "#0f1923", borderLeft: "4px solid #8b1a1a", padding: "20px 24px" }}>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.15em", marginBottom: 10 }}>{label}</div>
+                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.05rem", lineHeight: 1.8, margin: 0 }}>{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Copyright */}
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", padding: "24px", textAlign: "center" }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 12 }}>COPYRIGHT & FAIR USE</div>

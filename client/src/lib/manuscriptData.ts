@@ -235,7 +235,34 @@ export const CHAPTERS: Chapter[] = [
     primarySource: "Thomas Craemer, Estimating Slavery Reparations (2015); Germany Holocaust Reparations, Federal Ministry of Finance",
   },
   {
-    id: 23, slug: "gullah-geechee", title: "The Gullah Geechee",
+    id: 23, slug: "chinese-exclusion", title: "The Chinese Exclusion Act",
+    subtitle: "The First Federal Law to Bar a Racial Group from Immigration (1882)",
+    era: "Era II", eraColor: "#d4af37",
+    summary: "The Chinese Exclusion Act of 1882 was the first federal law to explicitly bar a racial group from immigration. It established the legal template for racially discriminatory immigration policy that would culminate in the 1924 National Origins Act and shape American immigration law for a century.",
+    tier: 1,
+    keyFact: "The Chinese Exclusion Act of 1882 was not repealed until 1943 — 61 years after it was enacted — and only because China was a U.S. ally in World War II.",
+    primarySource: "Chinese Exclusion Act (1882), 22 Stat. 58, National Archives",
+  },
+  {
+    id: 24, slug: "buffalo-soldiers", title: "The Buffalo Soldiers",
+    subtitle: "Black Warriors for a Country That Returned Them to Jim Crow (1866–1898)",
+    era: "Era II", eraColor: "#d4af37",
+    summary: "The Buffalo Soldiers were Black military regiments who fought in the Indian Wars and the Spanish-American War. They were celebrated as heroes in Cuba in 1898 — and returned to Jim Crow America, where they were denied the rights they had fought to defend.",
+    tier: 1,
+    keyFact: "The Buffalo Soldiers received 23 Congressional Medals of Honor — the highest military honor in the United States — yet returned home to segregation, lynching, and the denial of basic civil rights.",
+    primarySource: "Buffalo Soldiers National Museum; Congressional Medal of Honor Society records",
+  },
+  {
+    id: 25, slug: "bracero-program", title: "The Bracero Program",
+    subtitle: "The Exploitation of Mexican Agricultural Labor (1942–1964)",
+    era: "Era III", eraColor: "#2d6a4f",
+    summary: "The Bracero Program (1942–1964) brought approximately 4.6 million Mexican agricultural workers to the United States under conditions nearly identical to convict leasing. Workers were unable to leave their employers, wages were withheld, and a 10% 'savings fund' was never paid.",
+    tier: 1,
+    keyFact: "The U.S. government withheld 10% of Bracero wages in a 'savings fund' that was supposed to be returned when workers went home. Most workers never received this money. Advocates estimate the stolen wages total over $500 million.",
+    primarySource: "Bracero History Archive, Library of Congress; Gamboa, Erasmo. Mexican Labor and World War II (1990)",
+  },
+  {
+    id: 26, slug: "gullah-geechee", title: "The Gullah Geechee",
     subtitle: "Enduring Culture of the Sea Islands",
     era: "Era III", eraColor: "#2d6a4f",
     summary: "The Gullah Geechee people are direct descendants of enslaved Africans who maintained the most intact African cultural traditions in North America, living on the Sea Islands of Georgia and South Carolina. Their survival is a testament to the resilience of African culture against the most brutal conditions of American slavery.",
@@ -279,8 +306,8 @@ export const FIGURES: Figure[] = [
     heritage: "Cherokee Nation",
     role: "Inventor of the Cherokee Syllabary",
     quote: "I will try. If I succeed, I will be a great man.",
-    image: "",
-    connection: "Created the Cherokee syllabary in 1821, making the Cherokee Phoenix newspaper possible — an act of intellectual sovereignty."
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663605007568/dUgbbogrefGeDRlw.png",
+    connection: "Created the Cherokee syllabary in 1821, making the Cherokee Phoenix newspaper possible — an act of intellectual sovereignty that proved literacy is the prerequisite for liberation."
   },
   {
     name: "Chief Junaluska",
@@ -288,7 +315,7 @@ export const FIGURES: Figure[] = [
     heritage: "Cherokee Nation",
     role: "Warrior and Resistance Leader",
     quote: "If I had known Jackson would drive us from our homes, I would have killed him that day at Horseshoe Bend.",
-    image: "",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663605007568/dUgbbogrefGeDRlw.png",
     connection: "Saved Andrew Jackson's life at the Battle of Horseshoe Bend, only to be betrayed by him — the ultimate symbol of the enforcement gap."
   },
   {
@@ -297,7 +324,7 @@ export const FIGURES: Figure[] = [
     heritage: "Black Seminole (African-Seminole)",
     role: "Military Leader and Freedom Fighter",
     quote: "We will fight until we die or are free.",
-    image: "",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663605007568/dUgbbogrefGeDRlw.png",
     connection: "Led Black Seminole resistance against the U.S. Army, proving that Black and Indigenous communities formed powerful alliances against colonial power."
   },
   {
@@ -306,7 +333,7 @@ export const FIGURES: Figure[] = [
     heritage: "Cherokee Nation",
     role: "Principal Chief of the Cherokee Nation",
     quote: "The perpetrator of a wrong never forgives his victim.",
-    image: "",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663605007568/dUgbbogrefGeDRlw.png",
     connection: "Led the Cherokee Nation's legal and political resistance against removal, using the U.S. legal system to challenge Georgia's illegal seizure of Cherokee territory."
   },
   {
