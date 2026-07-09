@@ -142,6 +142,38 @@ export default function AboutPage() {
             <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.1em", marginTop: 16 }}>
               — LaDarious Strickland, Kingston & Cartersville, Georgia, July 2026
             </p>
+
+            {/* The Passing of the Torch Portrait */}
+            <div style={{ marginTop: 32, display: "flex", gap: 24, alignItems: "flex-start", flexWrap: "wrap" }}>
+              <div style={{ flexShrink: 0, width: 220 }}>
+                <div style={{ border: "2px solid rgba(212,175,55,0.4)", overflow: "hidden", boxShadow: "0 0 40px rgba(212,175,55,0.1)" }}>
+                  <img
+                    src="/manus-storage/portrait_ladarious_torch_1b7e1366.png"
+                    alt="LaDarious Strickland — The Passing of the Torch"
+                    style={{ width: "100%", display: "block", cursor: "zoom-in" }}
+                    onClick={() => {
+                      const overlay = document.createElement('div');
+                      overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(5,11,16,0.97);display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
+                      const img = document.createElement('img');
+                      img.src = '/manus-storage/portrait_ladarious_torch_1b7e1366.png';
+                      img.style.cssText = 'max-width:90vw;max-height:90vh;object-fit:contain;border:1px solid rgba(212,175,55,0.2);';
+                      overlay.appendChild(img);
+                      overlay.onclick = () => document.body.removeChild(overlay);
+                      document.body.appendChild(overlay);
+                    }}
+                  />
+                </div>
+                <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", marginTop: 8, textAlign: "center" }}>
+                  THE PASSING OF THE TORCH
+                </div>
+              </div>
+              <div style={{ flex: 1, minWidth: 200 }}>
+                <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 12, letterSpacing: "0.1em", marginBottom: 12 }}>LADARIOUS STRICKLAND</div>
+                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "0.95rem", lineHeight: 1.8 }}>
+                  Author of The Archive Encyclopedia. First born son of Kingston, Georgia. Raised in Cartersville. Scholar. DJ Castronovaa. The legacy continues.
+                </p>
+              </div>
+            </div>
             </div>
           </div>
 
