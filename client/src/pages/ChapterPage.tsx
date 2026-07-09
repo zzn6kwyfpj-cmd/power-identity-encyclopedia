@@ -2,6 +2,7 @@ import { Link, useParams } from "wouter";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { CHAPTERS } from "@/lib/manuscriptData";
+import { CHAPTER_CONTENT } from "@/lib/manuscriptContent";
 
 export default function ChapterPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -86,10 +87,60 @@ export default function ChapterPage() {
                 </p>
               </div>
 
-              {/* Chapter Summary */}
-              <div className="drop-cap" style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.15rem", lineHeight: 1.9, marginBottom: 32 }}>
-                {chapter.summary}
-              </div>
+              {/* Full Chapter Content */}
+              {(() => {
+                const content = CHAPTER_CONTENT[chapter.slug];
+                if (content && content.fullText.length > 0) {
+                  return (
+                    <div>
+                      {content.fullText.map((paragraph, i) => (
+                        <p key={i} className={i === 0 ? "drop-cap" : ""} style={{ 
+                          fontFamily: "Cormorant Garamond, serif", 
+                          color: "#e2e8f0", 
+                          fontSize: "1.15rem", 
+                          lineHeight: 1.9, 
+                          marginBottom: 24 
+                        }}>
+                          {paragraph}
+                        </p>
+                      ))}
+                      {content.pullQuote && (
+                        <div style={{
+                          borderLeft: "4px solid #8b1a1a",
+                          padding: "16px 20px",
+                          background: "rgba(139,26,26,0.08)",
+                          margin: "32px 0",
+                        }}>
+                          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.15rem", fontStyle: "italic", lineHeight: 1.8, marginBottom: 8 }}>
+                            "{content.pullQuote.text}"
+                          </p>
+                          <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.1em" }}>
+                            — {content.pullQuote.attribution}
+                          </p>
+                        </div>
+                      )}
+                      {content.didYouKnow && (
+                        <div style={{
+                          background: "rgba(212,175,55,0.05)",
+                          border: "1px solid rgba(212,175,55,0.2)",
+                          padding: "16px 20px",
+                          margin: "24px 0",
+                        }}>
+                          <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 10, letterSpacing: "0.2em", marginBottom: 8 }}>✦ DID YOU KNOW?</div>
+                          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.7 }}>
+                            {content.didYouKnow}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+                return (
+                  <div className="drop-cap" style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.15rem", lineHeight: 1.9, marginBottom: 32 }}>
+                    {chapter.summary}
+                  </div>
+                );
+              })()}
 
               {/* Primary Source */}
               {chapter.primarySource && (

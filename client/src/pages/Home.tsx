@@ -32,33 +32,42 @@ export default function Home() {
         paddingBottom: 60,
       }}>
         <div className="container text-center" style={{ maxWidth: 900 }}>
-          {/* Ornamental header */}
-          <div style={{ color: "#d4af37", fontSize: 12, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 24 }}>
+          {/* ARCHIVE Brand */}
+          <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 16 }}>
             ✦ A ROYAL MANUSCRIPT ENCYCLOPEDIA ✦
           </div>
 
           <h1 style={{
             fontFamily: "Cinzel, serif",
-            fontSize: "clamp(2rem, 5vw, 4rem)",
-            fontWeight: 700,
+            fontSize: "clamp(3rem, 8vw, 7rem)",
+            fontWeight: 900,
             color: "#d4af37",
-            lineHeight: 1.2,
-            letterSpacing: "0.05em",
-            marginBottom: 16,
+            lineHeight: 1.0,
+            letterSpacing: "0.3em",
+            marginBottom: 8,
           }}>
-            Power, Identity,
+            ARCHIVE
           </h1>
-          <h1 style={{
+          <p style={{
+            fontFamily: "Cormorant Garamond, serif",
+            fontSize: "clamp(0.8rem, 1.5vw, 1rem)",
+            color: "#64748b",
+            letterSpacing: "0.15em",
+            marginBottom: 20,
+          }}>
+            American Records of Contested History, Identity, and Verified Encyclopedia
+          </p>
+          <h2 style={{
             fontFamily: "Cinzel, serif",
-            fontSize: "clamp(1.5rem, 4vw, 3rem)",
+            fontSize: "clamp(1rem, 2.5vw, 1.8rem)",
             fontWeight: 400,
             color: "#e2e8f0",
-            lineHeight: 1.2,
-            letterSpacing: "0.08em",
+            lineHeight: 1.3,
+            letterSpacing: "0.05em",
             marginBottom: 32,
           }}>
-            and Contested Origins
-          </h1>
+            Power, Identity, and Contested Origins
+          </h2>
 
           <div style={{ width: 80, height: 2, background: "linear-gradient(to right, transparent, #d4af37, transparent)", margin: "0 auto 24px" }} />
 
@@ -309,8 +318,11 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ background: "#050b10", borderTop: "1px solid rgba(212,175,55,0.2)", padding: "40px 0", textAlign: "center" }}>
-        <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 14, letterSpacing: "0.1em", marginBottom: 8 }}>
-          Power, Identity, and Contested Origins
+          <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 16, letterSpacing: "0.3em", marginBottom: 4 }}>
+          ARCHIVE
+        </div>
+        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, letterSpacing: "0.1em", marginBottom: 8 }}>
+          American Records of Contested History, Identity, and Verified Encyclopedia
         </div>
         <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 13, marginBottom: 4 }}>
           By LaDarious Strickland · Dedicated to Luka Strickland, a Native American

@@ -34,11 +34,11 @@ export default function Navigation() {
                 <span style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontWeight: 700, fontSize: 14, letterSpacing: "0.05em" }}>✦</span>
               </div>
               <div className="hidden sm:block">
-                <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 13, letterSpacing: "0.1em", lineHeight: 1.2 }}>
-                  POWER, IDENTITY
+                <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 15, letterSpacing: "0.2em", lineHeight: 1.2 }}>
+                  ARCHIVE
                 </div>
-                <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 11, letterSpacing: "0.05em" }}>
-                  & Contested Origins
+                <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.05em" }}>
+                  American Records of Contested History
                 </div>
               </div>
             </div>
