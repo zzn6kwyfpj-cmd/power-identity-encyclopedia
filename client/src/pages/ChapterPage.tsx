@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { CHAPTERS } from "@/lib/manuscriptData";
 import { CHAPTER_CONTENT } from "@/lib/manuscriptContent";
 import { EXTRA_CHAPTER_CONTENT } from "@/lib/manuscriptContentExtra";
+import { MODERN_CHAPTER_CONTENT } from "@/lib/manuscriptContentModern";
 
 export default function ChapterPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -91,7 +92,7 @@ export default function ChapterPage() {
 
               {/* Full Chapter Content */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug];
+                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug];
                 if (content && content.fullText.length > 0) {
                   return (
                     <div>
@@ -161,7 +162,7 @@ export default function ChapterPage() {
 
               {/* Key Documents Section */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug];
+                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug];
                 if (content?.keyDocuments && content.keyDocuments.length > 0) {
                   return (
                     <div style={{ marginTop: 40, marginBottom: 32 }}>
