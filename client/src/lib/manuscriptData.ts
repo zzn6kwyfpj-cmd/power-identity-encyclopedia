@@ -49,6 +49,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The 1732 Georgia Charter described Creek and Cherokee territories as 'waste and desolate' — erasing thousands of Indigenous inhabitants with a single legal phrase.",
     primarySource: "Georgia Charter (1732), Avalon Project, Yale Law School",
+    image: "/manus-storage/scene_georgia_charter_1f896a97.png",
   },
   {
     id: 3, slug: "sovereignty", title: "The Enforcement Gap",
@@ -76,6 +77,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The 1930 Census instruction: 'A person of mixed Indian and Negro blood should be returned a Negro, unless the Indian blood predominates and the status as an Indian is generally accepted in the community.'",
     primarySource: "U.S. Census Bureau, 1930 Enumerator Instructions, National Archives",
+    image: "/manus-storage/scene_paper_genocide_36d39695.png",
   },
   {
     id: 6, slug: "resistance", title: "Resistance and Survival",
@@ -103,6 +105,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "In 1898, a mob of 2,000 white supremacists overthrew the legitimately elected biracial government of Wilmington, NC — the only successful coup d'état in U.S. history.",
     primarySource: "David Zucchino, Wilmington's Lie (Pulitzer Prize, 2021)",
+    image: "/manus-storage/scene_wilmington_massacre_86fe794e.png",
   },
   {
     id: 9, slug: "dawes-act", title: "The 1887 Dawes Act",
@@ -112,6 +115,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "Between 1887 and 1934, Native Americans lost approximately 90 million acres — nearly two-thirds of all the territory they held in 1887.",
     primarySource: "Kappler, Indian Affairs: Laws and Treaties, Vol. I (Oklahoma State University)",
+    image: "/manus-storage/scene_dawes_act_34da5aae.png",
   },
   {
     id: 10, slug: "boarding-schools", title: "Kill the Indian, Save the Man",
@@ -242,6 +246,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Chinese Exclusion Act of 1882 was not repealed until 1943 — 61 years after it was enacted — and only because China was a U.S. ally in World War II.",
     primarySource: "Chinese Exclusion Act (1882), 22 Stat. 58, National Archives",
+    image: "/manus-storage/scene_chinese_exclusion_952ccfee.png",
   },
   {
     id: 24, slug: "buffalo-soldiers", title: "The Buffalo Soldiers",
@@ -251,6 +256,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Buffalo Soldiers received 23 Congressional Medals of Honor — the highest military honor in the United States — yet returned home to segregation, lynching, and the denial of basic civil rights.",
     primarySource: "Buffalo Soldiers National Museum; Congressional Medal of Honor Society records",
+    image: "/manus-storage/scene_buffalo_soldiers_505c3800.png",
   },
   {
     id: 25, slug: "bracero-program", title: "The Bracero Program",
@@ -260,6 +266,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The U.S. government withheld 10% of Bracero wages in a 'savings fund' that was supposed to be returned when workers went home. Most workers never received this money. Advocates estimate the stolen wages total over $500 million.",
     primarySource: "Bracero History Archive, Library of Congress; Gamboa, Erasmo. Mexican Labor and World War II (1990)",
+    image: "/manus-storage/scene_bracero_program_d9495b50.png",
   },
   {
     id: 26, slug: "gullah-geechee", title: "The Gullah Geechee",
@@ -269,6 +276,7 @@ export const CHAPTERS: Chapter[] = [
     tier: 1,
     keyFact: "The Gullah Geechee Corridor National Heritage Area was federally designated in 2006, spanning from North Carolina to Florida — recognizing the most intact African cultural tradition in North America.",
     primarySource: "Gullah Geechee Cultural Heritage Corridor National Heritage Area (NPS, 2006)",
+    image: "/manus-storage/scene_gullah_geechee_f378b7ef.png",
   },
   {
     id: 24, slug: "five-tribes-slavery", title: "The Complexity of Alliance",
@@ -392,14 +400,17 @@ export const TIMELINE_EVENTS = [
   { year: 1865, event: "Georgia Black Codes immediately re-enslave Black labor", era: 2 },
   { year: 1866, event: "Sherman's Field Orders No. 15 revoked — 40 Acres denied", era: 2 },
   { year: 1877, event: "Reconstruction ends — federal troops withdrawn from the South", era: 2 },
+  { year: 1882, event: "Chinese Exclusion Act — first federal law to explicitly bar a racial group from immigration", era: 2 },
   { year: 1887, event: "Dawes Act — 90 million acres of Indigenous land stolen", era: 3 },
   { year: 1896, event: "Plessy v. Ferguson — 'separate but equal' enshrined in law", era: 3 },
+  { year: 1898, event: "Spanish-American War — Buffalo Soldiers fight for a country that returns them to Jim Crow", era: 3 },
   { year: 1898, event: "Wilmington Massacre — only successful coup d'état in U.S. history", era: 3 },
   { year: 1909, event: "NAACP founded by Du Bois, Wells, and others", era: 3 },
   { year: 1921, event: "Tulsa Race Massacre — Greenwood District destroyed", era: 3 },
   { year: 1921, event: "Dyer Anti-Lynching Bill killed by Senate filibuster", era: 3 },
   { year: 1930, event: "Census instructions erase Black Indigenous identity", era: 3 },
   { year: 1934, event: "Indian Reorganization Act ends Dawes Act allotment", era: 3 },
+  { year: 1942, event: "Bracero Program begins — 4.6 million Mexican workers exploited under conditions mirroring convict leasing", era: 3 },
   { year: 1944, event: "GI Bill — racially administered, denying benefits to Black veterans", era: 3 },
   { year: 1954, event: "Brown v. Board of Education", era: 4 },
   { year: 1955, event: "Emmett Till murdered — Sheriff Strider suppresses evidence", era: 4 },

@@ -11,6 +11,7 @@ export default function Navigation() {
     { href: "/search", label: "Search", icon: Search },
     { href: "/timeline", label: "Timeline", icon: Clock },
     { href: "/figures", label: "Figures", icon: Users },
+    { href: "/charts", label: "Charts", icon: BookMarked },
     { href: "/resources", label: "Resources", icon: BookMarked },
     { href: "/bibliography", label: "Sources", icon: BookMarked },
     { href: "/about", label: "About", icon: Info },
