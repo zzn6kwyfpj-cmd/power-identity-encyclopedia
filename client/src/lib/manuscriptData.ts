@@ -1,0 +1,361 @@
+export interface Chapter {
+  id: number;
+  slug: string;
+  title: string;
+  subtitle: string;
+  era: string;
+  eraColor: string;
+  summary: string;
+  tier: 1 | 2 | 3;
+  keyFact: string;
+  primarySource?: string;
+  image?: string;
+}
+
+export interface Figure {
+  name: string;
+  years: string;
+  heritage: string;
+  role: string;
+  quote: string;
+  image: string;
+  connection: string;
+}
+
+export const ERAS = [
+  { id: 1, name: "Era I: Imperial Origins (1452–1732)", color: "#8b1a1a" },
+  { id: 2, name: "Era II: Dispossession & Erasure (1783–1900)", color: "#d4af37" },
+  { id: 3, name: "Era III: Economic Extraction (1862–1945)", color: "#2d6a4f" },
+  { id: 4, name: "Era IV: Psychological Warfare (1865–1972)", color: "#6b3fa0" },
+  { id: 5, name: "Era V: The Modern Resistance (1954–Present)", color: "#1d6fa4" },
+];
+
+export const CHAPTERS: Chapter[] = [
+  {
+    id: 1, slug: "etowah-mounds", title: "The Etowah Mounds",
+    subtitle: "Before the Conquest: The Mississippian World",
+    era: "Era I", eraColor: "#8b1a1a",
+    summary: "Long before European contact, the Etowah site in present-day Georgia was a thriving Mississippian city of 4,000 people — one of the most sophisticated civilizations in pre-Columbian North America.",
+    tier: 1,
+    keyFact: "The Etowah Mounds in Cartersville, Georgia represent a civilization that predates the 1732 Georgia Charter by over 500 years.",
+    primarySource: "Earl H. Morris, The Temple of the Warriors at Chichen Itza (Carnegie Institution, 1931)",
+    image: "/manus-storage/scene_etowah_fd5e50db.png"
+  },
+  {
+    id: 2, slug: "georgia-charter", title: "The 1732 Georgia Charter",
+    subtitle: "The Legal Fiction of Discovery",
+    era: "Era I", eraColor: "#8b1a1a",
+    summary: "King George II granted the 1732 Georgia Charter to a corporate body of Trustees, describing inhabited Indigenous lands as 'waste and desolate' — the foundational legal fiction of American dispossession.",
+    tier: 1,
+    keyFact: "The 1732 Georgia Charter described Creek and Cherokee territories as 'waste and desolate' — erasing thousands of Indigenous inhabitants with a single legal phrase.",
+    primarySource: "Georgia Charter (1732), Avalon Project, Yale Law School",
+  },
+  {
+    id: 3, slug: "sovereignty", title: "The Enforcement Gap",
+    subtitle: "Worcester v. Georgia and the Betrayal of Sovereignty",
+    era: "Era I", eraColor: "#8b1a1a",
+    summary: "In 1832, Chief Justice John Marshall ruled that Georgia had no jurisdiction over Cherokee territory. President Andrew Jackson refused to enforce the ruling, establishing the template for state power overriding federal law.",
+    tier: 1,
+    keyFact: "Andrew Jackson's refusal to enforce Worcester v. Georgia established the precedent that state power could override federal law when the federal government lacked the will to enforce it.",
+    primarySource: "Worcester v. Georgia, 31 U.S. 515 (1832)",
+  },
+  {
+    id: 4, slug: "haitian-revolution", title: "The Haitian Revolution",
+    subtitle: "The International Context of American Slavery",
+    era: "Era I", eraColor: "#8b1a1a",
+    summary: "The 1791 Haitian Revolution terrified American slaveholders and directly caused the tightening of slave codes across the South. Thomas Jefferson's embargo of Haiti proved the U.S. would sacrifice trade to protect slavery.",
+    tier: 1,
+    keyFact: "The Haitian Revolution caused the U.S. to enact draconian restrictions on free Black people in New Orleans and tighten slave codes across the South.",
+    primarySource: "Thomas Jefferson, Embargo Act correspondence (1806), National Archives",
+  },
+  {
+    id: 5, slug: "identity-erasure", title: "The Paper Genocide",
+    subtitle: "The 1930 Census and the Erasure of Black Indigenous Identity",
+    era: "Era II", eraColor: "#d4af37",
+    summary: "The 1930 U.S. Census enumerator instructions mandated that anyone with mixed Black and Indigenous ancestry be classified as 'Negro' — erasing hundreds of thousands of people from the legal record in a single enumeration cycle.",
+    tier: 1,
+    keyFact: "The 1930 Census instruction: 'A person of mixed Indian and Negro blood should be returned a Negro, unless the Indian blood predominates and the status as an Indian is generally accepted in the community.'",
+    primarySource: "U.S. Census Bureau, 1930 Enumerator Instructions, National Archives",
+  },
+  {
+    id: 6, slug: "resistance", title: "Resistance and Survival",
+    subtitle: "Armed and Intellectual Struggle",
+    era: "Era II", eraColor: "#d4af37",
+    summary: "History is equally the story of resistance. From the Cherokee Phoenix newspaper to the Black Seminole warriors, from Sequoyah's syllabary to Principal Chief John Ross's legal battles, the dispossessed never stopped fighting.",
+    tier: 1,
+    keyFact: "In 1828, the Cherokee Nation launched the Cherokee Phoenix — the first Native American newspaper — as an act of intellectual sovereignty.",
+    primarySource: "Cherokee Phoenix, Vol. 1, No. 1 (February 21, 1828)",
+  },
+  {
+    id: 7, slug: "reclamation", title: "Alternative Narratives",
+    subtitle: "Reclamation, Identity, and Community Historical Traditions",
+    era: "Era II", eraColor: "#d4af37",
+    summary: "Alongside the official historical record, communities have preserved alternative narratives of their origins and sovereignty. These Community Historical Traditions serve profound psychological and cultural functions.",
+    tier: 3,
+    keyFact: "The Washitaw Nation's claims to pre-Columbian sovereignty are grounded in the Maison Rouge land grant of 1795 — a Tier 1 primary source wrapped in a Tier 3 interpretive framework.",
+    primarySource: "Verdiacee Washitaw-Turner Goston El-Bey, Return of the Ancient Ones (1993)",
+  },
+  {
+    id: 8, slug: "reconstruction", title: "The Reconstruction Betrayal",
+    subtitle: "The Promise Made and Broken (1865–1877)",
+    era: "Era II", eraColor: "#d4af37",
+    summary: "The end of the Civil War offered a brief window to restructure American power. President Andrew Johnson systematically dismantled Reconstruction, revoking 40 Acres and a Mule and enabling the Black Codes.",
+    tier: 1,
+    keyFact: "In 1898, a mob of 2,000 white supremacists overthrew the legitimately elected biracial government of Wilmington, NC — the only successful coup d'état in U.S. history.",
+    primarySource: "David Zucchino, Wilmington's Lie (Pulitzer Prize, 2021)",
+  },
+  {
+    id: 9, slug: "dawes-act", title: "The 1887 Dawes Act",
+    subtitle: "The Theft of 90 Million Acres",
+    era: "Era III", eraColor: "#2d6a4f",
+    summary: "The General Allotment Act of 1887 destroyed communal Indigenous land ownership, transferring approximately 90 million acres from Native nations to white settlers, railroads, and corporations.",
+    tier: 1,
+    keyFact: "Between 1887 and 1934, Native Americans lost approximately 90 million acres — nearly two-thirds of all the territory they held in 1887.",
+    primarySource: "Kappler, Indian Affairs: Laws and Treaties, Vol. I (Oklahoma State University)",
+  },
+  {
+    id: 10, slug: "boarding-schools", title: "Kill the Indian, Save the Man",
+    subtitle: "The Indian Boarding School System",
+    era: "Era III", eraColor: "#2d6a4f",
+    summary: "Beginning in 1879, the U.S. government funded hundreds of Indian boarding schools designed to forcibly assimilate Native American children. Children were forbidden to speak their languages, stripped of their names, and subjected to systematic abuse.",
+    tier: 1,
+    keyFact: "Recent federal reports identified marked and unmarked burial sites at 65 of the more than 400 Indian boarding schools, documenting the deaths of nearly 1,000 Native children.",
+    primarySource: "U.S. Department of the Interior, Federal Indian Boarding School Initiative (2022)",
+  },
+  {
+    id: 11, slug: "sleeping-giant", title: "The Sleeping Giant",
+    subtitle: "The Creation of a Permanent Consumer Class",
+    era: "Era III", eraColor: "#2d6a4f",
+    summary: "The dispossession of land and erasure of identity were only the first steps. The ultimate goal was the creation of a permanent, dependent consumer class — a demographic with immense economic energy conditioned to function as wards of the state.",
+    tier: 2,
+    keyFact: "African Americans possess $1.6–1.9 trillion in annual spending power yet hold less than 5% of the nation's wealth — the mathematical result of centuries of systematic extraction.",
+    primarySource: "Dr. Claud Anderson, PowerNomics (2001); McKinsey & Company, The Economic Impact of Closing the Racial Wealth Gap (2019)",
+  },
+  {
+    id: 12, slug: "wealth-extraction", title: "Wealth Extraction",
+    subtitle: "The Tulsa Race Massacre and the Bulldozing of Black Wealth",
+    era: "Era III", eraColor: "#2d6a4f",
+    summary: "When Black communities successfully built autonomous wealth, they were met with state-sanctioned violence. The 1921 Tulsa Race Massacre destroyed 35 square blocks of the Greenwood District. Atlanta's highway system bulldozed Sweet Auburn Avenue.",
+    tier: 1,
+    keyFact: "On May 31–June 1, 1921, a white mob destroyed 35 square blocks of the Greenwood District. No white person was ever charged. Insurance companies denied all claims.",
+    primarySource: "Oklahoma Commission to Study the Tulsa Race Riot of 1921, Final Report (2001)",
+    image: "/manus-storage/scene_tulsa_9e4c2b56.png"
+  },
+  {
+    id: 13, slug: "builders", title: "The Builders of America",
+    subtitle: "Black Genius and the Infrastructure of a Nation",
+    era: "Era III", eraColor: "#2d6a4f",
+    summary: "Despite immense systemic barriers, Black inventors secured thousands of patents that revolutionized global industry. Elijah McCoy, Lewis Latimer, Granville T. Woods, and Jan Ernst Matzeliger built the modern world while being denied its benefits.",
+    tier: 1,
+    keyFact: "Granville T. Woods invented the multiplex telegraph system used on railroads — at the exact same time Black men were being leased as convicts to build those same railroad tracks.",
+    primarySource: "U.S. Patent Office Records, National Archives",
+  },
+  {
+    id: 14, slug: "intellectual-resistance", title: "The Intellectual Resistance",
+    subtitle: "Black Authors, Scholars, and the Power of Literacy",
+    era: "Era III", eraColor: "#2d6a4f",
+    summary: "The intellectual architecture of liberation was built upon essential texts. From Frederick Douglass's Narrative to Carter G. Woodson's Mis-Education of the Negro, Black scholars systematically dismantled the dominant historical narrative.",
+    tier: 2,
+    keyFact: "Carter G. Woodson's The Mis-Education of the Negro (1933) argued that the American educational system was deliberately designed to prevent Black Americans from understanding their own history.",
+    primarySource: "Carter G. Woodson, The Mis-Education of the Negro (1933); J.A. Rogers, Nature Knows No Color-Line (1952)",
+    image: "/manus-storage/portrait_douglass_8d952b5e.png"
+  },
+  {
+    id: 15, slug: "sound-of-resistance", title: "The Sound of Resistance",
+    subtitle: "From Minstrelsy to Motown: The Chronological History of Black Music",
+    era: "Era III", eraColor: "#2d6a4f",
+    summary: "Black music is the story of the entire manuscript compressed into sound: erasure, theft, resistance, genius, and the ultimate proof that no system of oppression can extinguish the human spirit.",
+    tier: 1,
+    keyFact: "Berry Gordy's Motown Records (1959) executed vertical integration — Black-owned, Black-produced, Black-distributed — generating 'The Sound of Young America' that forced white audiences to consume Black art on Black terms.",
+    primarySource: "Thompson & Olsen, The Science and Psychology of Music (Greenwood, 2020)",
+    image: "/manus-storage/scene_motown_e672d208.png"
+  },
+  {
+    id: 16, slug: "great-migration", title: "The Great Migration",
+    subtitle: "Six Million Votes With Their Feet (1910–1970)",
+    era: "Era IV", eraColor: "#6b3fa0",
+    summary: "Between 1910 and 1970, approximately six million Black Americans relocated from the rural South to the urban North and West — the largest internal migration in American history, and one of the most profound acts of collective resistance.",
+    tier: 1,
+    keyFact: "From Georgia alone, 74,000 Black residents departed between 1910 and 1920. Chicago's Black population grew 148% in a decade. Detroit's grew 611%.",
+    primarySource: "Isabel Wilkerson, The Warmth of Other Suns (2010)",
+  },
+  {
+    id: 17, slug: "psychological-warfare", title: "The Architecture of Psychological Warfare",
+    subtitle: "Terror, Science, and the Control of the Mind (1865–1972)",
+    era: "Era IV", eraColor: "#6b3fa0",
+    summary: "The theft of land and labor required a third mechanism: the psychological subjugation of the population. This was achieved through Social Darwinism, public lynching as spectacle, the Tuskegee Study, and the deliberate weaponization of national holidays.",
+    tier: 1,
+    keyFact: "The Dyer Anti-Lynching Bill passed the House in 1921 but was killed by a Senate filibuster. The U.S. did not pass a federal anti-lynching law until the Emmett Till Antilynching Act of 2022 — 101 years later.",
+    primarySource: "Equal Justice Initiative, Lynching in America (2017); FBI Vault, COINTELPRO Black Extremist Part 01 (1967)",
+  },
+  {
+    id: 18, slug: "entertainment-industry", title: "The Industrialization of Dehumanization",
+    subtitle: "From Minstrelsy to Hollywood to the Modern Entertainment Complex",
+    era: "Era IV", eraColor: "#6b3fa0",
+    summary: "Physical terror was accompanied by narrative control. The minstrel show, the coon song craze, Birth of a Nation, and the Hollywood Production Code systematically dehumanized Black people for mass audiences.",
+    tier: 1,
+    keyFact: "The CIA's Congress for Cultural Freedom (1950–1967) and Operation Mockingbird proved the government's willingness to use cultural production as an instrument of psychological warfare.",
+    primarySource: "Donald Bogle, Toms, Coons, Mulattoes, Mammies, and Bucks (1973); Church Committee Report (1976)",
+  },
+  {
+    id: 19, slug: "epigenetics", title: "The Biology of History",
+    subtitle: "Epigenetics, Intergenerational Trauma, and the DNA of Oppression",
+    era: "Era IV", eraColor: "#6b3fa0",
+    summary: "Modern science has proven that trauma manifests as measurable biological changes inherited across generations. The history is not in the past — it is in the DNA.",
+    tier: 1,
+    keyFact: "A 2017 peer-reviewed study (Janusek et al., Brain, Behavior, and Immunity) found that childhood adversity in young African American men directly alters the methylation of the IL6 gene, causing chronic inflammation.",
+    primarySource: "Janusek et al., Brain, Behavior, and Immunity (2017); Dr. Rachel Yehuda, Biological Psychiatry (2015)",
+  },
+  {
+    id: 20, slug: "women-of-resistance", title: "Women of Resistance",
+    subtitle: "Harriet Tubman, Zitkala-Sa, Ida B. Wells, and the Architects of Liberation",
+    era: "Era V", eraColor: "#1d6fa4",
+    summary: "The narrative of American resistance is often incomplete, overlooking the profound leadership of Black and Indigenous women who challenged systemic oppression and laid the groundwork for future movements.",
+    tier: 1,
+    keyFact: "Harriet Tubman was the first woman in U.S. history to lead a military operation — the 1863 Combahee River Raid, which liberated over 750 enslaved people.",
+    primarySource: "Kate Clifford Larson, Bound for the Promised Land: Harriet Tubman (2004)",
+    image: "/manus-storage/portrait_wells_e6de28c9.png"
+  },
+  {
+    id: 21, slug: "institutions", title: "Institutions of Preservation",
+    subtitle: "Museums, Archives, and the Architecture of Memory",
+    era: "Era V", eraColor: "#1d6fa4",
+    summary: "As the state deployed legal and physical mechanisms of erasure, Black and Indigenous communities built institutions to preserve their history. From the NAACP (1909) to the NMAAHC (2016), these institutions are active defense mechanisms against ongoing erasure.",
+    tier: 1,
+    keyFact: "The National Park Service's 2020 report 'Black Lives and Whitened Stories' formally acknowledged that its own historical sites had systematically erased Black history — proving that autonomous institutions of preservation are a historical necessity.",
+    primarySource: "Whisnant & Whisnant, Black Lives and Whitened Stories (NPS, 2020)",
+  },
+  {
+    id: 22, slug: "accountability", title: "Accountability and Tangible Action",
+    subtitle: "Legal Frameworks for Restorative Justice",
+    era: "Era V", eraColor: "#1d6fa4",
+    summary: "The historical record is clear: the crimes documented in this encyclopedia were state-sanctioned policies. Accountability is legally possible; it only lacks political will.",
+    tier: 1,
+    keyFact: "University of Connecticut economist Thomas Craemer calculated that the value of enslaved labor, compounded at 3% interest, equals approximately $14 trillion.",
+    primarySource: "Thomas Craemer, Estimating Slavery Reparations (2015); Germany Holocaust Reparations, Federal Ministry of Finance",
+  },
+  {
+    id: 23, slug: "living-legacy", title: "The Living Legacy",
+    subtitle: "McGirt v. Oklahoma, Land Back, and the Ongoing Struggle",
+    era: "Era V", eraColor: "#1d6fa4",
+    summary: "The history documented in this encyclopedia is not over. The legal battles, the identity reclamation movements, and the struggle for economic justice are ongoing.",
+    tier: 1,
+    keyFact: "In 2020, the Supreme Court ruled in McGirt v. Oklahoma that the Muscogee (Creek) Nation's reservation was never formally disestablished — recognizing that nearly half of Oklahoma remains 'Indian Country.'",
+    primarySource: "McGirt v. Oklahoma, 591 U.S. ___ (2020); Justice Neil Gorsuch, majority opinion",
+  },
+];
+
+export const FIGURES: Figure[] = [
+  {
+    name: "Sequoyah",
+    years: "c.1770–1843",
+    heritage: "Cherokee Nation",
+    role: "Inventor of the Cherokee Syllabary",
+    quote: "I will try. If I succeed, I will be a great man.",
+    image: "",
+    connection: "Created the Cherokee syllabary in 1821, making the Cherokee Phoenix newspaper possible — an act of intellectual sovereignty."
+  },
+  {
+    name: "Chief Junaluska",
+    years: "c.1775–1858",
+    heritage: "Cherokee Nation",
+    role: "Warrior and Resistance Leader",
+    quote: "If I had known Jackson would drive us from our homes, I would have killed him that day at Horseshoe Bend.",
+    image: "",
+    connection: "Saved Andrew Jackson's life at the Battle of Horseshoe Bend, only to be betrayed by him — the ultimate symbol of the enforcement gap."
+  },
+  {
+    name: "John Horse",
+    years: "c.1812–1882",
+    heritage: "Black Seminole (African-Seminole)",
+    role: "Military Leader and Freedom Fighter",
+    quote: "We will fight until we die or are free.",
+    image: "",
+    connection: "Led Black Seminole resistance against the U.S. Army, proving that Black and Indigenous communities formed powerful alliances against colonial power."
+  },
+  {
+    name: "Principal Chief John Ross",
+    years: "1790–1866",
+    heritage: "Cherokee Nation",
+    role: "Principal Chief of the Cherokee Nation",
+    quote: "The perpetrator of a wrong never forgives his victim.",
+    image: "",
+    connection: "Led the Cherokee Nation's legal and political resistance against removal, using the U.S. legal system to challenge Georgia's illegal seizure of Cherokee territory."
+  },
+  {
+    name: "Frederick Douglass",
+    years: "1818–1895",
+    heritage: "African American",
+    role: "Abolitionist, Orator, and Statesman",
+    quote: "What, to the American slave, is your 4th of July? I answer: a day that reveals to him, more than all other days in the year, the gross injustice and cruelty to which he is the constant victim.",
+    image: "/manus-storage/portrait_douglass_8d952b5e.png",
+    connection: "Proved that literacy is the prerequisite for liberation. His 1852 address exposed the hypocrisy of national celebration as a tool of psychological warfare."
+  },
+  {
+    name: "Ida B. Wells",
+    years: "1862–1931",
+    heritage: "African American",
+    role: "Journalist and Anti-Lynching Crusader",
+    quote: "The way to right wrongs is to turn the light of truth upon them.",
+    image: "/manus-storage/portrait_wells_e6de28c9.png",
+    connection: "Documented how lynching was used as an economic weapon to eliminate Black business competition — connecting racial terror to the economic extraction model."
+  },
+  {
+    name: "Alonzo Herndon",
+    years: "1858–1927",
+    heritage: "African American (Born Enslaved)",
+    role: "Entrepreneur and Founder of Atlanta Life Insurance",
+    quote: "Success is not given; it is earned through relentless work and vision.",
+    image: "/manus-storage/portrait_herndon_99584b58.png",
+    connection: "Born enslaved, built one of the largest Black-owned businesses in the nation — anchoring Atlanta's Sweet Auburn 'Black Mecca.'"
+  },
+  {
+    name: "Berry Gordy Jr.",
+    years: "1929–",
+    heritage: "African American",
+    role: "Founder of Motown Records",
+    quote: "I wanted to make music that would cross over to all people.",
+    image: "/manus-storage/portrait_gordy_8e2da39e.png",
+    connection: "Executed vertical integration decades before the term existed — proving that when Black creators own the means of production, the economic results are staggering."
+  },
+];
+
+export const TIMELINE_EVENTS = [
+  { year: 1452, event: "Papal Bull Dum Diversas authorizes Portuguese enslavement of non-Christians", era: 1 },
+  { year: 1493, event: "Columbus's second voyage establishes the Doctrine of Discovery", era: 1 },
+  { year: 1619, event: "First enslaved Africans arrive in Virginia", era: 1 },
+  { year: 1732, event: "Georgia Charter describes Indigenous lands as 'waste and desolate'", era: 1 },
+  { year: 1776, event: "Declaration of Independence — freedom declared, slavery maintained", era: 1 },
+  { year: 1791, event: "Haitian Revolution begins — terrifies American slaveholders", era: 1 },
+  { year: 1803, event: "Louisiana Purchase transfers 828,000 sq miles of Indigenous territory", era: 1 },
+  { year: 1821, event: "Sequoyah completes the Cherokee syllabary", era: 2 },
+  { year: 1828, event: "Cherokee Phoenix newspaper launched", era: 2 },
+  { year: 1830, event: "Indian Removal Act signed by Andrew Jackson", era: 2 },
+  { year: 1832, event: "Worcester v. Georgia — Marshall rules for Cherokee; Jackson ignores ruling", era: 2 },
+  { year: 1838, event: "Trail of Tears — 4,000+ Cherokee die on forced march", era: 2 },
+  { year: 1845, event: "Southern Baptist Convention founded to defend slaveholders", era: 2 },
+  { year: 1865, event: "13th Amendment — abolishes slavery 'except as punishment for crime'", era: 2 },
+  { year: 1865, event: "Georgia Black Codes immediately re-enslave Black labor", era: 2 },
+  { year: 1866, event: "Sherman's Field Orders No. 15 revoked — 40 Acres denied", era: 2 },
+  { year: 1877, event: "Reconstruction ends — federal troops withdrawn from the South", era: 2 },
+  { year: 1887, event: "Dawes Act — 90 million acres of Indigenous land stolen", era: 3 },
+  { year: 1896, event: "Plessy v. Ferguson — 'separate but equal' enshrined in law", era: 3 },
+  { year: 1898, event: "Wilmington Massacre — only successful coup d'état in U.S. history", era: 3 },
+  { year: 1909, event: "NAACP founded by Du Bois, Wells, and others", era: 3 },
+  { year: 1921, event: "Tulsa Race Massacre — Greenwood District destroyed", era: 3 },
+  { year: 1921, event: "Dyer Anti-Lynching Bill killed by Senate filibuster", era: 3 },
+  { year: 1930, event: "Census instructions erase Black Indigenous identity", era: 3 },
+  { year: 1934, event: "Indian Reorganization Act ends Dawes Act allotment", era: 3 },
+  { year: 1944, event: "GI Bill — racially administered, denying benefits to Black veterans", era: 3 },
+  { year: 1954, event: "Brown v. Board of Education", era: 4 },
+  { year: 1955, event: "Emmett Till murdered — Sheriff Strider suppresses evidence", era: 4 },
+  { year: 1963, event: "Medgar Evers assassinated in his driveway", era: 4 },
+  { year: 1965, event: "Voting Rights Act passed", era: 4 },
+  { year: 1967, event: "FBI COINTELPRO directive targets Black Nationalist organizations", era: 4 },
+  { year: 1969, event: "Fred Hampton assassinated — FBI provides floor plan to Chicago police", era: 4 },
+  { year: 1976, event: "Church Committee Report exposes COINTELPRO abuses", era: 5 },
+  { year: 1990, event: "NAGPRA passed — repatriation of Indigenous remains begins", era: 5 },
+  { year: 2013, event: "Shelby County v. Holder guts the Voting Rights Act", era: 5 },
+  { year: 2020, event: "McGirt v. Oklahoma — Muscogee (Creek) reservation affirmed", era: 5 },
+  { year: 2022, event: "Emmett Till Antilynching Act — first federal anti-lynching law, 101 years late", era: 5 },
+];
