@@ -3,6 +3,7 @@ import { Link, useParams } from "wouter";
 import { ChevronLeft, ChevronRight, Share2, Check } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { LightboxImage } from "@/components/Lightbox";
 import { CHAPTERS } from "@/lib/manuscriptData";
 import { CHAPTER_CONTENT } from "@/lib/manuscriptContent";
 import { EXTRA_CHAPTER_CONTENT } from "@/lib/manuscriptContentExtra";
@@ -60,6 +61,7 @@ export default function ChapterPage() {
         display: "flex",
         alignItems: "flex-end",
         paddingBottom: 48,
+        position: "relative",
       }}>
         <div className="container" style={{ maxWidth: 900 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
@@ -122,6 +124,22 @@ export default function ChapterPage() {
                   {chapter.keyFact}
                 </p>
               </div>
+
+              {/* Featured Illustration with Lightbox */}
+              {chapter.image && (
+                <div style={{ marginBottom: 40 }}>
+                  <div style={{ height: 280, overflow: "hidden", position: "relative" }}>
+                    <LightboxImage
+                      src={chapter.image}
+                      alt={`${chapter.title} — ${chapter.subtitle}`}
+                      caption={`${chapter.title}: ${chapter.subtitle}. ${chapter.primarySource}`}
+                    />
+                  </div>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", marginTop: 8, textAlign: "right" }}>
+                    AI-GENERATED HISTORICAL ILLUSTRATION — CLICK TO EXPAND
+                  </div>
+                </div>
+              )}
 
               {/* Full Chapter Content */}
               {(() => {

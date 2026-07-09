@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { LightboxImage } from "@/components/Lightbox";
 import { FIGURES } from "@/lib/manuscriptData";
 
 export default function FiguresPage() {
@@ -20,7 +21,13 @@ export default function FiguresPage() {
             {FIGURES.map(figure => (
               <div key={figure.name} style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)" }}>
                 {figure.image && (
-                  <img src={figure.image} alt={figure.name} style={{ width: "100%", height: 220, objectFit: "cover", borderBottom: "2px solid rgba(212,175,55,0.3)" }} />
+                  <div style={{ height: 220, overflow: "hidden", borderBottom: "2px solid rgba(212,175,55,0.3)" }}>
+                    <LightboxImage
+                      src={figure.image}
+                      alt={figure.name}
+                      caption={`${figure.name} (${figure.years}) — ${figure.role}. ${figure.connection}`}
+                    />
+                  </div>
                 )}
                 {!figure.image && (
                   <div style={{ 

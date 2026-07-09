@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { LightboxImage } from "@/components/Lightbox";
 
 export default function AboutPage() {
   return (
@@ -111,7 +112,11 @@ export default function AboutPage() {
           {/* Origin Story */}
           <div style={{ marginBottom: 32, background: "#0f1923", borderLeft: "4px solid rgba(212,175,55,0.3)", overflow: "hidden" }}>
             <div style={{ height: 220, overflow: "hidden", position: "relative" }}>
-              <img src="/manus-storage/scene_etowah_cartersville_1a3a3dd4.png" alt="The Etowah Mounds, Cartersville, Georgia" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+              <LightboxImage
+                src="/manus-storage/scene_etowah_cartersville_1a3a3dd4.png"
+                alt="The Etowah Mounds, Cartersville, Georgia"
+                caption="The Etowah Mounds, Cartersville, Georgia — one of the most significant ancient Mississippian ceremonial sites in North America. This is where the question began."
+              />
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top, #0f1923, transparent)", height: 80 }} />
             </div>
             <div style={{ padding: "24px 32px" }}>
