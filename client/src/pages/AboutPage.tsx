@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
@@ -11,13 +12,37 @@ export default function AboutPage() {
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 16 }}>About This Encyclopedia</h1>
           </div>
 
-          {/* Dedication */}
-          <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px 40px", marginBottom: 40, textAlign: "center" }}>
+          {/* Primary Dedication */}
+          <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px 40px", marginBottom: 24, textAlign: "center" }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.3em", marginBottom: 16 }}>DEDICATION</div>
             <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", color: "#e2e8f0", fontSize: "1.2rem", lineHeight: 1.8, marginBottom: 16 }}>
               "For Luka Strickland — my grandmother, a Native American. Your blood, your land, and your truth are on every page of this manuscript. This is for you, and for every generation that comes after."
             </p>
             <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 12, letterSpacing: "0.1em" }}>— LaDarious Strickland, July 2026</p>
+          </div>
+
+          {/* Second Dedication — To Those Who Came Before */}
+          <div style={{ background: "#0f1923", border: "1px solid rgba(139,26,26,0.4)", borderLeft: "4px solid #8b1a1a", padding: "32px 40px", marginBottom: 40 }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 11, letterSpacing: "0.3em", marginBottom: 20, textAlign: "center" }}>AND TO THOSE WHO CAME BEFORE US</div>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", color: "#94a3b8", fontSize: "1rem", lineHeight: 2, marginBottom: 0 }}>
+              And to those who came before me attempting to tell this story:
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 12 }}>
+              {[
+                { name: "Ida B. Wells", desc: "who turned the light of truth on terror." },
+                { name: "Angela Y. Walton-Raji", desc: "who preserved the tools to find ourselves." },
+                { name: "Dr. Claud Anderson", desc: "who built the blueprint for what was taken." },
+                { name: "Verdiacee Washitaw-Turner Goston El-Bey", desc: "who asserted sovereignty when they said there was none left." },
+                { name: "Redbird Smith", desc: "who refused to let the spirit die." },
+              ].map(({ name, desc }) => (
+                <p key={name} style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>
+                  To <strong style={{ color: "#e2e8f0" }}>{name}</strong>, {desc}
+                </p>
+              ))}
+              <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", color: "#64748b", fontSize: "0.95rem", lineHeight: 1.8, marginTop: 8 }}>
+                And to every unnamed ancestor who carried this history in their body when no document would carry it for them.
+              </p>
+            </div>
           </div>
 
           {/* About the Work */}
@@ -89,9 +114,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <footer style={{ background: "#050b10", borderTop: "1px solid rgba(212,175,55,0.2)", padding: "32px 0", textAlign: "center" }}>
-        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12 }}>© 2026 LaDarious Strickland. All rights reserved.</div>
-      </footer>
+      <Footer />
     </div>
   );
 }

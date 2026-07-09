@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { Search, ChevronRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { CHAPTERS } from "@/lib/manuscriptData";
 import { CHAPTER_CONTENT } from "@/lib/manuscriptContent";
 
@@ -145,9 +146,7 @@ export default function SearchPage() {
           )}
         </div>
       </section>
-      <footer style={{ background: "#050b10", borderTop: "1px solid rgba(212,175,55,0.2)", padding: "32px 0", textAlign: "center" }}>
-        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12 }}>© 2026 LaDarious Strickland. All rights reserved.</div>
-      </footer>
+      <Footer />
     </div>
   );
 }

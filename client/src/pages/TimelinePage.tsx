@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { TIMELINE_EVENTS, ERAS } from "@/lib/manuscriptData";
 
 export default function TimelinePage() {
@@ -103,9 +104,7 @@ export default function TimelinePage() {
           </div>
         </div>
       </section>
-      <footer style={{ background: "#050b10", borderTop: "1px solid rgba(212,175,55,0.2)", padding: "32px 0", textAlign: "center" }}>
-        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12 }}>© 2026 LaDarious Strickland. All rights reserved.</div>
-      </footer>
+      <Footer />
     </div>
   );
 }

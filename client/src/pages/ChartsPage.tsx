@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 // Chart.js loaded via CDN in index.html — declare global
 declare const Chart: any;
@@ -245,9 +246,7 @@ export default function ChartsPage() {
           </div>
         </div>
       </section>
-      <footer style={{ background: "#050b10", borderTop: "1px solid rgba(212,175,55,0.2)", padding: "32px 0", textAlign: "center" }}>
-        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12 }}>© 2026 LaDarious Strickland. All rights reserved.</div>
-      </footer>
+      <Footer />
     </div>
   );
 }

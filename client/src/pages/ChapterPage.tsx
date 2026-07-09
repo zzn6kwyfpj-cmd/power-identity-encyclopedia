@@ -1,6 +1,7 @@
 import { Link, useParams } from "wouter";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { CHAPTERS } from "@/lib/manuscriptData";
 import { CHAPTER_CONTENT } from "@/lib/manuscriptContent";
 import { EXTRA_CHAPTER_CONTENT } from "@/lib/manuscriptContentExtra";
@@ -301,12 +302,7 @@ export default function ChapterPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer style={{ background: "#050b10", borderTop: "1px solid rgba(212,175,55,0.2)", padding: "32px 0", textAlign: "center" }}>
-        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12 }}>
-          © 2026 LaDarious Strickland. All rights reserved. Fair Use: 17 U.S.C. § 107
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

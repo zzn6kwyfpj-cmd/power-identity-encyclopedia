@@ -33,8 +33,8 @@ export default function Home() {
       }}>
         <div className="container text-center" style={{ maxWidth: 900 }}>
           {/* THE ARCHIVE ENCYCLOPEDIA Brand */}
-          <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>
-            ✦ AMERICAN RECORDS OF CONTESTED HISTORY ✦
+          <div style={{ color: "#d4af37", fontSize: 10, letterSpacing: "0.3em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>
+            ✦ IDENTITY · EVIDENCE · TRUTH ✦
           </div>
 
           {/* THE */}
@@ -117,15 +117,26 @@ export default function Home() {
             A History of America's Suppressed Truths
           </p>
 
-          <p style={{
-            fontFamily: "Cormorant Garamond, serif",
-            fontSize: "1rem",
-            color: "#64748b",
-            marginBottom: 48,
-            letterSpacing: "0.05em",
-          }}>
-            Dedicated to Luka Strickland, a Native American
-          </p>
+          <div style={{ marginBottom: 48 }}>
+            <p style={{
+              fontFamily: "Cormorant Garamond, serif",
+              fontSize: "1rem",
+              color: "#64748b",
+              letterSpacing: "0.05em",
+              marginBottom: 4,
+            }}>
+              Dedicated to Luka Strickland, a Native American
+            </p>
+            <p style={{
+              fontFamily: "Cormorant Garamond, serif",
+              fontSize: "0.85rem",
+              color: "#475569",
+              letterSpacing: "0.05em",
+              fontStyle: "italic",
+            }}>
+              and to all those who came before us
+            </p>
+          </div>
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "clamp(24px, 5vw, 60px)", flexWrap: "wrap", marginBottom: 48 }}>
@@ -358,8 +369,14 @@ export default function Home() {
         <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, letterSpacing: "0.1em", marginBottom: 8 }}>
           American Records of Contested History, Identity, and Verified Evidence
         </div>
-        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 13, marginBottom: 4 }}>
-          By LaDarious Strickland · Dedicated to Luka Strickland, a Native American
+        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 13, marginBottom: 2 }}>
+          By LaDarious Strickland
+        </div>
+        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginBottom: 2 }}>
+          Dedicated to Luka Strickland, a Native American
+        </div>
+        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 11, fontStyle: "italic", marginBottom: 4 }}>
+          and to all those who came before us
         </div>
         <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12 }}>
           © 2026 LaDarious Strickland. All rights reserved. Fair Use: 17 U.S.C. § 107
