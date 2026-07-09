@@ -71,11 +71,23 @@ export default function Home() {
             fontWeight: 400,
             color: "#8b1a1a",
             letterSpacing: "clamp(0.4em, 2.5vw, 1.2em)",
-            marginBottom: 20,
+            marginBottom: 4,
             lineHeight: 1,
             textTransform: "uppercase",
           }}>
             ENCYCLOPEDIA
+          </div>
+
+          {/* ARCHIVE acronym subtitle */}
+          <div style={{
+            fontFamily: "Cormorant Garamond, serif",
+            fontSize: "clamp(0.6rem, 1vw, 0.8rem)",
+            color: "#475569",
+            letterSpacing: "0.15em",
+            marginBottom: 20,
+            lineHeight: 1.4,
+          }}>
+            American Records of Contested History, Identity, and Verified Evidence
           </div>
 
           <h2 style={{
@@ -344,7 +356,7 @@ export default function Home() {
           ARCHIVE
         </div>
         <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, letterSpacing: "0.1em", marginBottom: 8 }}>
-          American Records of Contested History, Identity, and Verified Encyclopedia
+          American Records of Contested History, Identity, and Verified Evidence
         </div>
         <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 13, marginBottom: 4 }}>
           By LaDarious Strickland · Dedicated to Luka Strickland, a Native American
