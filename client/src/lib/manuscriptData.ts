@@ -783,6 +783,69 @@ export const FIGURES: Figure[] = [
     image: "/manus-storage/portrait_john_trudell_b9527910.png",
     connection: "Chairman of the American Indian Movement during the 1970s. The FBI maintained a 17,000-page file on him — one of the largest surveillance files on any individual in American history. His wife, mother-in-law, and three children were killed in a suspicious house fire the day after he burned an American flag at the FBI headquarters in Washington D.C."
   },
+  {
+    name: "César Chávez",
+    years: "1927–1993",
+    heritage: "Mexican-American",
+    role: "Labor Organizer and Co-Founder of the United Farm Workers",
+    quote: "We cannot seek achievement for ourselves and forget about progress and prosperity for our community.",
+    image: "/manus-storage/portrait_cesar_chavez_b3dc3b57.png",
+    connection: "Co-founded the United Farm Workers (UFW) with Dolores Huerta in 1962, organizing Mexican-American agricultural laborers who were excluded from New Deal labor protections. His use of nonviolent tactics — strikes, boycotts, and fasting — directly connects to the Bracero Program chapter and the documented exploitation of non-Black, non-Indigenous labor."
+  },
+  {
+    name: "Vine Deloria Jr.",
+    years: "1933–2005",
+    heritage: "Standing Rock Sioux Nation",
+    role: "Author, Legal Scholar, and Indigenous Rights Theorist",
+    quote: "Religion is for people who are afraid of going to hell. Spirituality is for those who have already been there.",
+    image: "/manus-storage/portrait_vine_deloria_763d7787.png",
+    connection: "His 1969 book 'Custer Died for Your Sins: An Indian Manifesto' is the foundational text of modern Indigenous political thought. He demolished the anthropological and legal frameworks used to justify colonialism with the same primary source rigor that defines this encyclopedia."
+  },
+  {
+    name: "Coretta Scott King",
+    years: "1927–2006",
+    heritage: "African American",
+    role: "Civil Rights Leader and Keeper of the Movement's Legacy",
+    quote: "Struggle is a never-ending process. Freedom is never really won; you earn it and win it in every generation.",
+    image: "/manus-storage/portrait_coretta_scott_king_cf722aee.png",
+    connection: "After Dr. King's assassination, Coretta Scott King became the primary keeper and expander of the Civil Rights Movement's legacy. She founded the King Center in Atlanta (1968), established the Martin Luther King Jr. federal holiday, and continued advocating for economic justice — the cause that made Dr. King 'dangerous' in the first place."
+  },
+  {
+    name: "Winona LaDuke",
+    years: "1959–",
+    heritage: "Anishinaabe (White Earth Ojibwe)",
+    role: "Environmental Activist and Indigenous Rights Leader",
+    quote: "Someone needs to speak for those who cannot speak for themselves.",
+    image: "/manus-storage/portrait_winona_laduke_cc7c3ac8.png",
+    connection: "Founded the White Earth Land Recovery Project (1989) to reclaim Anishinaabe land lost through the Dawes Act. Led the Standing Rock pipeline resistance movement. Her work directly connects the Dawes Act chapter to the present-day Land Back movement documented in the Living Legacy chapter."
+  },
+  {
+    name: "Diane Nash",
+    years: "1938–",
+    heritage: "African American",
+    role: "Civil Rights Strategist and Co-Founder of SNCC",
+    quote: "We will not stop.",
+    image: "/manus-storage/portrait_diane_nash_b7fbfe56.png",
+    connection: "Organized the Nashville sit-ins (1960) and the Freedom Rides (1961) — two of the most strategically sophisticated campaigns of the Civil Rights Movement. Co-founded the Student Nonviolent Coordinating Committee (SNCC). Ella Baker called her 'the most courageous person I know.'"
+  },
+  {
+    name: "James Baldwin",
+    years: "1924–1987",
+    heritage: "African American",
+    role: "Novelist, Essayist, and Witness to American Racism",
+    quote: "Not everything that is faced can be changed, but nothing can be changed until it is faced.",
+    image: "/manus-storage/portrait_james_baldwin_518c5e04.png",
+    connection: "His 1963 book 'The Fire Next Time' and his 1965 Cambridge debate with William F. Buckley are the most powerful literary articulations of the systemic racism documented in this encyclopedia. His 1972 essay 'No Name in the Street' directly addresses the FBI's targeting of Black leaders — connecting to the COINTELPRO chapter."
+  },
+  {
+    name: "Audre Lorde",
+    years: "1934–1992",
+    heritage: "Caribbean-American (Barbadian-Grenadian)",
+    role: "Poet, Essayist, and Intersectional Theorist",
+    quote: "Your silence will not protect you.",
+    image: "/manus-storage/portrait_audre_lorde_71c642c5.png",
+    connection: "Her 1984 essay collection 'Sister Outsider' introduced the concept of intersectionality before the term was coined — arguing that race, gender, sexuality, and class are not separate systems of oppression but interlocking ones. Her work is the intellectual foundation of the Combahee River Collective's 1977 statement documented in this encyclopedia."
+  },
 ];
 
 export const TIMELINE_EVENTS = [

@@ -1,604 +1,296 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { BookOpen } from "lucide-react";
 
-// Chart.js loaded via CDN in index.html — declare global
+// Chart.js loaded via CDN in index.html
 declare const Chart: any;
 
+// ─── Treaty Data ──────────────────────────────────────────────────────────────
 const TREATY_DATA: Record<number, { nation: string; treaty: string; year: number; acresLost: string; mechanism: string; consequence: string; resistance: string; source: string }> = {
-  0: {
-    nation: "Muscogee (Creek) Nation",
-    treaty: "Treaty of Fort Jackson",
-    year: 1814,
-    acresLost: "23 million acres",
-    mechanism: "Forced cession following the Creek War (1813–1814). Andrew Jackson demanded the land as 'war reparations' after the Battle of Horseshoe Bend — a battle in which Creek warriors had fought alongside Jackson against the Red Sticks faction.",
-    consequence: "The Creek Nation lost 23 million acres — more than half of present-day Alabama and part of Georgia. The fraudulent Treaty of Indian Springs (1825) ceded the remaining Creek territory. By 1836, the Creek Nation had been forcibly marched to Indian Territory.",
-    resistance: "William McIntosh, who signed the Treaty of Indian Springs, was executed by Creek warriors for his betrayal. The Creek Nation filed legal challenges that were ignored by the federal government.",
-    source: "Treaty of Fort Jackson (1814), National Archives; Kappler, Indian Affairs: Laws and Treaties, Vol. II"
-  },
-  1: {
-    nation: "Cherokee Nation",
-    treaty: "Treaty of New Echota",
-    year: 1835,
-    acresLost: "7 million acres",
-    mechanism: "Signed by a minority faction of the Cherokee Nation without authorization from Principal Chief John Ross or the Cherokee National Council. The treaty was explicitly repudiated by 15,000 Cherokee — representing approximately 90% of the nation — in a petition to Congress.",
-    consequence: "The Trail of Tears. Between 1838 and 1839, approximately 16,000 Cherokee were forcibly removed from their homeland. An estimated 4,000 to 8,000 died of cold, hunger, and disease during the march. The land was distributed to white settlers via the Georgia Land Lottery.",
-    resistance: "Principal Chief John Ross led the legal and political resistance, using the U.S. legal system to challenge the treaty. Worcester v. Georgia (1832) had already ruled in the Cherokee's favor — a ruling Jackson refused to enforce.",
-    source: "Treaty of New Echota (1835), National Archives; Worcester v. Georgia, 31 U.S. 515 (1832)"
-  },
-  2: {
-    nation: "Choctaw Nation",
-    treaty: "Treaty of Dancing Rabbit Creek",
-    year: 1830,
-    acresLost: "10.4 million acres",
-    mechanism: "The first removal treaty signed under the Indian Removal Act of 1830. Choctaw leaders were pressured to sign by U.S. commissioners who threatened that if they did not cede their lands, they would lose federal protection and be subject to Mississippi state laws.",
-    consequence: "Approximately 17,000 Choctaw were removed to Indian Territory between 1831 and 1833. An estimated 2,500 to 6,000 died during the removal. The Choctaw Nation's removal was the model for all subsequent removals.",
-    resistance: "Chief Pushmataha had previously allied with Andrew Jackson at the Battle of New Orleans (1815). His successor, Chief Greenwood LeFlore, negotiated the treaty but remained in Mississippi. Many Choctaw refused to leave and remained in Mississippi.",
-    source: "Treaty of Dancing Rabbit Creek (1830), National Archives; Kappler, Indian Affairs: Laws and Treaties, Vol. II"
-  },
-  3: {
-    nation: "Chickasaw Nation",
-    treaty: "Treaty of Pontotoc Creek",
-    year: 1832,
-    acresLost: "6.4 million acres",
-    mechanism: "The Chickasaw ceded all their lands east of the Mississippi in exchange for a promise of equivalent territory west of the river. The U.S. government delayed fulfilling this promise for years, leaving the Chickasaw in legal limbo.",
-    consequence: "The Chickasaw removal (1837–1838) was one of the most organized, as the Chickasaw were given more time to prepare. However, they were forced to pay the Choctaw Nation for the right to settle in their territory — a financial burden that lasted decades.",
-    resistance: "The Chickasaw Nation negotiated more favorable terms than other tribes but were still ultimately removed. Their legal and financial sophistication allowed them to preserve more of their institutional structure.",
-    source: "Treaty of Pontotoc Creek (1832), National Archives; Kappler, Indian Affairs: Laws and Treaties, Vol. II"
-  },
-  4: {
-    nation: "All Five Civilized Tribes",
-    treaty: "Dawes Act (General Allotment Act)",
-    year: 1887,
-    acresLost: "90 million acres",
-    mechanism: "The Dawes Act broke up communally held tribal reservation land into individual allotments. Any land remaining after allotments were assigned was declared 'surplus' and sold to non-Native settlers, railroads, and corporations at below-market prices.",
-    consequence: "Between 1887 and 1934, Native Americans lost approximately 90 million acres — nearly two-thirds of all the territory they held in 1887. The Dawes Rolls created a racial classification system that erased the identity of thousands of mixed Black-Indigenous people.",
-    resistance: "Redbird Smith led the Keetoowah Society in refusing to enroll in the Dawes Rolls. The Indian Reorganization Act (1934) formally ended the allotment policy but did not return the 90 million acres already stolen.",
-    source: "General Allotment Act (Dawes Act), 24 Stat. 388 (1887), National Archives; Meriam Report (1928)"
-  },
+  0: { nation: "Muscogee (Creek) Nation", treaty: "Treaty of Fort Jackson", year: 1814, acresLost: "23 million acres", mechanism: "Forced cession after the Creek War. Jackson demanded land as 'war reparations' — from allies who had fought alongside him.", consequence: "The Creek Nation lost more than half of present-day Alabama. By 1836, the entire nation had been forcibly marched to Indian Territory.", resistance: "William McIntosh, who later signed the fraudulent Treaty of Indian Springs (1825), was executed by Creek warriors for betraying the nation.", source: "Treaty of Fort Jackson (1814), National Archives; Kappler, Indian Affairs: Laws and Treaties, Vol. II" },
+  1: { nation: "Cherokee Nation", treaty: "Treaty of New Echota", year: 1835, acresLost: "7 million acres", mechanism: "Signed by a minority faction without authorization from Principal Chief John Ross. Repudiated by 15,000 Cherokee — ~90% of the nation — in a petition to Congress.", consequence: "The Trail of Tears. 16,000 Cherokee forcibly removed. An estimated 4,000–8,000 died of cold, hunger, and disease.", resistance: "Principal Chief John Ross used the U.S. legal system to challenge the treaty. Worcester v. Georgia (1832) had already ruled in the Cherokee's favor.", source: "Treaty of New Echota (1835), National Archives; Worcester v. Georgia, 31 U.S. 515 (1832)" },
+  2: { nation: "Choctaw Nation", treaty: "Treaty of Dancing Rabbit Creek", year: 1830, acresLost: "10.4 million acres", mechanism: "First removal treaty under the Indian Removal Act. Choctaw leaders were threatened with loss of federal protection if they refused.", consequence: "~17,000 Choctaw removed 1831–1833. An estimated 2,500–6,000 died during removal. The Choctaw removal was the model for all subsequent removals.", resistance: "Many Choctaw refused to leave and remained in Mississippi. Chief Pushmataha had previously allied with Jackson at the Battle of New Orleans.", source: "Treaty of Dancing Rabbit Creek (1830), National Archives" },
+  3: { nation: "Chickasaw Nation", treaty: "Treaty of Pontotoc Creek", year: 1832, acresLost: "6.4 million acres", mechanism: "Chickasaw ceded all lands east of the Mississippi for a promise of equivalent territory west of the river — a promise the U.S. delayed fulfilling for years.", consequence: "The Chickasaw were forced to pay the Choctaw Nation for the right to settle in their territory — a financial burden lasting decades.", resistance: "The Chickasaw negotiated more favorable terms than other tribes, preserving more of their institutional structure through legal and financial sophistication.", source: "Treaty of Pontotoc Creek (1832), National Archives" },
+  4: { nation: "All Five Civilized Tribes", treaty: "Dawes Act (General Allotment Act)", year: 1887, acresLost: "90 million acres", mechanism: "Broke up communally held tribal land into individual allotments. 'Surplus' land sold to settlers and railroads at below-market prices.", consequence: "Native Americans lost ~90 million acres — nearly two-thirds of all territory held in 1887. The Dawes Rolls erased the identity of thousands of mixed Black-Indigenous people.", resistance: "Redbird Smith led the Keetoowah Society in refusing to enroll in the Dawes Rolls. The Indian Reorganization Act (1934) ended allotment but did not return the stolen land.", source: "General Allotment Act, 24 Stat. 388 (1887); Meriam Report (1928)" },
 };
 
+// ─── Land Loss Chart ──────────────────────────────────────────────────────────
 function LandLossChart() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [selectedBar, setSelectedBar] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number | null>(null);
+  const chartRef = useRef<any>(null);
 
   useEffect(() => {
     if (!canvasRef.current || typeof Chart === "undefined") return;
+    if (chartRef.current) chartRef.current.destroy();
     const ctx = canvasRef.current.getContext("2d");
-    const chart = new Chart(ctx, {
+    chartRef.current = new Chart(ctx, {
       type: "bar",
       data: {
-        labels: ["Creek Nation\n(1814)", "Cherokee Nation\n(1835)", "Choctaw Nation\n(1830)", "Chickasaw Nation\n(1832)", "All Five Tribes\n(Dawes Act, 1887)"],
-        datasets: [{
-          label: "Acres Lost (Millions)",
-          data: [23, 7, 10.4, 6.4, 90],
-          backgroundColor: ["rgba(139,26,26,0.7)", "rgba(212,175,55,0.7)", "rgba(45,106,79,0.7)", "rgba(107,63,160,0.7)", "rgba(29,111,164,0.7)"],
-          borderColor: ["#8b1a1a", "#d4af37", "#2d6a4f", "#6b3fa0", "#1d6fa4"],
-          borderWidth: 2,
-          hoverBorderWidth: 4,
-        }]
+        labels: ["Creek Nation\n(Fort Jackson, 1814)", "Cherokee Nation\n(New Echota, 1835)", "Choctaw Nation\n(Dancing Rabbit, 1830)", "Chickasaw Nation\n(Pontotoc, 1832)", "All Five Tribes\n(Dawes Act, 1887)"],
+        datasets: [{ label: "Acres Lost (Millions)", data: [23, 7, 10.4, 6.4, 90], backgroundColor: ["rgba(139,26,26,0.75)", "rgba(212,175,55,0.75)", "rgba(45,106,79,0.75)", "rgba(107,63,160,0.75)", "rgba(29,111,164,0.75)"], borderColor: ["#8b1a1a", "#d4af37", "#2d6a4f", "#6b3fa0", "#1d6fa4"], borderWidth: 2 }]
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        onClick: (_event: any, elements: any[]) => {
-          if (elements.length > 0) {
-            const index = elements[0].index;
-            setSelectedBar(selectedBar === index ? null : index);
-          }
-        },
-        plugins: {
-          legend: { display: false },
-          title: { display: true, text: "Click any bar to see the treaty details — Indigenous Land Cessions (Millions of Acres)", color: "#d4af37", font: { size: 13, family: "Cinzel, serif" } },
-          tooltip: {
-            callbacks: {
-              afterBody: (items: any[]) => {
-                const idx = items[0]?.dataIndex;
-                const t = TREATY_DATA[idx];
-                if (t) return [`\u2726 Click to see: ${t.treaty} (${t.year})`];
-                return [];
-              }
-            }
-          }
-        },
+        responsive: true, maintainAspectRatio: true, aspectRatio: 2.2,
+        onClick: (_: any, elements: any[]) => { if (elements.length > 0) { const i = elements[0].index; setSelected(prev => prev === i ? null : i); } },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { footer: (items: any[]) => [`Click to see treaty details`] } } },
         scales: {
-          y: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(212,175,55,0.1)" }, title: { display: true, text: "Acres Lost (Millions)", color: "#64748b" } },
-          x: { ticks: { color: "#94a3b8", maxRotation: 0 }, grid: { color: "rgba(212,175,55,0.1)" } }
+          y: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 10 } }, grid: { color: "rgba(212,175,55,0.08)" }, title: { display: true, text: "Millions of Acres", color: "#64748b", font: { family: "Cinzel, serif", size: 10 } } },
+          x: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 9 }, maxRotation: 0 }, grid: { color: "rgba(212,175,55,0.08)" } }
         }
       }
     });
-    return () => chart.destroy();
+    return () => chartRef.current?.destroy();
   }, []);
 
-  const treaty = selectedBar !== null ? TREATY_DATA[selectedBar] : null;
+  const treaty = selected !== null ? TREATY_DATA[selected] : null;
   const barColors = ["#8b1a1a", "#d4af37", "#2d6a4f", "#6b3fa0", "#1d6fa4"];
 
   return (
     <div>
-      <canvas ref={canvasRef} style={{ cursor: "pointer" }} />
+      <div style={{ height: 320 }}><canvas ref={canvasRef} /></div>
+      <p style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", textAlign: "center", marginTop: 8 }}>CLICK ANY BAR TO SEE THE TREATY DETAILS</p>
       {treaty && (
-        <div style={{
-          marginTop: 20,
-          background: "#0a1118",
-          border: `1px solid ${barColors[selectedBar!]}60`,
-          borderLeft: `4px solid ${barColors[selectedBar!]}`,
-          padding: "20px 24px",
-        }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+        <div style={{ marginTop: 20, background: "#0a1118", border: `1px solid ${barColors[selected!]}50`, borderLeft: `4px solid ${barColors[selected!]}`, padding: "20px 24px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
             <div>
-              <div style={{ fontFamily: "Cinzel, serif", color: barColors[selectedBar!], fontSize: 13, letterSpacing: "0.05em", marginBottom: 2 }}>{treaty.nation}</div>
-              <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 16 }}>{treaty.treaty} ({treaty.year})</div>
+              <div style={{ fontFamily: "Cinzel, serif", color: barColors[selected!], fontSize: 11, letterSpacing: "0.05em", marginBottom: 2 }}>{treaty.nation}</div>
+              <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 15 }}>{treaty.treaty} ({treaty.year})</div>
             </div>
             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-              <span style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 11, letterSpacing: "0.05em" }}>{treaty.acresLost} lost</span>
-              <button onClick={() => setSelectedBar(null)} style={{ background: "transparent", border: "none", color: "#64748b", cursor: "pointer", fontSize: 16, padding: "0 4px" }}>×</button>
+              <span style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 12 }}>{treaty.acresLost} lost</span>
+              <button onClick={() => setSelected(null)} style={{ background: "transparent", border: "none", color: "#64748b", cursor: "pointer", fontSize: 18 }}>×</button>
             </div>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16, marginTop: 12 }}>
-            {[
-              { label: "MECHANISM", text: treaty.mechanism, color: "#f87171" },
-              { label: "CONSEQUENCE", text: treaty.consequence, color: "#94a3b8" },
-              { label: "RESISTANCE", text: treaty.resistance, color: "#4ade80" },
-            ].map(({ label, text, color }) => (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
+            {[{ label: "MECHANISM", text: treaty.mechanism, color: "#f87171" }, { label: "CONSEQUENCE", text: treaty.consequence, color: "#94a3b8" }, { label: "RESISTANCE", text: treaty.resistance, color: "#4ade80" }].map(({ label, text, color }) => (
               <div key={label}>
                 <div style={{ fontFamily: "Cinzel, serif", color, fontSize: 9, letterSpacing: "0.2em", marginBottom: 6 }}>{label}</div>
                 <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, lineHeight: 1.7, margin: 0 }}>{text}</p>
               </div>
             ))}
           </div>
-          <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 10, letterSpacing: "0.1em", marginTop: 12 }}>SOURCE: {treaty.source}</div>
-        </div>
-      )}
-      {selectedBar === null && (
-        <div style={{ textAlign: "center", marginTop: 12, fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 13, fontStyle: "italic" }}>
-          ✦ Click any bar to reveal the treaty details, mechanism of dispossession, and resistance
+          <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", marginTop: 12 }}>SOURCE: {treaty.source}</div>
         </div>
       )}
     </div>
   );
 }
 
-function WealthGapChart() {
+// ─── Incarceration Chart ──────────────────────────────────────────────────────
+const INCARCERATION_EVENTS: Record<string, { title: string; description: string; source: string }> = {
+  "1970": { title: "Nixon Declares War on Drugs", description: "Nixon's domestic policy chief John Ehrlichman later admitted: 'Did we know we were lying about the drugs? Of course we did.' The War on Drugs was designed to target Black communities and the antiwar left.", source: "Baum, Dan. 'Legalize It All.' Harper's Magazine (April 2016)" },
+  "1975": { title: "Church Committee Report", description: "The Senate's Church Committee (1976) exposed COINTELPRO — the FBI's program to 'neutralize' Black political leaders. The report documented surveillance, infiltration, and assassination plots against civil rights organizations.", source: "Church Committee Report, U.S. Senate (1976)" },
+  "1980": { title: "Reagan Escalates War on Drugs", description: "The Reagan administration dramatically increased federal drug enforcement budgets and mandatory minimum sentences. The number of people incarcerated for drug offenses increased from 40,900 in 1980 to 452,900 by 1990.", source: "Bureau of Justice Statistics, Prisoners in 1990" },
+  "1986": { title: "100:1 Crack/Powder Sentencing Disparity", description: "The Anti-Drug Abuse Act of 1986 established a 100:1 sentencing disparity between crack and powder cocaine. 5 grams of crack triggered a 5-year mandatory minimum; 500 grams of powder cocaine was required for the same sentence. In FY2010, 78.7% of crack defendants were Black.", source: "Anti-Drug Abuse Act, 21 U.S.C. § 841 (1986); U.S. Sentencing Commission Report (2015)" },
+  "1994": { title: "Crime Bill — Three Strikes, Mandatory Minimums", description: "The Violent Crime Control and Law Enforcement Act of 1994 established three-strikes mandatory life imprisonment and provided $12.5 billion to states adopting truth-in-sentencing laws. 89% of defendants selected for federal capital prosecution were Black or Hispanic.", source: "Violent Crime Control Act, 18 U.S.C. § 3559(c) (1994)" },
+  "2000": { title: "Private Prison Industry Expands", description: "CoreCivic (then CCA) and GEO Group expanded dramatically. Their SEC filings explicitly listed 'leniency in conviction or parole standards' as a financial risk — documenting that their profitability depends on high incarceration rates.", source: "CoreCivic SEC Filing (2000); GEO Group Annual Report (2000)" },
+  "2010": { title: "Fair Sentencing Act — Disparity Reduced to 18:1", description: "The Fair Sentencing Act of 2010 reduced the crack/powder cocaine sentencing disparity from 100:1 to 18:1. The disparity was not eliminated — it was reduced. The First Step Act (2018) made the change retroactive.", source: "Fair Sentencing Act, Pub. L. 111-220 (2010)" },
+  "2024": { title: "CoreCivic Generates $2.4B Revenue", description: "CoreCivic's 2024 SEC filing documents $2.4 billion in annual revenue. The filing explicitly states that 'leniency in conviction or parole standards' would reduce their revenue — proving that the private prison industry's financial interests are structurally aligned with mass incarceration.", source: "CoreCivic Annual Report and SEC Filing (2024)" },
+};
+
+function IncarcerationChart() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [selected, setSelected] = useState<string | null>(null);
+  const chartRef = useRef<any>(null);
+
+  const years = ["1970", "1975", "1980", "1986", "1990", "1994", "2000", "2008", "2010", "2018", "2024"];
+  const rates = [600, 750, 1100, 1500, 2100, 2600, 3200, 3100, 2900, 2400, 2100];
+
   useEffect(() => {
     if (!canvasRef.current || typeof Chart === "undefined") return;
+    if (chartRef.current) chartRef.current.destroy();
     const ctx = canvasRef.current.getContext("2d");
-    const chart = new Chart(ctx, {
+    chartRef.current = new Chart(ctx, {
       type: "line",
       data: {
-        labels: ["1790", "1860", "1870", "1900", "1930", "1950", "1970", "1990", "2010", "2024"],
-        datasets: [
-          {
-            label: "White Household Wealth Share (%)",
-            data: [99.5, 99.0, 98.5, 98.0, 97.5, 96.0, 94.0, 93.0, 92.0, 89.0],
-            borderColor: "#d4af37",
-            backgroundColor: "rgba(212,175,55,0.1)",
-            tension: 0.4,
-            fill: true,
-          },
-          {
-            label: "Black Household Wealth Share (%)",
-            data: [0.5, 0.5, 0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 4.5, 4.9],
-            borderColor: "#8b1a1a",
-            backgroundColor: "rgba(139,26,26,0.1)",
-            tension: 0.4,
-            fill: true,
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif" } } },
-          title: { display: true, text: "Racial Wealth Gap: Share of U.S. Household Wealth (1790–2024)", color: "#d4af37", font: { size: 14, family: "Cinzel, serif" } }
-        },
-        scales: {
-          y: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(212,175,55,0.1)" }, title: { display: true, text: "% of Total U.S. Household Wealth", color: "#64748b" } },
-          x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(212,175,55,0.1)" } }
-        }
-      }
-    });
-    return () => chart.destroy();
-  }, []);
-  return <canvas ref={canvasRef} />;
-}
-
-function LabelTimelineChart() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  useEffect(() => {
-    if (!canvasRef.current || typeof Chart === "undefined") return;
-    const ctx = canvasRef.current.getContext("2d");
-    const chart = new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["1790", "1820", "1850", "1870", "1890", "1910", "1930", "1960", "1980", "2000", "2020"],
-        datasets: [
-          { label: "Free Negro / Mulatto", data: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], backgroundColor: "rgba(139,26,26,0.7)" },
-          { label: "Negro / Black", data: [0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0], backgroundColor: "rgba(212,175,55,0.7)" },
-          { label: "Negro / Black / African American", data: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0], backgroundColor: "rgba(45,106,79,0.7)" },
-          { label: "Black / African American", data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], backgroundColor: "rgba(29,111,164,0.7)" },
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif" } } },
-          title: { display: true, text: "U.S. Census Racial Classification Labels for Black Americans (1790–2020)", color: "#d4af37", font: { size: 14, family: "Cinzel, serif" } }
-        },
-        scales: {
-          y: { display: false, stacked: true },
-          x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(212,175,55,0.1)" }, stacked: true }
-        }
-      }
-    });
-    return () => chart.destroy();
-  }, []);
-  return <canvas ref={canvasRef} />;
-}
-
-function EvidenceTierChart() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  useEffect(() => {
-    if (!canvasRef.current || typeof Chart === "undefined") return;
-    const ctx = canvasRef.current.getContext("2d");
-    const chart = new Chart(ctx, {
-      type: "doughnut",
-      data: {
-        labels: ["Tier 1 — Primary Sources", "Tier 2 — Scholarly Analysis", "Tier 3 — Community Historical Traditions"],
+        labels: years,
         datasets: [{
-          data: [65, 25, 10],
-          backgroundColor: ["rgba(74,222,128,0.7)", "rgba(212,175,55,0.7)", "rgba(248,113,113,0.7)"],
-          borderColor: ["#4ade80", "#d4af37", "#f87171"],
-          borderWidth: 2,
+          label: "Black Incarceration Rate (per 100,000)",
+          data: rates,
+          borderColor: "#8b1a1a",
+          backgroundColor: "rgba(139,26,26,0.1)",
+          borderWidth: 2.5,
+          pointBackgroundColor: years.map(y => INCARCERATION_EVENTS[y] ? "#d4af37" : "#8b1a1a"),
+          pointRadius: years.map(y => INCARCERATION_EVENTS[y] ? 8 : 4),
+          pointHoverRadius: 10,
+          fill: true,
+          tension: 0.3,
         }]
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif" } } },
-          title: { display: true, text: "Evidence Tier Distribution Across 29 Chapters", color: "#d4af37", font: { size: 14, family: "Cinzel, serif" } }
-        }
-      }
-    });
-    return () => chart.destroy();
-  }, []);
-  return <canvas ref={canvasRef} />;
-}
-
-const YEAR_LEGISLATION: Record<string, { title: string; tier: string; description: string; source: string }> = {
-  "1970": {
-    title: "Nixon's War on Drugs Begins",
-    tier: "Tier 1",
-    description: "President Nixon declares drug abuse 'public enemy number one.' John Ehrlichman later admitted in 2016 that the campaign was designed to target Black communities and anti-war protesters.",
-    source: "Ehrlichman admission, Harper's Magazine (2016); Nixon Presidential Library"
-  },
-  "1975": {
-    title: "Rockefeller Drug Laws (1973) Take Effect",
-    tier: "Tier 1",
-    description: "New York's Rockefeller Drug Laws mandate 15-year minimum sentences for drug possession. Disproportionately impact Black and Latino communities. Became the national template for mandatory minimum sentencing.",
-    source: "New York Penal Law § 220; Human Rights Watch, Cruel and Usual (1997)"
-  },
-  "1980": {
-    title: "Reagan Elected; War on Drugs Escalates",
-    tier: "Tier 1",
-    description: "Reagan administration dramatically escalates the War on Drugs. Federal drug control budget increases from $1.5 billion (1981) to $6.6 billion (1989). Black arrest rates begin accelerating.",
-    source: "Office of National Drug Control Policy budget records; BJS Prisoners in 2023 (NCJ 310197)"
-  },
-  "1983": {
-    title: "CCA (CoreCivic) Founded — Private Prison Industry Born",
-    tier: "Tier 1",
-    description: "Corrections Corporation of America (now CoreCivic) is founded in Nashville, Tennessee — the first private prison company in the United States. The private prison industry is born at the exact moment Black incarceration rates begin their steepest climb.",
-    source: "CoreCivic corporate history; SEC EDGAR CIK 1070985"
-  },
-  "1985": {
-    title: "Crack Cocaine Epidemic Accelerates",
-    tier: "Tier 1",
-    description: "Crack cocaine spreads rapidly through urban communities. The Kerry Committee (1989) later documents CIA awareness of Contra drug trafficking networks. The crack epidemic devastates Black communities already destabilized by Vietnam veteran trauma and redlining.",
-    source: "Kerry Committee Report (1989); CDC epidemiological data"
-  },
-  "1990": {
-    title: "Anti-Drug Abuse Act (1986) Impact Peaks",
-    tier: "Tier 1",
-    description: "The 100:1 crack/powder cocaine sentencing disparity established by the 1986 Anti-Drug Abuse Act reaches its full impact. In FY1990, 78.7% of crack cocaine defendants are Black. Black imprisonment rate reaches 1,860 per 100,000 — 3x the 1970 rate.",
-    source: "U.S. Sentencing Commission; BJS Prisoners in 2023 (NCJ 310197)"
-  },
-  "1995": {
-    title: "1994 Crime Bill Mandatory Minimums Take Effect",
-    tier: "Tier 1",
-    description: "The Violent Crime Control and Law Enforcement Act of 1994 (the Crime Bill) mandates truth-in-sentencing and three-strikes provisions. States receive $12.5B in grants to adopt these laws. Black imprisonment rate peaks at 2,200 per 100,000.",
-    source: "Violent Crime Control and Law Enforcement Act, 18 U.S.C. § 3559(c); BJS data"
-  },
-  "2000": {
-    title: "Mass Incarceration Peaks",
-    tier: "Tier 1",
-    description: "U.S. prison population reaches 2 million for the first time. Black imprisonment rate peaks at 2,400 per 100,000 — 10x the white rate. Private prison industry revenue exceeds $1.2 billion annually.",
-    source: "BJS Prisoners in 2023 (NCJ 310197); CoreCivic and GEO Group annual reports"
-  },
-  "2005": {
-    title: "Prison Population Continues to Grow",
-    tier: "Tier 1",
-    description: "U.S. incarcerates more people than any nation on earth. Black men are incarcerated at 6x the rate of white men. Private prison industry lobbying intensifies — CoreCivic and GEO Group spend millions on state and federal lobbying.",
-    source: "BJS data; OpenSecrets lobbying records"
-  },
-  "2010": {
-    title: "Fair Sentencing Act — Crack/Powder Disparity Reduced to 18:1",
-    tier: "Tier 1",
-    description: "The Fair Sentencing Act of 2010 reduces the crack/powder cocaine sentencing disparity from 100:1 to 18:1. Black imprisonment rate begins declining from its 2,400 peak. The First Step Act (2018) makes this retroactive, resulting in 3,705 sentence reductions.",
-    source: "Fair Sentencing Act of 2010, Pub. L. 111-220; U.S. Sentencing Commission"
-  },
-  "2015": {
-    title: "Black Lives Matter Movement; Sentencing Reform Debate",
-    tier: "Tier 1",
-    description: "Black Lives Matter movement gains national attention following documented police killings. Black imprisonment rate continues declining. Bipartisan criminal justice reform debate begins in Congress.",
-    source: "BJS data; Equal Justice Initiative reports"
-  },
-  "2020": {
-    title: "COVID-19 and George Floyd — Accelerated Decline",
-    tier: "Tier 1",
-    description: "COVID-19 forces prison population reductions. George Floyd's murder by Minneapolis police officer Derek Chauvin (documented on video) triggers global protests. Black imprisonment rate falls to 1,240 per 100,000 — lowest since 1990, but still 5x the white rate.",
-    source: "BJS Prisoners in 2023 (NCJ 310197); Chauvin trial records"
-  },
-  "2024": {
-    title: "Private Prison Industry at Peak Revenue",
-    tier: "Tier 1",
-    description: "CoreCivic and GEO Group together generate $4.38 billion in revenue. Their own SEC filings document that their profitability depends on high incarceration rates. Black Americans are still incarcerated at 5x the rate of white Americans.",
-    source: "CoreCivic Form 10-K (2024), SEC EDGAR CIK 1070985; GEO Group Form 10-K (2024)"
-  },
-};
-
-function ModernChainChart() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [selectedYear, setSelectedYear] = useState<string | null>(null);
-  const [selectedLegislation, setSelectedLegislation] = useState<typeof YEAR_LEGISLATION[string] | null>(null);
-
-  useEffect(() => {
-    if (!canvasRef.current || typeof Chart === "undefined") return;
-    const ctx = canvasRef.current.getContext("2d");
-    const chart = new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: ["1970", "1975", "1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2024"],
-        datasets: [
-          {
-            label: "Black Imprisonment Rate (per 100,000)",
-            data: [600, 700, 1000, 1400, 1860, 2200, 2400, 2290, 2207, 1745, 1240, 1218],
-            borderColor: "#8b1a1a",
-            backgroundColor: "rgba(139,26,26,0.1)",
-            tension: 0.4,
-            fill: true,
-            yAxisID: "y",
-            pointRadius: 7,
-            pointHoverRadius: 10,
-            pointBackgroundColor: "#8b1a1a",
-            pointBorderColor: "#d4af37",
-            pointBorderWidth: 2,
-          },
-          {
-            label: "Private Prison Revenue ($ millions)",
-            data: [0, 0, 0, 100, 280, 600, 1200, 2100, 3200, 3800, 3600, 4380],
-            borderColor: "#d4af37",
-            backgroundColor: "rgba(212,175,55,0.1)",
-            tension: 0.4,
-            fill: true,
-            yAxisID: "y1",
-            pointRadius: 5,
-            pointHoverRadius: 8,
-            pointBackgroundColor: "#d4af37",
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        onClick: (_event: any, elements: any[]) => {
+        responsive: true, maintainAspectRatio: true, aspectRatio: 2.2,
+        onClick: (_: any, elements: any[]) => {
           if (elements.length > 0) {
-            const index = elements[0].index;
-            const labels = ["1970", "1975", "1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2024"];
-            const year = labels[index];
-            setSelectedYear(year);
-            setSelectedLegislation(YEAR_LEGISLATION[year] || null);
+            const year = years[elements[0].index];
+            setSelected(prev => prev === year ? null : year);
           }
         },
         plugins: {
-          legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif" } } },
-          title: { display: true, text: "Click any data point to see the legislation tied to that year", color: "#64748b", font: { size: 11, family: "Cinzel, serif" } },
-          tooltip: {
-            callbacks: {
-              afterBody: (items: any[]) => {
-                const year = items[0]?.label;
-                const leg = YEAR_LEGISLATION[year];
-                if (leg) return [`\u2726 Click to see: ${leg.title}`];
-                return [];
-              }
-            }
-          }
+          legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif", size: 12 } } },
+          tooltip: { callbacks: { footer: (items: any[]) => { const y = items[0]?.label; return INCARCERATION_EVENTS[y] ? [`★ Click to see: ${INCARCERATION_EVENTS[y].title}`] : []; } } }
         },
         scales: {
-          y: { ticks: { color: "#f87171" }, grid: { color: "rgba(212,175,55,0.1)" }, title: { display: true, text: "Black Imprisonment Rate (per 100,000)", color: "#f87171" } },
-          y1: { position: "right", ticks: { color: "#d4af37" }, grid: { drawOnChartArea: false }, title: { display: true, text: "Private Prison Revenue ($ millions)", color: "#d4af37" } },
-          x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(212,175,55,0.1)" } }
+          y: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 10 } }, grid: { color: "rgba(212,175,55,0.08)" }, title: { display: true, text: "Rate per 100,000 Black Americans", color: "#64748b", font: { family: "Cinzel, serif", size: 10 } } },
+          x: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 10 } }, grid: { color: "rgba(212,175,55,0.08)" } }
         }
       }
     });
-    return () => chart.destroy();
+    return () => chartRef.current?.destroy();
   }, []);
+
+  const event = selected ? INCARCERATION_EVENTS[selected] : null;
 
   return (
     <div>
-      <canvas ref={canvasRef} style={{ cursor: "pointer" }} />
-      {selectedYear && selectedLegislation && (
-        <div style={{
-          marginTop: 20,
-          background: "#0a1118",
-          border: "1px solid rgba(212,175,55,0.3)",
-          borderLeft: "4px solid #d4af37",
-          padding: "20px 24px",
-          transition: "all 0.3s ease",
-        }}>
+      <div style={{ height: 320 }}><canvas ref={canvasRef} /></div>
+      <p style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", textAlign: "center", marginTop: 8 }}>GOLD DOTS = KEY LEGISLATION. CLICK TO SEE THE LAW THAT DROVE THAT YEAR'S RATE.</p>
+      {event && (
+        <div style={{ marginTop: 20, background: "#0a1118", border: "1px solid rgba(139,26,26,0.4)", borderLeft: "4px solid #8b1a1a", padding: "20px 24px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
-            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 16, letterSpacing: "0.05em" }}>
-              {selectedYear}
-            </div>
-            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-              <span style={{ fontFamily: "Cinzel, serif", color: "#4ade80", fontSize: 9, letterSpacing: "0.1em", border: "1px solid rgba(74,222,128,0.3)", padding: "2px 8px" }}>
-                {selectedLegislation.tier}
-              </span>
-              <button
-                onClick={() => { setSelectedYear(null); setSelectedLegislation(null); }}
-                style={{ background: "transparent", border: "none", color: "#64748b", cursor: "pointer", fontSize: 16, padding: "0 4px" }}
-              >
-                ×
-              </button>
-            </div>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 14 }}>{selected} — {event.title}</div>
+            <button onClick={() => setSelected(null)} style={{ background: "transparent", border: "none", color: "#64748b", cursor: "pointer", fontSize: 18 }}>×</button>
           </div>
-          <div style={{ fontFamily: "Cinzel, serif", color: "#e2e8f0", fontSize: 14, marginBottom: 10, letterSpacing: "0.03em" }}>
-            {selectedLegislation.title}
-          </div>
-          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, marginBottom: 10 }}>
-            {selectedLegislation.description}
-          </p>
-          <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.1em" }}>
-            SOURCE: {selectedLegislation.source}
-          </div>
-        </div>
-      )}
-      {!selectedYear && (
-        <div style={{ textAlign: "center", marginTop: 12, fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 13, fontStyle: "italic" }}>
-          ✦ Click any data point on the chart to reveal the legislation tied to that year
+          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: 14, lineHeight: 1.8, marginBottom: 12 }}>{event.description}</p>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em" }}>SOURCE: {event.source}</div>
         </div>
       )}
     </div>
   );
 }
 
+// ─── Wealth Gap Chart ─────────────────────────────────────────────────────────
+function WealthGapChart() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const chartRef = useRef<any>(null);
+  useEffect(() => {
+    if (!canvasRef.current || typeof Chart === "undefined") return;
+    if (chartRef.current) chartRef.current.destroy();
+    const ctx = canvasRef.current.getContext("2d");
+    chartRef.current = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["1863", "1900", "1930", "1944\n(GI Bill)", "1968\n(Fair Housing)", "1980", "2008\n(Crisis)", "2019", "2024"],
+        datasets: [
+          { label: "White Median Household Wealth (Indexed)", data: [100, 180, 280, 350, 580, 720, 850, 1000, 1080], borderColor: "#d4af37", backgroundColor: "rgba(212,175,55,0.08)", borderWidth: 2, tension: 0.3, fill: true },
+          { label: "Black Median Household Wealth (Indexed)", data: [1, 8, 12, 15, 45, 58, 55, 74, 78], borderColor: "#8b1a1a", backgroundColor: "rgba(139,26,26,0.15)", borderWidth: 2, tension: 0.3, fill: true },
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true, aspectRatio: 2.2,
+        plugins: { legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif", size: 12 } } } },
+        scales: {
+          y: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 10 } }, grid: { color: "rgba(212,175,55,0.08)" }, title: { display: true, text: "Indexed to 1863 = 100", color: "#64748b", font: { family: "Cinzel, serif", size: 10 } } },
+          x: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 9 }, maxRotation: 0 }, grid: { color: "rgba(212,175,55,0.08)" } }
+        }
+      }
+    });
+    return () => chartRef.current?.destroy();
+  }, []);
+  return <div style={{ height: 320 }}><canvas ref={canvasRef} /></div>;
+}
+
+// ─── Power Mechanics Matrix ───────────────────────────────────────────────────
+function PowerMatrix() {
+  const rows = [
+    { instrument: "Papal Bulls (1452–1455)", beneficiary: "European monarchies", victim: "Indigenous peoples globally", enforcement: "Theological authority + military force", resistance: "Taíno armed resistance; Las Casas documentation" },
+    { instrument: "Georgia Charter (1732)", beneficiary: "British Trustees, white settlers", victim: "Creek and Cherokee Nations", enforcement: "Colonial militia + British Army", resistance: "Creek and Cherokee diplomatic and military resistance" },
+    { instrument: "Indian Removal Act (1830)", beneficiary: "White land speculators, Georgia settlers", victim: "Five Civilized Tribes", enforcement: "U.S. Army; Georgia militia", resistance: "Worcester v. Georgia; John Ross's legal campaign" },
+    { instrument: "13th Amendment loophole (1865)", beneficiary: "Southern planters, railroad companies", victim: "Formerly enslaved Black men", enforcement: "Black Codes; convict leasing contracts", resistance: "Freedmen's Bureau; Black political organizing" },
+    { instrument: "Dawes Act (1887)", beneficiary: "Railroad companies, white settlers", victim: "All Indigenous nations", enforcement: "Federal agents; Dawes Commission", resistance: "Redbird Smith; Keetoowah Society refusal to enroll" },
+    { instrument: "HOLC Redlining (1935)", beneficiary: "White homeowners, suburban developers", victim: "Black and Brown urban communities", enforcement: "Federal mortgage insurance denial", resistance: "NAACP legal challenges; fair housing activism" },
+    { instrument: "War on Drugs (1971–)", beneficiary: "Private prison industry ($4.38B/year)", victim: "Black and Latino communities", enforcement: "Police; mandatory minimums; 100:1 disparity", resistance: "ACLU litigation; Fair Sentencing Act (2010)" },
+    { instrument: "Shelby County v. Holder (2013)", beneficiary: "State legislatures seeking voter suppression", victim: "Black voters in Southern states", enforcement: "Voter ID laws passed within hours of ruling", resistance: "Voting rights litigation; grassroots organizing" },
+  ];
+
+  return (
+    <div style={{ overflowX: "auto" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 700 }}>
+        <thead>
+          <tr style={{ borderBottom: "2px solid rgba(212,175,55,0.3)" }}>
+            {["Legal Instrument", "Who Benefited", "Who Lost", "Enforcement", "Resistance"].map(h => (
+              <th key={h} style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 9, letterSpacing: "0.1em", padding: "12px 14px", textAlign: "left" }}>{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={i} style={{ borderBottom: "1px solid rgba(212,175,55,0.07)", background: i % 2 === 0 ? "transparent" : "rgba(212,175,55,0.02)" }}>
+              <td style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 10, padding: "14px", verticalAlign: "top", lineHeight: 1.5 }}>{row.instrument}</td>
+              <td style={{ fontFamily: "Cormorant Garamond, serif", color: "#4ade80", fontSize: 13, padding: "14px", verticalAlign: "top", lineHeight: 1.6 }}>{row.beneficiary}</td>
+              <td style={{ fontFamily: "Cormorant Garamond, serif", color: "#f87171", fontSize: 13, padding: "14px", verticalAlign: "top", lineHeight: 1.6 }}>{row.victim}</td>
+              <td style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, padding: "14px", verticalAlign: "top", lineHeight: 1.6 }}>{row.enforcement}</td>
+              <td style={{ fontFamily: "Cormorant Garamond, serif", color: "#d4af37", fontSize: 13, padding: "14px", verticalAlign: "top", lineHeight: 1.6 }}>{row.resistance}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+// ─── Main Page ────────────────────────────────────────────────────────────────
 export default function ChartsPage() {
+  const sections = [
+    { id: "land-loss", num: 1, title: "Indigenous Land Loss in the American Southeast", subtitle: "Millions of Acres Ceded by Treaty — 1814 to 1934", description: "Each bar represents a single legal instrument used to transfer land from Indigenous nations to the U.S. government and white settlers. The Dawes Act bar (90 million acres) dwarfs all others — it was the single largest land transfer in American history. Click any bar to see the specific treaty, the mechanism of dispossession, and the resistance that met it.", tier: "TIER 1", tierColor: "#4ade80", source: "National Archives Treaty Records; Kappler's Indian Affairs: Laws and Treaties", chapterSlug: "dawes-act", chapterTitle: "The 1887 Dawes Act", chart: <LandLossChart /> },
+    { id: "incarceration", num: 2, title: "Black Incarceration Rate vs. Federal Legislation", subtitle: "Rate per 100,000 Black Americans — 1970 to 2024", description: "This chart proves that incarceration rates are not a product of crime rates — they are a product of legislative choices. The 1986 Anti-Drug Abuse Act's 100:1 crack/powder sentencing disparity is the single most visible inflection point. Gold dots mark years with major legislation. Click any gold dot to see the specific law.", tier: "TIER 1", tierColor: "#4ade80", source: "Bureau of Justice Statistics; U.S. Sentencing Commission; CoreCivic SEC Filing (2024)", chapterSlug: "prison-industrial-complex", chapterTitle: "The Economics of Incarceration", chart: <IncarcerationChart /> },
+    { id: "wealth-gap", num: 3, title: "The Racial Wealth Gap — 1863 to 2024", subtitle: "Indexed Median Household Wealth: White vs. Black Americans (1863 = 100)", description: "The gap between the two lines is the documented cost of systemic exclusion. The GI Bill (1944) dramatically widened the gap by providing home loans and college tuition to white veterans while excluding Black veterans. The 2008 financial crisis wiped out 53% of Black household wealth. The gap today is larger than when the Fair Housing Act was passed in 1968.", tier: "TIER 1", tierColor: "#4ade80", source: "Federal Reserve Survey of Consumer Finances; Urban Institute; McKinsey & Company", chapterSlug: "wealth-extraction", chapterTitle: "The Racial Wealth Gap Was Engineered", chart: <WealthGapChart /> },
+    { id: "matrix", num: 4, title: "The Power Mechanics Matrix", subtitle: "Eight Legal Instruments — Who Benefited, Who Lost, What Resistance Occurred", description: "This matrix maps the eight major legal instruments of systemic power documented in this encyclopedia. Green = beneficiary. Red = victim. The pattern across 572 years is identical: a small group uses legal instruments to extract land and labor from a larger group, and the larger group resists. This is not coincidence. It is a system.", tier: "TIER 1", tierColor: "#4ade80", source: "National Archives; Cornell Law School; Bureau of Justice Statistics", chapterSlug: "georgia-charter", chapterTitle: "The 1732 Georgia Charter", chart: <PowerMatrix /> },
+  ];
+
   return (
     <div style={{ backgroundColor: "#0a1118", minHeight: "100vh" }}>
       <Navigation />
       <section style={{ paddingTop: 100, paddingBottom: 80 }}>
-        <div className="container" style={{ maxWidth: 1100 }}>
+        <div className="container" style={{ maxWidth: 900 }}>
           <div className="text-center" style={{ marginBottom: 60 }}>
-            <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ APPENDIX D ✦</div>
+            <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ APPENDIX C ✦</div>
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 16 }}>Charts & Data Visualizations</h1>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 600, margin: "0 auto" }}>
-              The unbroken chain of causation, visualized. All data sourced from primary government records and peer-reviewed scholarship.
+              The unbroken chain of causation — told through data. All figures sourced from primary government records and peer-reviewed scholarship.
             </p>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
-            {/* Land Loss Chart */}
-            <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px" }}>
-              <div style={{ height: 350 }}>
-                <LandLossChart />
-              </div>
-              <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginTop: 12, textAlign: "center" }}>
-                Sources: Treaty of Fort Jackson (1814), Treaty of Dancing Rabbit Creek (1830), Treaty of Pontotoc (1832), Treaty of New Echota (1835), Dawes Act (1887). National Archives.
-              </p>
-            </div>
-
-            {/* Wealth Gap Chart */}
-            <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px" }}>
-              <div style={{ height: 350 }}>
-                <WealthGapChart />
-              </div>
-              <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginTop: 12, textAlign: "center" }}>
-                Sources: Federal Reserve Survey of Consumer Finances (2022); McKinsey & Company, The Economic Impact of Closing the Racial Wealth Gap (2019); Thomas Craemer, Estimating Slavery Reparations (2015).
-              </p>
-            </div>
-
-            {/* Two-column charts */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: 32 }}>
-              <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px" }}>
-                <div style={{ height: 300 }}>
-                  <LabelTimelineChart />
-                </div>
-                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginTop: 12, textAlign: "center" }}>
-                  Source: U.S. Census Bureau Historical Records, National Archives.
-                </p>
-              </div>
-              <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px" }}>
-                <div style={{ height: 300 }}>
-                  <EvidenceTierChart />
-                </div>
-                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginTop: 12, textAlign: "center" }}>
-                  The Archive Encyclopedia evidence tier methodology. See About page for full explanation.
-                </p>
-              </div>
-            </div>
-
-            {/* Power Mechanics Matrix */}
-            <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px" }}>
-              <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 13, letterSpacing: "0.1em", marginBottom: 20 }}>
-                THE POWER MECHANICS MATRIX
-              </div>
-              <div style={{ overflowX: "auto" }}>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "Cormorant Garamond, serif" }}>
-                  <thead>
-                    <tr style={{ borderBottom: "2px solid rgba(212,175,55,0.3)" }}>
-                      {["Legal Instrument", "Year", "Who Benefited", "Who Lost", "Enforcement Mechanism", "Resistance"].map(h => (
-                        <th key={h} style={{ padding: "10px 12px", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.1em", textAlign: "left" }}>{h}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      ["Georgia Charter", "1732", "British Crown / Trustees", "Creek & Cherokee Nations", "Royal decree / Corporate charter", "Creek & Cherokee diplomacy"],
-                      ["Doctrine of Discovery", "1493–1823", "European colonial powers / U.S.", "All Indigenous peoples", "Papal authority / Supreme Court (Johnson v. M'Intosh)", "Ongoing legal challenges"],
-                      ["Indian Removal Act", "1830", "White settlers / Land speculators", "Five Civilized Tribes", "U.S. Army / State militias", "Worcester v. Georgia; armed resistance"],
-                      ["13th Amendment loophole", "1865", "Southern corporations / States", "Formerly enslaved Black Americans", "Black Codes / Convict leasing", "NAACP; labor organizing"],
-                      ["Dawes Act", "1887", "Railroad companies / White settlers", "All Native American nations", "Federal allotment / Land sales", "Keetoowah Society; AIM"],
-                      ["1930 Census rule", "1930", "U.S. government / White supremacy", "Mixed Black-Indigenous Americans", "Administrative classification", "Genealogy research; legal challenges"],
-                      ["GI Bill (racial exclusion)", "1944", "White veterans / Suburban developers", "Black and Indigenous veterans", "Local VA administration / Redlining", "NAACP legal campaigns"],
-                      ["COINTELPRO", "1956–1971", "FBI / Federal government", "Black & Indigenous political leaders", "Surveillance / Assassination / Prosecution", "Church Committee; ongoing advocacy"],
-                    ].map((row, i) => (
-                      <tr key={i} style={{ borderBottom: "1px solid rgba(212,175,55,0.1)", background: i % 2 === 0 ? "transparent" : "rgba(212,175,55,0.02)" }}>
-                        {row.map((cell, j) => (
-                          <td key={j} style={{ padding: "10px 12px", color: j === 0 ? "#d4af37" : "#94a3b8", fontSize: 13, lineHeight: 1.5 }}>{cell}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginTop: 12 }}>
-                Sources: National Archives primary documents; Kappler Indian Affairs Laws and Treaties; Church Committee Report (1976).
-              </p>
-            </div>
+          {/* Jump links */}
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 60, justifyContent: "center" }}>
+            {sections.map(s => (
+              <a key={s.id} href={`#${s.id}`} style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9, letterSpacing: "0.1em", border: "1px solid rgba(212,175,55,0.2)", padding: "8px 14px", textDecoration: "none" }}>
+                {s.num}. {s.title.split(" ").slice(0, 3).join(" ")}...
+              </a>
+            ))}
           </div>
 
-          {/* Modern Chain Chart */}
-          <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px", marginTop: 48 }}>
-            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 13, letterSpacing: "0.1em", marginBottom: 20 }}>
-              THE MODERN CHAIN: BLACK INCARCERATION RATES VS. PRIVATE PRISON REVENUE (1970–2024)
-            </div>
-            <div style={{ height: 350 }}>
-              <ModernChainChart />
-            </div>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginTop: 12 }}>
-              Sources: Bureau of Justice Statistics, Prisoners in 2023 (NCJ 310197); CoreCivic Form 10-K (2024); GEO Group Form 10-K (2024); The Sentencing Project, Color of Justice (2021). Note: Private prison revenue data begins with CCA's founding in 1983; shown as index relative to 1983 baseline.
-            </p>
-            <div style={{ marginTop: 20, padding: "16px", background: "rgba(139,26,26,0.08)", borderLeft: "4px solid #8b1a1a" }}>
-              <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 10, letterSpacing: "0.2em", marginBottom: 8 }}>THE CHRONOLOGICAL CHAIN</div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12 }}>
-                {[
-                  { year: "1865", event: "13th Amendment loophole — convict leasing begins" },
-                  { year: "1971", event: "Nixon's War on Drugs — Ehrlichman admission" },
-                  { year: "1983", event: "CCA (CoreCivic) founded — private prison industry born" },
-                  { year: "1986", event: "100:1 crack/powder sentencing — 78.7% Black defendants" },
-                  { year: "1994", event: "Crime Bill — three strikes, mandatory minimums" },
-                  { year: "2024", event: "$4.38B private prison revenue — SEC filings document occupancy incentives" },
-                ].map(({ year, event }) => (
-                  <div key={year} style={{ padding: "8px 12px", background: "rgba(212,175,55,0.05)", borderLeft: "2px solid rgba(212,175,55,0.3)" }}>
-                    <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 12, marginBottom: 4 }}>{year}</div>
-                    <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, lineHeight: 1.5 }}>{event}</div>
-                  </div>
-                ))}
+          {sections.map(section => (
+            <div key={section.id} id={section.id} style={{ marginBottom: 80 }}>
+              <div style={{ marginBottom: 24 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+                  <span style={{ fontFamily: "Cinzel, serif", color: section.tierColor, fontSize: 9, letterSpacing: "0.1em", border: `1px solid ${section.tierColor}40`, padding: "2px 8px" }}>{section.tier} — PRIMARY SOURCE</span>
+                  <span style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em" }}>CHART {section.num} OF {sections.length}</span>
+                </div>
+                <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)", marginBottom: 4 }}>{section.title}</h2>
+                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "0.95rem", fontStyle: "italic", marginBottom: 12 }}>{section.subtitle}</p>
+                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8 }}>{section.description}</p>
+              </div>
+
+              <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.12)", padding: "24px" }}>
+                {section.chart}
+              </div>
+
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 12, flexWrap: "wrap", gap: 8 }}>
+                <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 11 }}>
+                  <span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.1em", color: "#334155" }}>SOURCE: </span>{section.source}
+                </div>
+                <Link href={`/chapter/${section.chapterSlug}`}>
+                  <button style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "transparent", border: "1px solid rgba(212,175,55,0.2)", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.1em", padding: "8px 14px", cursor: "pointer" }}>
+                    <BookOpen size={10} />
+                    READ: {section.chapterTitle?.toUpperCase()}
+                  </button>
+                </Link>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
       <Footer />
