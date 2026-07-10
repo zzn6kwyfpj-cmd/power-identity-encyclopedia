@@ -13,6 +13,10 @@ import AboutPage from "./pages/AboutPage";
 import SearchPage from "./pages/SearchPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import ChartsPage from "./pages/ChartsPage";
+import GeorgiaPage from "./pages/GeorgiaPage";
+import GlossaryPage from "./pages/GlossaryPage";
+import GenealogyPage from "./pages/GenealogyPage";
+import MapPage from "./pages/MapPage";
 
 function Router() {
   return (
@@ -26,6 +30,10 @@ function Router() {
       <Route path="/search" component={SearchPage} />
       <Route path="/resources" component={ResourcesPage} />
       <Route path="/charts" component={ChartsPage} />
+      <Route path="/georgia" component={GeorgiaPage} />
+      <Route path="/glossary" component={GlossaryPage} />
+      <Route path="/genealogy" component={GenealogyPage} />
+      <Route path="/map" component={MapPage} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
