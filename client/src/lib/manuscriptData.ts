@@ -522,6 +522,267 @@ export const FIGURES: Figure[] = [
     image: "/manus-storage/portrait_gordy_8e2da39e.png",
     connection: "Executed vertical integration decades before the term existed — proving that when Black creators own the means of production, the economic results are staggering."
   },
+  {
+    name: "Bartolomé de Las Casas",
+    years: "1484–1566",
+    heritage: "Spanish (Eyewitness to Colonial Atrocities)",
+    role: "Dominican Priest and First Advocate for Indigenous Rights",
+    quote: "The Spaniards studied nothing for forty years but the massacre of these wretches.",
+    image: "/manus-storage/portrait_las_casas_c1390aca.png",
+    connection: "His eyewitness account documented the destruction of the Taino people and is the primary source for understanding the human cost of Columbus's voyages. Without Las Casas, the record would have been written entirely by the perpetrators."
+  },
+  {
+    name: "Toussaint L'Ouverture",
+    years: "1743–1803",
+    heritage: "Haitian (Born Enslaved)",
+    role: "Leader of the Haitian Revolution",
+    quote: "In overthrowing me, you have done no more than cut down the trunk of the tree of Black liberty. It will spring back from the roots, for they are numerous and deep.",
+    image: "/manus-storage/portrait_toussaint_758f35cd.png",
+    connection: "Led the only successful slave revolt in history that resulted in a new nation. His victory terrified American slaveholders and directly caused the U.S. to tighten slave codes and impose a devastating trade embargo on Haiti."
+  },
+  {
+    name: "Tecumseh",
+    years: "c.1768–1813",
+    heritage: "Shawnee Nation",
+    role: "Warrior and Pan-Indigenous Alliance Builder",
+    quote: "A single twig breaks, but the bundle of twigs is strong.",
+    image: "/manus-storage/portrait_tecumseh_2dc9a4b0.png",
+    connection: "Built the most ambitious pan-Indigenous military alliance in American history to resist U.S. expansion. His death at the Battle of the Thames in 1813 ended the last serious military resistance to American expansion east of the Mississippi."
+  },
+  {
+    name: "Osceola",
+    years: "c.1804–1838",
+    heritage: "Seminole Nation",
+    role: "Seminole War Leader",
+    quote: "I have done nothing to be ashamed of. It is for those to feel shame who did this.",
+    image: "/manus-storage/portrait_osceola_dc2119c2.png",
+    connection: "Led Seminole resistance against forced removal during the Second Seminole War (1835–1842) — the most costly Indian war in U.S. history. He was captured under a flag of truce and died in captivity, becoming a symbol of the U.S. government's bad faith."
+  },
+  {
+    name: "Denmark Vesey",
+    years: "c.1767–1822",
+    heritage: "African American (Born Enslaved, Purchased Freedom)",
+    role: "Organizer of the 1822 Charleston Slave Revolt",
+    quote: "We are free, but our brothers are not.",
+    image: "/manus-storage/portrait_denmark_vesey_fd00ca77.png",
+    connection: "A free Black man who organized one of the largest planned slave revolts in American history in Charleston, South Carolina. His plot was betrayed before it could be executed. He was executed along with 34 others. The Emanuel African Methodist Episcopal Church he co-founded still stands."
+  },
+  {
+    name: "Nat Turner",
+    years: "1800–1831",
+    heritage: "African American (Born Enslaved)",
+    role: "Leader of the 1831 Southampton Slave Rebellion",
+    quote: "I am here loaded with chains and willing to suffer the fate that awaits me.",
+    image: "/manus-storage/portrait_nat_turner_ff1deba7.png",
+    connection: "Led the deadliest slave revolt in American history in Southampton County, Virginia. His rebellion killed 55 to 65 white slaveholders and caused Southern states to pass even more restrictive laws against enslaved people — proving that the system of slavery required constant violent enforcement to maintain."
+  },
+  {
+    name: "Sojourner Truth",
+    years: "c.1797–1883",
+    heritage: "African American (Born Enslaved)",
+    role: "Abolitionist and Women's Rights Activist",
+    quote: "Ain't I a Woman?",
+    image: "/manus-storage/portrait_sojourner_truth_ecacb0f9.png",
+    connection: "Born Isabella Baumfree into slavery in New York, she escaped in 1826 and became one of the most powerful voices for both abolition and women's rights. Her 1851 'Ain't I a Woman?' speech at the Women's Rights Convention in Akron, Ohio remains one of the most powerful speeches in American history."
+  },
+  {
+    name: "Harriet Tubman",
+    years: "c.1822–1913",
+    heritage: "African American (Born Enslaved)",
+    role: "Underground Railroad Conductor and Union Army Spy",
+    quote: "I never ran my train off the track and I never lost a passenger.",
+    image: "/manus-storage/portrait_harriet_tubman_ec5a7696.png",
+    connection: "Made 13 missions to rescue approximately 70 enslaved people via the Underground Railroad. During the Civil War, she became the first woman in U.S. history to lead an armed military operation — the Combahee River Raid (1863), which liberated more than 700 enslaved people."
+  },
+  {
+    name: "Booker T. Washington",
+    years: "1856–1915",
+    heritage: "African American (Born Enslaved)",
+    role: "Educator and Founder of Tuskegee Institute",
+    quote: "Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.",
+    image: "/manus-storage/portrait_booker_washington_3ccbd323.png",
+    connection: "Founded Tuskegee Institute in 1881 as a model of Black economic self-sufficiency — the direct historical predecessor to Dr. Claud Anderson's PowerNomics framework. His debate with W.E.B. Du Bois over accommodation vs. confrontation shaped Black political strategy for a century."
+  },
+  {
+    name: "W.E.B. Du Bois",
+    years: "1868–1963",
+    heritage: "African American",
+    role: "Scholar, Activist, and Co-Founder of the NAACP",
+    quote: "The problem of the twentieth century is the problem of the color-line.",
+    image: "/manus-storage/portrait_web_dubois_62c0dc6c.png",
+    connection: "The first African American to earn a PhD from Harvard. His 1903 masterwork 'The Souls of Black Folk' introduced the concept of 'double consciousness' — the sense of always looking at oneself through the eyes of others. Co-founded the NAACP in 1909."
+  },
+  {
+    name: "Marcus Garvey",
+    years: "1887–1940",
+    heritage: "Jamaican / Pan-African",
+    role: "Pan-African Leader and Founder of UNIA",
+    quote: "A people without the knowledge of their past history, origin and culture is like a tree without roots.",
+    image: "/manus-storage/portrait_marcus_garvey_ed78b1ad.png",
+    connection: "Founded the Universal Negro Improvement Association (UNIA) and the Black Star Line shipping company — the most ambitious attempt at Black economic nationalism before Dr. Claud Anderson. His deportation from the U.S. in 1927 was orchestrated by J. Edgar Hoover — a direct precursor to COINTELPRO."
+  },
+  {
+    name: "Chief Joseph",
+    years: "1840–1904",
+    heritage: "Nez Perce Nation",
+    role: "Nez Perce Leader and Resistance Fighter",
+    quote: "From where the sun now stands, I will fight no more forever.",
+    image: "/manus-storage/portrait_chief_joseph_c5c2dc77.png",
+    connection: "Led the Nez Perce on a 1,400-mile retreat through the Rocky Mountains to avoid forced removal, outmaneuvering the U.S. Army for four months. His surrender speech — 'I will fight no more forever' — is one of the most powerful statements of exhausted resistance in American history."
+  },
+  {
+    name: "Geronimo",
+    years: "1829–1909",
+    heritage: "Chiricahua Apache Nation",
+    role: "Apache Resistance Leader",
+    quote: "I was no chief and never had been, but because I had been more deeply wronged than others, this honor was conferred upon me.",
+    image: "/manus-storage/portrait_geronimo_c0d6f02c.png",
+    connection: "Led Apache resistance against both U.S. and Mexican military campaigns for decades. His final surrender in 1886 marked the end of organized armed Indigenous resistance in the American Southwest. He was held as a prisoner of war for the rest of his life — never allowed to return to his homeland."
+  },
+  {
+    name: "Anna Julia Cooper",
+    years: "1858–1964",
+    heritage: "African American (Born Enslaved)",
+    role: "Scholar, Educator, and First Black Feminist Theorist",
+    quote: "The cause of freedom is not the cause of a race or a sect, a party or a class — it is the cause of humankind.",
+    image: "/manus-storage/portrait_anna_julia_cooper_a5533536.png",
+    connection: "Born enslaved, earned a PhD from the Sorbonne at age 65 — the fourth African American woman to earn a doctorate. Her 1892 book 'A Voice from the South' is the first articulation of Black feminist thought in American literature."
+  },
+  {
+    name: "Zitkala-\u0160a",
+    years: "1876–1938",
+    heritage: "Yankton Sioux Nation",
+    role: "Writer, Musician, and Indigenous Rights Activist",
+    quote: "I was not wholly conscious of myself, but was more keenly alive to the fire within me.",
+    image: "/manus-storage/portrait_zitkala_sa_7ca630af.png",
+    connection: "Attended the Carlisle Indian Industrial School — the model boarding school designed to 'kill the Indian, save the man' — and then used her education to fight the boarding school system from the inside. Helped draft the 1924 Indian Citizenship Act."
+  },
+  {
+    name: "Charles Hamilton Houston",
+    years: "1895–1950",
+    heritage: "African American",
+    role: "Attorney and Architect of the Legal Strategy to Dismantle Jim Crow",
+    quote: "A lawyer's either a social engineer or he's a parasite on society.",
+    image: "/manus-storage/portrait_charles_hamilton_houston_b00734ea.png",
+    connection: "Called 'The Man Who Killed Jim Crow.' As Dean of Howard University Law School, he trained Thurgood Marshall and the generation of lawyers who dismantled legal segregation. He designed the legal strategy that led to Brown v. Board of Education — but died five years before the ruling."
+  },
+  {
+    name: "Thurgood Marshall",
+    years: "1908–1993",
+    heritage: "African American",
+    role: "Attorney and First Black Supreme Court Justice",
+    quote: "In recognizing the humanity of our fellow beings, we pay ourselves the highest tribute.",
+    image: "/manus-storage/portrait_thurgood_marshall_dfe951e1.png",
+    connection: "Argued Brown v. Board of Education before the Supreme Court in 1954, overturning Plessy v. Ferguson. Appointed by President Johnson as the first Black Supreme Court Justice in 1967 — the same year the FBI's COINTELPRO program was targeting Black leaders."
+  },
+  {
+    name: "Ella Baker",
+    years: "1903–1986",
+    heritage: "African American",
+    role: "Civil Rights Organizer and Movement Architect",
+    quote: "Strong people don't need strong leaders.",
+    image: "/manus-storage/portrait_ella_baker_9138837a.png",
+    connection: "The organizational backbone of the NAACP, SCLC, and SNCC. Her philosophy of grassroots organizing — 'strong people don't need strong leaders' — was the structural foundation of the Civil Rights Movement. She mentored both Martin Luther King Jr. and the student sit-in movement."
+  },
+  {
+    name: "Fannie Lou Hamer",
+    years: "1917–1977",
+    heritage: "African American",
+    role: "Voting Rights Activist and Mississippi Freedom Democratic Party Leader",
+    quote: "I'm sick and tired of being sick and tired.",
+    image: "/manus-storage/portrait_fannie_lou_hamer_8de246d7.png",
+    connection: "A Mississippi sharecropper who became one of the most powerful voices of the Civil Rights Movement. Her 1964 testimony before the Credentials Committee of the Democratic National Convention — broadcast nationally — exposed the violent suppression of Black voting rights in Mississippi."
+  },
+  {
+    name: "Bayard Rustin",
+    years: "1912–1987",
+    heritage: "African American",
+    role: "Civil Rights Strategist and Chief Organizer of the March on Washington",
+    quote: "The only weapon we have is our bodies, and we need to tuck them in places so wheels don't turn.",
+    image: "/manus-storage/portrait_bayard_rustin_3f3a8417.png",
+    connection: "Organized the 1963 March on Washington — the largest civil rights demonstration in American history — in just eight weeks. He introduced Dr. King to Gandhian nonviolent resistance. His contributions were deliberately minimized because he was openly gay."
+  },
+  {
+    name: "Stokely Carmichael",
+    years: "1941–1998",
+    heritage: "Trinidadian-American",
+    role: "Civil Rights and Black Power Leader",
+    quote: "In order for nonviolence to work, your opponent must have a conscience.",
+    image: "/manus-storage/portrait_stokely_carmichael_f2ed3d28.png",
+    connection: "Coined the term 'Black Power' in 1966 — shifting the Civil Rights Movement from legal equality to economic and political power. His analysis that racism is not merely individual prejudice but a structural system directly connects to Dr. Claud Anderson's PowerNomics framework."
+  },
+  {
+    name: "Fred Hampton",
+    years: "1948–1969",
+    heritage: "African American",
+    role: "Black Panther Party Chairman and Community Organizer",
+    quote: "You fight racism with solidarity.",
+    image: "/manus-storage/portrait_fred_hampton_5b3293f2.png",
+    connection: "At age 21, organized the Rainbow Coalition — an alliance of the Black Panthers, Young Patriots Organization, and Young Lords. Assassinated in a predawn FBI/Chicago PD raid on December 4, 1969. The FBI provided the floor plan of his apartment. He was shot twice in the head while sleeping."
+  },
+  {
+    name: "Angela Davis",
+    years: "1944–",
+    heritage: "African American",
+    role: "Scholar, Activist, and Prison Abolition Advocate",
+    quote: "I am no longer accepting the things I cannot change. I am changing the things I cannot accept.",
+    image: "/manus-storage/portrait_angela_davis_47bf5005.png",
+    connection: "Her 2003 book 'Are Prisons Obsolete?' is the foundational text of the prison abolition movement — directly connecting the 13th Amendment's 'except as punishment for crime' loophole to the modern prison industrial complex documented in Chapter 29 of this encyclopedia."
+  },
+  {
+    name: "John Lewis",
+    years: "1940–2020",
+    heritage: "African American",
+    role: "Civil Rights Leader and U.S. Congressman",
+    quote: "Do not get lost in a sea of despair. Be hopeful, be optimistic. Our struggle is not the struggle of a day, a week, a month, or a year, it is the struggle of a lifetime.",
+    image: "/manus-storage/portrait_john_lewis_a21ad364.png",
+    connection: "Was beaten on the Edmund Pettus Bridge on Bloody Sunday (March 7, 1965) — the event that directly led to the passage of the Voting Rights Act. Served in Congress for 33 years. Called 'the conscience of the Congress.'"
+  },
+  {
+    name: "Shirley Chisholm",
+    years: "1924–2005",
+    heritage: "African American",
+    role: "First Black Woman Elected to Congress and First Black Presidential Candidate",
+    quote: "If they don't give you a seat at the table, bring a folding chair.",
+    image: "/manus-storage/portrait_shirley_chisholm_a78f1607.png",
+    connection: "First Black woman elected to the U.S. Congress (1968) and first Black candidate for a major party presidential nomination (1972). Her campaign slogan was 'Unbought and Unbossed' — a direct challenge to the political economy documented in this encyclopedia."
+  },
+  {
+    name: "Wilma Mankiller",
+    years: "1945–2010",
+    heritage: "Cherokee Nation",
+    role: "First Female Principal Chief of the Cherokee Nation",
+    quote: "The secret of our success is that we never, never give up.",
+    image: "/manus-storage/portrait_wilma_mankiller_9cc7d294.png",
+    connection: "First woman elected Principal Chief of the Cherokee Nation (1987). Led the Cherokee Nation's economic revival and self-governance movement — proving that the sovereignty the U.S. tried to extinguish through the Dawes Act and boarding schools was never truly destroyed."
+  },
+  {
+    name: "Leonard Peltier",
+    years: "1944–2025",
+    heritage: "Ojibwe and Lakota Nations",
+    role: "American Indian Movement Leader",
+    quote: "I don't know how to save the world. I don't have the answers or resources. I'm just a human being.",
+    image: "/manus-storage/portrait_leonard_peltier_20ad8e98.png",
+    connection: "Imprisoned for nearly 50 years for the 1975 Pine Ridge shootout — a case that Amnesty International declared a miscarriage of justice. His imprisonment is the most documented example of the U.S. government's use of the criminal justice system to suppress Indigenous sovereignty movements."
+  },
+  {
+    name: "Claudette Colvin",
+    years: "1939–",
+    heritage: "African American",
+    role: "Civil Rights Pioneer — Refused to Give Up Her Bus Seat Nine Months Before Rosa Parks",
+    quote: "I felt like Sojourner Truth was pushing down on one shoulder and Harriet Tubman was pushing down on the other.",
+    image: "/manus-storage/portrait_claudette_colvin_c05a1ff6.png",
+    connection: "On March 2, 1955, fifteen-year-old Claudette Colvin refused to give up her seat on a Montgomery, Alabama bus — nine months before Rosa Parks. Her case was not publicized because civil rights leaders feared her age and circumstances would undermine the legal challenge. Her erasure from history is itself a story about who gets to be remembered."
+  },
+  {
+    name: "John Trudell",
+    years: "1946–2015",
+    heritage: "Santee Sioux Nation",
+    role: "American Indian Movement Leader, Poet, and Activist",
+    quote: "We're not Indians and we're not Native Americans. We're older than both concepts. We're the human beings, the natural people of this land.",
+    image: "/manus-storage/portrait_john_trudell_b9527910.png",
+    connection: "Chairman of the American Indian Movement during the 1970s. The FBI maintained a 17,000-page file on him — one of the largest surveillance files on any individual in American history. His wife, mother-in-law, and three children were killed in a suspicious house fire the day after he burned an American flag at the FBI headquarters in Washington D.C."
+  },
 ];
 
 export const TIMELINE_EVENTS = [
