@@ -28,7 +28,7 @@ export default function Navigation() {
   const [location] = useLocation();
 
   const navLinks = [
-    { href: "/", label: "Home", icon: BookOpen },
+    { href: "/home", label: "Home", icon: BookOpen },
     { href: "/search", label: "Search", icon: Search },
     { href: "/timeline", label: "Timeline", icon: Clock },
     { href: "/figures", label: "Figures", icon: Users },
