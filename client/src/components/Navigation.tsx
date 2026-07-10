@@ -2,6 +2,27 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, BookOpen, Users, Clock, BookMarked, Info, Search } from "lucide-react";
 
+function MoreDropdown({ moreLinks, location }: { moreLinks: { href: string; label: string }[]; location: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ position: "relative" }}>
+      <span
+        onClick={() => setOpen(!open)}
+        style={{ fontFamily: "Cinzel, serif", fontSize: 11, letterSpacing: "0.1em", padding: "6px 14px", color: "#94a3b8", cursor: "pointer", display: "inline-block", borderBottom: "2px solid transparent", userSelect: "none" }}
+      >More ▾</span>
+      {open && (
+        <div style={{ position: "absolute", top: "100%", right: 0, background: "#050b10", border: "1px solid rgba(212,175,55,0.3)", minWidth: 180, zIndex: 100 }}>
+          {moreLinks.map(({ href, label }) => (
+            <Link key={href} href={href} onClick={() => setOpen(false)}>
+              <div style={{ fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.1em", padding: "10px 16px", color: location === href ? "#d4af37" : "#94a3b8", cursor: "pointer", borderBottom: "1px solid rgba(212,175,55,0.1)" }}>{label}</div>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
@@ -73,16 +94,7 @@ export default function Navigation() {
               </Link>
             ))}
             {/* More dropdown */}
-            <div style={{ position: "relative" }} className="group">
-              <span style={{ fontFamily: "Cinzel, serif", fontSize: 11, letterSpacing: "0.1em", padding: "6px 14px", color: "#94a3b8", cursor: "pointer", display: "inline-block", borderBottom: "2px solid transparent" }}>More ▾</span>
-              <div style={{ position: "absolute", top: "100%", right: 0, background: "#050b10", border: "1px solid rgba(212,175,55,0.3)", minWidth: 180, zIndex: 100, display: "none" }} className="group-hover:block">
-                {moreLinks.map(({ href, label }) => (
-                  <Link key={href} href={href}>
-                    <div style={{ fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.1em", padding: "10px 16px", color: location === href ? "#d4af37" : "#94a3b8", cursor: "pointer", borderBottom: "1px solid rgba(212,175,55,0.1)" }}>{label}</div>
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <MoreDropdown moreLinks={moreLinks} location={location} />
           </div>
 
           {/* Mobile Menu Button */}
