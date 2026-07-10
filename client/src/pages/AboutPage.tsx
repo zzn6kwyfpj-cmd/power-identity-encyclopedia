@@ -14,6 +14,42 @@ export default function AboutPage() {
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 16 }}>About This Encyclopedia</h1>
           </div>
 
+          {/* Synopsis & Purpose */}
+          <div style={{ background: "linear-gradient(135deg, #0f1923 0%, #111d2b 100%)", border: "1px solid rgba(212,175,55,0.3)", padding: "40px 48px", marginBottom: 40 }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", marginBottom: 20, textAlign: "center" }}>✦ SYNOPSIS ✦</div>
+            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)", marginBottom: 24, textAlign: "center", lineHeight: 1.4 }}>
+              Power, Identity, and Contested Origins:<br />
+              <span style={{ color: "#e2e8f0", fontSize: "0.85em" }}>A History of America's Suppressed Truths</span>
+            </h2>
+            <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.15rem", lineHeight: 2, maxWidth: 680, margin: "0 auto" }}>
+              <p style={{ marginBottom: 20 }}>
+                The Archive Encyclopedia is a comprehensive, evidence-based educational resource documenting the unbroken chain of power, dispossession, and resistance that connects the Papal Bulls of 1452 to the present day. It covers 54 chapters across 572 years of American history — from the legal fictions of European colonialism, through the forced removal of Indigenous nations, the architecture of chattel slavery, the systematic erasure of Black and Native identity, and the ongoing struggle for sovereignty, recognition, and economic justice.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                The purpose of this work is straightforward: to document what happened, to whom, by whose authority, and with what consequences — using primary sources, court records, census data, peer-reviewed scholarship, and the words of the people who lived through it. This encyclopedia does not tell you what to think. It presents the evidence and allows the record to speak for itself.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                Every claim in this encyclopedia is labeled by evidence tier. Tier 1 sources are primary documents — National Archives records, Supreme Court rulings, federal census instructions, and peer-reviewed research. Tier 2 sources are rigorous scholarly analysis. Tier 3 sources are community historical traditions and reclamation narratives, included for their cultural significance and clearly labeled as such. The distinction matters. Truth requires precision.
+              </p>
+              <p>
+                This encyclopedia was built for the student who cannot find their family in the official record. For the researcher who suspects the story they were taught is incomplete. For the community organizer who needs the documented evidence to make the argument. For the child who grows up in a place like Cartersville, Georgia, looks at ancient mounds, and wonders: <em>who built these, and am I connected to them?</em> The answer may not be simple. But the question deserves a serious, honest, and thoroughly documented response.
+              </p>
+            </div>
+            <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 32, flexWrap: "wrap" }}>
+              {[
+                { number: "54", label: "Chapters" },
+                { number: "572", label: "Years Documented" },
+                { number: "90+", label: "Primary Sources" },
+                { number: "45", label: "Figures of Resistance" },
+              ].map(({ number, label }) => (
+                <div key={label} style={{ textAlign: "center" }}>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700 }}>{number}</div>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9, letterSpacing: "0.2em", marginTop: 4 }}>{label.toUpperCase()}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Primary Dedication */}
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px 40px", marginBottom: 24, textAlign: "center" }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.3em", marginBottom: 16 }}>DEDICATION</div>
