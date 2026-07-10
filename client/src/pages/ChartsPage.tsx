@@ -427,9 +427,46 @@ function BrokenPromisesChart() {
   }, [selected]);
 
   const t = selected !== null ? treaties[selected] : null;
+  const totalAcres = treaties.reduce((sum, tr) => sum + tr.acres, 0);
+  const [displayCount, setDisplayCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = totalAcres;
+    const duration = 2000;
+    const stepTime = 16;
+    const steps = duration / stepTime;
+    const increment = end / steps;
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) { setDisplayCount(end); clearInterval(timer); }
+      else { setDisplayCount(Math.floor(start * 10) / 10); }
+    }, stepTime);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div>
+      {/* Dynamic Cumulative Counter */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 24 }}>
+        <div style={{ background: "rgba(139,26,26,0.1)", border: "1px solid rgba(248,113,113,0.3)", borderLeft: "4px solid #8b1a1a", padding: "16px 20px", textAlign: "center" }}>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 9, letterSpacing: "0.2em", marginBottom: 8 }}>TOTAL ACRES LOST</div>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 900, lineHeight: 1 }}>
+            {displayCount.toFixed(1)}M
+          </div>
+          <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, marginTop: 6 }}>million acres across {treaties.length} treaties</div>
+        </div>
+        <div style={{ background: "rgba(212,175,55,0.05)", border: "1px solid rgba(212,175,55,0.2)", borderLeft: "4px solid #d4af37", padding: "16px 20px", textAlign: "center" }}>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 9, letterSpacing: "0.2em", marginBottom: 8 }}>TREATIES DOCUMENTED</div>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 900, lineHeight: 1 }}>374</div>
+          <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, marginTop: 6 }}>total U.S.-Indigenous treaties signed</div>
+        </div>
+        <div style={{ background: "rgba(139,26,26,0.05)", border: "1px solid rgba(248,113,113,0.15)", borderLeft: "4px solid #8b1a1a", padding: "16px 20px", textAlign: "center" }}>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 9, letterSpacing: "0.2em", marginBottom: 8 }}>TREATIES HONORED</div>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 900, lineHeight: 1 }}>0</div>
+          <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, marginTop: 6 }}>every single one was broken</div>
+        </div>
+      </div>
       <div style={{ height: 340 }}><canvas ref={canvasRef} /></div>
       <p style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", textAlign: "center", marginTop: 8 }}>CLICK ANY BAR TO SEE THE FULL TREATY DETAILS</p>
       {t && (
