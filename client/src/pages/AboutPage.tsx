@@ -184,9 +184,9 @@ export default function AboutPage() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16 }}>
               {[
                 { number: "47", label: "Chapters" },
-                { number: "56", label: "Timeline Events" },
+                { number: "57", label: "Timeline Events" },
                 { number: "90+", label: "Primary Source Citations" },
-                { number: "13", label: "Portrait Illustrations" },
+                { number: "45", label: "Figures of Resistance" },
                 { number: "572", label: "Years Documented" },
                 { number: "40+", label: "Hours of Research" },
               ].map(({ number, label }) => (

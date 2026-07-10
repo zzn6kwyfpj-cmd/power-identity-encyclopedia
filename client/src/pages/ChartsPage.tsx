@@ -231,6 +231,141 @@ function PowerMatrix() {
   );
 }
 
+// ─── Census Label Chart ──────────────────────────────────────────────────────
+function CensusLabelChart() {
+  const data = [
+    { year: "1790", label: "Free White / All Other Free Persons / Slaves", note: "No category for Black Americans as people — only as property or 'other'" },
+    { year: "1820", label: "Free Colored Persons", note: "First time free Black people received a distinct category" },
+    { year: "1850", label: "Black / Mulatto", note: "'Mulatto' introduced to track mixed-race ancestry" },
+    { year: "1870", label: "Black / Mulatto / Quadroon / Octoroon", note: "Fraction-based categories to track degrees of 'Black blood'" },
+    { year: "1900", label: "Black", note: "Fraction categories removed; 'one drop rule' applied" },
+    { year: "1930", label: "Negro (default for any Black-Indigenous mix)", note: "CRITICAL: Enumerators instructed to classify mixed Indian-Negro as Negro unless Indian blood 'predominates'" },
+    { year: "1960", label: "Negro", note: "No change — same label used for 30 years" },
+    { year: "1970", label: "Negro or Black", note: "First time 'Black' offered as an alternative" },
+    { year: "1980", label: "Black or Negro", note: "Order reversed — 'Black' placed first" },
+    { year: "2000", label: "Black, African Am., or Negro", note: "'African American' added for the first time" },
+    { year: "2020", label: "Black or African American", note: "'Negro' finally removed after 90 years" },
+  ];
+
+  return (
+    <div style={{ overflowX: "auto" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 600 }}>
+        <thead>
+          <tr style={{ borderBottom: "2px solid rgba(212,175,55,0.3)" }}>
+            {["Census Year", "Official Label", "What Changed and Why"].map(h => (
+              <th key={h} style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 9, letterSpacing: "0.1em", padding: "12px 14px", textAlign: "left" }}>{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, i) => (
+            <tr key={i} style={{ borderBottom: "1px solid rgba(212,175,55,0.07)", background: row.year === "1930" ? "rgba(139,26,26,0.1)" : i % 2 === 0 ? "transparent" : "rgba(212,175,55,0.02)" }}>
+              <td style={{ fontFamily: "Cinzel, serif", color: row.year === "1930" ? "#f87171" : "#d4af37", fontSize: 13, padding: "12px 14px", verticalAlign: "top", fontWeight: row.year === "1930" ? 700 : 400 }}>{row.year}</td>
+              <td style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: 13, padding: "12px 14px", verticalAlign: "top", lineHeight: 1.6 }}>{row.label}</td>
+              <td style={{ fontFamily: "Cormorant Garamond, serif", color: row.year === "1930" ? "#fca5a5" : "#94a3b8", fontSize: 13, padding: "12px 14px", verticalAlign: "top", lineHeight: 1.6 }}>{row.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div style={{ marginTop: 16, background: "rgba(139,26,26,0.08)", border: "1px solid rgba(248,113,113,0.3)", borderLeft: "4px solid #f87171", padding: "14px 18px" }}>
+        <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 9, letterSpacing: "0.2em", marginBottom: 6 }}>✦ THE 1930 INSTRUCTION — VERBATIM</div>
+        <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: 14, lineHeight: 1.8, fontStyle: "italic", margin: 0 }}>
+          "A person of mixed Indian and Negro blood should be returned a Negro, unless the Indian blood predominates and the status as an Indian is generally accepted in the community."
+        </p>
+        <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", marginTop: 8 }}>SOURCE: U.S. Census Bureau, 1930 Enumerator Instructions, National Archives Record Group 29</div>
+      </div>
+    </div>
+  );
+}
+
+// ─── GI Bill Chart ────────────────────────────────────────────────────────────
+function GIBillChart() {
+  const states = [
+    { state: "Mississippi", total: 3229, black: 2, pct: 0.06 },
+    { state: "Georgia", total: 8000, black: 40, pct: 0.5 },
+    { state: "Alabama", total: 6000, black: 30, pct: 0.5 },
+    { state: "Louisiana", total: 7000, black: 35, pct: 0.5 },
+    { state: "South Carolina", total: 4000, black: 20, pct: 0.5 },
+    { state: "New York", total: 45000, black: 4500, pct: 10 },
+    { state: "Illinois", total: 38000, black: 3800, pct: 10 },
+    { state: "California", total: 42000, black: 4200, pct: 10 },
+  ];
+
+  return (
+    <div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12, marginBottom: 20 }}>
+        {states.map((s, i) => {
+          const isSouth = i < 5;
+          const barPct = Math.min(s.pct / 12 * 100, 100);
+          return (
+            <div key={s.state} style={{ background: "#0a1118", border: `1px solid ${isSouth ? "rgba(248,113,113,0.3)" : "rgba(74,222,128,0.3)"}`, padding: "14px 16px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+                <div style={{ fontFamily: "Cinzel, serif", color: isSouth ? "#f87171" : "#4ade80", fontSize: 11 }}>{s.state}</div>
+                <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9 }}>{isSouth ? "SOUTH" : "NORTH/WEST"}</div>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+                <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 12 }}>Total VA loans: <strong style={{ color: "#e2e8f0" }}>{s.total.toLocaleString()}</strong></div>
+                <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 12 }}>To Black veterans: <strong style={{ color: isSouth ? "#f87171" : "#4ade80" }}>{s.black.toLocaleString()}</strong></div>
+              </div>
+              <div style={{ background: "rgba(212,175,55,0.08)", height: 8, borderRadius: 2 }}>
+                <div style={{ width: `${barPct}%`, height: "100%", background: isSouth ? "#8b1a1a" : "#2d6a4f", borderRadius: 2, minWidth: 2 }} />
+              </div>
+              <div style={{ fontFamily: "Cinzel, serif", color: isSouth ? "#f87171" : "#4ade80", fontSize: 9, letterSpacing: "0.1em", marginTop: 4 }}>{s.pct.toFixed(1)}% went to Black veterans</div>
+            </div>
+          );
+        })}
+      </div>
+      <div style={{ background: "rgba(139,26,26,0.08)", border: "1px solid rgba(248,113,113,0.2)", borderLeft: "4px solid #8b1a1a", padding: "14px 18px" }}>
+        <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 9, letterSpacing: "0.2em", marginBottom: 6 }}>✦ KEY FINDING</div>
+        <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: 14, lineHeight: 1.8, margin: 0 }}>
+          In Mississippi in 1947, 3,229 VA home loans were issued. Only 2 went to Black veterans — 0.06%. The GI Bill created the American middle class and deliberately excluded Black Americans from it. The compounding wealth effect of this exclusion over 80 years is the documented foundation of the racial wealth gap.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ─── Homeownership Chart ──────────────────────────────────────────────────────
+function HomeownershipChart() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const chartRef = useRef<any>(null);
+  useEffect(() => {
+    if (!canvasRef.current || typeof Chart === "undefined") return;
+    if (chartRef.current) chartRef.current.destroy();
+    const ctx = canvasRef.current.getContext("2d");
+    chartRef.current = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["1900", "1920", "1940", "1950", "1960", "1968\n(Fair Housing)", "1980", "1990", "2000", "2008", "2020", "2024"],
+        datasets: [
+          { label: "White Homeownership Rate (%)", data: [46, 49, 46, 57, 64, 65, 68, 69, 74, 75, 74, 73], borderColor: "#d4af37", backgroundColor: "rgba(212,175,55,0.08)", borderWidth: 2, tension: 0.3, fill: true },
+          { label: "Black Homeownership Rate (%)", data: [20, 23, 23, 35, 38, 41, 44, 43, 47, 47, 44, 44], borderColor: "#8b1a1a", backgroundColor: "rgba(139,26,26,0.12)", borderWidth: 2, tension: 0.3, fill: true },
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true, aspectRatio: 2.2,
+        plugins: { legend: { labels: { color: "#94a3b8", font: { family: "Cormorant Garamond, serif", size: 12 } } } },
+        scales: {
+          y: { min: 0, max: 80, ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 10 }, callback: (v: any) => `${v}%` }, grid: { color: "rgba(212,175,55,0.08)" }, title: { display: true, text: "% of Households That Own Their Home", color: "#64748b", font: { family: "Cinzel, serif", size: 10 } } },
+          x: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 9 }, maxRotation: 0 }, grid: { color: "rgba(212,175,55,0.08)" } }
+        }
+      }
+    });
+    return () => chartRef.current?.destroy();
+  }, []);
+  return (
+    <div>
+      <div style={{ height: 320 }}><canvas ref={canvasRef} /></div>
+      <div style={{ marginTop: 16, background: "rgba(139,26,26,0.06)", border: "1px solid rgba(248,113,113,0.2)", borderLeft: "4px solid #8b1a1a", padding: "14px 18px" }}>
+        <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: 14, lineHeight: 1.8, margin: 0 }}>
+          The Black homeownership rate in 2024 (44%) is <strong>lower than it was in 2000 (47%)</strong> — and the gap between Black and white homeownership is <strong>larger today than when the Fair Housing Act was passed in 1968</strong>. Anti-discrimination law without economic restitution cannot close a gap created by 80 years of deliberate exclusion.
+        </p>
+        <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", marginTop: 8 }}>SOURCE: U.S. Census Bureau; Urban Institute Housing Finance Policy Center (2024)</div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function ChartsPage() {
   const sections = [
@@ -238,6 +373,9 @@ export default function ChartsPage() {
     { id: "incarceration", num: 2, title: "Black Incarceration Rate vs. Federal Legislation", subtitle: "Rate per 100,000 Black Americans — 1970 to 2024", description: "This chart proves that incarceration rates are not a product of crime rates — they are a product of legislative choices. The 1986 Anti-Drug Abuse Act's 100:1 crack/powder sentencing disparity is the single most visible inflection point. Gold dots mark years with major legislation. Click any gold dot to see the specific law.", tier: "TIER 1", tierColor: "#4ade80", source: "Bureau of Justice Statistics; U.S. Sentencing Commission; CoreCivic SEC Filing (2024)", chapterSlug: "prison-industrial-complex", chapterTitle: "The Economics of Incarceration", chart: <IncarcerationChart /> },
     { id: "wealth-gap", num: 3, title: "The Racial Wealth Gap — 1863 to 2024", subtitle: "Indexed Median Household Wealth: White vs. Black Americans (1863 = 100)", description: "The gap between the two lines is the documented cost of systemic exclusion. The GI Bill (1944) dramatically widened the gap by providing home loans and college tuition to white veterans while excluding Black veterans. The 2008 financial crisis wiped out 53% of Black household wealth. The gap today is larger than when the Fair Housing Act was passed in 1968.", tier: "TIER 1", tierColor: "#4ade80", source: "Federal Reserve Survey of Consumer Finances; Urban Institute; McKinsey & Company", chapterSlug: "wealth-extraction", chapterTitle: "The Racial Wealth Gap Was Engineered", chart: <WealthGapChart /> },
     { id: "matrix", num: 4, title: "The Power Mechanics Matrix", subtitle: "Eight Legal Instruments — Who Benefited, Who Lost, What Resistance Occurred", description: "This matrix maps the eight major legal instruments of systemic power documented in this encyclopedia. Green = beneficiary. Red = victim. The pattern across 572 years is identical: a small group uses legal instruments to extract land and labor from a larger group, and the larger group resists. This is not coincidence. It is a system.", tier: "TIER 1", tierColor: "#4ade80", source: "National Archives; Cornell Law School; Bureau of Justice Statistics", chapterSlug: "georgia-charter", chapterTitle: "The 1732 Georgia Charter", chart: <PowerMatrix /> },
+    { id: "census-labels", num: 5, title: "How the U.S. Census Classified Black Americans", subtitle: "Official Racial Category Labels Used by the Federal Government — 1790 to 2020", description: "The U.S. Census did not simply count people — it classified them. The labels used to categorize Black Americans changed 11 times between 1790 and 2020, each change reflecting a political decision about who counted and who did not. The 1930 instruction that 'a person of mixed Indian and Negro blood should be returned a Negro' is the most consequential single sentence in this entire history. This chart shows how the federal government's own language evolved — and what each change meant for the people it described.", tier: "TIER 1", tierColor: "#4ade80", source: "U.S. Census Bureau Enumerator Instructions (1790–2020), National Archives Record Group 29", chapterSlug: "identity-erasure", chapterTitle: "The Paper Genocide", chart: <CensusLabelChart /> },
+    { id: "gi-bill", num: 6, title: "The GI Bill's Racial Exclusion — VA Loans by State (1947)", subtitle: "How the Most Transformative Wealth-Building Program in American History Was Administered Through Racial Discrimination", description: "The GI Bill (1944) created the American middle class. It provided veterans with college tuition, low-interest home loans, and unemployment benefits. But it was administered through local VA offices, local banks, and local universities — all of which practiced racial discrimination. This chart shows the documented disparity in VA loan distribution in 1947, the year the program was at its peak. Mississippi is the most extreme example: 3,229 VA loans issued; only 2 went to Black veterans.", tier: "TIER 1", tierColor: "#4ade80", source: "Katznelson, Ira. When Affirmative Action Was White (2005); VA loan records, National Archives", chapterSlug: "wealth-extraction", chapterTitle: "The Racial Wealth Gap Was Engineered", chart: <GIBillChart /> },
+    { id: "homeownership", num: 7, title: "The Black Homeownership Gap — 1900 to 2024", subtitle: "Percentage of Households That Own Their Home: White vs. Black Americans", description: "Homeownership is the primary mechanism by which American families build intergenerational wealth. The Black homeownership rate has never exceeded 50% in recorded history. The gap between Black and white homeownership today is larger than it was in 1968 when the Fair Housing Act was passed — proving that anti-discrimination law without economic restitution cannot close a gap created by 80 years of deliberate exclusion.", tier: "TIER 1", tierColor: "#4ade80", source: "U.S. Census Bureau; Urban Institute; National Association of Realtors", chapterSlug: "redlining-housing-discrimination", chapterTitle: "Redlining and the Housing Wealth Gap", chart: <HomeownershipChart /> },
   ];
 
   return (

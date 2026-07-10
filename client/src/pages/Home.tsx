@@ -238,7 +238,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
             {[
               { href: "/timeline", icon: Clock, title: "Master Timeline", desc: "572 years of documented history" },
-              { href: "/figures", icon: Users, title: "Figures of Resistance", desc: "8 portraits of resistance and legacy" },
+              { href: "/figures", icon: Users, title: "Figures of Resistance", desc: "45 figures across 572 years of history" },
               { href: "/charts", icon: BookMarked, title: "Charts & Data", desc: "7 interactive data visualizations" },
               { href: "/resources", icon: BookMarked, title: "Research Tools", desc: "Genealogy, archives, and advocacy" },
             ].map(({ href, icon: Icon, title, desc }) => (
