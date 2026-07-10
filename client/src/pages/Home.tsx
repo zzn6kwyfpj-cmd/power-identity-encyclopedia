@@ -123,7 +123,7 @@ export default function Home() {
               { value: "54", label: "Chapters" },
               { value: "572", label: "Years Documented" },
               { value: "90+", label: "Primary Sources" },
-              { value: "1452", label: "to 2024" },
+              { value: "850 CE", label: "to 2024" },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
                 <div style={{ fontFamily: "Cinzel, serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: "#d4af37", fontWeight: 700 }}>{value}</div>
@@ -216,8 +216,8 @@ export default function Home() {
         <div className="container" style={{ maxWidth: 1100 }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
             {[
-              { href: "/timeline", icon: Clock, title: "Master Timeline", desc: "572 years of documented history" },
-              { href: "/figures", icon: Users, title: "Figures of Resistance", desc: "45 figures across 572 years of history" },
+              { href: "/timeline", icon: Clock, title: "Master Timeline", desc: "1,100+ years of documented history" },
+              { href: "/figures", icon: Users, title: "Figures of Resistance", desc: "45 figures across 1,100+ years of history" },
               { href: "/charts", icon: BookMarked, title: "Charts & Data", desc: "7 interactive data visualizations" },
               { href: "/resources", icon: BookMarked, title: "Research Tools", desc: "Genealogy, archives, and advocacy" },
             ].map(({ href, icon: Icon, title, desc }) => (

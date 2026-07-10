@@ -27,7 +27,7 @@ export default function AboutPage() {
             </h2>
             <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.1rem", lineHeight: 2, maxWidth: 680, margin: "0 auto" }}>
               <p style={{ marginBottom: 20 }}>
-                The Archive Encyclopedia is a comprehensive, evidence-based educational resource documenting the unbroken chain of power, dispossession, and resistance that connects the Papal Bulls of 1452 to the present day. It covers 54 chapters across 572 years of American history — from the legal fictions of European colonialism, through the forced removal of Indigenous nations, the architecture of chattel slavery, the systematic erasure of Black and Native identity, and the ongoing struggle for sovereignty, recognition, and economic justice.
+                The Archive Encyclopedia is a comprehensive, evidence-based educational resource documenting the unbroken chain of power, dispossession, and resistance that begins with the pre-Columbian civilizations of 850 CE and extends to the present day. It covers 54 chapters across over 1,100 years of American history — from the legal fictions of European colonialism, through the forced removal of Indigenous nations, the architecture of chattel slavery, the systematic erasure of Black and Native identity, and the ongoing struggle for sovereignty, recognition, and economic justice.
               </p>
               <p style={{ marginBottom: 20 }}>
                 The purpose of this work is to document what happened, to whom, by whose authority, and with what consequences — using primary sources, court records, census data, peer-reviewed scholarship, and the documented words of the people who lived through it. This encyclopedia does not tell you what to think. It presents the evidence and allows the record to speak for itself.
@@ -42,7 +42,7 @@ export default function AboutPage() {
             <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 36, flexWrap: "wrap" }}>
               {[
                 { number: "54", label: "Chapters" },
-                { number: "572", label: "Years Documented" },
+                { number: "850 CE", label: "to 2024" },
                 { number: "90+", label: "Primary Sources" },
                 { number: "45", label: "Figures of Resistance" },
               ].map(({ number, label }) => (
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.4rem", marginBottom: 20, letterSpacing: "0.05em" }}>How to Use This Encyclopedia</h2>
             <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9 }}>
               <p style={{ marginBottom: 16 }}>
-                Each chapter is self-contained and can be read independently. The chapters are organized chronologically across five historical eras, from 1452 to 2024. Use the <strong style={{ color: "#e2e8f0" }}>Timeline</strong> to navigate by date, the <strong style={{ color: "#e2e8f0" }}>Search</strong> to find specific events, people, or legislation, and the <strong style={{ color: "#e2e8f0" }}>Figures</strong> gallery to explore the individuals documented throughout.
+                Each chapter is self-contained and can be read independently. The chapters are organized chronologically across five historical eras, from 850 CE to 2024. Use the <strong style={{ color: "#e2e8f0" }}>Timeline</strong> to navigate by date, the <strong style={{ color: "#e2e8f0" }}>Search</strong> to find specific events, people, or legislation, and the <strong style={{ color: "#e2e8f0" }}>Figures</strong> gallery to explore the individuals documented throughout.
               </p>
               <p style={{ marginBottom: 16 }}>
                 The <strong style={{ color: "#e2e8f0" }}>Georgia</strong> page provides a deep dive into the state that serves as the central geographic lens of this encyclopedia — connecting the Etowah Mounds, the 1732 Georgia Charter, the Indian Removal Act, and the modern city of Atlanta into a single documented narrative. The <strong style={{ color: "#e2e8f0" }}>Genealogy</strong> page provides step-by-step guidance for readers who want to research their own family history using the Freedmen's Bureau records, the Dawes Rolls, and other primary source archives.

@@ -142,7 +142,7 @@ export default function TimelinePage() {
             <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ APPENDIX B ✦</div>
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 12 }}>Master Chronological Timeline</h1>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 600, margin: "0 auto 8px" }}>
-              1452 to 2024 — an unbroken chain of causation. Every event connects to the next.
+              850 CE to 2024 — an unbroken chain of causation. Every event connects to the next.
             </p>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: "0.95rem" }}>
               {filteredEvents.length} of {enrichedEvents.length} events shown
