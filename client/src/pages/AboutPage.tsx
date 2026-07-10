@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { LightboxImage } from "@/components/Lightbox";
 import { AudioPlayer } from "@/components/AudioPlayer";
 
 export default function AboutPage() {
@@ -9,33 +8,38 @@ export default function AboutPage() {
       <Navigation />
       <section style={{ paddingTop: 100, paddingBottom: 80 }}>
         <div className="container" style={{ maxWidth: 800 }}>
-          <div className="text-center" style={{ marginBottom: 60 }}>
+
+          {/* Page Header */}
+          <div className="text-center" style={{ marginBottom: 56 }}>
             <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ ABOUT THIS WORK ✦</div>
-            <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 16 }}>About This Encyclopedia</h1>
+            <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 16 }}>About The Archive Encyclopedia</h1>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 560, margin: "0 auto" }}>
+              American Records of Contested History, Identity, and Verified Evidence
+            </p>
           </div>
 
-          {/* Synopsis & Purpose */}
+          {/* Synopsis */}
           <div style={{ background: "linear-gradient(135deg, #0f1923 0%, #111d2b 100%)", border: "1px solid rgba(212,175,55,0.3)", padding: "40px 48px", marginBottom: 40 }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", marginBottom: 20, textAlign: "center" }}>✦ SYNOPSIS ✦</div>
-            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)", marginBottom: 24, textAlign: "center", lineHeight: 1.4 }}>
+            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)", marginBottom: 28, textAlign: "center", lineHeight: 1.5 }}>
               Power, Identity, and Contested Origins:<br />
-              <span style={{ color: "#e2e8f0", fontSize: "0.85em" }}>A History of America's Suppressed Truths</span>
+              <span style={{ color: "#e2e8f0", fontSize: "0.85em", fontStyle: "normal" }}>A History of America's Suppressed Truths</span>
             </h2>
-            <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.15rem", lineHeight: 2, maxWidth: 680, margin: "0 auto" }}>
+            <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.1rem", lineHeight: 2, maxWidth: 680, margin: "0 auto" }}>
               <p style={{ marginBottom: 20 }}>
                 The Archive Encyclopedia is a comprehensive, evidence-based educational resource documenting the unbroken chain of power, dispossession, and resistance that connects the Papal Bulls of 1452 to the present day. It covers 54 chapters across 572 years of American history — from the legal fictions of European colonialism, through the forced removal of Indigenous nations, the architecture of chattel slavery, the systematic erasure of Black and Native identity, and the ongoing struggle for sovereignty, recognition, and economic justice.
               </p>
               <p style={{ marginBottom: 20 }}>
-                The purpose of this work is straightforward: to document what happened, to whom, by whose authority, and with what consequences — using primary sources, court records, census data, peer-reviewed scholarship, and the words of the people who lived through it. This encyclopedia does not tell you what to think. It presents the evidence and allows the record to speak for itself.
+                The purpose of this work is to document what happened, to whom, by whose authority, and with what consequences — using primary sources, court records, census data, peer-reviewed scholarship, and the documented words of the people who lived through it. This encyclopedia does not tell you what to think. It presents the evidence and allows the record to speak for itself.
               </p>
               <p style={{ marginBottom: 20 }}>
-                Every claim in this encyclopedia is labeled by evidence tier. Tier 1 sources are primary documents — National Archives records, Supreme Court rulings, federal census instructions, and peer-reviewed research. Tier 2 sources are rigorous scholarly analysis. Tier 3 sources are community historical traditions and reclamation narratives, included for their cultural significance and clearly labeled as such. The distinction matters. Truth requires precision.
+                The events documented here are not matters of opinion; they are matters of record. The connections between them are not conspiracy; they are chronology. The racial wealth gap, the mass incarceration crisis, the ongoing dispossession of Indigenous land — these are the documented mathematical results of specific legal instruments, specific enforcement decisions, and specific economic policies that can be traced, named, and cited.
               </p>
               <p>
-                This encyclopedia was built for the student who cannot find their family in the official record. For the researcher who suspects the story they were taught is incomplete. For the community organizer who needs the documented evidence to make the argument. For the child who grows up in a place like Cartersville, Georgia, looks at ancient mounds, and wonders: <em>who built these, and am I connected to them?</em> The answer may not be simple. But the question deserves a serious, honest, and thoroughly documented response.
+                This encyclopedia was built for the student who cannot find their family in the official record. For the researcher who suspects the story they were taught is incomplete. For the community organizer who needs the documented evidence to make the argument. For anyone who wants to understand how the America we live in today was built, and by whom.
               </p>
             </div>
-            <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 32, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 36, flexWrap: "wrap" }}>
               {[
                 { number: "54", label: "Chapters" },
                 { number: "572", label: "Years Documented" },
@@ -50,70 +54,34 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Primary Dedication */}
-          <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "32px 40px", marginBottom: 24, textAlign: "center" }}>
-            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.3em", marginBottom: 16 }}>DEDICATION</div>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", color: "#e2e8f0", fontSize: "1.2rem", lineHeight: 1.8, marginBottom: 16 }}>
-              "Dedicated to my family, friends, and loved ones. I just wanted to make everyone proud."
-            </p>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, marginBottom: 12 }}>
-              And in loving memory of Luka Strickland — my grandmother, a Native American. Your blood, your land, and your truth are on every page of this work. This is for you, and for every generation that comes after.
-            </p>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, marginBottom: 16 }}>
-              In loving memory of <strong style={{ color: "#e2e8f0" }}>Carolyn Strickland</strong> and <strong style={{ color: "#e2e8f0" }}>Pauline Pasley</strong> — whose lives, whose love, and whose loss shaped everything that followed.
-            </p>
-            <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 12, letterSpacing: "0.1em" }}>— LaDarious Strickland, July 2026</p>
-          </div>
-
-          {/* Second Dedication — To Those Who Came Before */}
-          <div style={{ background: "#0f1923", border: "1px solid rgba(139,26,26,0.4)", borderLeft: "4px solid #8b1a1a", padding: "32px 40px", marginBottom: 40 }}>
-            <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 11, letterSpacing: "0.3em", marginBottom: 20, textAlign: "center" }}>AND TO THOSE WHO CAME BEFORE US</div>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", color: "#94a3b8", fontSize: "1rem", lineHeight: 2, marginBottom: 0 }}>
-              And to those who came before me attempting to tell this story:
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 12 }}>
-              {[
-                { name: "Ida B. Wells", desc: "who turned the light of truth on terror." },
-                { name: "Angela Y. Walton-Raji", desc: "who preserved the tools to find ourselves." },
-                { name: "Dr. Claud Anderson", desc: "who built the blueprint for what was taken." },
-                { name: "Verdiacee Washitaw-Turner Goston El-Bey", desc: "who asserted sovereignty when they said there was none left." },
-                { name: "Redbird Smith", desc: "who refused to let the spirit die." },
-              ].map(({ name, desc }) => (
-                <p key={name} style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>
-                  To <strong style={{ color: "#e2e8f0" }}>{name}</strong>, {desc}
-                </p>
-              ))}
-              <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", color: "#64748b", fontSize: "0.95rem", lineHeight: 1.8, marginTop: 8 }}>
-                And to every unnamed ancestor who carried this history in their body when no document would carry it for them.
+          {/* How to Use This Encyclopedia */}
+          <div style={{ marginBottom: 40 }}>
+            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.4rem", marginBottom: 20, letterSpacing: "0.05em" }}>How to Use This Encyclopedia</h2>
+            <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9 }}>
+              <p style={{ marginBottom: 16 }}>
+                Each chapter is self-contained and can be read independently. The chapters are organized chronologically across five historical eras, from 1452 to 2024. Use the <strong style={{ color: "#e2e8f0" }}>Timeline</strong> to navigate by date, the <strong style={{ color: "#e2e8f0" }}>Search</strong> to find specific events, people, or legislation, and the <strong style={{ color: "#e2e8f0" }}>Figures</strong> gallery to explore the individuals documented throughout.
+              </p>
+              <p style={{ marginBottom: 16 }}>
+                The <strong style={{ color: "#e2e8f0" }}>Georgia</strong> page provides a deep dive into the state that serves as the central geographic lens of this encyclopedia — connecting the Etowah Mounds, the 1732 Georgia Charter, the Indian Removal Act, and the modern city of Atlanta into a single documented narrative. The <strong style={{ color: "#e2e8f0" }}>Genealogy</strong> page provides step-by-step guidance for readers who want to research their own family history using the Freedmen's Bureau records, the Dawes Rolls, and other primary source archives.
+              </p>
+              <p>
+                Every claim in this encyclopedia is labeled by evidence tier. Look for the colored badge on each chapter and each chart to understand the evidentiary basis for what you are reading.
               </p>
             </div>
           </div>
 
-          {/* About the Work */}
-          <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.1rem", lineHeight: 1.9, marginBottom: 40 }}>
-            <p style={{ marginBottom: 20 }}>
-              This encyclopedia was created for a very specific reason: the true history of America is rarely told in full, and the history of my own bloodline has been systematically obscured. I created this for my family, friends, and loved ones — to make everyone proud. And I created it in honor of my grandmother, Luka Strickland, a Native American, whose life and lineage represent the suppressed truths that this document brings to light.
-            </p>
-            <p style={{ marginBottom: 20 }}>
-              This manuscript does not tell you what to think. It presents documented history — primary sources, court rulings, census records, and peer-reviewed scholarship — and allows the evidence to speak for itself. The events documented here are not matters of opinion; they are matters of record. The connections between them are not conspiracy; they are chronology.
-            </p>
-            <p>
-              I offer this as an educational resource for anyone who wants to understand how the America we live in today was built, and by whom. The rest — what you do with this knowledge — belongs to you.
-            </p>
-          </div>
-
-          {/* Evidence Tiers */}
+          {/* Evidence Tier System */}
           <div style={{ marginBottom: 40 }}>
-            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.5rem", marginBottom: 24 }}>Evidence Tier System</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.4rem", marginBottom: 20, letterSpacing: "0.05em" }}>Evidence Tier System</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
-                { tier: 1, color: "#4ade80", label: "Tier 1 — Primary Source", desc: "National Archives documents, court rulings, peer-reviewed archaeological and genetic studies, census records, and other verifiable primary sources." },
-                { tier: 2, color: "#d4af37", label: "Tier 2 — Scholarly Analysis", desc: "Peer-reviewed academic works, Pulitzer Prize-winning journalism, and rigorous historical synthesis that draws on primary sources." },
-                { tier: 3, color: "#f87171", label: "Tier 3 — Community Historical Tradition", desc: "Alternative reclamation narratives and community oral traditions. Included for their cultural and psychological significance, clearly labeled to distinguish them from primary source evidence." },
+                { tier: 1, color: "#4ade80", label: "Tier 1 — Primary Source", desc: "National Archives documents, Supreme Court rulings, peer-reviewed archaeological and genetic studies, federal census records, congressional testimony, and other verifiable primary sources. These are the foundation of every argument in this encyclopedia." },
+                { tier: 2, color: "#d4af37", label: "Tier 2 — Scholarly Analysis", desc: "Peer-reviewed academic works, Pulitzer Prize-winning journalism, and rigorous historical synthesis that draws on primary sources. These sources interpret and contextualize the primary record." },
+                { tier: 3, color: "#f87171", label: "Tier 3 — Community Historical Tradition", desc: "Alternative reclamation narratives and community oral traditions. Included for their cultural and psychological significance and clearly labeled to distinguish them from primary source evidence. The distinction matters. Truth requires precision." },
               ].map(({ tier, color, label, desc }) => (
                 <div key={tier} style={{ background: "#0f1923", padding: "20px 24px", borderLeft: `4px solid ${color}` }}>
-                  <div style={{ fontFamily: "Cinzel, serif", color, fontSize: 11, letterSpacing: "0.15em", marginBottom: 8 }}>{label}</div>
-                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.7 }}>{desc}</p>
+                  <div style={{ fontFamily: "Cinzel, serif", color, fontSize: 10, letterSpacing: "0.15em", marginBottom: 8 }}>{label}</div>
+                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>{desc}</p>
                 </div>
               ))}
             </div>
@@ -121,134 +89,45 @@ export default function AboutPage() {
 
           {/* Enlightened Perspective */}
           <div style={{ marginBottom: 40 }}>
-            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.5rem", marginBottom: 24 }}>Afterword: The Enlightened Perspective</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.4rem", marginBottom: 20, letterSpacing: "0.05em" }}>Afterword: The Systemic Question</h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
                 {
-                  label: "The Single Most Important Truth",
-                  text: "The system of oppression documented here was not a failure of American ideals — it was the precise, mathematical execution of its economic design. The poverty of Black and Indigenous communities is not a symptom of their inadequacy; it is the required fuel for the engine of American capitalism. The system is not broken; it is operating exactly as engineered."
+                  label: "The Central Finding",
+                  text: "The evidence assembled in this encyclopedia demonstrates that the racial wealth gap, the mass incarceration crisis, and the ongoing dispossession of Indigenous land are not the products of cultural failure or individual circumstance. They are the documented mathematical results of specific legal instruments — the 13th Amendment's 'except as punishment for crime' clause, the HOLC redlining maps, the 1930 Census enumerator instructions, the Dawes Act allotment system — that can be traced, named, and cited."
                 },
                 {
-                  label: "The Single Most Important Action",
-                  text: "The most critical action a reader can take is to reject the psychological conditioning of the 'ward of the state' mentality. Action begins with internal decolonization — recognizing that the labels, the statistics, and the entertainment industry are all mechanisms designed to suppress sovereign consciousness. Reclaiming one's genealogy, practicing group economics, and building autonomous institutions are not just political acts; they are spiritual imperatives."
-                },
-                {
-                  label: "The Unasked Question",
-                  text: "The question that no academic institution has yet been willing to formally ask is this: If the legal and economic architecture of the United States was built entirely upon the non-consensual extraction of land and labor, at what point does the accumulated debt exceed the total value of the nation itself? And if that point has already been passed, what is the mathematical formula for a truly just society?"
-                },
-                {
-                  label: "The Systemic Question",
+                  label: "The Unanswered Question",
                   text: "The evidence assembled in this encyclopedia raises a question that each reader must answer for themselves: whether the consistency, precision, and durability of this system across five centuries represents the accumulated effect of individual self-interest, or something more deliberately organized. The primary sources do not answer that question. They simply make it impossible to avoid asking."
+                },
+                {
+                  label: "The Scholarly Disclaimer",
+                  text: "This encyclopedia is an educational synthesis, not a peer-reviewed academic paper. It is grounded in peer-reviewed evidence and primary source documentation, but it represents the editorial judgment of its author in selecting, organizing, and contextualizing that evidence. Readers are encouraged to follow the citations, access the primary sources directly, and form their own conclusions."
                 },
               ].map(({ label, text }) => (
                 <div key={label} style={{ background: "#0f1923", borderLeft: "4px solid #8b1a1a", padding: "20px 24px" }}>
-                  <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.15em", marginBottom: 10 }}>{label}</div>
-                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.05rem", lineHeight: 1.8, margin: 0 }}>{text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Origin Story */}
-          <div style={{ marginBottom: 32, background: "#0f1923", borderLeft: "4px solid rgba(212,175,55,0.3)", overflow: "hidden" }}>
-            <div style={{ height: 220, overflow: "hidden", position: "relative" }}>
-              <LightboxImage
-                src="/manus-storage/scene_etowah_cartersville_1a3a3dd4.png"
-                alt="The Etowah Mounds, Cartersville, Georgia"
-                caption="The Etowah Mounds, Cartersville, Georgia — one of the most significant ancient Mississippian ceremonial sites in North America. This is where the question began."
-              />
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top, #0f1923, transparent)", height: 80 }} />
-            </div>
-            <div style={{ padding: "24px 32px" }}>
-            <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 20 }}>WHERE THIS BEGAN</div>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
-              I am originally from Kingston, Georgia. When I was five years old, my house burned down. In that fire, I lost my grandmother Carolyn Strickland and her mother Pauline Pasley. My family had nothing. We moved to Cartersville, Georgia — into the housing projects. We got our clothes from the Salvation Army. My mother raised me and my three sisters alone, with no house, no financial support, and no safety net. And she made it. We made it.
-            </p>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
-              Growing up in Cartersville, I used to look at the Etowah Mounds — one of the most significant ancient Mississippian ceremonial sites in North America — and wonder: is there a connection between myself and the people who built them? I never had an answer. I still don’t. But that question never left me.
-            </p>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
-              That question is why this encyclopedia begins where it does — with the Etowah Mounds, with the 1732 Georgia Charter that described the land as “waste and desolate,” with the Creek and Cherokee nations who were removed from that same land, with the Dawes Rolls that erased the identity of thousands of mixed Black-Indigenous people, and with the 1930 Census instructions that classified them as Negro by default.
-            </p>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 16 }}>
-              This encyclopedia was not built in a university. It was not funded by a grant. It was built by the firstborn son on both sides of his family, who grew up without a house, who learned along the way, who paid attention, and who refused to accept that the story he was given was the whole story. I am a DJ by craft — known in my community for music, for making people move, for making people smile. This is the other side of that same person. Because you can command a crowd and command a library. You can make people feel something and make people think something. Both matter.
-            </p>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.05rem", lineHeight: 1.9, marginBottom: 0 }}>
-              I may never know if I am descended from the people who built those mounds. But I have built something that I hope will help someone else get closer to their own answer. If this encyclopedia helps one person understand their history, one researcher find a primary source they were looking for, or one child who grew up the way I grew up see themselves as capable, confident, and connected to something ancient and powerful — then every hour of work was worth it.
-            </p>
-            <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.1em", marginTop: 16 }}>
-              — LaDarious Strickland, Kingston & Cartersville, Georgia, July 2026
-            </p>
-
-            {/* The Passing of the Torch Portrait */}
-            <div style={{ marginTop: 32, display: "flex", gap: 24, alignItems: "flex-start", flexWrap: "wrap" }}>
-              <div style={{ flexShrink: 0, width: 220 }}>
-                <div style={{ border: "2px solid rgba(212,175,55,0.4)", overflow: "hidden", boxShadow: "0 0 40px rgba(212,175,55,0.1)" }}>
-                  <img
-                    src="/manus-storage/portrait_ladarious_torch_1b7e1366.png"
-                    alt="LaDarious Strickland — The Passing of the Torch"
-                    style={{ width: "100%", display: "block", cursor: "zoom-in" }}
-                    onClick={() => {
-                      const overlay = document.createElement('div');
-                      overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(5,11,16,0.97);display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
-                      const img = document.createElement('img');
-                      img.src = '/manus-storage/portrait_ladarious_torch_1b7e1366.png';
-                      img.style.cssText = 'max-width:90vw;max-height:90vh;object-fit:contain;border:1px solid rgba(212,175,55,0.2);';
-                      overlay.appendChild(img);
-                      overlay.onclick = () => document.body.removeChild(overlay);
-                      document.body.appendChild(overlay);
-                    }}
-                  />
-                </div>
-                <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", marginTop: 8, textAlign: "center" }}>
-                  THE PASSING OF THE TORCH
-                </div>
-              </div>
-              <div style={{ flex: 1, minWidth: 200 }}>
-                <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 12, letterSpacing: "0.1em", marginBottom: 12 }}>LADARIOUS STRICKLAND</div>
-                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "0.95rem", lineHeight: 1.8 }}>
-                  Author of The Archive Encyclopedia. First born son of Kingston, Georgia. Raised in Cartersville. Scholar. DJ Castronovaa. The legacy continues.
-                </p>
-              </div>
-            </div>
-            </div>
-          </div>
-
-          {/* Project Scope */}
-          <div style={{ marginBottom: 32, padding: "24px 32px", background: "rgba(212,175,55,0.03)", border: "1px solid rgba(212,175,55,0.1)" }}>
-            <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 16 }}>THE SCOPE OF THIS WORK</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16 }}>
-              {[
-                { number: "54", label: "Chapters" },
-                { number: "57", label: "Timeline Events" },
-                { number: "90+", label: "Primary Source Citations" },
-                { number: "45", label: "Figures of Resistance" },
-                { number: "572", label: "Years Documented" },
-                { number: "40+", label: "Hours of Research" },
-              ].map(({ number, label }) => (
-                <div key={label} style={{ textAlign: "center" }}>
-                  <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.5rem", fontWeight: 700 }}>{number}</div>
-                  <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase" }}>{label}</div>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 10, letterSpacing: "0.15em", marginBottom: 10 }}>{label}</div>
+                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>{text}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Audio Section */}
-          <div style={{ marginBottom: 32 }}>
-            <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 16 }}>AUDIO — SPOKEN INTRODUCTION & THEMATIC MUSIC</div>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 13, lineHeight: 1.7, marginBottom: 20 }}>
-              Upload a spoken introduction or a thematic background track to accompany this page. Audio files can be added by updating the <code style={{ color: "#d4af37", fontSize: 11 }}>src</code> prop in the AudioPlayer component with a public URL to your audio file.
+          <div style={{ marginBottom: 40 }}>
+            <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.4rem", marginBottom: 8, letterSpacing: "0.05em" }}>Audio Introduction</h2>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: "1rem", lineHeight: 1.7, marginBottom: 20 }}>
+              A spoken introduction and thematic background track will be available here.
             </p>
             <AudioPlayer
               title="Spoken Introduction"
-              subtitle="A personal introduction from LaDarious Strickland"
+              subtitle="An introduction to The Archive Encyclopedia"
               type="spoken"
               placeholder={true}
             />
             <AudioPlayer
               title="Thematic Background Track"
-              subtitle="Music to accompany your reading of The Archive Encyclopedia"
+              subtitle="Music to accompany your reading"
               type="music"
               placeholder={true}
             />
@@ -258,9 +137,10 @@ export default function AboutPage() {
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", padding: "24px", textAlign: "center" }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 12 }}>COPYRIGHT & FAIR USE</div>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "0.95rem", lineHeight: 1.7 }}>
-              © 2026 LaDarious Strickland. All rights reserved. This work is protected under copyright law. Scholarly sources are cited under the Fair Use doctrine (17 U.S.C. § 107) for educational and research purposes. All primary source documents are in the public domain.
+              © 2026 LaDarious Strickland. All rights reserved. This work is protected under copyright law (U.S. Copyright Office Registration, July 2026). Scholarly sources are cited under the Fair Use doctrine (17 U.S.C. § 107) for educational and research purposes. All primary source documents cited are in the public domain.
             </p>
           </div>
+
         </div>
       </section>
       <Footer />
