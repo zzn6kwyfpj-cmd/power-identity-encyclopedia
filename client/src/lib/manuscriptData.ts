@@ -525,8 +525,9 @@ export const FIGURES: Figure[] = [
 ];
 
 export const TIMELINE_EVENTS = [
-  { year: 1452, event: "Papal Bull Dum Diversas authorizes Portuguese enslavement of non-Christians", era: 1 },
-  { year: 1493, event: "Columbus's second voyage establishes the Doctrine of Discovery", era: 1 },
+  { year: 1452, event: "Papal Bull Dum Diversas authorizes Portuguese enslavement of non-Christians — the legal foundation of the Doctrine of Discovery", era: 1 },
+  { year: 1492, event: "Columbus's first voyage: makes landfall October 12 on Guanahani (Bahamas); his own journal records 'with fifty men they can all be subjugated' — the Doctrine of Discovery in plain language", era: 1 },
+  { year: 1493, event: "Columbus's second voyage: 17 ships, 1,500 men; establishes the encomienda forced labor system; initiates the first transatlantic slave trade by shipping enslaved Taíno people to Spain", era: 1 },
   { year: 1619, event: "First enslaved Africans arrive in Virginia", era: 1 },
   { year: 1732, event: "Georgia Charter describes Indigenous lands as 'waste and desolate'", era: 1 },
   { year: 1776, event: "Declaration of Independence — freedom declared, slavery maintained", era: 1 },
