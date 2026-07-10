@@ -128,7 +128,7 @@ export default function SearchPage() {
             <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ FULL-TEXT SEARCH ✦</div>
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", marginBottom: 12 }}>Search The Archive</h1>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 600, margin: "0 auto" }}>
-              Search across all 51 chapters, primary source citations, key facts, and historical records.
+              Search across all 54 chapters, primary source citations, key facts, and historical records.
             </p>
           </div>
 

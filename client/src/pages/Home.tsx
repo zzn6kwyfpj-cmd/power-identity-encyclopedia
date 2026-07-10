@@ -141,7 +141,7 @@ export default function Home() {
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "clamp(24px, 5vw, 60px)", flexWrap: "wrap", marginBottom: 48 }}>
             {[
-              { value: "51", label: "Chapters" },
+              { value: "54", label: "Chapters" },
               { value: "572", label: "Years Documented" },
               { value: "90+", label: "Primary Sources" },
               { value: "1452", label: "to 2024" },
@@ -273,7 +273,7 @@ export default function Home() {
               ✦ BROWSE THE ENCYCLOPEDIA ✦
             </div>
             <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", marginBottom: 16 }}>
-              All 51 Chapters
+              All 54 Chapters
             </h2>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 600, margin: "0 auto" }}>
               From the Papal Bulls of 1452 to the Emmett Till Antilynching Act of 2022 — an unbroken chain of causation.
@@ -289,7 +289,7 @@ export default function Home() {
                 <Search size={20} style={{ position: "absolute", left: 20, top: "50%", transform: "translateY(-50%)", color: "#64748b", pointerEvents: "none" }} />
                 <input
                   type="text"
-                  placeholder="Search all 51 chapters — events, people, laws, dates, places..."
+                  placeholder="Search all 54 chapters — events, people, laws, dates, places..."
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   onKeyDown={e => { if (e.key === "Enter" && searchQuery.trim()) window.location.href = `/search`; }}
