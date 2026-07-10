@@ -280,28 +280,52 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Search and Filter */}
-          <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-            <div style={{ position: "relative", flex: 1, minWidth: 200 }}>
-              <Search size={16} style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "#64748b" }} />
-              <input
-                type="text"
-                placeholder="Search chapters..."
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-                style={{
-                  width: "100%",
-                  background: "#0f1923",
-                  border: "1px solid rgba(212,175,55,0.2)",
-                  color: "#e2e8f0",
-                  padding: "10px 14px 10px 40px",
-                  fontFamily: "Cormorant Garamond, serif",
-                  fontSize: 15,
-                  outline: "none",
-                }}
-              />
+          {/* Global Search Bar */}
+          <div style={{ marginBottom: 32 }}>
+            <Link href="/search">
+              <div style={{ position: "relative", cursor: "pointer" }}
+                onClick={e => { e.preventDefault(); window.location.href = "/search"; }}
+              >
+                <Search size={20} style={{ position: "absolute", left: 20, top: "50%", transform: "translateY(-50%)", color: "#64748b", pointerEvents: "none" }} />
+                <input
+                  type="text"
+                  placeholder="Search all 51 chapters — events, people, laws, dates, places..."
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                  onKeyDown={e => { if (e.key === "Enter" && searchQuery.trim()) window.location.href = `/search`; }}
+                  style={{
+                    width: "100%",
+                    background: "#0f1923",
+                    border: "2px solid rgba(212,175,55,0.35)",
+                    color: "#e2e8f0",
+                    padding: "16px 140px 16px 52px",
+                    fontFamily: "Cormorant Garamond, serif",
+                    fontSize: 17,
+                    outline: "none",
+                    boxSizing: "border-box",
+                    cursor: "text",
+                  }}
+                />
+                <Link href={`/search${searchQuery ? `?q=${encodeURIComponent(searchQuery)}` : ""}`}>
+                  <div style={{ position: "absolute", right: 8, top: "50%", transform: "translateY(-50%)", background: "#d4af37", color: "#0a1118", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.15em", padding: "8px 16px", cursor: "pointer", display: "flex", alignItems: "center", gap: 6 }}>
+                    <Search size={12} />
+                    SEARCH
+                  </div>
+                </Link>
+              </div>
+            </Link>
+            <div style={{ display: "flex", gap: 8, marginTop: 10, flexWrap: "wrap", alignItems: "center" }}>
+              <span style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em" }}>TRY:</span>
+              {["Georgia Charter", "Trail of Tears", "COINTELPRO", "Tuskegee", "Motown", "McGirt v. Oklahoma"].map(term => (
+                <Link key={term} href="/search">
+                  <span onClick={() => setSearchQuery(term)} style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, cursor: "pointer", textDecoration: "underline", textDecorationColor: "rgba(212,175,55,0.3)" }}>{term}</span>
+                </Link>
+              ))}
             </div>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          </div>
+
+          {/* Era Filter */}
+          <div style={{ display: "flex", gap: 8, marginBottom: 32, flexWrap: "wrap" }}>
               <button
                 onClick={() => setSelectedEra(null)}
                 style={{
@@ -335,7 +359,6 @@ export default function Home() {
                   ERA {["I","II","III","IV","V"][i]}
                 </button>
               ))}
-            </div>
           </div>
 
           {/* Chapter Grid */}
