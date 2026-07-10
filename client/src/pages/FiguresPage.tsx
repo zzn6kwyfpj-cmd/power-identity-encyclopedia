@@ -8,7 +8,7 @@ import { Search } from "lucide-react";
 // Era classification by approximate years
 function getEra(years: string): string {
   const startYear = parseInt(years.replace("c.", "").split("–")[0].split("–")[0]);
-  if (startYear < 1800) return "Era I: Colonial & Revolutionary (1452–1800)";
+  if (startYear < 1800) return "Era I: Pre-Columbian & Imperial Origins (850 CE–1732)";
   if (startYear < 1877) return "Era II: Slavery & Removal (1800–1877)";
   if (startYear < 1930) return "Era III: Jim Crow & Allotment (1877–1930)";
   if (startYear < 1970) return "Era IV: Civil Rights & Resistance (1930–1970)";
@@ -16,7 +16,7 @@ function getEra(years: string): string {
 }
 
 const ERA_COLORS: Record<string, string> = {
-  "Era I: Colonial & Revolutionary (1452–1800)": "#8b1a1a",
+  "Era I: Pre-Columbian & Imperial Origins (850 CE–1732)": "#8b1a1a",
   "Era II: Slavery & Removal (1800–1877)": "#d4af37",
   "Era III: Jim Crow & Allotment (1877–1930)": "#2d6a4f",
   "Era IV: Civil Rights & Resistance (1930–1970)": "#6b3fa0",
@@ -56,7 +56,7 @@ export default function FiguresPage() {
             <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ APPENDIX A ✦</div>
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 16 }}>Figures of Resistance and Legacy</h1>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 700, margin: "0 auto 12px" }}>
-              Across 572 years of documented history, these individuals did not merely survive the system documented in this encyclopedia. They resisted it, documented it, and built the intellectual and moral architecture that makes liberation possible.
+              Across 1,100+ years of documented history, these individuals did not merely survive the system documented in this encyclopedia. They resisted it, documented it, and built the intellectual and moral architecture that makes liberation possible.
             </p>
             <p style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 10, letterSpacing: "0.2em" }}>
               {filteredFigures.length} OF {FIGURES.length} FIGURES SHOWN

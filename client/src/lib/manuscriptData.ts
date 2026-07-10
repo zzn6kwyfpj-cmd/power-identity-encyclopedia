@@ -23,7 +23,7 @@ export interface Figure {
 }
 
 export const ERAS = [
-  { id: 1, name: "Era I: Imperial Origins (1452–1732)", color: "#8b1a1a" },
+  { id: 1, name: "Era I: Pre-Columbian & Imperial Origins (850 CE–1732)", color: "#8b1a1a" },
   { id: 2, name: "Era II: Dispossession & Erasure (1783–1900)", color: "#d4af37" },
   { id: 3, name: "Era III: Economic Extraction (1862–1945)", color: "#2d6a4f" },
   { id: 4, name: "Era IV: Psychological Warfare (1865–1972)", color: "#6b3fa0" },

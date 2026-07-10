@@ -32,7 +32,7 @@ const TOPIC_FILTERS = [
 
 const ERA_FILTERS = [
   { id: "all", label: "All Eras" },
-  { id: "Era I", label: "Era I: 1452–1800" },
+  { id: "Era I", label: "Era I: 850 CE–1732" },
   { id: "Era II", label: "Era II: 1800–1877" },
   { id: "Era III", label: "Era III: 1877–1930" },
   { id: "Era IV", label: "Era IV: 1930–1970" },
