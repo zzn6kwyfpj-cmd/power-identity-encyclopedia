@@ -439,7 +439,16 @@ export const CHAPTERS: Chapter[] = [
     image: "/manus-storage/scene_george_floyd_act_efd5f198.png",
   },
   {
-    id: 36, slug: "middle-passage", title: "The Middle Passage",
+    id: 36, slug: "medical-apartheid", title: "Medical Apartheid",
+    subtitle: "400 Years of Medical Experimentation on Black Americans — From J. Marion Sims to Tuskegee to COVID-19",
+    era: "Era II", eraColor: "#d4af37",
+    summary: "Between 1845 and 1849, J. Marion Sims performed 30 experimental surgeries on an enslaved woman named Anarcha without anesthesia. He became the 'father of modern gynecology.' Harriet Washington's 2006 book 'Medical Apartheid' documents a continuous 400-year history of medical exploitation of Black Americans — from colonial times to the Tuskegee Study to modern racial disparities in pain treatment.",
+    tier: 1,
+    keyFact: "The Tuskegee Syphilis Study (1932–1972) deliberately withheld penicillin from 399 Black men with syphilis after it became the standard cure in 1947. 28 men died directly from syphilis. 100 died from related complications. 40 wives were infected. 19 children were born with congenital syphilis.",
+    primarySource: "Washington, Harriet A. Medical Apartheid (2006); Centers for Disease Control, The Tuskegee Timeline; Hoffman et al., Proceedings of the National Academy of Sciences (2016)",
+  },
+  {
+    id: 37, slug: "middle-passage", title: "The Middle Passage",
     subtitle: "The Foundational Trauma — 12.5 Million Embarked, 2 Million Dead",
     era: "Era I", eraColor: "#8b1a1a",
     summary: "The transatlantic slave trade was the largest forced migration in human history. Between 1500 and 1900, approximately 12.5 million people were forcibly embarked from West and Central Africa. Nearly two million died during the crossing. The psychological and cultural erasure that began on the slave ships continued through the plantation system, the Black Codes, the Dawes Rolls, and the 1930 Census.",

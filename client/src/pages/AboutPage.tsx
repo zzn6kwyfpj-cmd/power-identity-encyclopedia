@@ -183,7 +183,7 @@ export default function AboutPage() {
             <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.3em", marginBottom: 16 }}>THE SCOPE OF THIS WORK</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 16 }}>
               {[
-                { number: "50", label: "Chapters" },
+                { number: "51", label: "Chapters" },
                 { number: "57", label: "Timeline Events" },
                 { number: "90+", label: "Primary Source Citations" },
                 { number: "45", label: "Figures of Resistance" },

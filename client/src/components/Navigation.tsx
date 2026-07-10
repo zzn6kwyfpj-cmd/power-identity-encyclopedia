@@ -12,13 +12,16 @@ export default function Navigation() {
     { href: "/timeline", label: "Timeline", icon: Clock },
     { href: "/figures", label: "Figures", icon: Users },
     { href: "/charts", label: "Charts", icon: BookMarked },
-    { href: "/map", label: "Map", icon: BookMarked },
-    { href: "/georgia", label: "Georgia", icon: BookMarked },
-    { href: "/glossary", label: "Glossary", icon: BookMarked },
-    { href: "/genealogy", label: "Genealogy", icon: BookMarked },
-    { href: "/bibliography", label: "Sources", icon: BookMarked },
-    { href: "/resources", label: "Resources", icon: BookMarked },
     { href: "/about", label: "About", icon: Info },
+  ];
+
+  const moreLinks = [
+    { href: "/map", label: "Interactive Map" },
+    { href: "/georgia", label: "Georgia Deep Dive" },
+    { href: "/glossary", label: "Glossary" },
+    { href: "/genealogy", label: "Genealogy Guide" },
+    { href: "/bibliography", label: "Sources" },
+    { href: "/resources", label: "Resources" },
   ];
 
   return (
@@ -69,6 +72,17 @@ export default function Navigation() {
                 </span>
               </Link>
             ))}
+            {/* More dropdown */}
+            <div style={{ position: "relative" }} className="group">
+              <span style={{ fontFamily: "Cinzel, serif", fontSize: 11, letterSpacing: "0.1em", padding: "6px 14px", color: "#94a3b8", cursor: "pointer", display: "inline-block", borderBottom: "2px solid transparent" }}>More ▾</span>
+              <div style={{ position: "absolute", top: "100%", right: 0, background: "#050b10", border: "1px solid rgba(212,175,55,0.3)", minWidth: 180, zIndex: 100, display: "none" }} className="group-hover:block">
+                {moreLinks.map(({ href, label }) => (
+                  <Link key={href} href={href}>
+                    <div style={{ fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.1em", padding: "10px 16px", color: location === href ? "#d4af37" : "#94a3b8", cursor: "pointer", borderBottom: "1px solid rgba(212,175,55,0.1)" }}>{label}</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
