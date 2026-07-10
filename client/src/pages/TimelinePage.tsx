@@ -62,6 +62,30 @@ const EVENT_CATEGORIES: Record<string, string> = {
   "Crime Bill": "legislation",
   "First enslaved": "violence",
   "Sequoyah": "resistance",
+  "Treaty of Hopewell": "treaty",
+  "Treaty of Holston": "treaty",
+  "Treaty of New York": "treaty",
+  "Treaty of Greenville": "treaty",
+  "Treaty of Fort Wilkinson": "treaty",
+  "Treaty of Washington": "treaty",
+  "Treaty of Fort Jackson": "treaty",
+  "Treaty of Indian Springs": "treaty",
+  "Treaty of Dancing Rabbit": "treaty",
+  "Treaty of Pontotoc": "treaty",
+  "Treaty of Payne's Landing": "treaty",
+  "Treaty of New Echota": "treaty",
+  "Fort Laramie Treaty": "treaty",
+  "Medicine Lodge Treaty": "treaty",
+  "Indian Appropriations Act": "treaty",
+  "TREATY ERA ENDS": "treaty",
+  "Cahokia": "precolumbian",
+  "Etowah Mounds": "precolumbian",
+  "Haudenosaunee": "precolumbian",
+  "Tenochtitlan": "precolumbian",
+  "Ancestral Puebloans": "precolumbian",
+  "Aztec": "precolumbian",
+  "pre-Columbian": "precolumbian",
+  "Columbian Exchange": "precolumbian",
 };
 
 function getCategory(event: string): string {
@@ -76,6 +100,8 @@ const CATEGORY_COLORS: Record<string, string> = {
   violence: "#8b1a1a",
   resistance: "#2d6a4f",
   economic: "#6b3fa0",
+  treaty: "#1d6fa4",
+  precolumbian: "#c9a84c",
 };
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -83,6 +109,8 @@ const CATEGORY_LABELS: Record<string, string> = {
   violence: "Violence & Terror",
   resistance: "Resistance & Reclamation",
   economic: "Economic Extraction",
+  treaty: "Treaties (Made & Broken)",
+  precolumbian: "Pre-Columbian Civilizations",
 };
 
 export default function TimelinePage() {
@@ -95,6 +123,7 @@ export default function TimelinePage() {
 
   const eraColors = ["#8b1a1a", "#d4af37", "#2d6a4f", "#6b3fa0", "#1d6fa4"];
   const eraBanners = [
+    "/manus-storage/era_banner_0_precolumbian_a7aa2715.png",
     "/manus-storage/era_banner_1_1ad8b855.png",
     "/manus-storage/era_banner_2_76655c44.png",
     "/manus-storage/era_banner_3_83f1354b.png",
