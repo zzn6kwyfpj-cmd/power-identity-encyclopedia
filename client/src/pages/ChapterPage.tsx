@@ -239,7 +239,7 @@ export default function ChapterPage() {
               <div style={{ background: "rgba(212,175,55,0.03)", border: "1px solid rgba(212,175,55,0.1)", padding: "16px 20px", marginTop: 24, marginBottom: 32 }}>
                 <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 10, letterSpacing: "0.2em", marginBottom: 8 }}>CITE THIS CHAPTER</div>
                 <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: 12, lineHeight: 1.6, margin: 0, fontStyle: "italic" }}>
-                  Strickland, LaDarious. "{chapter.title}." <em>The Archive Encyclopedia: American Records of Contested History, Identity, and Verified Evidence</em>. 2026. Dedicated to Luka Strickland. {window.location.href}
+                  Strickland, LaDarious. "{chapter.title}." <em>The Archive Encyclopedia: American Records of Contested History, Identity, and Verified Evidence</em>. 2026. {window.location.href}
                 </p>
               </div>
 
