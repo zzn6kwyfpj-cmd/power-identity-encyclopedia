@@ -366,6 +366,97 @@ function HomeownershipChart() {
   );
 }
 
+// ─── Broken Promises: Treaty Acreage Chart ───────────────────────────────────
+function BrokenPromisesChart() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const chartRef = useRef<any>(null);
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const treaties = [
+    { year: 1785, nation: "Cherokee", treaty: "Treaty of Hopewell", acres: 0.5, note: "First U.S.-Cherokee treaty. The U.S. promised permanent boundaries. Violated within years.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1790, nation: "Creek (Muscogee)", treaty: "Treaty of New York", acres: 1.5, note: "First treaty under the U.S. Constitution. Creek cede Oconee River lands. U.S. fails to police borders immediately.", source: "U.S. Statutes at Large, 7 Stat. 35" },
+    { year: 1802, nation: "Creek (Muscogee)", treaty: "Treaty of Fort Wilkinson", acres: 2.5, note: "Creek cede Georgia lands along the Oconee, Ocmulgee, and Altamaha rivers. First in a series of forced Georgia cessions.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1805, nation: "Cherokee", treaty: "Treaty of Washington", acres: 1.2, note: "Cherokee cede Tennessee and Georgia lands for roads. U.S. fails to protect remaining lands from encroachment.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1814, nation: "Creek (Muscogee)", treaty: "Treaty of Fort Jackson", acres: 23, note: "Jackson forces Creek to cede 23 million acres — including land from Creek allies who fought alongside him. The largest single forced cession in Georgia history.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1821, nation: "Creek (Muscogee)", treaty: "Treaty of Indian Springs (1st)", acres: 4.3, note: "4.3 million acres ceded east of the Flint River. Later deemed fraudulent — Chief McIntosh received personal payments for his role.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1825, nation: "Creek (Muscogee)", treaty: "Treaty of Indian Springs (2nd)", acres: 5.2, note: "McIntosh signs away ALL remaining Creek lands in Georgia without tribal authorization. He is executed by Creek warriors. The U.S. Senate ratifies it anyway.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1826, nation: "Creek (Muscogee)", treaty: "Treaty of Washington", acres: 3.8, note: "Creek forced to cede all remaining Georgia lands east of the Chattahoochee. By 1838, the entire Creek Nation has been removed from Georgia.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1830, nation: "Choctaw", treaty: "Treaty of Dancing Rabbit Creek", acres: 10.4, note: "First removal treaty under the Indian Removal Act. 11 million acres of Mississippi homeland ceded. ~2,500–6,000 Choctaw die during removal.", source: "Kappler's Indian Affairs Laws and Treaties, 7 Stat. 333" },
+    { year: 1832, nation: "Chickasaw", treaty: "Treaty of Pontotoc Creek", acres: 6.4, note: "Chickasaw cede 6 million acres of Mississippi lands for a promise of equivalent territory west of the Mississippi — a promise delayed for years.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1835, nation: "Cherokee", treaty: "Treaty of New Echota", acres: 7, note: "Minority faction signs away 7 million acres without authorization. 16,000 Cherokee sign a petition rejecting it. The U.S. Senate ratifies it by a single vote. The Trail of Tears follows.", source: "Kappler's Indian Affairs Laws and Treaties" },
+    { year: 1868, nation: "Lakota (Sioux)", treaty: "Fort Laramie Treaty", acres: 0, note: "The Black Hills guaranteed 'as long as the grass shall grow.' Gold discovered in 1874. U.S. violates the treaty and seizes the land. The Black Hills have never been returned.", source: "National Archives, Treaty of Fort Laramie (1868)" },
+    { year: 1887, nation: "All Indigenous Nations", treaty: "Dawes Act (Allotment)", acres: 90, note: "The Dawes Act breaks up communally held tribal land. Between 1887 and 1934, Indigenous peoples lose 90 million acres — nearly two-thirds of all tribal land.", source: "General Allotment Act, 24 Stat. 388 (1887)" },
+  ];
+
+  useEffect(() => {
+    if (!canvasRef.current || typeof Chart === "undefined") return;
+    if (chartRef.current) chartRef.current.destroy();
+    const ctx = canvasRef.current.getContext("2d");
+    chartRef.current = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: treaties.map(t => `${t.year}`),
+        datasets: [{
+          label: "Millions of Acres Ceded",
+          data: treaties.map(t => t.acres),
+          backgroundColor: treaties.map((_, i) => i === selected ? "rgba(212,175,55,0.9)" : "rgba(139,26,26,0.65)"),
+          borderColor: treaties.map((_, i) => i === selected ? "#d4af37" : "#8b1a1a"),
+          borderWidth: 2,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true, aspectRatio: 2,
+        onClick: (_: any, elements: any[]) => {
+          if (elements.length > 0) { const i = elements[0].index; setSelected(prev => prev === i ? null : i); }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: {
+            title: (items: any[]) => treaties[items[0].dataIndex].treaty,
+            label: (item: any) => ` ${treaties[item.dataIndex].acres > 0 ? treaties[item.dataIndex].acres + " million acres" : "Land seized (no acreage recorded)"}`,
+            footer: () => ["Click bar for full treaty details"],
+          }}
+        },
+        scales: {
+          y: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 10 }, callback: (v: any) => v === 0 ? "0" : `${v}M` }, grid: { color: "rgba(212,175,55,0.08)" }, title: { display: true, text: "Millions of Acres Ceded", color: "#64748b", font: { family: "Cinzel, serif", size: 10 } } },
+          x: { ticks: { color: "#94a3b8", font: { family: "Cinzel, serif", size: 9 } }, grid: { color: "rgba(212,175,55,0.08)" }, title: { display: true, text: "Year of Treaty", color: "#64748b", font: { family: "Cinzel, serif", size: 10 } } }
+        }
+      }
+    });
+    return () => chartRef.current?.destroy();
+  }, [selected]);
+
+  const t = selected !== null ? treaties[selected] : null;
+
+  return (
+    <div>
+      <div style={{ height: 340 }}><canvas ref={canvasRef} /></div>
+      <p style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", textAlign: "center", marginTop: 8 }}>CLICK ANY BAR TO SEE THE FULL TREATY DETAILS</p>
+      {t && (
+        <div style={{ marginTop: 20, background: "#0a1118", border: "1px solid rgba(139,26,26,0.5)", borderLeft: "4px solid #8b1a1a", padding: "20px 24px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+            <div>
+              <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 10, letterSpacing: "0.1em", marginBottom: 4 }}>{t.nation} · {t.year}</div>
+              <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 16, marginBottom: 4 }}>{t.treaty}</div>
+              {t.acres > 0 && <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 13 }}>{t.acres} million acres ceded</div>}
+            </div>
+            <button onClick={() => setSelected(null)} style={{ background: "transparent", border: "1px solid rgba(212,175,55,0.3)", color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 9, padding: "6px 12px", cursor: "pointer", letterSpacing: "0.1em" }}>✕ CLOSE</button>
+          </div>
+          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.05rem", lineHeight: 1.8, marginBottom: 12 }}>{t.note}</p>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em" }}>SOURCE: {t.source}</div>
+        </div>
+      )}
+      <div style={{ marginTop: 20, background: "rgba(139,26,26,0.06)", border: "1px solid rgba(248,113,113,0.2)", borderLeft: "4px solid #8b1a1a", padding: "14px 18px" }}>
+        <div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 9, letterSpacing: "0.2em", marginBottom: 6 }}>✦ THE PATTERN</div>
+        <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: 14, lineHeight: 1.8, margin: 0 }}>
+          Between 1785 and 1887, the United States signed 374 treaties with Indigenous nations. Every single one was broken. The 1871 Indian Appropriations Act ended treaty-making entirely — not because the U.S. had honored its obligations, but because Congress decided it no longer needed to negotiate. The total acreage shown above represents only the documented cessions in the Southeast and Plains. The full national total exceeds 1.5 billion acres.
+        </p>
+        <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", marginTop: 8 }}>SOURCE: Kappler's Indian Affairs: Laws and Treaties (1904); National Archives Treaty Records</div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function ChartsPage() {
   const sections = [
@@ -375,7 +466,8 @@ export default function ChartsPage() {
     { id: "matrix", num: 4, title: "The Power Mechanics Matrix", subtitle: "Eight Legal Instruments — Who Benefited, Who Lost, What Resistance Occurred", description: "This matrix maps the eight major legal instruments of systemic power documented in this encyclopedia. Green = beneficiary. Red = victim. The pattern across 572 years is identical: a small group uses legal instruments to extract land and labor from a larger group, and the larger group resists. This is not coincidence. It is a system.", tier: "TIER 1", tierColor: "#4ade80", source: "National Archives; Cornell Law School; Bureau of Justice Statistics", chapterSlug: "georgia-charter", chapterTitle: "The 1732 Georgia Charter", chart: <PowerMatrix /> },
     { id: "census-labels", num: 5, title: "How the U.S. Census Classified Black Americans", subtitle: "Official Racial Category Labels Used by the Federal Government — 1790 to 2020", description: "The U.S. Census did not simply count people — it classified them. The labels used to categorize Black Americans changed 11 times between 1790 and 2020, each change reflecting a political decision about who counted and who did not. The 1930 instruction that 'a person of mixed Indian and Negro blood should be returned a Negro' is the most consequential single sentence in this entire history. This chart shows how the federal government's own language evolved — and what each change meant for the people it described.", tier: "TIER 1", tierColor: "#4ade80", source: "U.S. Census Bureau Enumerator Instructions (1790–2020), National Archives Record Group 29", chapterSlug: "identity-erasure", chapterTitle: "The Paper Genocide", chart: <CensusLabelChart /> },
     { id: "gi-bill", num: 6, title: "The GI Bill's Racial Exclusion — VA Loans by State (1947)", subtitle: "How the Most Transformative Wealth-Building Program in American History Was Administered Through Racial Discrimination", description: "The GI Bill (1944) created the American middle class. It provided veterans with college tuition, low-interest home loans, and unemployment benefits. But it was administered through local VA offices, local banks, and local universities — all of which practiced racial discrimination. This chart shows the documented disparity in VA loan distribution in 1947, the year the program was at its peak. Mississippi is the most extreme example: 3,229 VA loans issued; only 2 went to Black veterans.", tier: "TIER 1", tierColor: "#4ade80", source: "Katznelson, Ira. When Affirmative Action Was White (2005); VA loan records, National Archives", chapterSlug: "wealth-extraction", chapterTitle: "The Racial Wealth Gap Was Engineered", chart: <GIBillChart /> },
-    { id: "homeownership", num: 7, title: "The Black Homeownership Gap — 1900 to 2024", subtitle: "Percentage of Households That Own Their Home: White vs. Black Americans", description: "Homeownership is the primary mechanism by which American families build intergenerational wealth. The Black homeownership rate has never exceeded 50% in recorded history. The gap between Black and white homeownership today is larger than it was in 1968 when the Fair Housing Act was passed — proving that anti-discrimination law without economic restitution cannot close a gap created by 80 years of deliberate exclusion.", tier: "TIER 1", tierColor: "#4ade80", source: "U.S. Census Bureau; Urban Institute; National Association of Realtors", chapterSlug: "redlining-housing-discrimination", chapterTitle: "Redlining and the Housing Wealth Gap", chart: <HomeownershipChart /> },
+    { id: "broken-promises", num: 8, title: "Broken Promises: Acreage Ceded by Treaty — 1785 to 1887", subtitle: "Every Bar is a Sovereign Agreement Made and Broken", description: "Each bar represents a specific treaty between the U.S. government and an Indigenous nation. The height of the bar shows the millions of acres ceded. The selected bar turns gold when clicked, revealing the specific treaty name, the promise made, and exactly how it was broken. The Dawes Act bar (90 million acres) dwarfs everything else — it was the single largest land transfer in American history, achieved not through a treaty but through unilateral legislation after the 1871 Indian Appropriations Act ended treaty-making entirely.", tier: "TIER 1", tierColor: "#4ade80", source: "Kappler's Indian Affairs: Laws and Treaties (1904); National Archives Treaty Records", chapterSlug: "treaties-broken-promises", chapterTitle: "The Treaties: Sovereign Agreements Made and Broken", chart: <BrokenPromisesChart /> },
+    { id: "homeownership", num: 9, title: "The Black Homeownership Gap — 1900 to 2024", subtitle: "Percentage of Households That Own Their Home: White vs. Black Americans", description: "Homeownership is the primary mechanism by which American families build intergenerational wealth. The Black homeownership rate has never exceeded 50% in recorded history. The gap between Black and white homeownership today is larger than it was in 1968 when the Fair Housing Act was passed — proving that anti-discrimination law without economic restitution cannot close a gap created by 80 years of deliberate exclusion.", tier: "TIER 1", tierColor: "#4ade80", source: "U.S. Census Bureau; Urban Institute; National Association of Realtors", chapterSlug: "redlining-housing-discrimination", chapterTitle: "Redlining and the Housing Wealth Gap", chart: <HomeownershipChart /> },
   ];
 
   return (
