@@ -511,6 +511,70 @@ export const CHAPTERS: Chapter[] = [
     keyFact: "In 2020, the Supreme Court ruled in McGirt v. Oklahoma that the Muscogee (Creek) Nation's reservation was never formally disestablished — recognizing that nearly half of Oklahoma remains 'Indian Country.'",
     primarySource: "McGirt v. Oklahoma, 591 U.S. ___ (2020); Justice Neil Gorsuch, majority opinion",
   },
+  // THE 7 CRITICAL GAP CHAPTERS — completing the encyclopedia to 10/10 standard
+  {
+    id: 58, slug: "etowah-mounds-deep", title: "The Etowah Mounds: Who Built Them and What Happened to Them",
+    subtitle: "The Archaeological Record, the Creek/Muscogee Connection, and the Question LaDarious Strickland Asked as a Child",
+    era: "Era I", eraColor: "#c9a84c",
+    summary: "The Etowah Mounds in Cartersville, Georgia — a 54-acre Mississippian civilization site active from 1000 CE to 1550 CE — were built by the ancestors of the Muscogee (Creek) Nation. The Creek were forcibly removed from Georgia in 1838. Their descendants, including those enrolled as Freedmen in the Dawes Rolls, carry the history of this place in their ancestry. This chapter answers the question LaDarious Strickland asked as a child standing at the base of Mound A: who built this, and am I connected to them?",
+    tier: 1,
+    keyFact: "The Georgia DNR is currently returning 404 ancestors and 187,000+ cultural artifacts from the Etowah Mounds to five Muskogean-speaking tribes under NAGPRA. The Mound Builders became the Creek. The Creek were removed. Their descendants are in Oklahoma. The mounds are still in Georgia.",
+    primarySource: "King, Adam. Excavations at Mound B, Etowah: 1954-1958 (2001), University of Georgia Laboratory of Archeology Series, Report No. 37; Georgia DNR NAGPRA Repatriation Records (2023)",
+  },
+  {
+    id: 59, slug: "freedmens-bureau", title: "The Freedmen's Bureau: Recovery Tool and Instrument of Erasure",
+    subtitle: "The Bureau of Refugees, Freedmen, and Abandoned Lands (1865–1872) and the Records That Can Recover What Was Lost",
+    era: "Era III", eraColor: "#d4af37",
+    summary: "The Freedmen's Bureau was the first federal social welfare agency in American history. It created the most comprehensive documentary archive of the formerly enslaved population ever assembled — and it enforced the 'Freedmen' classification that the Dawes Commission would use thirty-three years later to erase Black Native American ancestry from the official record. The same records that administered the erasure are now the primary tool for recovering it.",
+    tier: 1,
+    keyFact: "The Freedmen's Bureau Search Portal has digitized over 1.8 million Bureau records. Cross-referencing these records with tribal census rolls is the most powerful methodology available for recovering Black Native American ancestry that was erased by the Dawes Commission enrollment process.",
+    primarySource: "Bureau of Refugees, Freedmen, and Abandoned Lands Records, National Archives, Record Group 105 (1865-1872); Freedmen's Bureau Search Portal, FamilySearch.org",
+  },
+  {
+    id: 60, slug: "blood-quantum-invented-system", title: "Blood Quantum: The System the U.S. Government Invented to Erase Indigenous Identity",
+    subtitle: "No Indigenous Nation Used Blood Quantum Before European Contact. It Was Designed to Reduce the Number of People Who Could Claim Indigenous Identity Over Time.",
+    era: "Era III", eraColor: "#8b1a1a",
+    summary: "Blood quantum — the requirement that Indigenous people prove a specific percentage of 'Indian blood' to be recognized as tribal members — was invented by the United States government in the late 19th century. No Indigenous nation used it before European contact. The Dawes Commission applied it to enroll Black Native Americans as Freedmen rather than by blood. The system is still operating today, and it is the primary mechanism by which Black Native American identity continues to be denied.",
+    tier: 1,
+    keyFact: "Vine Deloria Jr.: 'The blood quantum system is a slow-motion termination policy.' The Indian Reorganization Act (1934) first codified blood quantum as a federal legal standard. The Dawes Commission applied it before that to enroll Black Native Americans as Freedmen rather than by blood.",
+    primarySource: "Curtis Act (1898), 30 Stat. 495; Indian Reorganization Act (1934), 48 Stat. 984; Deloria, Vine Jr., Custer Died for Your Sins (1969)",
+  },
+  {
+    id: 61, slug: "turtle-island-niji", title: "Turtle Island: The Name of This Place and the People Who Named It",
+    subtitle: "The Haudenosaunee Name for North America, the Archaeological Record of 15,000+ Years of Continuous Habitation, and the Scholarly Framing of the Niji Tradition",
+    era: "Era I", eraColor: "#c9a84c",
+    summary: "'Turtle Island' is the Haudenosaunee (Iroquois) name for the North American continent — documented in their oral tradition and confirmed by anthropologists. The people who named it have been here for at least 15,000 years. The genetic evidence confirms that Indigenous Americans are the oldest continuous population in the Western Hemisphere. This chapter documents the Turtle Island tradition, the archaeological evidence for early American population diversity, and the scholarly framing of the Niji community's claims.",
+    tier: 2,
+    keyFact: "The Haudenosaunee Confederacy — one of the oldest continuously operating democratic governments in the world — named this continent 'Turtle Island' centuries before European contact. The archaeological evidence confirms continuous Indigenous habitation of North America for at least 15,000 years.",
+    primarySource: "Raghavan, M. et al. 'Genomic evidence for the Pleistocene and recent population history of Native Americans,' Science (2015); Parker, Arthur C. The Constitution of the Five Nations (1916)",
+  },
+  {
+    id: 62, slug: "counter-narrative", title: "The Counter-Narrative: Engaging Mainstream Scholarship",
+    subtitle: "The Strongest Arguments Against This Encyclopedia's Thesis — and Where They Are Incomplete",
+    era: "Era I\u2013V", eraColor: "#64748b",
+    summary: "A rigorous encyclopedia must engage the strongest version of the opposing argument. The mainstream scholarly consensus — supported by the Bryc 2015 genetic study and the Trans-Atlantic Slave Trade Database — holds that African Americans are primarily of West African descent. This chapter presents that argument at its strongest, and then shows, with primary source evidence, where it is incomplete and where it relies on the same administrative records this encyclopedia documents as instruments of erasure.",
+    tier: 2,
+    keyFact: "The Bryc 2015 study found African Americans average 73.2% West African, 24.0% European, and 0.8% Native American ancestry. The mainstream argument is strongest on the demographic evidence. It is incomplete because the reclassification of Indigenous people as 'Negro' happened before the genetic record was created.",
+    primarySource: "Bryc, K. et al. American Journal of Human Genetics, 96(1), 37-53 (2015); Trans-Atlantic Slave Trade Database, slavevoyages.org",
+  },
+  {
+    id: 63, slug: "psychological-cultural-impact", title: "The Human Cost of the Paper Genocide",
+    subtitle: "Johnnie Mae Austin, the Cherokee Freedmen, the Black Seminoles, and the People Who Know Who They Are",
+    era: "Era III\u2013V", eraColor: "#8b1a1a",
+    summary: "The legal record documents the erasure. The genealogical record documents the mechanism. But neither captures what it feels like to be told that the identity you know to be true is not recognized by the institution with the power to confirm or deny it. This chapter documents the human cost of the paper genocide — in the words of the people who lived it: the Cherokee Freedmen stripped of citizenship in 2007, the Creek Freedmen fighting in federal court, and the Black Seminoles of Brackettville, Texas.",
+    tier: 2,
+    keyFact: "The 2007 Cherokee Nation vote stripped 2,800 Freedmen descendants of citizenship, healthcare, housing assistance, and educational benefits — 141 years after the 1866 Treaty guaranteed them 'all the rights of native Cherokees.' It took a federal court order to restore what the treaty had promised.",
+    primarySource: "Cherokee Nation v. Nash, No. 1:03-cv-01209 (D.D.C. 2017); Inniss, 'Cherokee Freedmen and the Color of Belonging,' Columbia Journal of Race and Law (2015)",
+  },
+  {
+    id: 64, slug: "garifuna-international", title: "The Garifuna: International Proof of Concept",
+    subtitle: "How a Black Indigenous People Survived Colonial Reclassification — and What Their Survival Proves About Black Native Americans in North America",
+    era: "Era I\u2013V", eraColor: "#2d6a4f",
+    summary: "The Garifuna people of Honduras, Belize, Guatemala, and Nicaragua are the most complete documented parallel to the Black Native American story in the world. Descended from the Arawak and Carib nations of the Caribbean and escaped African enslaved people, they survived colonial attempts to reclassify them as 'Negro,' a forced deportation in 1797, and 225 years of pressure to assimilate. UNESCO recognized their language, dance, and music as an Intangible Cultural Heritage of Humanity in 2001. Their survival is the proof of concept for everything this encyclopedia argues.",
+    tier: 1,
+    keyFact: "British Governor William Young's 1795 report called the Garifuna 'mere interlopers from Africa' to undermine their land claims. UNESCO's 2001 designation called their culture an irreplaceable heritage of humanity. The colonial administration that tried to erase them has been superseded by an international body that honors them.",
+    primarySource: "Young, William. An Account of the Black Charaibs in the Island of St. Vincent's (1795); UNESCO Intangible Cultural Heritage Designation (2001)",
+  },
   {
     id: 57, slug: "papal-bulls-perpetual-slavery", title: "Dum Diversas & Romanus Pontifex: The Legal Origin of Perpetual Slavery",
     subtitle: "How Two Papal Decrees in 1452 and 1455 Created the Framework That Enslaved the World",
@@ -938,6 +1002,33 @@ export const FIGURES: Figure[] = [
     image: "/manus-storage/portrait_audre_lorde_71c642c5.png",
     connection: "Her 1984 essay collection 'Sister Outsider' introduced the concept of intersectionality before the term was coined — arguing that race, gender, sexuality, and class are not separate systems of oppression but interlocking ones. Her work is the intellectual foundation of the Combahee River Collective's 1977 statement documented in this encyclopedia."
   },
+  {
+    name: "Angela Y. Walton-Raji",
+    years: "1950s–",
+    heritage: "African American / Black Native American (Choctaw Freedmen Descent)",
+    role: "Genealogist and Author of Black Indian Genealogy Research",
+    quote: "The records are there. The ancestors are waiting to be found. The only question is whether we are willing to do the work.",
+    image: "",
+    connection: "Her 1993 book Black Indian Genealogy Research is the foundational methodology for recovering Black Native American ancestry from the Dawes Rolls and Freedmen's Bureau records. Her personal research began when she discovered her great-grandmother Sally's Choctaw heritage — a heritage that had been administratively erased by the Freedmen enrollment process. She has helped hundreds of families recover what the Dawes Commission took from them."
+  },
+  {
+    name: "Brooklyn Saint Mickell",
+    years: "Contemporary",
+    heritage: "African American",
+    role: "Community Educator and YouTube Researcher (525+ Videos, 81,000 Subscribers)",
+    quote: "The word 'Black' was invented specifically by the European colonist for a specific purpose: to serve their needs as slaves. Holding onto that identity is holding onto a slave name.",
+    image: "",
+    connection: "His 525+ video numbered series documents the suppressed history of Black identity as a colonial administrative category rather than an ethnic identity. His video #5, 'Why I'm Not African or African American,' cites Richard B. Moore's The Name Negro: Its Origin and Evil Use (1960) and argues that the word 'negro' first appeared as a legal category in Romanus Pontifex (1455) — a claim this encyclopedia confirms with Tier 1 primary source evidence. Presented here as Tier 3 — Community Historical Tradition — with the recognition that his core argument is supported by documented primary sources."
+  },
+  {
+    name: "Walter English (FormerLovePoet)",
+    years: "Contemporary",
+    heritage: "African American (ADOS — American Descendant of Slavery)",
+    role: "Founder of The Brister English Project (bristerep.org)",
+    quote: "I was told that my history never existed. The records proved otherwise.",
+    image: "",
+    connection: "Founded the Brister English Project in 2021 after discovering his great-great-grandfather Brister English on a slave schedule. His non-profit has helped over 200 families recover erased ancestry and maintains a waitlist of 5,000+ individuals. His own great-grandfather's Navy card listed his nationality as 'American.' The census said 'Negro.' The difference between those two words is the history this encyclopedia documents. The Brister English Project is named in honor of the ancestor whose name survived on a single document."
+  },
 ];
 
 export const TIMELINE_EVENTS = [
@@ -1058,6 +1149,12 @@ export const TIMELINE_EVENTS = [
   { year: 1866, event: "1866 Treaty with the Cherokee Nation — Article IX mandates: 'all freedmen who have been liberated by voluntary act of their former owners or by law... shall have all the rights of native Cherokees.' This is the first federal recognition of Black Native American rights. The Five Civilized Tribes are required to grant full citizenship to their Freedmen as a condition of Reconstruction. Source: Treaty with the Cherokee (1866), U.S. Department of the Interior", era: 2 },
   { year: 1898, event: "Dawes Rolls enrollment begins — the Curtis Act of 1898 creates separate enrollment categories: 'Cherokee by blood,' 'intermarried whites,' and 'Freedmen.' Black Native Americans with Cherokee ancestry are enrolled as Freedmen rather than 'by blood,' denying them full tribal rights despite documented ancestral ties. By 1907, 4,924 Freedmen are enrolled. A 1872 petition from Cherokee Freedmen to President Grant documents: 'Some of us had fled North to get away from slavery... we were so far that we had no way of getting back.' Source: National Archives, Dawes Commission Records", era: 3 },
   { year: 1930, event: "1930 U.S. Census enumerator instructions direct that anyone with any 'Negro blood' be classified as 'Negro' — regardless of Indigenous ancestry, tribal affiliation, or self-identification. This administrative instruction completes a process that began with the 1719 South Carolina statute. An entire generation of Black Native Americans is reclassified into a single racial category that denies their Indigenous heritage. The National Archives holds both the 1719 statute and the 1930 Census enumerator manual. Source: Hendricks and Patterson, 'The 1930 Census in Perspective,' National Archives Prologue Magazine, Summer 2002", era: 4 },
+  // ADDITIONAL GAP ENTRIES
+  { year: 1865, event: "Freedmen's Bureau established (March 3, 1865) — the Bureau of Refugees, Freedmen, and Abandoned Lands becomes the first federal social welfare agency in American history. It creates the most comprehensive documentary archive of the formerly enslaved population ever assembled: labor contracts, marriage registers, ration records, school records, and field office reports. These records are now the primary genealogical tool for recovering Black Native American ancestry erased by the Dawes Commission. Source: Bureau of Refugees, Freedmen, and Abandoned Lands Records, National Archives, Record Group 105", era: 3 },
+  { year: 1797, event: "Garifuna deportation — the British forcibly remove over 5,000 Garifuna people from St. Vincent to Roatan, Honduras. Those with more African features are specifically targeted for deportation — a racial selection process mirroring the 'one-drop rule' being applied simultaneously in North America. Only approximately 2,500 survive the journey. The Garifuna are the most complete documented parallel to the Black Native American story: a Black Indigenous people who survived colonial reclassification and maintained their identity. Source: Young, William. An Account of the Black Charaibs in the Island of St. Vincent's (1795)", era: 1 },
+  { year: 1934, event: "Indian Reorganization Act (1934) — the first federal law to codify blood quantum as a legal standard for Indigenous identity, defining 'Indian' as including 'all other persons of one-half or more Indian blood.' No Indigenous nation used blood quantum before European contact. The system was designed to reduce the number of people who could claim Indigenous identity over time. Vine Deloria Jr. (Standing Rock Sioux) would later call it 'a slow-motion termination policy.' Source: Indian Reorganization Act (1934), 48 Stat. 984", era: 4 },
+  { year: 1969, event: "Vine Deloria Jr. publishes 'Custer Died for Your Sins: An Indian Manifesto' — the foundational text of modern Indigenous rights scholarship. Deloria documents how blood quantum was invented by the U.S. government to reduce the number of people who could claim Indigenous identity, how the Dawes Rolls enrollment process erased Indigenous ancestry, and how the federal government's policies toward Indigenous peoples constitute a systematic program of cultural and legal termination. Source: Deloria, Vine Jr., Custer Died for Your Sins (1969), Macmillan", era: 5 },
+  { year: 2001, event: "UNESCO proclaims the Language, Dance, and Music of the Garifuna as a 'Masterpiece of the Oral and Intangible Heritage of Humanity' — the highest international recognition of cultural heritage available. The Garifuna are descended from the Arawak and Carib nations of the Caribbean and escaped African enslaved people. The same colonial administration that tried to classify them as 'mere interlopers from Africa' in 1795 has been superseded by an international body that honors them. Source: UNESCO Intangible Cultural Heritage Designation (2001)", era: 5 },
   { year: 1960, event: "Richard B. Moore publishes 'The Name Negro: Its Origin and Evil Use' — documenting how 'Negro,' 'Black,' 'Colored,' and 'Indian' were administrative categories created by colonial administrators to replace tribal and ethnic identities. Moore documents the specific legal mechanisms: the 1719 South Carolina statute, the California Supreme Court's 1854 ruling that 'Black person' included all non-Caucasians, and the Virginia county records showing Indigenous people reclassified as Negro. 'Dogs and Slaves are Named by Their Masters; Free Men Name Themselves.' Source: Moore, Richard B., The Name Negro: Its Origin and Evil Use (1960), Black Classic Press", era: 5 },
   { year: 2007, event: "Cherokee Nation strips Freedmen descendants of citizenship in a special election, limiting tribal membership to those with 'Cherokee blood.' Approximately 2,800 descendants of the Cherokee Freedmen — people whose ancestors were guaranteed 'all the rights of native Cherokees' by the 1866 Treaty — lose their citizenship. This is the paper genocide of the Dawes Rolls playing out in the present day. Source: Cherokee Nation v. Nash, National Indian Law Library", era: 5 },
   { year: 2017, event: "U.S. District Court restores Cherokee Freedmen citizenship — ruling that the Cherokee Nation must honor the 1866 Treaty. The court states: 'The Cherokee Nation concedes that its power to determine tribal membership can be limited by treaty.' The 1866 Treaty is still legally binding. Black Native Americans whose identity was erased by the Dawes Rolls in 1898 have their rights restored 119 years later. Source: Cherokee Nation v. Nash (2017), U.S. District Court", era: 5 },
