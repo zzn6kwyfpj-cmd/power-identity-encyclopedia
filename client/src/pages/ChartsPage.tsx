@@ -511,6 +511,10 @@ function HistoricalMapChart() {
     { id: "wounded-knee", name: "Wounded Knee, South Dakota", lat: 43.1567, lng: -102.3600, category: "violence", era: "1890", description: "On December 29, 1890, the U.S. Army's 7th Cavalry killed approximately 250–300 Lakota men, women, and children. The Army was attempting to disarm the Lakota, who were practicing the Ghost Dance. Twenty soldiers received the Medal of Honor. The last major military action against Indigenous people.", keyFact: "The 7th Cavalry that carried out the Wounded Knee Massacre was the same regiment that Custer commanded at the Battle of Little Bighorn in 1876.", source: "Report of the Commissioner of Indian Affairs for 1891" },
     { id: "sweet-auburn", name: "Sweet Auburn Avenue, Atlanta, GA", lat: 33.7530, lng: -84.3760, category: "resistance", era: "1880–1960", description: "Named 'the richest Negro street in the world' by Fortune magazine in 1956. Home to the Atlanta Life Insurance Company, Ebenezer Baptist Church, and dozens of Black-owned businesses. The federal highway system deliberately routed I-75/I-85 through the heart of this community.", keyFact: "Martin Luther King Jr. was born at 501 Auburn Avenue. Fortune magazine called Sweet Auburn 'the richest Negro street in the world' in 1956. The highway destroyed it.", source: "Atlanta History Center; Fortune Magazine (1956)" },
     { id: "greenwood", name: "Greenwood District, Tulsa, OK", lat: 36.1627, lng: -95.9898, category: "violence", era: "1921", description: "'Black Wall Street' — a thriving Black business district with 108 Black-owned businesses, the Dreamland Theatre, and the 54-room Stradford Hotel. On May 31–June 1, 1921, a white mob burned it to the ground. The city of Tulsa denied reparations for 100 years.", keyFact: "The Tulsa Race Massacre destroyed 35 blocks and 1,256 homes. The Stradford Hotel was the largest Black-owned hotel in the country. Insurance companies denied all claims.", source: "Tulsa Race Massacre Commission Report (2001)" },
+    { id: "stono", name: "Stono Rebellion Site, South Carolina", lat: 32.7157, lng: -80.3960, category: "resistance", era: "1739", description: "On September 9, 1739, approximately 60 enslaved people marched toward Spanish Florida, which offered freedom. The Stono Rebellion was the largest slave revolt in colonial British America. The direct response was the Negro Act of 1740, which prohibited enslaved people from learning to read, assembling, or growing their own food.", keyFact: "The Stono Rebellion directly caused the Negro Act of 1740 — which Georgia adopted — proving that resistance by the enslaved was met with legislative punishment, not reform.", source: "Britannica, Stono Rebellion (2026)" },
+    { id: "gullah-geechee", name: "Gullah Geechee Sea Islands, GA/SC", lat: 32.0809, lng: -80.9001, category: "resistance", era: "1700s–Present", description: "The Sea Islands of Georgia and South Carolina are home to the Gullah Geechee people — the most intact African cultural tradition in North America. Isolated by geography, they preserved West African languages, foodways, and spiritual practices that were erased elsewhere. The Gullah Geechee Corridor is a federally designated National Heritage Area.", keyFact: "The Gullah Geechee people speak Gullah, a creole language that preserves West African linguistic structures. Their rice cultivation techniques were the foundation of the South Carolina plantation economy.", source: "Gullah Geechee Cultural Heritage Corridor, National Park Service" },
+    { id: "tuskegee", name: "Tuskegee Institute, Alabama", lat: 32.4309, lng: -85.7077, category: "resistance", era: "1881–Present", description: "Founded by Booker T. Washington in 1881, Tuskegee Institute was the center of Black economic self-sufficiency in the post-Reconstruction South. George Washington Carver conducted his agricultural research here. The U.S. government also conducted the Tuskegee Syphilis Study here from 1932 to 1972 — deliberately withholding penicillin from 399 Black men.", keyFact: "Tuskegee is simultaneously the site of Booker T. Washington's model of Black economic independence AND the site of the most egregious documented medical experiment on Black Americans in U.S. history.", source: "CDC, Tuskegee Study Timeline; Tuskegee University Archives" },
+    { id: "selma", name: "Edmund Pettus Bridge, Selma, AL", lat: 32.4072, lng: -87.0211, category: "resistance", era: "1965", description: "On March 7, 1965 — 'Bloody Sunday' — 600 civil rights marchers were beaten by state troopers as they crossed the Edmund Pettus Bridge on their way to Montgomery. The bridge was named after a Confederate general and KKK leader. The televised violence directly led to the passage of the Voting Rights Act of 1965.", keyFact: "John Lewis, who was beaten on the bridge, later served in Congress for 33 years. The bridge still bears the name of a KKK leader. In 2020, Lewis's body was carried across it one final time.", source: "Voting Rights Act of 1965; John Lewis, Walking with the Wind (1998)" },
   ];
 
   const CAT_COLORS: Record<string, string> = { precolumbian: "#c9a84c", treaty: "#1d6fa4", removal: "#d4af37", violence: "#8b1a1a", resistance: "#2d6a4f" };
@@ -519,6 +523,40 @@ function HistoricalMapChart() {
   const filtered = filter ? MAP_LOCATIONS.filter(l => l.category === filter) : MAP_LOCATIONS;
 
   const handleMapReady = (map: google.maps.Map) => {
+    // Draw Trail of Tears polyline (Cherokee route, 1838-1839)
+    const trailOfTearsPath = [
+      { lat: 34.5154, lng: -84.9410 }, // New Echota, GA (start)
+      { lat: 35.4676, lng: -86.5861 }, // Tennessee
+      { lat: 36.1627, lng: -86.7816 }, // Nashville, TN
+      { lat: 36.8529, lng: -87.4886 }, // Kentucky
+      { lat: 37.0833, lng: -88.6001 }, // Illinois
+      { lat: 37.3364, lng: -89.5784 }, // Missouri border
+      { lat: 36.7748, lng: -90.4329 }, // Arkansas
+      { lat: 35.6528, lng: -95.9669 }, // Indian Territory, OK (end)
+    ];
+    new google.maps.Polyline({
+      path: trailOfTearsPath,
+      geodesic: true,
+      strokeColor: "#8b1a1a",
+      strokeOpacity: 0.8,
+      strokeWeight: 3,
+      map,
+    });
+    // Add Trail of Tears label at midpoint
+    new google.maps.Marker({
+      position: { lat: 36.5, lng: -89.5 },
+      map,
+      title: "Trail of Tears Route (1838-1839)",
+      icon: {
+        path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
+        scale: 4,
+        fillColor: "#8b1a1a",
+        fillOpacity: 0.9,
+        strokeColor: "#d4af37",
+        strokeWeight: 1,
+        rotation: 270,
+      },
+    });
     MAP_LOCATIONS.forEach(loc => {
       const marker = new google.maps.Marker({
         position: { lat: loc.lat, lng: loc.lng },
