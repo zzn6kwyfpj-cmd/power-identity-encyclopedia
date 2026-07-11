@@ -14,6 +14,7 @@ import { DEPTH_CONTENT } from "@/lib/manuscriptContentDepth";
 import { FULL_CHAPTER_CONTENT } from "@/lib/manuscriptContentFull";
 import { FINAL_3_CONTENT } from "@/lib/manuscriptContentFinal3";
 import { TREATIES_CONTENT } from "@/lib/manuscriptContentTreaties";
+import { BLACK_NATIVE_CONTENT } from "@/lib/manuscriptContentBlackNative";
 
 export default function ChapterPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -148,7 +149,7 @@ export default function ChapterPage() {
 
               {/* Full Chapter Content */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug];
+                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug];
                 if (content && content.fullText.length > 0) {
                   return (
                     <div>
@@ -218,7 +219,7 @@ export default function ChapterPage() {
 
               {/* Key Documents Section */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug];
+                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug];
                 if (content?.keyDocuments && content.keyDocuments.length > 0) {
                   return (
                     <div style={{ marginTop: 40, marginBottom: 32 }}>

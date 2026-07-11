@@ -86,6 +86,24 @@ const EVENT_CATEGORIES: Record<string, string> = {
   "Aztec": "precolumbian",
   "pre-Columbian": "precolumbian",
   "Columbian Exchange": "precolumbian",
+  // Black Native American history
+  "Yamasee War": "blacknative",
+  "Black Seminole": "blacknative",
+  "Second Seminole War": "blacknative",
+  "Cherokee Freedmen": "blacknative",
+  "Dawes Rolls": "blacknative",
+  "Freedmen citizenship": "blacknative",
+  "1866 Treaty with the Cherokee": "blacknative",
+  "Black Native": "blacknative",
+  "Freedmen descendants": "blacknative",
+  "Tuscarora War": "blacknative",
+  "accounted as negroe": "blacknative",
+  "South Carolina colonial legislature": "blacknative",
+  "Kate Indian": "blacknative",
+  "Robin an Indian": "blacknative",
+  "Negro blood": "blacknative",
+  "Name Negro": "blacknative",
+  "Richard B. Moore": "blacknative",
 };
 
 function getCategory(event: string): string {
@@ -102,6 +120,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   economic: "#6b3fa0",
   treaty: "#1d6fa4",
   precolumbian: "#c9a84c",
+  blacknative: "#b87333",
 };
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -111,6 +130,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   economic: "Economic Extraction",
   treaty: "Treaties (Made & Broken)",
   precolumbian: "Pre-Columbian Civilizations",
+  blacknative: "Black Native American History",
 };
 
 export default function TimelinePage() {
