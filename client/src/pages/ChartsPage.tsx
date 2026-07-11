@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { BookOpen } from "lucide-react";
+import { BookOpen, MapPin } from "lucide-react";
+import { MapView } from "@/components/Map";
 
 // Chart.js loaded via CDN in index.html
 declare const Chart: any;
@@ -494,6 +495,98 @@ function BrokenPromisesChart() {
   );
 }
 
+// ─── Historical Map Chart ───────────────────────────────────────────
+function HistoricalMapChart() {
+  const [selected, setSelected] = useState<any>(null);
+  const [filter, setFilter] = useState<string | null>(null);
+
+  const MAP_LOCATIONS = [
+    { id: "cahokia", name: "Cahokia Mounds", lat: 38.6553, lng: -90.0625, category: "precolumbian", era: "850–1200 CE", description: "The largest pre-Columbian settlement north of Mexico. Population of 20,000–40,000. Monks Mound is larger at its base than the Great Pyramid of Giza. A thriving trade network spanning the entire North American continent.", keyFact: "Cahokia was larger than London at its peak. It was abandoned around 1350 CE, over 100 years before European contact.", source: "UNESCO World Heritage Centre, Cahokia Mounds State Historic Site" },
+    { id: "etowah", name: "Etowah Mounds, Cartersville, GA", lat: 34.1454, lng: -84.7440, category: "precolumbian", era: "1000–1550 CE", description: "A Mississippian city of 4,000 people with six earthen mounds. The largest mound stands 63 feet tall. Trade networks connect Georgia to the Great Lakes, Gulf Coast, and Appalachian Mountains. The 1732 Georgia Charter described this land as 'waste and desolate.'", keyFact: "The Etowah Mounds were continuously inhabited for 500 years before the Georgia Charter erased the people who built them with a single legal phrase.", source: "National Park Service, Etowah Indian Mounds State Historic Site" },
+    { id: "chaco", name: "Chaco Canyon, New Mexico", lat: 36.0608, lng: -107.9617, category: "precolumbian", era: "850–1250 CE", description: "The center of Ancestral Puebloan civilization. Monumental great houses, a complex road system spanning hundreds of miles, and astronomical alignments. This civilization thrived for 400 years before European contact.", keyFact: "Chaco Canyon's road system spans over 400 miles. The great houses were aligned to solar and lunar cycles with precision that rivals modern astronomy.", source: "UNESCO World Heritage Centre, Chaco Culture" },
+    { id: "new-echota", name: "New Echota — Cherokee Capital", lat: 34.5154, lng: -84.9410, category: "treaty", era: "1835", description: "The capital of the Cherokee Nation. The fraudulent Treaty of New Echota (1835) was signed here by a minority faction of 79 Cherokee without authorization. 15,000 Cherokee signed a petition opposing it. The U.S. Senate ratified it by a single vote. The Trail of Tears followed.", keyFact: "Only 79 of 17,000 Cherokee signed the Treaty of New Echota. The U.S. Senate ratified it by one vote. This is the most documented act of treaty fraud in American history.", source: "Treaty of New Echota (1835), National Archives" },
+    { id: "horseshoe-bend", name: "Battle of Horseshoe Bend, AL", lat: 32.9754, lng: -85.7390, category: "treaty", era: "1814", description: "Andrew Jackson defeated the Creek Nation here on March 27, 1814. Chief Junaluska and Cherokee warriors fought alongside Jackson. Jackson's victory led directly to the Treaty of Fort Jackson, seizing 23 million acres. Jackson later signed the Indian Removal Act.", keyFact: "Chief Junaluska saved Andrew Jackson's life at Horseshoe Bend. Jackson later signed the Indian Removal Act. Junaluska said: 'If I had known Jackson would drive us from our homes, I would have killed him that day.'", source: "Treaty of Fort Jackson (1814), National Archives" },
+    { id: "fort-laramie", name: "Fort Laramie, Wyoming", lat: 42.2097, lng: -104.5439, category: "treaty", era: "1868", description: "The Fort Laramie Treaty (1868) guaranteed the Lakota Nation the Black Hills 'as long as the grass shall grow and the water flow.' In 1874, Custer's expedition discovered gold. The U.S. violated the treaty and seized the land. The Black Hills have never been returned.", keyFact: "In 1980, the Supreme Court ruled the Black Hills were taken illegally and awarded $105 million. The Lakota refused the money. They want their land back. The fund now exceeds $1 billion.", source: "National Archives, Fort Laramie Treaty (1868); United States v. Sioux Nation (1980)" },
+    { id: "trail-of-tears-end", name: "Indian Territory — Oklahoma", lat: 35.6528, lng: -95.9669, category: "removal", era: "1838–1839", description: "The destination of the forced removal of the Five Civilized Tribes. The Cherokee, Creek, Choctaw, Chickasaw, and Seminole nations were marched here from their homelands in Georgia, Alabama, Mississippi, and Florida. An estimated 15,000 people died during the various removals.", keyFact: "McGirt v. Oklahoma (2020) ruled that the Muscogee (Creek) Nation's reservation was never legally dissolved. The Creek were removed from Georgia in 1836. Their sovereignty survived.", source: "McGirt v. Oklahoma, 591 U.S. ___ (2020)" },
+    { id: "wounded-knee", name: "Wounded Knee, South Dakota", lat: 43.1567, lng: -102.3600, category: "violence", era: "1890", description: "On December 29, 1890, the U.S. Army's 7th Cavalry killed approximately 250–300 Lakota men, women, and children. The Army was attempting to disarm the Lakota, who were practicing the Ghost Dance. Twenty soldiers received the Medal of Honor. The last major military action against Indigenous people.", keyFact: "The 7th Cavalry that carried out the Wounded Knee Massacre was the same regiment that Custer commanded at the Battle of Little Bighorn in 1876.", source: "Report of the Commissioner of Indian Affairs for 1891" },
+    { id: "sweet-auburn", name: "Sweet Auburn Avenue, Atlanta, GA", lat: 33.7530, lng: -84.3760, category: "resistance", era: "1880–1960", description: "Named 'the richest Negro street in the world' by Fortune magazine in 1956. Home to the Atlanta Life Insurance Company, Ebenezer Baptist Church, and dozens of Black-owned businesses. The federal highway system deliberately routed I-75/I-85 through the heart of this community.", keyFact: "Martin Luther King Jr. was born at 501 Auburn Avenue. Fortune magazine called Sweet Auburn 'the richest Negro street in the world' in 1956. The highway destroyed it.", source: "Atlanta History Center; Fortune Magazine (1956)" },
+    { id: "greenwood", name: "Greenwood District, Tulsa, OK", lat: 36.1627, lng: -95.9898, category: "violence", era: "1921", description: "'Black Wall Street' — a thriving Black business district with 108 Black-owned businesses, the Dreamland Theatre, and the 54-room Stradford Hotel. On May 31–June 1, 1921, a white mob burned it to the ground. The city of Tulsa denied reparations for 100 years.", keyFact: "The Tulsa Race Massacre destroyed 35 blocks and 1,256 homes. The Stradford Hotel was the largest Black-owned hotel in the country. Insurance companies denied all claims.", source: "Tulsa Race Massacre Commission Report (2001)" },
+  ];
+
+  const CAT_COLORS: Record<string, string> = { precolumbian: "#c9a84c", treaty: "#1d6fa4", removal: "#d4af37", violence: "#8b1a1a", resistance: "#2d6a4f" };
+  const CAT_LABELS: Record<string, string> = { precolumbian: "Pre-Columbian Civilizations", treaty: "Treaty Sites", removal: "Removal Routes & Destinations", violence: "Sites of Violence", resistance: "Resistance & Legacy" };
+
+  const filtered = filter ? MAP_LOCATIONS.filter(l => l.category === filter) : MAP_LOCATIONS;
+
+  const handleMapReady = (map: google.maps.Map) => {
+    MAP_LOCATIONS.forEach(loc => {
+      const marker = new google.maps.Marker({
+        position: { lat: loc.lat, lng: loc.lng },
+        map,
+        title: loc.name,
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 10,
+          fillColor: CAT_COLORS[loc.category],
+          fillOpacity: 0.9,
+          strokeColor: "#d4af37",
+          strokeWeight: 2,
+        },
+      });
+      marker.addListener("click", () => setSelected(loc));
+    });
+  };
+
+  return (
+    <div>
+      {/* Category Filter */}
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
+        <button onClick={() => setFilter(null)} style={{ padding: "5px 12px", background: !filter ? "#d4af37" : "transparent", color: !filter ? "#0a1118" : "#94a3b8", border: "1px solid rgba(212,175,55,0.3)", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.1em", cursor: "pointer" }}>ALL</button>
+        {Object.entries(CAT_LABELS).map(([key, label]) => (
+          <button key={key} onClick={() => setFilter(filter === key ? null : key)} style={{ padding: "5px 12px", background: filter === key ? CAT_COLORS[key] : "transparent", color: filter === key ? "#fff" : "#94a3b8", border: `1px solid ${CAT_COLORS[key]}40`, fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.05em", cursor: "pointer" }}>
+            {label}
+          </button>
+        ))}
+      </div>
+      {/* Map */}
+      <div style={{ height: 440, border: "1px solid rgba(212,175,55,0.2)", marginBottom: 16, position: "relative" }}>
+        <MapView
+          initialCenter={{ lat: 37.5, lng: -95.0 }}
+          initialZoom={4}
+          onMapReady={handleMapReady}
+        />
+      </div>
+      {/* Selected Detail */}
+      {selected && (
+        <div style={{ background: "#0a1118", border: `1px solid ${CAT_COLORS[selected.category]}40`, borderLeft: `4px solid ${CAT_COLORS[selected.category]}`, padding: "20px 24px", marginBottom: 16 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
+            <div>
+              <div style={{ fontFamily: "Cinzel, serif", color: CAT_COLORS[selected.category], fontSize: 8, letterSpacing: "0.1em", marginBottom: 4 }}>{CAT_LABELS[selected.category]} · {selected.era}</div>
+              <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 15 }}>{selected.name}</div>
+            </div>
+            <button onClick={() => setSelected(null)} style={{ background: "transparent", border: "none", color: "#64748b", cursor: "pointer", fontSize: 18 }}>×</button>
+          </div>
+          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1rem", lineHeight: 1.8, marginBottom: 12 }}>{selected.description}</p>
+          <div style={{ background: `${CAT_COLORS[selected.category]}08`, borderLeft: `3px solid ${CAT_COLORS[selected.category]}`, padding: "10px 14px", marginBottom: 10 }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: CAT_COLORS[selected.category], fontSize: 8, letterSpacing: "0.2em", marginBottom: 4 }}>✦ KEY FINDING</div>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "0.95rem", lineHeight: 1.7, fontStyle: "italic", margin: 0 }}>{selected.keyFact}</p>
+          </div>
+          <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 8, letterSpacing: "0.1em" }}>SOURCE: {selected.source}</div>
+        </div>
+      )}
+      {/* Location Grid */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
+        {filtered.map(loc => (
+          <button key={loc.id} onClick={() => setSelected(selected?.id === loc.id ? null : loc)} style={{ background: selected?.id === loc.id ? `${CAT_COLORS[loc.category]}15` : "#0a1118", border: `1px solid ${selected?.id === loc.id ? CAT_COLORS[loc.category] : "rgba(212,175,55,0.1)"}`, borderLeft: `3px solid ${CAT_COLORS[loc.category]}`, padding: "12px 14px", cursor: "pointer", textAlign: "left" }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: CAT_COLORS[loc.category], fontSize: 7, letterSpacing: "0.1em", marginBottom: 3 }}>{loc.era}</div>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11 }}>{loc.name}</div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function ChartsPage() {
   const sections = [
@@ -504,7 +597,8 @@ export default function ChartsPage() {
     { id: "census-labels", num: 5, title: "How the U.S. Census Classified Black Americans", subtitle: "Official Racial Category Labels Used by the Federal Government — 1790 to 2020", description: "The U.S. Census did not simply count people — it classified them. The labels used to categorize Black Americans changed 11 times between 1790 and 2020, each change reflecting a political decision about who counted and who did not. The 1930 instruction that 'a person of mixed Indian and Negro blood should be returned a Negro' is the most consequential single sentence in this entire history. This chart shows how the federal government's own language evolved — and what each change meant for the people it described.", tier: "TIER 1", tierColor: "#4ade80", source: "U.S. Census Bureau Enumerator Instructions (1790–2020), National Archives Record Group 29", chapterSlug: "identity-erasure", chapterTitle: "The Paper Genocide", chart: <CensusLabelChart /> },
     { id: "gi-bill", num: 6, title: "The GI Bill's Racial Exclusion — VA Loans by State (1947)", subtitle: "How the Most Transformative Wealth-Building Program in American History Was Administered Through Racial Discrimination", description: "The GI Bill (1944) created the American middle class. It provided veterans with college tuition, low-interest home loans, and unemployment benefits. But it was administered through local VA offices, local banks, and local universities — all of which practiced racial discrimination. This chart shows the documented disparity in VA loan distribution in 1947, the year the program was at its peak. Mississippi is the most extreme example: 3,229 VA loans issued; only 2 went to Black veterans.", tier: "TIER 1", tierColor: "#4ade80", source: "Katznelson, Ira. When Affirmative Action Was White (2005); VA loan records, National Archives", chapterSlug: "wealth-extraction", chapterTitle: "The Racial Wealth Gap Was Engineered", chart: <GIBillChart /> },
     { id: "broken-promises", num: 7, title: "Broken Promises: Acreage Ceded by Treaty — 1785 to 1887", subtitle: "Every Bar is a Sovereign Agreement Made and Broken", description: "Each bar represents a specific treaty between the U.S. government and an Indigenous nation. The height of the bar shows the millions of acres ceded. The selected bar turns gold when clicked, revealing the specific treaty name, the promise made, and exactly how it was broken. The Dawes Act bar (90 million acres) dwarfs everything else — it was the single largest land transfer in American history, achieved not through a treaty but through unilateral legislation after the 1871 Indian Appropriations Act ended treaty-making entirely.", tier: "TIER 1", tierColor: "#4ade80", source: "Kappler's Indian Affairs: Laws and Treaties (1904); National Archives Treaty Records", chapterSlug: "treaties-broken-promises", chapterTitle: "The Treaties: Sovereign Agreements Made and Broken", chart: <BrokenPromisesChart /> },
-    { id: "homeownership", num: 8, title: "The Black Homeownership Gap — 1900 to 2024", subtitle: "Percentage of Households That Own Their Home: White vs. Black Americans", description: "Homeownership is the primary mechanism by which American families build intergenerational wealth. The Black homeownership rate has never exceeded 50% in recorded history. The gap between Black and white homeownership today is larger than it was in 1968 when the Fair Housing Act was passed — proving that anti-discrimination law without economic restitution cannot close a gap created by 80 years of deliberate exclusion.", tier: "TIER 1", tierColor: "#4ade80", source: "U.S. Census Bureau; Urban Institute; National Association of Realtors", chapterSlug: "redlining-housing-discrimination", chapterTitle: "Redlining and the Housing Wealth Gap", chart: <HomeownershipChart /> },
+    { id: "historical-map", num: 9, title: "Geographic History: Pre-Columbian Civilizations & Treaty Lands", subtitle: "Where This History Happened — From the Etowah Mounds to the Muscogee Reservation in Oklahoma", description: "Every event in this encyclopedia happened in a specific place. This map shows the geographic locations of the pre-Columbian civilizations, the treaty signing sites, the removal routes, and the living legacy communities. Click any marker to see the documented history of that location. The distance between the Etowah Mounds in Cartersville, Georgia and the Muscogee (Creek) Nation reservation in Oklahoma is the Trail of Tears.", tier: "TIER 1", tierColor: "#4ade80", source: "National Park Service; National Archives Treaty Records; McGirt v. Oklahoma (2020)", chapterSlug: "etowah-mounds", chapterTitle: "The Etowah Mounds", chart: <HistoricalMapChart /> },
+    { id: "homeownership", num: 10, title: "The Black Homeownership Gap — 1900 to 2024", subtitle: "Percentage of Households That Own Their Home: White vs. Black Americans", description: "Homeownership is the primary mechanism by which American families build intergenerational wealth. The Black homeownership rate has never exceeded 50% in recorded history. The gap between Black and white homeownership today is larger than it was in 1968 when the Fair Housing Act was passed — proving that anti-discrimination law without economic restitution cannot close a gap created by 80 years of deliberate exclusion.", tier: "TIER 1", tierColor: "#4ade80", source: "U.S. Census Bureau; Urban Institute; National Association of Realtors", chapterSlug: "redlining-housing-discrimination", chapterTitle: "Redlining and the Housing Wealth Gap", chart: <HomeownershipChart /> },
   ];
 
   return (
