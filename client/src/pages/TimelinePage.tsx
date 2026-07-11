@@ -9,7 +9,7 @@ import { Search, Share2, Filter, ChevronDown, ChevronUp, BookOpen, X } from "luc
 // Categorize each event for filtering
 const EVENT_CATEGORIES: Record<string, string> = {
   "Papal Bull": "legislation",
-  "Doctrine of Discovery": "legislation",
+  "Doctrine of Discovery": "blacknative",
   "Georgia Charter": "legislation",
   "Declaration of Independence": "legislation",
   "Haitian Revolution": "resistance",
@@ -104,6 +104,10 @@ const EVENT_CATEGORIES: Record<string, string> = {
   "Negro blood": "blacknative",
   "Name Negro": "blacknative",
   "Richard B. Moore": "blacknative",
+  "Dum Diversas": "blacknative",
+  "Romanus Pontifex": "blacknative",
+  "Inter Caetera": "blacknative",
+  "perpetual slavery": "blacknative",
 };
 
 function getCategory(event: string): string {
