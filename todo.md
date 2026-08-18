@@ -113,3 +113,10 @@
 - [x] Add the next page-verified colonial source-card tranche for Smith, Winslow, Strachey, Wood, Williams, Josselyn, and Beverley.
 - [x] Establish a normalized legal-record metadata model and apply it to the existing civil-rights and voting-rights sequence.
 - [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after all three releases are complete.
+
+# Next Three Research Releases — Verification and Legal Expansion
+
+- [x] Inspect original Louisiana field-office images and seek a second record with an independent identifier before linking any named land applicant across records; preserve the result as unresolved unless identifiers match.
+- [x] Add page-verified or stable-facsimile cards for Percy, Johnson, Ashe, Archdale, Lawson, Dampier, Exquemelin, and Purchas, preserving authorial and edition limits.
+- [x] Extend the legal-record registry to selected state Black Codes, classification statutes, and linked federal legal records with jurisdiction-bounded enforcement analysis.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the three releases are complete.

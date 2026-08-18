@@ -151,6 +151,78 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
         limitation: "Beverley’s claims about Indigenous religion, law, custom, and colonial history are colonial representations, not self-authored Indigenous records or standalone proof of community identity.",
         source: "Robert Beverley, The History and Present State of Virginia (1705)",
         sourceUrl: "https://docsouth.unc.edu/southlit/beverley/beverley.html"
+      },
+      {
+        year: "1607 / 1907",
+        title: "George Percy, Observations by Master George Percy",
+        locator: "Virtual Jamestown transcription of the 1907 edition of Percy’s 1607 observations; stable document route",
+        establishes: "The text makes an English participant’s account of the 1606–1607 voyage and early Jamestown encounters available for source-critical review.",
+        limitation: "Percy’s labels, descriptions, and explanations are colonial representations. They do not establish Indigenous belief, consent, sovereignty, or present-day identity without independent evidence.",
+        source: "George Percy, Observations by Master George Percy (1607; ed. 1907)",
+        sourceUrl: "https://www.virtualjamestown.org/VVD4SJBL.html"
+      },
+      {
+        year: "1654",
+        title: "Edward Johnson, Wonder-Working Providence",
+        locator: "1654 London work; later public edition with Internet Archive title-page facsimile route",
+        establishes: "Johnson’s history records a Puritan author’s providential interpretation of New England colonization and his own stated representations of land, settlement, religion, and conflict.",
+        limitation: "A providential colonial history is not neutral history and cannot substitute for the self-representation of the Indigenous nations affected by the events it recounts.",
+        source: "Edward Johnson, Wonder-Working Providence of Sion’s Saviour in New England (1654; later ed.)",
+        sourceUrl: "https://archive.org/details/wonderworkingpro00john/page/n5/mode/1up"
+      },
+      {
+        year: "1682 / 1911",
+        title: "Thomas Ashe, Carolina",
+        locator: "Ashe’s 1682 promotional narrative in the 1911 Narratives of Early Carolina collection; Internet Archive title-page facsimile route",
+        establishes: "The work documents one English writer’s commercial and settlement-focused description of Carolina and the colony’s prospects as the author framed them.",
+        limitation: "The public copy is a later collection, and Ashe’s promotional voice cannot independently establish Indigenous life, consent, or the complete operation of Carolina’s Indian trade.",
+        source: "Thomas Ashe, Carolina (1682; in Narratives of Early Carolina, ed. 1911)",
+        sourceUrl: "https://archive.org/details/narrearlycarolina00sallrich/page/n5/mode/1up"
+      },
+      {
+        year: "1707 / 1822",
+        title: "John Archdale, A New Description of Carolina",
+        locator: "1822 Charleston reprint that identifies itself as preserving style and punctuation from a 1707 copy; Internet Archive title-page facsimile route",
+        establishes: "The text provides evidence of an English colonial administrator’s presentation of Carolina’s discovery, settlement, government, and commercial prospects.",
+        limitation: "The public copy is a later reprint and the author’s administrative viewpoint cannot substitute for Indigenous histories or verify every statement about colonial society.",
+        source: "John Archdale, A New Description of That Fertile and Pleasant Province of Carolina (1707; reprint 1822)",
+        sourceUrl: "https://archive.org/details/newdescriptionof00arch/page/n5/mode/1up"
+      },
+      {
+        year: "1709",
+        title: "John Lawson, A New Voyage to Carolina",
+        locator: "UNC-Chapel Hill Documenting the American South electronic edition, identified as the 1709 London publication",
+        establishes: "The work documents an English colonial traveler’s account of Carolina’s natural history and his stated observations during travel through several Indigenous nations.",
+        limitation: "Lawson’s travel narrative cannot alone establish the meanings of Indigenous customs, political status, or land relations; a section-level page check is required before quotation.",
+        source: "John Lawson, A New Voyage to Carolina (1709)",
+        sourceUrl: "https://docsouth.unc.edu/nc/lawson/menu.html"
+      },
+      {
+        year: "1697",
+        title: "William Dampier, A New Voyage Round the World",
+        locator: "1697 Internet Archive microfilm scan, digitized from source scan IA40313706-62",
+        establishes: "The work preserves a maritime traveler’s reported observations within an Atlantic world of navigation, commerce, conflict, and colonial contact.",
+        limitation: "A maritime narrative cannot serve as a complete Caribbean social record or establish demographic, legal, or identity claims without records suited to those questions.",
+        source: "William Dampier, A New Voyage Round the World (1697)",
+        sourceUrl: "https://archive.org/details/bim_early-english-books-1641-1700_a-new-voyage-round-the-w_dampier-william_1697"
+      },
+      {
+        year: "1684",
+        title: "Alexandre Olivier Exquemelin, Bucaniers of America",
+        locator: "1684 English Internet Archive microfilm scan, digitized from source scan IA40313003-38",
+        establishes: "The edition records what a buccaneering narrative reported about Caribbean conflict, captivity, commerce, and colonial violence.",
+        limitation: "The account moved across languages, violence, and publication contexts; it is not a neutral social census and cannot substantiate a universal Black–Indigenous identity claim.",
+        source: "Alexandre Olivier Exquemelin, Bucaniers of America (1684 English edition)",
+        sourceUrl: "https://archive.org/details/bim_early-english-books-1641-1700_bucaniers-of-america-_exquemelin-alexandre-ol_1684"
+      },
+      {
+        year: "1625",
+        title: "Samuel Purchas, Purchas His Pilgrimes",
+        locator: "1625 London compilation; University of Michigan EEBO-TCP stable division routes and Internet Archive source-scan route",
+        establishes: "Purchas’s compilation documents how an English editor assembled, selected, and framed travel relations for readers, including material about discovery, commerce, religion, and empire.",
+        limitation: "Purchas is a compiler as well as an author. A public claim must identify the underlying relation and exact section, rather than attributing a broad proposition to Purchas as a single eyewitness authority.",
+        source: "Samuel Purchas, Purchas His Pilgrimes (1625)",
+        sourceUrl: "https://quod.lib.umich.edu/e/eebo/A68617.0001.001?view=toc"
       }
     ]
   }

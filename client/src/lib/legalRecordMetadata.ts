@@ -14,6 +14,60 @@ export interface LegalRecordMetadata {
 }
 
 export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
+  "1662_maternal_status": {
+    recordType: "Statute",
+    jurisdiction: "Colony of Virginia",
+    citation: "Act XII, 2 Hening’s Statutes at Large 170 (Dec. 1662)",
+    mechanism: "Made a child’s bond or free status follow the legal condition of the mother in the described colonial context.",
+    enforcementPath: "Colonial courts and local administration of status, labor, inheritance, and enslavement.",
+    documentedLimit: "The statute establishes a legal rule; it does not establish the ancestry, kinship, or lived experience of every person later classified under colonial categories.",
+    sourceUrl: "https://encyclopediavirginia.org/primary-documents/negro-womens-children-to-serve-according-to-the-condition-of-the-mother-1662/"
+  },
+  "1723_classification": {
+    recordType: "Statute",
+    jurisdiction: "Colony of Virginia",
+    citation: "Act IV, 4 Hening’s Statutes at Large 126–34 (May 1723)",
+    mechanism: "Created a linked penal and administrative regime addressing enslaved people and people classified as Negro, Mulatto, or Indian, whether bond or free, with stated exceptions.",
+    enforcementPath: "Colonial courts, local officials, militia regulation, taxation, and voting administration.",
+    documentedLimit: "The aggregation of categories within a legal regime is not proof that all people placed in those categories shared ancestry, identity, or legal treatment in every circumstance.",
+    sourceUrl: "https://encyclopediavirginia.org/primary-documents/an-act-directing-the-trial-of-slaves-committing-capital-crimes-and-for-the-more-effectual-punishing-conspiracies-and-insurrections-of-them-and-for-the-better-government-of-negros-mulattos-and-in/"
+  },
+  "1740_sc_code": {
+    recordType: "Statute",
+    jurisdiction: "Province of South Carolina",
+    citation: "An Act for the Better Ordering and Governing Negroes and Other Slaves (1740)",
+    mechanism: "Established a broad slave-property and policing regime using multiple racialized categories, with stated exceptions and rules requiring freedom to be demonstrated in designated contexts.",
+    enforcementPath: "Provincial courts, patrols, enslaver claims, and local colonial administration.",
+    documentedLimit: "The statute describes a legal regime, not a complete family history or a uniform outcome for every person named by its categories.",
+    sourceUrl: "https://www.loc.gov/resource/gdcmassbookdig.negrolawofsouthc00onea/?st=gallery"
+  },
+  "1865_mississippi_black_code": {
+    recordType: "Statute",
+    jurisdiction: "State of Mississippi",
+    citation: "Mississippi Black Codes, Laws of the State of Mississippi (1865; published 1866)",
+    mechanism: "Applied race-specific restrictions to employment departure, vagrancy, arms, and marriage for people the statutes called freedmen, free Negroes, or mulattoes.",
+    enforcementPath: "State and local officers, police, courts, penal provisions, and labor administration.",
+    documentedLimit: "The entry documents selected enacted provisions and their legal targets; it does not establish identical enforcement in every county or account for every freedperson’s experience.",
+    sourceUrl: "https://constitutioncenter.org/the-constitution/historic-document-library/detail/mississippi-south-carolina-black-codes-1865"
+  },
+  "1865_south_carolina_black_code": {
+    recordType: "Statute",
+    jurisdiction: "State of South Carolina",
+    citation: "Act to Establish and Regulate the Domestic Relations of Persons of Colour (Dec. 21, 1865)",
+    mechanism: "Used master–servant terminology and regulated labor contracts, movement, licensing, vagrancy, and specified work or trade conditions for people classified as persons of color.",
+    enforcementPath: "District judges, magistrates, local courts, labor-contract administration, and penal enforcement.",
+    documentedLimit: "The statute’s text does not establish a uniform local outcome, a complete history of racial categories, or the identity of any specific individual or family.",
+    sourceUrl: "https://ldhi.library.cofc.edu/exhibits/show/after_slavery_educator/unit_three_documents/document_eight"
+  },
+  "1924_virginia_racial_integrity": {
+    recordType: "Statute",
+    jurisdiction: "Commonwealth of Virginia",
+    citation: "Racial Integrity Act, 1924 Va. Acts ch. 371",
+    mechanism: "Required racial designation in the legal administration of marriage and defined “white” through a restrictive statutory rule, creating a state classification framework later revised in 1930.",
+    enforcementPath: "Virginia Bureau of Vital Statistics, local clerks, marriage-license administration, and associated vital-record processes.",
+    documentedLimit: "The law documents a state classification regime; it does not prove a person’s ancestry, erase a community’s self-identification, or determine sovereign tribal citizenship.",
+    sourceUrl: "https://www.lva.virginia.gov/collections/educator-resources/dbva/items/show/226"
+  },
   "1865_field_order": {
     recordType: "Executive / military order",
     jurisdiction: "Military Division of the Mississippi; specified coastal territory",

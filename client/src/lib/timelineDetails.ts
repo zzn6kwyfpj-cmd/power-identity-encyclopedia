@@ -561,6 +561,20 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "captivity-classification-colonial-law",
     chapterTitle: "Captivity, Classification, and Colonial Law",
   },
+  "1865_black_codes": {
+    description: "In 1865, Mississippi and South Carolina enacted distinct post-emancipation statutes now commonly described as Black Codes. The selected Mississippi provisions restricted employment departure, imposed vagrancy rules, regulated arms, and criminalized interracial marriage under the statute’s terminology. South Carolina’s December 1865 act used master–servant language, regulated labor contracts and movement, required licensing for specified trades, and supplied vagrancy provisions. These laws document state efforts to regulate the labor and civil lives of people classified by race after emancipation. They do not establish identical enforcement in every locality or explain the experience, ancestry, or identity of every person affected.",
+    keyFact: "The selected 1865 statutes show that post-emancipation state law could combine labor, movement, licensing, vagrancy, and criminal rules in race-specific or race-targeted administrative regimes.",
+    primarySource: "Laws of the State of Mississippi (1865, published 1866); Acts of the General Assembly of South Carolina (1864–65), December 21, 1865",
+    chapterSlug: "freedmens-bureau",
+    chapterTitle: "The Freedmen’s Bureau: Recovery Tool and Instrument of Erasure",
+  },
+  "1924_racial_integrity": {
+    description: "Virginia’s 1924 Racial Integrity Act prohibited interracial marriage and imposed a restrictive legal definition of whiteness in the administration of marriage and vital records. The Library of Virginia preserves the contemporaneous Virginia Health Bulletin that circulated the law and administrative instructions. The National Park Service documents that its bureaucratic enforcement affected Black and Indigenous Virginians and could overwrite or constrain racial designations in public records. The law is direct evidence of a state classification system; it is not evidence that a state-assigned category correctly represented any individual’s ancestry, community identity, or tribal citizenship.",
+    keyFact: "The 1924 act created a legally administered racial-classification framework whose recordkeeping effects extended beyond marriage into vital-record practices.",
+    primarySource: "Virginia Health Bulletin, 'The New Virginia Law To Preserve Racial Integrity' (March 1924), Library of Virginia",
+    chapterSlug: "black-native-identity",
+    chapterTitle: "Black Native American Identity: The Suppressed History",
+  },
   "1795_san_lorenzo": {
     description: "The Treaty of San Lorenzo, signed by the United States and Spain on October 27, 1795, opened Mississippi River navigation and a New Orleans deposit privilege to U.S. commerce, defined a boundary, and required both powers to restrain Indigenous nations within their claimed territories from hostile action and new alliances across that boundary. It is a key record of borderlands expansion and the narrowing of Indigenous diplomatic space. The treaty does not recognize a private Maison Rouge title or establish Washitaw sovereignty.",
     keyFact: "A treaty designed to expand commerce also organized borderlands power by constraining Indigenous diplomacy inside U.S. and Spanish claims.",
