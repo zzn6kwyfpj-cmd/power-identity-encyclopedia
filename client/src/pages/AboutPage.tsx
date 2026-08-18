@@ -27,7 +27,7 @@ export default function AboutPage() {
             </h2>
             <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.1rem", lineHeight: 2, maxWidth: 680, margin: "0 auto" }}>
               <p style={{ marginBottom: 20 }}>
-                The Archive Encyclopedia is a comprehensive, evidence-based educational resource documenting the unbroken chain of power, dispossession, and resistance that begins with the pre-Columbian civilizations of 850 CE and extends to the present day. It covers 62 chapters across over 1,100 years of American history — from the legal fictions of European colonialism, through the forced removal of Indigenous nations, the architecture of chattel slavery, the systematic erasure of Black and Native identity, and the ongoing struggle for sovereignty, recognition, and economic justice.
+                The Archive Encyclopedia is a comprehensive, evidence-based educational resource documenting the unbroken chain of power, dispossession, and resistance that begins with the pre-Columbian civilizations of 850 CE and extends to the present day. It covers 67 chapters across over 1,100 years of American history — from the legal fictions of European colonialism, through the forced removal of Indigenous nations, the architecture of chattel slavery, the systematic erasure of Black and Native identity, and the ongoing struggle for sovereignty, recognition, and economic justice.
               </p>
               <p style={{ marginBottom: 20 }}>
                 The purpose of this work is to document what happened, to whom, by whose authority, and with what consequences — using primary sources, court records, census data, peer-reviewed scholarship, and the documented words of the people who lived through it. This encyclopedia does not tell you what to think. It presents the evidence and allows the record to speak for itself.
@@ -41,7 +41,7 @@ export default function AboutPage() {
             </div>
             <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 36, flexWrap: "wrap" }}>
               {[
-                { number: "62", label: "Chapters" },
+                { number: "67", label: "Chapters" },
                 { number: "850 CE", label: "to 2024" },
                 { number: "125+", label: "Primary Sources" },
                 { number: "48", label: "Figures of Resistance" },

@@ -17,13 +17,14 @@ import { BLACK_NATIVE_CONTENT } from "@/lib/manuscriptContentBlackNative";
 import { PAPAL_BULLS_CONTENT } from "@/lib/manuscriptContentPapalBulls";
 import { GAPS_CONTENT } from "@/lib/manuscriptContentGaps";
 import { ARCHIVAL_INTAKE_CONTENT } from "@/lib/manuscriptContentArchivalIntake";
+import { COLONIAL_SOURCEBOOK_CONTENT } from "@/lib/manuscriptContentColonialSourcebook";
 
 // Merge all content sources
 function getContent(slug: string) {
   return CHAPTER_CONTENT[slug] || EXTRA_CHAPTER_CONTENT[slug] || MODERN_CHAPTER_CONTENT[slug] ||
     VIETNAM_CHAPTER_CONTENT[slug] || GAP_FILL_CONTENT[slug] || DEPTH_CONTENT[slug] || FULL_CHAPTER_CONTENT[slug] ||
     FINAL_3_CONTENT[slug] || TREATIES_CONTENT[slug] || BLACK_NATIVE_CONTENT[slug] || PAPAL_BULLS_CONTENT[slug] ||
-    GAPS_CONTENT[slug] || ARCHIVAL_INTAKE_CONTENT[slug];
+    GAPS_CONTENT[slug] || ARCHIVAL_INTAKE_CONTENT[slug] || COLONIAL_SOURCEBOOK_CONTENT[slug];
 }
 
 const TOPIC_FILTERS = [
@@ -136,7 +137,7 @@ export default function SearchPage() {
             <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ FULL-TEXT SEARCH ✦</div>
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", marginBottom: 12 }}>Search The Archive</h1>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 600, margin: "0 auto" }}>
-              Search across all 62 chapters, primary source citations, key facts, and historical records.
+              Search across all 67 chapters, primary source citations, key facts, and historical records.
             </p>
           </div>
 

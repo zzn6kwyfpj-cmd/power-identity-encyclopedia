@@ -20,3 +20,10 @@
 - [x] Remove individual creator credit and replace it with anonymous collaborative stewardship language across the public site.
 - [x] Reconcile the public-domain reuse intent with the existing copyright-registration wording before publishing a legal-status statement.
 - [x] Verify the revised attribution and reuse language, then save a checkpoint.
+
+# Whole-Record Grand Chronology Audit
+
+- [x] Inventory the full inherited research history: prior links, attachments, books, workspace materials, framework prompt, research conclusions, and live encyclopedia records.
+- [x] Build a grand chronological matrix that maps every material finding to a live chapter, timeline entry, figure, source card, or explicit evidence-tiered deferral.
+- [x] Identify missed, contradicted, partially integrated, and Tier 3 community-tradition material suitable for transparent archival inclusion.
+- [x] Apply approved evidence-tiered additions, validate the website, and save a checkpoint with the grand audit report.

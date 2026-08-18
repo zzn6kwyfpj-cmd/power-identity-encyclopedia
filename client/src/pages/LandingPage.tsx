@@ -91,7 +91,7 @@ export default function LandingPage() {
           fontSize: "clamp(0.9rem, 1.5vw, 1rem)",
           lineHeight: 1.9,
         }}>
-          A comprehensive, evidence-based educational resource documenting the history of Black Native Americans and the systematic erasure of their identity, land, and sovereignty. From the pre-Columbian civilizations of 850 CE to the Cherokee Freedmen citizenship case of 2017. 62 chapters. 125+ primary source citations. An unbroken chain of causation from 850 CE to 2024.
+          A comprehensive, evidence-based educational resource documenting the history of Black Native Americans and the systematic erasure of their identity, land, and sovereignty. From the pre-Columbian civilizations of 850 CE to the Cherokee Freedmen citizenship case of 2017. 67 chapters. 125+ primary source citations. An unbroken chain of causation from 850 CE to 2024.
         </p>
       </div>
 

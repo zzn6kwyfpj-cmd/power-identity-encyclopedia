@@ -623,6 +623,16 @@ export const CHAPTERS: Chapter[] = [
     primarySource: "Washitaw-Turner Goston El-Bey, Return of the Ancient Ones (1993); United States v. Turner, 52 U.S. 663 (1850)",
     image: "/manus-storage/era_banner_5_f842cd88.png",
   },
+  {
+    id: 67, slug: "colonial-archive-sourcebook", title: "The Colonial Archive: A Sourcebook for Reading Power",
+    subtitle: "Twenty-Three Works, Their Records, and Their Limits",
+    era: "Era I–II", eraColor: "#d4af37",
+    summary: "A source-critical guide to the transferred twenty-three-work colonial corpus, its legal access routes, its historical value, and the limits of colonial observation. It makes the research archive public without turning colonial descriptions into unexamined authority.",
+    tier: 2,
+    keyFact: "A colonial text can establish what its author, publisher, or institution asserted. It becomes evidence of a past event only to the extent that the claim is dateable, locatable, and corroborated by sources appropriate to that claim.",
+    primarySource: "Transferred Early-Colonial Sources Access Inventory (23 works); Internet Archive, Library of Congress, HathiTrust, Documenting the American South, and EEBO-TCP access records",
+    image: "/manus-storage/era_banner_1_1ad8b855.png",
+  },
 ];
 
 export const FIGURES: Figure[] = [
@@ -1114,7 +1124,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
   { year: 1863, event: "Emancipation Proclamation — President Lincoln declares enslaved people in Confederate states to be free. Its scope is deliberately limited: it does not apply to loyal border states or Union-occupied Confederate territories. It is a war measure, not a moral declaration. 4 million enslaved people remain legally in bondage", era: 2 },
   { year: 1865, event: "13th Amendment — abolishes slavery 'except as punishment for crime'", era: 2 },
   { year: 1865, event: "Georgia Black Codes immediately re-enslave Black labor", era: 2 },
-  { year: 1866, event: "Sherman's Field Orders No. 15 revoked — 40 Acres denied", era: 2 },
+  { year: 1865, event: "Andrew Johnson's land-restoration policy reverses most settlements authorized under Sherman’s Special Field Orders No. 15 — formerly enslaved families holding only possessory titles lose the land set aside for them. Source: Freedmen and Southern Society Project; New Georgia Encyclopedia", era: 2, detailKey: "1865_land_restoration" },
   { year: 1867, event: "Medicine Lodge Treaty — Southern Plains nations (Cheyenne, Arapaho, Kiowa, Comanche, Plains Apache) are confined to reservations in Indian Territory. The U.S. promises food, clothing, and protection. The U.S. fails to provide promised provisions, and the Army continues attacking reservation communities. Source: Kappler's Indian Affairs Laws and Treaties", era: 2 },
   { year: 1868, event: "Fort Laramie Treaty (second) — the Lakota Nation is guaranteed the Black Hills 'as long as the grass shall grow and the water flow.' The U.S. promises to protect the Great Sioux Reservation from all intrusion. In 1874, Custer's expedition discovers gold in the Black Hills. The U.S. violates the treaty and seizes the land. The Black Hills have never been returned. Source: National Archives, Treaty of Fort Laramie (1868)", era: 2 },
   { year: 1871, event: "Indian Appropriations Act — Congress unilaterally ends treaty-making with all Indigenous nations. Section 3 states: 'No Indian nation or tribe within the territory of the United States shall be acknowledged or recognized as an independent nation, tribe, or power with whom the United States may contract by treaty.' After 370+ treaties signed and broken, the U.S. government simply decides it no longer needs to negotiate. Indigenous peoples are henceforth governed by federal legislation, not sovereign agreement. Source: Indian Appropriations Act, 16 Stat. 544, 566 (1871), National Archives", era: 2 },
@@ -1195,4 +1205,8 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
   { year: 1850, event: "United States v. Turner — the Supreme Court holds that the Carondelet–Maison Rouge instrument conveyed no private interest in land to Maison Rouge. This is the central legal record against the asserted private-title theory, while Washitaw land memory remains a documented community tradition. Source: 52 U.S. 663", era: 2, detailKey: "1850_turner" },
   { year: 1993, event: "Return of the Ancient Ones is published — Verdiacee 'Tiara' Washitaw-Turner Goston's community-authored text records Washitaw de Dugdahmoundyah history, Louisiana land memory, and Black Indigenous origin traditions. The publication is documented; its historical conclusions are presented as Tier 3 pending independent corroboration.", era: 5, detailKey: "1993_washitaw" },
   { year: 2019, event: "North American Aboriginal Society publishes a portrait and tribal-history compilation — a valuable community source index whose individual images, dates, and claims require independent verification before use as encyclopedia fact.", era: 5, detailKey: "2019_naas" },
+  { year: 1661, event: "Barbados enacts a comprehensive slave code — a foundational legal regime in the English Atlantic. The surviving 1667 text reflects amendments, but it documents controls over movement, punishment, labor, and property status that informed later Caribbean and Carolina legal systems. Source: Barbados slave-code manuscript/transcription", era: 1, detailKey: "1661_barbados_code" },
+  { year: 1690, event: "Carolina’s first comprehensive slave code — a mainland act shaped by earlier Caribbean codes. Its language explicitly governed Negro and Indian enslaved people while using White as the opposed category; the act was disallowed in 1691, though later Carolina laws borrowed heavily from its structure. Source: South Carolina Department of Archives and History, Act 57", era: 1, detailKey: "1690_carolina_code" },
+  { year: 1783, event: "Treaty of Paris recognizes U.S. independence and asserts boundaries to the Mississippi — Britain and the United States set territorial boundaries without Indigenous nations as parties, creating a central interstate claim later contested across Indigenous homelands. Source: Treaty of Paris (3 September 1783), National Archives", era: 2, detailKey: "1783_paris_boundaries" },
+  { year: 1865, event: "Sherman’s Special Field Orders No. 15 reserves specified coastal lands for settlement by formerly enslaved people — the order provided family plots of up to forty acres and possessory titles subject to later federal action. Source: Special Field Orders No. 15 (16 January 1865)", era: 2, detailKey: "1865_field_order" },
 ];
