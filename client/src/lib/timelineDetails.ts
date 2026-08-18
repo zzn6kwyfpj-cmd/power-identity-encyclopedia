@@ -778,4 +778,18 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "civil-rights-acts",
     chapterTitle: "The Civil Rights Act and the Voting Rights Act",
   },
+  "1969_gaston_county": {
+    description: "Gaston County sought to reinstate a literacy test under the Voting Rights Act’s procedures. The Supreme Court held that the county’s record of discrimination in educational opportunities available to Black children meant the proposed literacy test could not be reinstated. The case shows why a formally neutral test could not be assessed apart from the unequal conditions that shaped who could satisfy it. It establishes the Court’s treatment of the particular record and literacy test at issue; it does not itself decide every later voting-rights challenge in every jurisdiction.",
+    keyFact: "Gaston County linked voting access to the documented legacy of unequal educational opportunity, preventing a covered county from reviving a literacy test.",
+    primarySource: "Gaston County v. United States, 395 U.S. 285 (1969); Library of Congress; Constitution Annotated",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1980_city_of_rome": {
+    description: "City of Rome sought relief from Voting Rights Act preclearance requirements. Constitution Annotated explains that the Court upheld Congress’s authority under Section 2 of the Fifteenth Amendment to prohibit electoral devices with discriminatory impact or effect, even if discriminatory intent were necessary to establish a direct constitutional violation. The case therefore confirmed the reach of Congress’s affirmative remedial authority in the then-operative preclearance framework. It did not establish that discriminatory voting practices had ended, and it did not prevent the later statutory and constitutional retrenchment represented by Shelby County.",
+    keyFact: "City of Rome confirmed that Congress could use Fifteenth Amendment enforcement power to reach covered electoral changes with discriminatory impact or effect through the Voting Rights Act.",
+    primarySource: "City of Rome v. United States, 446 U.S. 156 (1980); Library of Congress; Constitution Annotated",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
 };

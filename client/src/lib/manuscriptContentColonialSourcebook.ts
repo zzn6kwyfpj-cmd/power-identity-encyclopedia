@@ -56,38 +56,38 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
       {
         year: "1588",
         title: "Thomas Hariot, A Briefe and True Report",
-        locator: "1588 edition; Internet Archive / Project Gutenberg working text; exact page-image quotation not yet published",
+        locator: "1590 English de Bry facsimile (UNC-Chapel Hill); title-page image and page-marked text reproduction",
         establishes: "The tract provides direct evidence of an English promoter’s stated commodity, settlement, and investment program, including reliance on local knowledge for provisions.",
         limitation: "It is promotional colonial writing, not an Indigenous account of consent, sovereignty, or social life. A page image must be checked before a public direct quotation is added.",
         source: "Thomas Hariot, A Briefe and True Report of the New Found Land of Virginia (1588)",
-        sourceUrl: "https://archive.org/details/abriefeandtruere04247gut"
+        sourceUrl: "https://docsouth.unc.edu/nc/hariot/hariot.html"
       },
       {
         year: "1613",
         title: "Alexander Whitaker, Good Newes from Virginia",
-        locator: "1613 John Carter Brown Library scan; working text indexed; exact page-image quotation not yet published",
+        locator: "1613 London printing; EEBO-TCP main tract, stable division 1:4; Internet Archive scan retained as facsimile route",
         establishes: "The tract documents a Virginia Company–era minister’s effort to connect plantation, conversion, English settlement, and colonial legitimacy.",
         limitation: "It cannot establish Indigenous belief, consent, or the lived effect of mission policy. Its genre and advocacy must remain visible.",
         source: "Alexander Whitaker, Good Newes from Virginia (1613)",
-        sourceUrl: "https://archive.org/details/goodnewesfromvir00whit"
+        sourceUrl: "https://quod.lib.umich.edu/e/eebo/A15050.0001.001/1:4?rgn=div1;view=fulltext"
       },
       {
         year: "1621",
         title: "William Bradford, Of Plymouth Plantation",
-        locator: "1898 transcription, pp. 57–59, for the Tisquantum passage; colonial manuscript tradition",
+        locator: "1898 state edition, p. 58 page-image anchor (within pp. 57–59, Tisquantum passage); original manuscript held by the State Library of Massachusetts",
         establishes: "Bradford records an English account of Thomas Hunt’s seizure of Tisquantum and other captives, supporting the timeline’s narrowly stated captivity event when paired with institutional context.",
         limitation: "The citation is a later transcription of a colonial manuscript, not a complete Wampanoag archive. The account does not prove a complete route, sale outcome, or Indigenous interpretation on its own.",
         source: "William Bradford, Of Plymouth Plantation; Plimoth Patuxet Museums contextual materials",
-        sourceUrl: "https://plimoth.org/yath/unit-2/plymouth-pokanoket-alliance"
+        sourceUrl: "https://archive.org/details/bradfordsh00brad/page/58/mode/1up"
       },
       {
         year: "1657",
         title: "Richard Ligon, A True and Exact History of Barbados",
-        locator: "1657 Internet Archive / Getty Research Institute scan; plantation-labor passages indexed; exact page-image quotation not yet published",
+        locator: "1657 Getty Research Institute copy, printed p. 22 (500-acre plantation passage immediately before printed p. 23); Internet Archive page-image anchor",
         establishes: "Ligon’s text provides firsthand-era evidence of one writer’s description of sugar production, forced labor, provisions, and plantation organization in Barbados.",
         limitation: "It is neither a full demographic record nor a complete legal account. The Barbados code and other records remain stronger evidence for statutory rules and enslaved people’s experience requires additional sources.",
         source: "Richard Ligon, A True and Exact History of the Island of Barbados (1657)",
-        sourceUrl: "https://archive.org/details/trueexacthistory00ligo"
+        sourceUrl: "https://archive.org/details/trueexacthistory00ligo/page/n43/mode/1up"
       }
     ]
   }

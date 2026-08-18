@@ -244,6 +244,24 @@ export const FINAL_3_CONTENT: Record<string, {
         limitation: "It establishes the scope of the preclearance system, not the outcome of every later dispute or the permanence of the system.",
         source: "Allen v. State Board of Elections, 393 U.S. 544 (1969); National Archives; Library of Congress",
         sourceUrl: "https://www.loc.gov/item/usrep393544/"
+      },
+      {
+        year: "1969",
+        title: "Gaston County v. United States",
+        locator: "395 U.S. 285; Library of Congress U.S. Reports scan and IIIF manifest",
+        establishes: "The Court held that a county’s history of discrimination in educational opportunities available to Black children precluded the county from reinstituting a literacy test under the Voting Rights Act.",
+        limitation: "The holding concerns the record and literacy test at issue; it does not independently resolve every registration barrier or voting dispute in other jurisdictions.",
+        source: "Gaston County v. United States, 395 U.S. 285 (1969); Constitution Annotated; Library of Congress",
+        sourceUrl: "https://www.loc.gov/item/usrep395285/"
+      },
+      {
+        year: "1980",
+        title: "City of Rome v. United States",
+        locator: "446 U.S. 156; Library of Congress U.S. Reports scan and IIIF manifest",
+        establishes: "The Court upheld Congress’s authority under Section 2 of the Fifteenth Amendment to prohibit covered electoral changes with discriminatory impact or effect through the Voting Rights Act’s preclearance framework.",
+        limitation: "The decision upheld the then-operative remedial framework; it did not establish that discriminatory voting practices ended or that the preclearance system would remain unchanged after later litigation.",
+        source: "City of Rome v. United States, 446 U.S. 156 (1980); Constitution Annotated; Library of Congress",
+        sourceUrl: "https://www.loc.gov/item/usrep446156/"
       }
     ],
     didYouKnow: "Within hours of the Supreme Court's ruling in Shelby County v. Holder (2013), which gutted the Voting Rights Act's preclearance requirement, Texas announced a voter ID law and a redistricting plan that had previously been blocked under Section 5. North Carolina and Georgia followed within days. The states that had been most aggressively blocked from voter suppression under the Voting Rights Act moved the fastest to implement new restrictions the moment the enforcement mechanism was removed."

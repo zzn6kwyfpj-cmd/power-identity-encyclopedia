@@ -77,3 +77,24 @@
 - [x] Verify the statutory text, dates, holdings, and public institutional source records.
 - [x] Prepare source cards and timeline panels that distinguish new legal tools from their practical enforcement limits.
 - [x] Integrate verified records, validate the site, and save the next research checkpoint.
+
+# Master Roadmap — Current Priorities
+
+- [x] Create the canonical master roadmap that distinguishes completed work, next research releases, deferred source acquisition, and future platform development.
+- [x] Update the canonical master roadmap after each substantive research or product checkpoint.
+- [x] Add page-specific facsimile anchors for the colonial passages currently linked only at the item level, beginning with Hariot, Whitaker, Bradford, and Ligon.
+- [x] Add the Voting Rights Act companion enforcement holdings: *Gaston County v. United States* (1969) and *City of Rome v. United States* (1980), with institutional record links and bounded claims.
+- [ ] Build a filterable Sources & Claims Index that lets readers browse evidence cards by tier, year, topic, source type, and verification status.
+- [ ] Deepen Chapter 59 on the Freedmen’s Bureau with page-verified primary records, including both recovery efforts and classification or land-restoration limits.
+- [ ] Add a practical Walter English / Brister English Project methodology section that explains a documentary genealogy workflow without equating ancestry research with tribal citizenship.
+- [ ] Research and lawfully obtain controlled-access scholarship, beginning with Jack D. Forbes’s *Africans and Native Americans* and Kyle T. Mays’s *An Afro-Indigenous History of the United States*.
+- [ ] Expand page-verified civil-rights movement coverage beyond legal milestones, including Birmingham, Selma, voting-registration campaigns, and the roles of local organizers.
+- [ ] Strengthen the pre-850 CE chronology rationale and the Turtle Island / Niji source base with clearly distinguished Indigenous knowledge traditions and archaeological or historical scholarship.
+- [ ] Design the staged architecture, evidence policy, moderation workflow, and provenance model for a future community-submission verification hub before building it.
+
+# Sequential Execution — Current Release
+
+- [x] Add page-specific facsimile or stable section anchors to the existing Hariot, Whitaker, Bradford, and Ligon source cards; record the edition and contextual limitation for each locator.
+- [x] Verify and integrate *Gaston County v. United States* (1969) and *City of Rome v. United States* (1980) as Voting Rights Act enforcement records with institutional decision links, source cards, timeline events, and detail panels.
+- [x] Create a primary-record Freedmen’s Bureau evidence plan identifying record groups, document types, potential case-file standards, legal or land-policy links, and research safeguards before expanding Chapter 59.
+- [ ] Type-check, visually verify, checkpoint, and update the canonical roadmap after all three workstreams are complete.
