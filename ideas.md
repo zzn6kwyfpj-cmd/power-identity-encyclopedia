@@ -46,3 +46,6 @@
 - Non-evidence accents are used sparingly: antique gold is the default accent, crimson marks conflict and resistance, and green is reserved for verified primary-source or evidence guidance.
 - Long galleries are divided into archive plates and era breaks so the reader experiences curation rather than a continuous card wall.
 - Body copy prioritizes readable Cormorant Garamond at a literary scale; Cinzel is reserved for titles, labels, and formal archive inscriptions.
+- Timeline era transitions use cinematic archive plates, a recurring institutional seal, formal gallery titles, and ornamental pauses before entries resume.
+- New long-form chapters include a gold-framed archival context plate tied to their documentary period; the visual treatment supports context rather than presenting generated imagery as evidence.
+- Timeline cataloging hierarchy distinguishes the date, archive-entry label, category, and historical era while retaining crimson and green only for evidence meaning.

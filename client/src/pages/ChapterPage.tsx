@@ -17,6 +17,7 @@ import { TREATIES_CONTENT } from "@/lib/manuscriptContentTreaties";
 import { BLACK_NATIVE_CONTENT } from "@/lib/manuscriptContentBlackNative";
 import { PAPAL_BULLS_CONTENT } from "@/lib/manuscriptContentPapalBulls";
 import { GAPS_CONTENT } from "@/lib/manuscriptContentGaps";
+import { ARCHIVAL_INTAKE_CONTENT } from "@/lib/manuscriptContentArchivalIntake";
 
 export default function ChapterPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -143,15 +144,16 @@ export default function ChapterPage() {
                       caption={`${chapter.title}: ${chapter.subtitle}. ${chapter.primarySource}`}
                     />
                   </div>
-                  <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", marginTop: 8, textAlign: "right" }}>
-                    AI-GENERATED HISTORICAL ILLUSTRATION — CLICK TO EXPAND
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, borderTop: "1px solid rgba(212,175,55,0.16)", paddingTop: 8, marginTop: 8 }}>
+                    <span style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 11, letterSpacing: "0.22em" }}>✦ ARCHIVAL CONTEXT PLATE ✦</span>
+                    <span style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 9, letterSpacing: "0.1em", textAlign: "right" }}>CLICK TO EXPAND</span>
                   </div>
                 </div>
               )}
 
               {/* Full Chapter Content */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug] || PAPAL_BULLS_CONTENT[chapter.slug] || GAPS_CONTENT[chapter.slug];
+                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug] || PAPAL_BULLS_CONTENT[chapter.slug] || GAPS_CONTENT[chapter.slug] || ARCHIVAL_INTAKE_CONTENT[chapter.slug];
                 if (content && content.fullText.length > 0) {
                   return (
                     <div>
@@ -221,7 +223,7 @@ export default function ChapterPage() {
 
               {/* Key Documents Section */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug] || PAPAL_BULLS_CONTENT[chapter.slug] || GAPS_CONTENT[chapter.slug];
+                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug] || PAPAL_BULLS_CONTENT[chapter.slug] || GAPS_CONTENT[chapter.slug] || ARCHIVAL_INTAKE_CONTENT[chapter.slug];
                 if (content?.keyDocuments && content.keyDocuments.length > 0) {
                   return (
                     <div style={{ marginTop: 40, marginBottom: 32 }}>

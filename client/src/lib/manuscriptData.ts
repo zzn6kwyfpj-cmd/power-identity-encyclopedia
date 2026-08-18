@@ -588,10 +588,10 @@ export const CHAPTERS: Chapter[] = [
     id: 56, slug: "black-native-american-identity", title: "Black Native American Identity: The Suppressed History",
     subtitle: "The Renaming Chain, the Colonial Reclassification Laws, and the People Who Were Already Here",
     era: "Era I–V", eraColor: "#d4af37",
-    summary: "The documented history of how Indigenous people captured in colonial wars were renamed and sold into slavery, how colonial laws reclassified mixed Indigenous-African people as 'Negro,' how the Dawes Commission enrollment erased Indigenous ancestry from the record, and what the primary sources — from Virginia county records to the 1930 Census enumerator instructions — actually prove about the suppressed history of Black Native American identity.",
+    summary: "A source-critical account of Indigenous captivity, African and Indigenous entanglement, changing colonial labels, Dawes enrollment, and census rules. It identifies what specific records establish about Black Native American families without turning administrative categories into universal ancestry claims.",
     tier: 1,
-    keyFact: "In 1719, South Carolina law declared: 'all such slaves as are not entirely Indian shall be accounted as negroe.' In Virginia, between 1715 and 1717, 'Robin an Indian' became 'Robin a negro' in the same county records. The renaming was not gradual. It was statutory.",
-    primarySource: "South Carolina Slave Code (1719), Colonial Records of South Carolina; Virginia County Records (1691–1717); Parsons and Abbott Census (1832), National Archives, Record Group 75, M275; Curtis Act (1898), 30 Stat. 495",
+    keyFact: "Forbes documents specific Virginia records in which colonial labels changed, while South Carolina law placed Negro, Indian, mulatto, and mestizo people inside connected slave-law categories. Each conclusion must remain specific to its date, jurisdiction, and record.",
+    primarySource: "Virginia County Records (1691–1717), analyzed by Jack D. Forbes; Virginia General Assembly statute (1723); South Carolina slave-law materials (1712–1740); Curtis Act (1898), 30 Stat. 495",
   },
   {
     id: 55, slug: "treaties-broken-promises", title: "The Treaties: Sovereign Agreements Made and Broken",
@@ -602,6 +602,26 @@ export const CHAPTERS: Chapter[] = [
     keyFact: "The U.S. government signed over 370 treaties with Indigenous nations. The 1871 Indian Appropriations Act ended treaty-making entirely — not because the U.S. had honored its obligations, but because Congress decided it no longer needed to negotiate.",
     primarySource: "Kappler, Charles J. Indian Affairs: Laws and Treaties, Vol. II (1904), Oklahoma State University Digital Library",
     image: "/manus-storage/scene_trail_of_tears_4c6c3c2f.png",
+  },
+  {
+    id: 65, slug: "captivity-classification-colonial-law", title: "Captivity, Classification, and Colonial Law",
+    subtitle: "How War, Hereditary Status, and Administrative Categories Produced an Archive of Erasure",
+    era: "Era I–II", eraColor: "#d4af37",
+    summary: "A documentary sequence from Pequot captivity and the Carolina Indian slave trade to Virginia's 1662 hereditary-status statute, Virginia's 1723 cross-category regime, and South Carolina's 1740 slave code. The chapter shows how legal records can obscure as well as preserve family history.",
+    tier: 1,
+    keyFact: "Virginia's 1662 statute made a child's bond or free condition follow the mother. By 1723, Virginia was jointly governing people identified as Negro, mulatto, and Indian—bond and free—through a shared penal regime.",
+    primarySource: "Virginia General Assembly (1662 and 1723), Hening's Statutes at Large; John Lawson, A New Voyage to Carolina (1709); South Carolina slave code (1740)",
+    image: "/manus-storage/era_banner_1_1ad8b855.png",
+  },
+  {
+    id: 66, slug: "community-traditions-and-the-archive", title: "Community Traditions and the Archive",
+    subtitle: "Washitaw Memory, Origin Theories, Legal Records, and a Transparent Standard of Verification",
+    era: "Era I–V", eraColor: "#8b1a1a",
+    summary: "A respectful, source-traceable archive of community historical traditions. It preserves the Washitaw movement's 1993 text, tests specific land and Columbus claims against accessible legal and historical records, and explains why publication status is different from historical verification.",
+    tier: 3,
+    keyFact: "Return of the Ancient Ones is a primary source for the community's stated history. United States v. Turner (1850) is a primary legal source holding that the Maison Rouge instrument conveyed no private interest in land to Maison Rouge.",
+    primarySource: "Washitaw-Turner Goston El-Bey, Return of the Ancient Ones (1993); United States v. Turner, 52 U.S. 663 (1850)",
+    image: "/manus-storage/era_banner_5_f842cd88.png",
   },
 ];
 
@@ -1031,7 +1051,14 @@ export const FIGURES: Figure[] = [
   },
 ];
 
-export const TIMELINE_EVENTS = [
+export interface TimelineEvent {
+  year: number;
+  event: string;
+  era: number;
+  detailKey?: string;
+}
+
+export const TIMELINE_EVENTS: TimelineEvent[] = [
   { year: 850, event: "Ancestral Puebloans (Anasazi) reach their peak at Chaco Canyon, New Mexico — a sophisticated urban center with monumental great houses, a complex road system spanning hundreds of miles, and astronomical alignments. This civilization thrived for 400 years before European contact", era: 1 },
   { year: 1000, event: "Etowah Mounds (Cartersville, Georgia) occupied at peak — a Mississippian city of approximately 4,000 people with six earthen mounds, the largest standing 63 feet tall. Trade networks connect Georgia to the Great Lakes, Gulf Coast, and Appalachian Mountains", era: 1 },
   { year: 1050, event: "Cahokia (near present-day St. Louis) reaches peak population of 20,000–40,000 people — the largest pre-Columbian settlement north of Mexico. Its central mound, Monks Mound, is larger at its base than the Great Pyramid of Giza. Trade networks span the entire North American continent", era: 1 },
@@ -1158,4 +1185,14 @@ export const TIMELINE_EVENTS = [
   { year: 1960, event: "Richard B. Moore publishes 'The Name Negro: Its Origin and Evil Use' — documenting how 'Negro,' 'Black,' 'Colored,' and 'Indian' were administrative categories created by colonial administrators to replace tribal and ethnic identities. Moore documents the specific legal mechanisms: the 1719 South Carolina statute, the California Supreme Court's 1854 ruling that 'Black person' included all non-Caucasians, and the Virginia county records showing Indigenous people reclassified as Negro. 'Dogs and Slaves are Named by Their Masters; Free Men Name Themselves.' Source: Moore, Richard B., The Name Negro: Its Origin and Evil Use (1960), Black Classic Press", era: 5 },
   { year: 2007, event: "Cherokee Nation strips Freedmen descendants of citizenship in a special election, limiting tribal membership to those with 'Cherokee blood.' Approximately 2,800 descendants of the Cherokee Freedmen — people whose ancestors were guaranteed 'all the rights of native Cherokees' by the 1866 Treaty — lose their citizenship. This is the paper genocide of the Dawes Rolls playing out in the present day. Source: Cherokee Nation v. Nash, National Indian Law Library", era: 5 },
   { year: 2017, event: "U.S. District Court restores Cherokee Freedmen citizenship — ruling that the Cherokee Nation must honor the 1866 Treaty. The court states: 'The Cherokee Nation concedes that its power to determine tribal membership can be limited by treaty.' The 1866 Treaty is still legally binding. Black Native Americans whose identity was erased by the Dawes Rolls in 1898 have their rights restored 119 years later. Source: Cherokee Nation v. Nash (2017), U.S. District Court", era: 5 },
+  { year: 1637, event: "Pequot War: captivity, enslavement, and Atlantic dispersal — after the 1637 conflict, Pequot women and children were divided among colonial and allied authorities; documentary evidence records captivity, forced labor, sale, and transfer to Caribbean and other English possessions. Source: Connecticut History / Mashantucket Pequot Museum & Research Center", era: 1, detailKey: "1637_pequot" },
+  { year: 1662, event: "Virginia makes a child's status follow the mother — the Assembly enacts that children born in the colony are held bond or free according to their mother's condition, creating a legal mechanism for hereditary slavery. Source: Hening's Statutes at Large", era: 1, detailKey: "1662_maternal_status" },
+  { year: 1701, event: "Carolina petition condemns 'Indian or Slave-Making' — political opponents accuse a former governor's network of turning the Indian trade into a system of captive-taking and warn that abuses against Indigenous nations invite war. Source: Narratives of Early Carolina, 1650–1708", era: 1, detailKey: "1701_carolina_petition" },
+  { year: 1709, event: "John Lawson records Indigenous captives sold to the islands and refers to 'Indian Slaves in South-Carolina' — a colonial observer's direct account of the Indian slave trade and dispossession. Source: A New Voyage to Carolina", era: 1, detailKey: "1709_lawson" },
+  { year: 1723, event: "Virginia's shared penal regime — an act governing 'Negros, Mulattos, and Indians, bond or free' restricts arms, movement, testimony, manumission, taxation, and voting, while preserving distinct exceptions. Source: Hening's Statutes at Large", era: 1, detailKey: "1723_classification" },
+  { year: 1740, event: "South Carolina's multi-category slave code — the colony's law organizes people called Negro, Indian, mulatto, and mestizo inside one slave-property regime, with freedom requiring proof and only limited exceptions. Source: South Carolina statute of 1740", era: 1, detailKey: "1740_sc_code" },
+  { year: 1795, event: "Treaty of San Lorenzo (27 October) — the United States and Spain open Mississippi navigation and New Orleans deposit rights, set a border, and undertake to restrain Indigenous diplomacy across their claimed territories. The treaty does not recognize a private Maison Rouge title. Source: Avalon Project treaty text", era: 1, detailKey: "1795_san_lorenzo" },
+  { year: 1850, event: "United States v. Turner — the Supreme Court holds that the Carondelet–Maison Rouge instrument conveyed no private interest in land to Maison Rouge. This is the central legal record against the asserted private-title theory, while Washitaw land memory remains a documented community tradition. Source: 52 U.S. 663", era: 2, detailKey: "1850_turner" },
+  { year: 1993, event: "Return of the Ancient Ones is published — Verdiacee 'Tiara' Washitaw-Turner Goston's community-authored text records Washitaw de Dugdahmoundyah history, Louisiana land memory, and Black Indigenous origin traditions. The publication is documented; its historical conclusions are presented as Tier 3 pending independent corroboration.", era: 5, detailKey: "1993_washitaw" },
+  { year: 2019, event: "North American Aboriginal Society publishes a portrait and tribal-history compilation — a valuable community source index whose individual images, dates, and claims require independent verification before use as encyclopedia fact.", era: 5, detailKey: "2019_naas" },
 ];

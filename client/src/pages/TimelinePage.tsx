@@ -108,6 +108,15 @@ const EVENT_CATEGORIES: Record<string, string> = {
   "Romanus Pontifex": "blacknative",
   "Inter Caetera": "blacknative",
   "perpetual slavery": "blacknative",
+  "Pequot War": "blacknative",
+  "child's status follow": "blacknative",
+  "Carolina petition": "blacknative",
+  "John Lawson": "blacknative",
+  "shared penal regime": "blacknative",
+  "multi-category slave code": "blacknative",
+  "Treaty of San Lorenzo": "treaty",
+  "United States v. Turner": "blacknative",
+  "Return of the Ancient Ones": "blacknative",
 };
 
 function getCategory(event: string): string {
@@ -318,16 +327,22 @@ export default function TimelinePage() {
                 return (
                   <>
                   {showEraBanner && (
-                    <div style={{ marginLeft: -48, marginBottom: 24, marginTop: i > 0 ? 32 : 0, position: "relative", overflow: "hidden", height: 120 }}>
+                    <div style={{ marginLeft: -48, marginBottom: 32, marginTop: i > 0 ? 52 : 0, position: "relative", overflow: "hidden", height: 220, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80` }}>
                       <img
                         src={eraBanners[event.era - 1]}
                         alt={`Era ${event.era}`}
-                        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.6 }}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.7 }}
                       />
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(10,17,24,0.8), rgba(10,17,24,0.3), rgba(10,17,24,0.8))", display: "flex", alignItems: "center", paddingLeft: 64 }}>
-                        <div>
-                          <div style={{ fontFamily: "Cinzel, serif", color: eraColors[event.era - 1], fontSize: 10, letterSpacing: "0.3em", marginBottom: 4 }}>ERA {["I","II","III","IV","V"][event.era - 1]}</div>
-                          <div style={{ fontFamily: "Cinzel, serif", color: "#e2e8f0", fontSize: 18 }}>{ERAS[event.era - 1]?.name}</div>
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(10,17,24,0.96), rgba(10,17,24,0.52), rgba(10,17,24,0.92))", display: "flex", alignItems: "center", padding: "0 64px" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+                          <div style={{ width: 52, height: 52, flexShrink: 0, border: `1px solid ${eraColors[event.era - 1]}`, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 28px ${eraColors[event.era - 1]}35` }}>
+                            <span style={{ color: eraColors[event.era - 1], fontFamily: "Cinzel, serif", fontSize: 18 }}>✦</span>
+                          </div>
+                          <div>
+                            <div style={{ fontFamily: "Cinzel, serif", color: eraColors[event.era - 1], fontSize: 10, letterSpacing: "0.3em", marginBottom: 8 }}>CURATED GALLERY · ERA {["I","II","III","IV","V"][event.era - 1]}</div>
+                            <div style={{ fontFamily: "Cinzel, serif", color: "#e2e8f0", fontSize: "clamp(1.05rem, 2vw, 1.45rem)", marginBottom: 8 }}>{ERAS[event.era - 1]?.name}</div>
+                            <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", fontStyle: "italic" }}>✦ — archival records, law, resistance, and consequence — ✦</div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -348,7 +363,7 @@ export default function TimelinePage() {
 
                     {/* Event card */}
                     <div style={{
-                      background: "#0f1923",
+                      background: "linear-gradient(100deg, #0f1923 0%, #101b27 100%)",
                       border: `1px solid ${catColor}30`,
                       borderLeft: `3px solid ${catColor}`,
                       padding: "14px 16px",
@@ -356,10 +371,11 @@ export default function TimelinePage() {
                     }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
                         <div style={{ flex: 1 }}>
-                          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, flexWrap: "wrap" }}>
                             <span style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
                               {event.year}
                             </span>
+                            <span style={{ color: "#475569", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.14em" }}>ARCHIVE ENTRY</span>
                             <span style={{ fontFamily: "Cinzel, serif", color: catColor, fontSize: 8, letterSpacing: "0.1em", border: `1px solid ${catColor}40`, padding: "1px 6px", flexShrink: 0 }}>
                               {CATEGORY_LABELS[event.category]}
                             </span>
@@ -415,7 +431,7 @@ export default function TimelinePage() {
 
                       {/* Expanded details — rich panel */}
                       {isExpanded && (() => {
-                        const detail = TIMELINE_DETAILS[event.year.toString()];
+                        const detail = TIMELINE_DETAILS[event.detailKey || event.year.toString()];
                         return (
                           <div style={{ marginTop: 12, paddingTop: 16, borderTop: `1px solid ${catColor}20` }}>
                             {/* Visual aid if available */}
