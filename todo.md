@@ -27,3 +27,18 @@
 - [x] Build a grand chronological matrix that maps every material finding to a live chapter, timeline entry, figure, source card, or explicit evidence-tiered deferral.
 - [x] Identify missed, contradicted, partially integrated, and Tier 3 community-tradition material suitable for transparent archival inclusion.
 - [x] Apply approved evidence-tiered additions, validate the website, and save a checkpoint with the grand audit report.
+
+# Full-Corpus Quality and Coverage Audit
+
+- [x] Inventory the newly attached workspace and reconcile it with all previously ingested books, links, research outputs, and live site records.
+- [x] Measure full-text reading depth, source-to-site coverage, chronological continuity, and the evidence-tier treatment of every major claim class.
+- [x] Audit Indigenous, Black American, civil-rights, legal-suppression, and Turtle Island/Niji coverage against accessible institutional sources.
+- [x] Produce a candid 100-point quality assessment, gap register, and prioritized research roadmap before applying additional content changes.
+
+# Additional Book Corpus Intake
+
+- [x] Obtain the missing titles, authors, or links for the additional book list referenced in the supplied archival framework.
+- [x] Apply the supplied prompts as method requirements: lawful full-text access, chapter-level extraction, precise source traces, chronology mapping, contradiction checks, and evidence tiers.
+- [x] Secure lawful searchable editions, create source logs, and perform chapter-level extraction using the five-field chronology framework.
+- [x] Cross-check historical claims, categorize verified evidence and community traditions, and prepare an integration ledger.
+- [x] Integrate approved, evidence-tiered findings into chapters and the timeline, then validate and save a checkpoint.

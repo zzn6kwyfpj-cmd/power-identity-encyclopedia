@@ -78,6 +78,20 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "georgia-charter",
     chapterTitle: "The 1732 Georgia Charter",
   },
+  "1614_tisquantum": {
+    description: "In 1614, English captain Thomas Hunt seized Tisquantum (often known as Squanto), a Patuxet man, with other Wampanoag people near present-day Massachusetts and carried them across the Atlantic. William Bradford's later Plymouth account reports that Tisquantum was sold in Málaga, reached England, and eventually returned to New England before acting as an interpreter and diplomatic intermediary. The surviving English-language record is incomplete and is not a substitute for Wampanoag history; what it does document is an Indigenous person's forced movement through an Atlantic system of capture, sale, and colonial expansion before Plymouth's 1620 settlement.",
+    keyFact: "Tisquantum's documented captivity predates Plymouth by six years. His later mediation occurred after forced Atlantic displacement, not outside the colonial violence that shaped the region.",
+    primarySource: "William Bradford, Of Plymouth Plantation (written c. 1630–1651); National Museum of the American Indian, 'Squanto'; Plimoth Patuxet Museums, Wampanoag history resources",
+    chapterSlug: "colonial-archive-sourcebook",
+    chapterTitle: "The Colonial Archive: A Sourcebook for Reading Power",
+  },
+  "1621_plymouth_pokanoket": {
+    description: "In March 1621, representatives of Plymouth Colony and Ousamequin (Massasoit), the leader of the Pokanoket/Wampanoag political community, reached an agreement recorded in Mourt's Relation and Bradford's later history. The English accounts describe reciprocal commitments not to harm one another, mutual assistance against enemies, return of offenders, and communication among allied communities. The agreement was not a simple story of English rescue or passive Indigenous consent. It was a diplomatic decision made by Indigenous leaders amid devastating epidemic, rival regional powers, and the arrival of an English settlement. The surviving terms come through English records and must be read with Wampanoag-centered interpretation.",
+    keyFact: "The 1621 agreement documents Indigenous diplomacy and political calculation. It is not evidence that English settlement was welcomed without qualification or that later dispossession was consented to.",
+    primarySource: "Mourt's Relation (1622); William Bradford, Of Plymouth Plantation (written c. 1630–1651); Plimoth Patuxet Museums, 'Plymouth–Pokanoket Alliance'",
+    chapterSlug: "colonial-archive-sourcebook",
+    chapterTitle: "The Colonial Archive: A Sourcebook for Reading Power",
+  },
   "1619": {
     description: "In August 1619, a Portuguese slave ship arrived at Point Comfort, Virginia, carrying approximately 20 to 30 enslaved Africans who had been captured in present-day Angola. They were traded to English colonists for food and supplies. This moment marks the beginning of chattel slavery in English North America — a system that would operate for 246 years. The same year, the Virginia House of Burgesses convened — the first representative assembly in the Americas. Democracy for some, slavery for others, in the same year. Between 1619 and 1808 (when the U.S. banned the importation of enslaved people), an estimated 400,000 to 500,000 enslaved Africans were brought to what became the United States. The total transported to the Americas across all colonial powers was 12.5 million, of whom 1.8 million died during the Middle Passage.",
     keyFact: "The 1619 arrival of the first enslaved Africans in English North America preceded the Mayflower by one year. The same year, the Virginia House of Burgesses convened. Democracy and slavery were born together in America.",
