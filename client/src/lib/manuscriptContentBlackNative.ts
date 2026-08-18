@@ -1,5 +1,5 @@
 // The Archive Encyclopedia — manuscriptContentBlackNative.ts
-// By LaDarious Strickland © 2026
+// Collaboratively stewarded source material; no individual authorship claim
 // Chapter: Black Native American Identity — The Suppressed History
 
 export interface ChapterContent {

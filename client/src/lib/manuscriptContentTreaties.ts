@@ -1,5 +1,5 @@
 // Treaties Chapter Content — The Archive Encyclopedia
-// By LaDarious Strickland © 2026
+// Collaboratively stewarded source material; no individual authorship claim
 
 export interface ChapterContent {
   slug: string;

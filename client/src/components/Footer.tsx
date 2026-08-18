@@ -8,8 +8,8 @@ export default function Footer() {
         American Records of Contested History, Identity, and Verified Evidence
       </div>
       <div style={{ width: 40, height: 1, background: "rgba(212,175,55,0.3)", margin: "0 auto 10px" }} />
-      <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#334155", fontSize: 11 }}>
-        © 2026 LaDarious Strickland. All rights reserved. Fair Use: 17 U.S.C. § 107
+      <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, lineHeight: 1.6, maxWidth: 620, margin: "0 auto" }}>
+        Collaboratively stewarded · No individual author attribution is claimed. Original editorial work is dedicated to the public domain to the fullest extent permitted by law. Cited materials may carry separate source rights.
       </div>
     </footer>
   );

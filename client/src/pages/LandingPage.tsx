@@ -131,7 +131,7 @@ export default function LandingPage() {
         fontSize: 9,
         letterSpacing: "0.25em",
       }}>
-        © 2026 LADARIOUS STRICKLAND &nbsp;·&nbsp; THEARCHIVEENCYCLOPEDIA.ORG
+        COLLABORATIVELY STEWARDED &nbsp;·&nbsp; THEARCHIVEENCYCLOPEDIA.ORG
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ export const DEPTH_CONTENT: Record<string, {
       "King, Adam. Etowah: The Political History of a Chiefdom Capital. University of Alabama Press (2003)",
       "Georgia Department of Natural Resources, Etowah Indian Mounds State Historic Site"
     ],
-    didYouKnow: "The two white marble mortuary figures found at Etowah Mounds are among the finest examples of pre-Columbian sculpture in North America. They are currently housed in the on-site museum in Cartersville, Georgia — the same city where LaDarious Strickland grew up looking at the mounds and wondering about their builders."
+    didYouKnow: "The two white marble mortuary figures found at Etowah Mounds are among the finest examples of pre-Columbian sculpture in North America. They are currently housed in the on-site museum in Cartersville, Georgia, where the mounds continue to invite questions about their builders and descendants."
   },
 
   // ─── DEEPENED: Haitian Revolution ────────────────────────────────────────────

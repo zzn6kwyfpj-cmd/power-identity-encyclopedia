@@ -514,9 +514,9 @@ export const CHAPTERS: Chapter[] = [
   // THE 7 CRITICAL GAP CHAPTERS — completing the encyclopedia to 10/10 standard
   {
     id: 58, slug: "etowah-mounds-deep", title: "The Etowah Mounds: Who Built Them and What Happened to Them",
-    subtitle: "The Archaeological Record, the Creek/Muscogee Connection, and the Question LaDarious Strickland Asked as a Child",
+    subtitle: "The Archaeological Record, the Creek/Muscogee Connection, and an Enduring Community Question",
     era: "Era I", eraColor: "#c9a84c",
-    summary: "The Etowah Mounds in Cartersville, Georgia — a 54-acre Mississippian civilization site active from 1000 CE to 1550 CE — were built by the ancestors of the Muscogee (Creek) Nation. The Creek were forcibly removed from Georgia in 1838. Their descendants, including those enrolled as Freedmen in the Dawes Rolls, carry the history of this place in their ancestry. This chapter answers the question LaDarious Strickland asked as a child standing at the base of Mound A: who built this, and am I connected to them?",
+    summary: "The Etowah Mounds in Cartersville, Georgia — a 54-acre Mississippian civilization site active from 1000 CE to 1550 CE — were built by the ancestors of the Muscogee (Creek) Nation. The Creek were forcibly removed from Georgia in 1838. Their descendants, including those enrolled as Freedmen in the Dawes Rolls, carry the history of this place in their ancestry. This chapter investigates the enduring question raised by Mound A: who built this place, and what became of their descendants?",
     tier: 1,
     keyFact: "The Georgia DNR is currently returning 404 ancestors and 187,000+ cultural artifacts from the Etowah Mounds to five Muskogean-speaking tribes under NAGPRA. The Mound Builders became the Creek. The Creek were removed. Their descendants are in Oklahoma. The mounds are still in Georgia.",
     primarySource: "King, Adam. Excavations at Mound B, Etowah: 1954-1958 (2001), University of Georgia Laboratory of Archeology Series, Report No. 37; Georgia DNR NAGPRA Repatriation Records (2023)",

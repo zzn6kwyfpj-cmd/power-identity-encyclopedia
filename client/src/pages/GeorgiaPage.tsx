@@ -48,7 +48,7 @@ The Georgia Land Lottery is one of the most direct and documented examples of we
 
 The specific districts and lots from the Georgia Land Lottery are documented in the Georgia Archives. Researchers can trace exactly which families received which parcels of land — land that had been Creek or Cherokee territory just years before.
 
-The Etowah Mounds site itself — the land in Cartersville where LaDarious Strickland grew up — was part of the Cherokee land distributed through the 1832 Cherokee Land Lottery. The mounds were on lot 145 of the 4th District, 3rd Section of Cherokee County.`,
+The Etowah Mounds site itself in Cartersville was part of the Cherokee land distributed through the 1832 Cherokee Land Lottery. The mounds were on lot 145 of the 4th District, 3rd Section of Cherokee County.`,
     keyFact: "The Georgia Land Lottery distributed millions of acres of Creek and Cherokee land to white settlers for as little as $20 per lot. The Etowah Mounds site in Cartersville was distributed through the 1832 Cherokee Land Lottery.",
     source: "Georgia Archives, Land Lottery Records; Smith, James F. The Cherokee Land Lottery (1838); Georgia Genealogical Society",
     chapterSlug: "sovereignty",

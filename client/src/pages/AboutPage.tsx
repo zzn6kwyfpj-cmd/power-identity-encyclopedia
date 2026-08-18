@@ -102,7 +102,7 @@ export default function AboutPage() {
                 },
                 {
                   label: "The Scholarly Disclaimer",
-                  text: "This encyclopedia is an educational synthesis, not a peer-reviewed academic paper. It is grounded in peer-reviewed evidence and primary source documentation, but it represents the editorial judgment of its author in selecting, organizing, and contextualizing that evidence. Readers are encouraged to follow the citations, access the primary sources directly, and form their own conclusions."
+                  text: "This encyclopedia is an educational synthesis, not a peer-reviewed academic paper. It is grounded in peer-reviewed evidence and primary source documentation, but it also reflects editorial decisions made during its collaborative assembly. Readers are encouraged to follow the citations, access the primary sources directly, and form their own conclusions."
                 },
               ].map(({ label, text }) => (
                 <div key={label} style={{ background: "#0f1923", borderLeft: "4px solid #8b1a1a", padding: "20px 24px" }}>
@@ -133,11 +133,11 @@ export default function AboutPage() {
             />
           </div>
 
-          {/* Copyright */}
+          {/* Public-domain dedication and source rights */}
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", padding: "24px", textAlign: "center" }}>
-            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 12 }}>COPYRIGHT & FAIR USE</div>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 12 }}>PUBLIC-DOMAIN DEDICATION & SOURCE USE</div>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "0.95rem", lineHeight: 1.7 }}>
-              © 2026 LaDarious Strickland. All rights reserved. This work is protected under copyright law (U.S. Copyright Office Registration, July 2026). Scholarly sources are cited under the Fair Use doctrine (17 U.S.C. § 107) for educational and research purposes. All primary source documents cited are in the public domain.
+              This encyclopedia is collaboratively stewarded and makes no individual authorship claim. Its original editorial organization, explanatory text, and research pathways are dedicated to the public domain to the fullest extent permitted by law, so they may be shared, adapted, and reused. Citations are retained so readers can inspect the record. Public-domain sources, fair-use quotations, and materials with separate rights remain governed by the status and conditions of their original sources.
             </p>
           </div>
 

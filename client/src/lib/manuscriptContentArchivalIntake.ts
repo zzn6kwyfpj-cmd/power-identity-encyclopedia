@@ -1,5 +1,5 @@
 // Royal Archive / Museum Catalog: evidence-led archival intake chapters for The Archive Encyclopedia.
-// By LaDarious Strickland © 2026. Gold marks verified record; crimson signals contested community claims.
+// Collaboratively stewarded source material. Gold marks verified record; crimson signals contested community claims.
 
 type ChapterContent = {
   slug: string;

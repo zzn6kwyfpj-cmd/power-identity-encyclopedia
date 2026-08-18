@@ -1,5 +1,5 @@
 // The Archive Encyclopedia — manuscriptContentGaps.ts
-// By LaDarious Strickland © 2026
+// Collaboratively stewarded source material; no individual authorship claim
 // The 7 Critical Gap Chapters — completing the encyclopedia to 10/10 standard
 
 export interface ChapterContent {
@@ -18,7 +18,7 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
   'etowah-mounds-deep': {
     slug: 'etowah-mounds-deep',
     fullText: [
-      'There is a child standing at the base of a mound in Cartersville, Georgia, looking up. The mound is 63 feet tall. It was built by human hands, one basket of earth at a time, over centuries. The child is LaDarious Strickland. The question he asks — who built this, and am I connected to them? — is the question this entire encyclopedia was built to answer.',
+      'There is a longstanding question at the base of the Etowah Mounds in Cartersville, Georgia: who built this place, and what became of the people who made it? The mound is 63 feet tall, built one basket of earth at a time over centuries. That question frames this chapter’s documentary investigation.',
 
       'The Etowah Indian Mounds are a 54-acre site on the Etowah River in Bartow County, Georgia. They are among the most intact Mississippian culture sites in the entire Southeast. The site comprises six earthen mounds, a central plaza, a village area, borrow pits where earth was excavated for construction, and a defensive ditch. The largest mound — Mound A — stands 63 feet tall and covers three acres. It was built as a platform for the residence or temple of the priest-chief, the supreme political and religious authority of the Etowah chiefdom. Mound B was a ceremonial and public mound. Mound C was a burial mound for the Etowah elite — the place where the most important people of this civilization were laid to rest with the objects that defined their lives.',
 
@@ -36,7 +36,7 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
 
       'The scholarly consensus is unambiguous: the Etowah Mound Builders are the ancestors of the Muscogee (Creek) Nation. The Georgia Department of Natural Resources, which manages the Etowah Indian Mounds State Historic Site, formally recognizes cultural affiliation with five Muskogean-speaking tribes: the Muscogee (Creek) Nation, Thlopthlocco Tribal Town, the Poarch Band of Creek Indians, Alabama, Quassarte Tribal Town, and Kialegee Tribal Town. Since 2023, the Georgia DNR has been working under the Native American Graves Protection and Repatriation Act (NAGPRA) to return 404 ancestors and over 187,000 cultural artifacts from Etowah to these lineal descendants. The process is expected to be completed by 2028.',
 
-      'This is the documented answer to the question LaDarious Strickland asked as a child: the people who built the Etowah Mounds became the Creek/Muscogee Nation. The Creek/Muscogee Nation was forcibly removed from Georgia by the Indian Removal Act of 1830. The Battle of Horseshoe Bend (1814) — fought on Creek territory in present-day Alabama — resulted in the forced cession of 23 million acres. The Trail of Tears removed the Creek to Indian Territory in present-day Oklahoma. Their original homeland — including the land where the Etowah Mounds stand — was seized, sold to white settlers, and eventually incorporated into the state of Georgia.',
+      'This chapter follows the documented record of the peoples who built the Etowah Mounds and their later connection to the Creek/Muscogee Nation. The Creek/Muscogee Nation was forcibly removed from Georgia by the Indian Removal Act of 1830. The Battle of Horseshoe Bend (1814) — fought on Creek territory in present-day Alabama — resulted in the forced cession of 23 million acres. The Trail of Tears removed the Creek to Indian Territory in present-day Oklahoma. Their original homeland — including the land where the Etowah Mounds stand — was seized, sold to white settlers, and eventually incorporated into the state of Georgia.',
 
       '— THE BLACK CREEK CONNECTION —',
 

@@ -180,7 +180,7 @@ export default function Home() {
           "This manuscript does not tell you what to think. It presents documented history and allows the evidence to speak for itself."
         </p>
         <p style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginTop: 8 }}>
-          — LaDarious Strickland
+          — Editorial Principle
         </p>
       </section>
 
@@ -398,8 +398,8 @@ export default function Home() {
         <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, letterSpacing: "0.1em", marginBottom: 8 }}>
           American Records of Contested History, Identity, and Verified Evidence
         </div>
-        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12 }}>
-          © 2026 LaDarious Strickland. All rights reserved. Fair Use: 17 U.S.C. § 107
+        <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, lineHeight: 1.6, maxWidth: 620, margin: "0 auto" }}>
+          Collaboratively stewarded · No individual author attribution is claimed. Original editorial work is dedicated to the public domain to the fullest extent permitted by law. Cited materials may carry separate source rights.
         </div>
       </footer>
     </div>

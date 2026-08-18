@@ -1,5 +1,5 @@
 // The Archive Encyclopedia — manuscriptContentPapalBulls.ts
-// By LaDarious Strickland © 2026
+// Collaboratively stewarded source material; no individual authorship claim
 // Chapter: The Papal Bulls — The Legal Origin of Perpetual Slavery
 
 export interface ChapterContent {

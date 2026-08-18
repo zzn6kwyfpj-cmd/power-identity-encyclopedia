@@ -1,5 +1,5 @@
 // Full chapter content extracted from the Royal Manuscript
-// Power, Identity, and Contested Origins by LaDarious Strickland
+// Collaboratively stewarded source material for The Archive Encyclopedia
 
 export interface ChapterContent {
   slug: string;

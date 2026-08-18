@@ -14,3 +14,9 @@
 - [x] Cross-check consequential claims against primary records and current scholarship; flag contradictions, anachronisms, and unsupported inferences.
 - [x] Produce a chronological ledger, thematic index, contradiction report, and a proposed evidence-tiered integration map for The Archive Encyclopedia.
 - [x] Integrate verified, approved findings into chapters, timeline, figures, and citations; then test and save a new checkpoint.
+
+# Attribution and Reuse Update
+
+- [x] Remove individual creator credit and replace it with anonymous collaborative stewardship language across the public site.
+- [x] Reconcile the public-domain reuse intent with the existing copyright-registration wording before publishing a legal-status statement.
+- [x] Verify the revised attribution and reuse language, then save a checkpoint.
