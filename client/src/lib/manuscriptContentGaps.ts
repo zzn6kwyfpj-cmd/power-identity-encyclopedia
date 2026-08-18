@@ -99,6 +99,12 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
 
       'A Louisiana register in Record Group 105, covering applications made in September and October 1865, shows how freedpeople applied for government land. The entries record names, household composition, acreage requested, locations, resources, and comments. They are powerful evidence of application and stated need; they are not evidence that every applicant received a lease, possession, title, or a lasting recovery from dispossession. Circular No. 15, issued September 12, 1865, simultaneously set procedures that permitted restoration of abandoned lands to pardoned former owners, while requiring crop protection or compensation for loyal freedpeople already cultivating land.',
 
+      '— LOCAL RESEARCH CASE FILE: LOUISIANA, 1865 —',
+
+      'One local record cluster illustrates both the promise and the discipline of Bureau research. The land-application register records “Robert Butler and 5 others” applying in New Orleans on October 7, 1865, naming Logan Plantation in St. Charles Parish and listing horses, plows, rice, and wages due. A separate Louisiana Plantation Department register indexes a Robert Butler in St. Charles Parish within the broad 1865–1872 record range. The shared name and parish make this a useful research path, not a completed identity claim: the surviving public metadata does not yet supply enough matching household, age, occupation, plantation, or explicit cross-reference data to say that the two entries name the same Robert Butler.',
+
+      'This is a source-complete local case file at the administrative level. It links a named land application, the governing Bureau land framework, an adjacent plantation-department register, and the National Archives finding aid for the Louisiana field-office series. It demonstrates how a researcher should proceed: compare original images; extract every identifier; search contracts, complaints, hospital, school, court, census, treaty, and local records; and publish a person-level conclusion only when the chain is independently supported. It establishes no Indigenous affiliation, land title, or later outcome for Robert Butler or any other applicant.',
+
       '— THE BUREAU\'S LEGACY —',
 
       'Congress continued and amended the Bureau in July 1866 over President Andrew Johnson\'s veto. Yet its authority remained time-limited, local enforcement was uneven, and most district-level operations were withdrawn after 1868; the Bureau was abolished in 1872. The institution belongs in the encyclopedia because it documents an essential Reconstruction struggle over relief, work, family, schooling, legal claims, and land. Its records can support careful Black Native genealogy when combined with community-specific sources; they cannot replace nation-specific evidence or decide sovereign membership.',
@@ -155,6 +161,15 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
         limitation: 'The document states policy; it does not itself establish the outcome for every settlement, claimant, or former owner.',
         source: 'Circular No. 15, approved by President Andrew Johnson',
         sourceUrl: 'https://www.presidency.ucsb.edu/documents/circular-no-15'
+      },
+      {
+        year: '1865–1872',
+        title: 'Louisiana Local Research Case File: Robert Butler (Unresolved)',
+        locator: 'Land application no. 187, New Orleans, October 7, 1865, RG 105, NAID 595044; adjacent Plantation Department register, M1905 roll 27, volume 110',
+        establishes: 'The land register records “Robert Butler and 5 others” applying for land connected to St. Charles Parish. A separate Plantation Department register indexes a Robert Butler in St. Charles Parish within the 1865–1872 record range, creating a documented path for additional image-level research.',
+        limitation: 'The shared name and parish do not establish that both entries identify the same person. The records do not prove an approved lease, a later land outcome, Indigenous affiliation, or tribal citizenship.',
+        source: 'National Archives RG 105 land-application register; NMAAHC Freedmen’s Bureau Digital Collection, M1905 roll 27, volume 110',
+        sourceUrl: 'https://nmaahc.si.edu/freedmens-bureau/record/fbs-1662423774659-1662425557069-0'
       },
       {
         year: '1866',

@@ -101,8 +101,15 @@
 
 # Freedmen’s Bureau Evidence-Packet Release
 
-- [ ] Verify page-level or stable institutional records for the 1865 and 1866 Freedmen’s Bureau Acts, Special Field Orders No. 15, NAID 595044 land applications, and a land-restoration policy record.
-- [ ] Resolve any date or provenance discrepancy before using a Bureau circular or other document as a public evidence card.
-- [ ] Prepare source cards and chronology panels that distinguish formal mandate, application, possessory settlement, restoration, and documented outcome.
-- [ ] Integrate the verified evidence packet into Chapter 59 and related chronology records without treating Bureau records as universal proof of Indigenous identity.
-- [ ] Type-check, visually verify, checkpoint, and update the canonical roadmap after the evidence-packet release.
+- [x] Verify page-level or stable institutional records for the 1865 and 1866 Freedmen’s Bureau Acts, Special Field Orders No. 15, NAID 595044 land applications, and a land-restoration policy record.
+- [x] Resolve any date or provenance discrepancy before using a Bureau circular or other document as a public evidence card.
+- [x] Prepare source cards and chronology panels that distinguish formal mandate, application, possessory settlement, restoration, and documented outcome.
+- [x] Integrate the verified evidence packet into Chapter 59 and related chronology records without treating Bureau records as universal proof of Indigenous identity.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the evidence-packet release.
+
+# Next Three Research Releases
+
+- [x] Build one source-complete, local Freedmen’s Bureau case file using linked records and preserve explicit limits on identity, ownership, and outcome claims.
+- [x] Add the next page-verified colonial source-card tranche for Smith, Winslow, Strachey, Wood, Williams, Josselyn, and Beverley.
+- [x] Establish a normalized legal-record metadata model and apply it to the existing civil-rights and voting-rights sequence.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after all three releases are complete.

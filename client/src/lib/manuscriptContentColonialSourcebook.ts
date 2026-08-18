@@ -88,6 +88,69 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
         limitation: "It is neither a full demographic record nor a complete legal account. The Barbados code and other records remain stronger evidence for statutory rules and enslaved people’s experience requires additional sources.",
         source: "Richard Ligon, A True and Exact History of the Island of Barbados (1657)",
         sourceUrl: "https://archive.org/details/trueexacthistory00ligo/page/n43/mode/1up"
+      },
+      {
+        year: "1624",
+        title: "John Smith, The Generall Historie",
+        locator: "1907 printed edition of Smith’s 1624 work; Internet Archive page-image anchor at the title/front-matter scan",
+        establishes: "The work is a colonial author’s retrospective narrative of English ventures in Virginia, New England, and Bermuda and is a traceable source for the author’s representations of settlement and Indigenous peoples.",
+        limitation: "A later printed edition does not independently verify every retrospective claim. The narrative cannot substitute for Powhatan- or other Indigenous-centered records, and no direct quotation is used here without a page-specific check.",
+        source: "John Smith, The Generall Historie of Virginia, New-England, and the Summer Isles (1624; 1907 edition)",
+        sourceUrl: "https://archive.org/details/generallhistorie01smit/page/n5/mode/1up"
+      },
+      {
+        year: "1624",
+        title: "Edward Winslow, Good Newes from New-England",
+        locator: "1624 London printing; Boston Public Library / John Adams Library copy; Internet Archive title-page image anchor",
+        establishes: "The work documents a Plymouth colonist’s account of the plantation and of the author’s stated descriptions of Indigenous laws and customs.",
+        limitation: "It is a colonial English narrative and cannot replace Wampanoag self-representation or establish the complete meaning of diplomacy, law, or community life from an Indigenous perspective.",
+        source: "Edward Winslow, Good Newes from New-England (1624)",
+        sourceUrl: "https://archive.org/details/goodnewesfromnew00wins/page/n5/mode/1up"
+      },
+      {
+        year: "1634",
+        title: "William Wood, New Englands Prospect",
+        locator: "1634 London printing; John Carter Brown Library copy; Internet Archive title-page and map-image route",
+        establishes: "The text documents an English promotional description addressed to potential planters and includes a surviving Massachuset vocabulary section and 1634 map context.",
+        limitation: "Promotion and colonial description are not neutral ethnography. The work cannot establish Indigenous consent, sovereignty, or the complete meaning of the language it records.",
+        source: "William Wood, New Englands Prospect (1634)",
+        sourceUrl: "https://archive.org/details/newenglandsprosp01wood/page/n5/mode/1up"
+      },
+      {
+        year: "1612 / 1849",
+        title: "William Strachey, The Historie of Travaile into Virginia Britannia",
+        locator: "Strachey manuscript completed c. 1612; Hakluyt Society printed edition, 1849; Internet Archive title-page image anchor",
+        establishes: "The edition makes available an early Virginia manuscript narrative concerned with cosmography, commodities, and English descriptions of the colony and the people it encountered.",
+        limitation: "The public version is an 1849 edited printing of an earlier manuscript. It requires manuscript and page comparison before a consequential quotation, and it cannot stand alone for Indigenous history.",
+        source: "William Strachey, The Historie of Travaile into Virginia Britannia (c. 1612; ed. 1849)",
+        sourceUrl: "https://archive.org/details/historietravail00majogoog/page/n5/mode/1up"
+      },
+      {
+        year: "1643",
+        title: "Roger Williams, A Key into the Language of America",
+        locator: "Original London publication, 1643; public facsimile edition with title-page image anchor",
+        establishes: "Williams’s work preserves a colonial-era linguistic and observational record concerning Narragansett language and English contact in the region.",
+        limitation: "The text is not a Narragansett-authored authority, and a later facsimile does not remove the need for language-community and Indigenous scholarship before interpreting a word or practice.",
+        source: "Roger Williams, A Key into the Language of America (1643; facsimile edition)",
+        sourceUrl: "https://archive.org/details/bub_gb_wOfpAPRxlVYC/page/n5/mode/1up"
+      },
+      {
+        year: "1672",
+        title: "John Josselyn, New-England’s Rarities",
+        locator: "1672 London work; 1865 edition reproducing the original title page; Internet Archive title-page image anchor",
+        establishes: "The work records a colonial author’s natural-history and regional observations, including statements about Indigenous people and practices as the author represented them.",
+        limitation: "Its natural-history genre, later edition, and colonial standpoint limit what it can establish about Indigenous knowledge, social life, or sovereignty without corroboration.",
+        source: "John Josselyn, New-England’s Rarities Discovered (1672; 1865 edition)",
+        sourceUrl: "https://archive.org/details/newenglandsrarit00joss/page/n5/mode/1up"
+      },
+      {
+        year: "1705",
+        title: "Robert Beverley, The History and Present State of Virginia",
+        locator: "1705 London edition; UNC-Chapel Hill page-marked electronic facsimile and Internet Archive page-image route",
+        establishes: "The book organizes a Virginia colonist’s account into settlement history, natural productions, descriptions of Native Indians, and colonial government, making its authorial representations traceable by page.",
+        limitation: "Beverley’s claims about Indigenous religion, law, custom, and colonial history are colonial representations, not self-authored Indigenous records or standalone proof of community identity.",
+        source: "Robert Beverley, The History and Present State of Virginia (1705)",
+        sourceUrl: "https://docsouth.unc.edu/southlit/beverley/beverley.html"
       }
     ]
   }

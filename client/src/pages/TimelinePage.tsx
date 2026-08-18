@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { TIMELINE_EVENTS, ERAS } from "@/lib/manuscriptData";
 import { TIMELINE_DETAILS } from "@/lib/timelineDetails";
+import { LEGAL_RECORDS } from "@/lib/legalRecordMetadata";
 import { Search, Share2, Filter, ChevronDown, ChevronUp, BookOpen, X } from "lucide-react";
 
 // Categorize each event for filtering
@@ -431,7 +432,9 @@ export default function TimelinePage() {
 
                       {/* Expanded details — rich panel */}
                       {isExpanded && (() => {
-                        const detail = TIMELINE_DETAILS[event.detailKey || event.year.toString()];
+                        const detailKey = event.detailKey || event.year.toString();
+                        const detail = TIMELINE_DETAILS[detailKey];
+                        const legalRecord = LEGAL_RECORDS[detailKey];
                         return (
                           <div style={{ marginTop: 12, paddingTop: 16, borderTop: `1px solid ${catColor}20` }}>
                             {/* Visual aid if available */}
@@ -460,6 +463,21 @@ export default function TimelinePage() {
                                 <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "0.95rem", lineHeight: 1.7, fontStyle: "italic", margin: 0 }}>
                                   {detail.keyFact}
                                 </p>
+                              </div>
+                            )}
+
+                            {legalRecord && (
+                              <div style={{ background: "rgba(212,175,55,0.045)", border: "1px solid rgba(212,175,55,0.20)", padding: "14px 16px", marginBottom: 16 }}>
+                                <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 9, letterSpacing: "0.18em", marginBottom: 10 }}>✦ LEGAL RECORD CONTEXT</div>
+                                <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: "10px 18px" }} className="legal-record-grid">
+                                  <div><div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 8, letterSpacing: "0.12em", marginBottom: 3 }}>RECORD TYPE</div><div style={{ color: "#e2e8f0", fontFamily: "Cormorant Garamond, serif", fontSize: 14 }}>{legalRecord.recordType}</div></div>
+                                  <div><div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 8, letterSpacing: "0.12em", marginBottom: 3 }}>JURISDICTION</div><div style={{ color: "#e2e8f0", fontFamily: "Cormorant Garamond, serif", fontSize: 14 }}>{legalRecord.jurisdiction}</div></div>
+                                  <div style={{ gridColumn: "1 / -1" }}><div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 8, letterSpacing: "0.12em", marginBottom: 3 }}>CITATION</div><div style={{ color: "#cbd5e1", fontFamily: "Cormorant Garamond, serif", fontSize: 14 }}>{legalRecord.citation}</div></div>
+                                  <div><div style={{ fontFamily: "Cinzel, serif", color: "#4ade80", fontSize: 8, letterSpacing: "0.12em", marginBottom: 3 }}>MECHANISM</div><div style={{ color: "#cbd5e1", fontFamily: "Cormorant Garamond, serif", fontSize: 14, lineHeight: 1.5 }}>{legalRecord.mechanism}</div></div>
+                                  <div><div style={{ fontFamily: "Cinzel, serif", color: "#94a3b8", fontSize: 8, letterSpacing: "0.12em", marginBottom: 3 }}>ENFORCEMENT PATH</div><div style={{ color: "#cbd5e1", fontFamily: "Cormorant Garamond, serif", fontSize: 14, lineHeight: 1.5 }}>{legalRecord.enforcementPath}</div></div>
+                                </div>
+                                <div style={{ borderLeft: "2px solid #f87171", paddingLeft: 10, marginTop: 12 }}><div style={{ fontFamily: "Cinzel, serif", color: "#f87171", fontSize: 8, letterSpacing: "0.12em", marginBottom: 3 }}>DOCUMENTED LIMIT</div><div style={{ color: "#fca5a5", fontFamily: "Cormorant Garamond, serif", fontSize: 14, lineHeight: 1.5 }}>{legalRecord.documentedLimit}</div></div>
+                                <a href={legalRecord.sourceUrl} target="_blank" rel="noreferrer" style={{ display: "inline-block", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.12em", marginTop: 12, textDecoration: "none", borderBottom: "1px solid rgba(212,175,55,0.45)" }}>OPEN LEGAL RECORD ↗</a>
                               </div>
                             )}
 
