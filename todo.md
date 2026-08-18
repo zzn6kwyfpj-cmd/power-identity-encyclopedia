@@ -13,4 +13,4 @@
 - [x] Extract dated events, actors, places, claims, quotations, and page-level citations into a chronological source ledger.
 - [x] Cross-check consequential claims against primary records and current scholarship; flag contradictions, anachronisms, and unsupported inferences.
 - [x] Produce a chronological ledger, thematic index, contradiction report, and a proposed evidence-tiered integration map for The Archive Encyclopedia.
-- [ ] Integrate verified, approved findings into chapters, timeline, figures, and citations; then test and save a new checkpoint.
+- [x] Integrate verified, approved findings into chapters, timeline, figures, and citations; then test and save a new checkpoint.
