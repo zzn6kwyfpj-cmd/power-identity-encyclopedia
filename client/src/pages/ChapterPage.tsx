@@ -20,6 +20,15 @@ import { GAPS_CONTENT } from "@/lib/manuscriptContentGaps";
 import { ARCHIVAL_INTAKE_CONTENT } from "@/lib/manuscriptContentArchivalIntake";
 import { COLONIAL_SOURCEBOOK_CONTENT } from "@/lib/manuscriptContentColonialSourcebook";
 
+type SourceCard = {
+  year: string;
+  title: string;
+  locator: string;
+  establishes: string;
+  limitation: string;
+  source: string;
+};
+
 export default function ChapterPage() {
   const { slug } = useParams<{ slug: string }>();
   const [copied, setCopied] = useState(false);
@@ -56,6 +65,10 @@ export default function ChapterPage() {
     2: "TIER 2 — Scholarly Analysis",
     3: "TIER 3 — Community Historical Tradition"
   };
+  const activeContent = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug] || PAPAL_BULLS_CONTENT[chapter.slug] || GAPS_CONTENT[chapter.slug] || ARCHIVAL_INTAKE_CONTENT[chapter.slug] || COLONIAL_SOURCEBOOK_CONTENT[chapter.slug];
+  const sourceCards: SourceCard[] = activeContent && "sourceCards" in activeContent && Array.isArray(activeContent.sourceCards)
+    ? activeContent.sourceCards as SourceCard[]
+    : [];
 
   return (
     <div style={{ backgroundColor: "#0a1118", minHeight: "100vh" }}>
@@ -154,7 +167,7 @@ export default function ChapterPage() {
 
               {/* Full Chapter Content */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug] || PAPAL_BULLS_CONTENT[chapter.slug] || GAPS_CONTENT[chapter.slug] || ARCHIVAL_INTAKE_CONTENT[chapter.slug] || COLONIAL_SOURCEBOOK_CONTENT[chapter.slug];
+                const content = activeContent;
                 if (content && content.fullText.length > 0) {
                   return (
                     <div>
@@ -224,7 +237,7 @@ export default function ChapterPage() {
 
               {/* Key Documents Section */}
               {(() => {
-                const content = CHAPTER_CONTENT[chapter.slug] || EXTRA_CHAPTER_CONTENT[chapter.slug] || MODERN_CHAPTER_CONTENT[chapter.slug] || VIETNAM_CHAPTER_CONTENT[chapter.slug] || GAP_FILL_CONTENT[chapter.slug] || DEPTH_CONTENT[chapter.slug] || FULL_CHAPTER_CONTENT[chapter.slug] || FINAL_3_CONTENT[chapter.slug] || TREATIES_CONTENT[chapter.slug] || BLACK_NATIVE_CONTENT[chapter.slug] || PAPAL_BULLS_CONTENT[chapter.slug] || GAPS_CONTENT[chapter.slug] || ARCHIVAL_INTAKE_CONTENT[chapter.slug] || COLONIAL_SOURCEBOOK_CONTENT[chapter.slug];
+                const content = activeContent;
                 if (content?.keyDocuments && content.keyDocuments.length > 0) {
                   return (
                     <div style={{ marginTop: 40, marginBottom: 32 }}>
@@ -241,6 +254,29 @@ export default function ChapterPage() {
                 }
                 return null;
               })()}
+
+              {sourceCards.length > 0 && (
+                <div style={{ marginTop: 40, marginBottom: 32 }}>
+                  <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 16 }}>✦ EVIDENCE SOURCE CARDS</div>
+                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.7, marginBottom: 16 }}>
+                    Each card separates what the record establishes from what it cannot establish on its own.
+                  </p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                    {sourceCards.map((card) => (
+                      <div key={`${card.year}-${card.title}`} style={{ background: "#0f1923", borderTop: "1px solid rgba(212,175,55,0.35)", padding: "18px 20px" }}>
+                        <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap", marginBottom: 8 }}>
+                          <span style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.16em" }}>{card.year}</span>
+                          <span style={{ color: "#e2e8f0", fontFamily: "Cinzel, serif", fontSize: 12, letterSpacing: "0.07em" }}>{card.title}</span>
+                        </div>
+                        <p style={{ color: "#64748b", fontFamily: "Cormorant Garamond, serif", fontSize: 14, fontStyle: "italic", margin: "0 0 12px" }}>{card.locator}</p>
+                        <p style={{ color: "#cbd5e1", fontFamily: "Cormorant Garamond, serif", fontSize: 15, lineHeight: 1.65, margin: "0 0 10px" }}><strong style={{ color: "#4ade80", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.1em" }}>ESTABLISHES</strong><br />{card.establishes}</p>
+                        <p style={{ color: "#fca5a5", fontFamily: "Cormorant Garamond, serif", fontSize: 15, lineHeight: 1.65, margin: "0 0 10px" }}><strong style={{ color: "#f87171", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.1em" }}>LIMIT</strong><br />{card.limitation}</p>
+                        <p style={{ color: "#64748b", fontFamily: "Cormorant Garamond, serif", fontSize: 13, margin: 0 }}>{card.source}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Cite This Article */}
               <div style={{ background: "rgba(212,175,55,0.03)", border: "1px solid rgba(212,175,55,0.1)", padding: "16px 20px", marginTop: 24, marginBottom: 32 }}>

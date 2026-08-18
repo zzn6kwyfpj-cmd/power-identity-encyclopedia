@@ -8,6 +8,14 @@ export const FINAL_3_CONTENT: Record<string, {
   pullQuote?: { text: string; attribution: string };
   keyDocuments?: string[];
   didYouKnow?: string;
+  sourceCards?: Array<{
+    year: string;
+    title: string;
+    locator: string;
+    establishes: string;
+    limitation: string;
+    source: string;
+  }>;
 }> = {
 
   "plessy-v-ferguson": {
@@ -69,6 +77,40 @@ export const FINAL_3_CONTENT: Record<string, {
       "Civil Rights Act of 1964, Pub. L. 88-352, 78 Stat. 241 — National Archives",
       "Voting Rights Act of 1965, Pub. L. 89-110, 79 Stat. 437 — National Archives",
       "Shelby County v. Holder, 570 U.S. 529 (2013) — gutting the Voting Rights Act"
+    ],
+    sourceCards: [
+      {
+        year: "1866",
+        title: "Civil Rights Act of 1866",
+        locator: "14 Stat. 27, §§ 1–2",
+        establishes: "Congress declared most U.S.-born persons citizens and guaranteed citizens the full and equal benefit of laws protecting person and property.",
+        limitation: "The statute’s citizenship rule excluded American Indians, and a federal statute on paper did not itself secure equal treatment in practice.",
+        source: "U.S. House Office of the Historian; Civil Rights Act of 1866, 14 Stat. 27"
+      },
+      {
+        year: "1868",
+        title: "Fourteenth Amendment",
+        locator: "Section 1 and Section 5; National Archives, Record Group 11",
+        establishes: "The amendment constitutionalized birthright citizenship, due process, equal protection, and Congress’s power to enforce its provisions by appropriate legislation.",
+        limitation: "Its text did not automatically compel state compliance; courts and federal officials later narrowed or failed to enforce its protections.",
+        source: "National Archives, House Joint Resolution Proposing the Fourteenth Amendment"
+      },
+      {
+        year: "1870–1871",
+        title: "Enforcement Acts and the Ku Klux Klan Act",
+        locator: "16 Stat. 140; 16 Stat. 433; 17 Stat. 13",
+        establishes: "Congress created federal penalties and election oversight, then authorized stronger federal action against conspiracies denying constitutional rights.",
+        limitation: "The measures temporarily suppressed some terror and intimidation, but their force was not sustained after Reconstruction’s collapse.",
+        source: "U.S. Senate Historical Office; U.S. House Office of the Historian"
+      },
+      {
+        year: "1875",
+        title: "Civil Rights Act of 1875",
+        locator: "18 Stat. 335, § 1",
+        establishes: "Congress required equal enjoyment of listed public accommodations and created a federal remedy for racial denial of access.",
+        limitation: "The Supreme Court invalidated key provisions in the Civil Rights Cases (1883), a rollback already documented in this encyclopedia.",
+        source: "U.S. Senate Historical Office; Civil Rights Act of 1875, 18 Stat. 335"
+      }
     ],
     didYouKnow: "Within hours of the Supreme Court's ruling in Shelby County v. Holder (2013), which gutted the Voting Rights Act's preclearance requirement, Texas announced a voter ID law and a redistricting plan that had previously been blocked under Section 5. North Carolina and Georgia followed within days. The states that had been most aggressively blocked from voter suppression under the Voting Rights Act moved the fastest to implement new restrictions the moment the enforcement mechanism was removed."
   },

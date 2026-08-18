@@ -42,3 +42,10 @@
 - [x] Secure lawful searchable editions, create source logs, and perform chapter-level extraction using the five-field chronology framework.
 - [x] Cross-check historical claims, categorize verified evidence and community traditions, and prepare an integration ledger.
 - [x] Integrate approved, evidence-tiered findings into chapters and the timeline, then validate and save a checkpoint.
+
+# Source Cards and Civil-Rights Legal Record Expansion
+
+- [x] Prioritize page-verifiable passages from the newly acquired early texts and the most consequential absent civil-rights legal records.
+- [x] Verify quotations, editions, page images, and institutional records; maintain a claim-level source ledger.
+- [x] Prepare evidence-tiered source cards and chronology entries without duplicating existing events.
+- [x] Integrate verified additions, validate the site, and save the next research checkpoint.
