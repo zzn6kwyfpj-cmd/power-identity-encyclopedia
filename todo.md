@@ -49,3 +49,10 @@
 - [x] Verify quotations, editions, page images, and institutional records; maintain a claim-level source ledger.
 - [x] Prepare evidence-tiered source cards and chronology entries without duplicating existing events.
 - [x] Integrate verified additions, validate the site, and save the next research checkpoint.
+
+# Early Source Cards and Court-Sequence Expansion
+
+- [x] Select the strongest page-verifiable passages from Bradford, Hariot, Ligon, and Whitaker and identify their source-image locators.
+- [x] Verify major Reconstruction-to–civil-rights court holdings against institutional records and identify absent chronology entries.
+- [x] Create transparent source cards and evidence-tiered timeline details that distinguish direct testimony, colonial argument, and legal holding.
+- [x] Integrate the verified additions, validate the site, and save the next research checkpoint.

@@ -7,6 +7,14 @@ type ChapterContent = {
   pullQuote?: { text: string; attribution: string };
   didYouKnow?: string;
   keyDocuments?: string[];
+  sourceCards?: Array<{
+    year: string;
+    title: string;
+    locator: string;
+    establishes: string;
+    limitation: string;
+    source: string;
+  }>;
 };
 
 export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
@@ -42,6 +50,40 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
       "John Lawson, A New Voyage to Carolina (1709) and History of Carolina edition history — Tier 1 colonial narrative",
       "John Ogilby / Arnoldus Montanus, America (1670–1671); James Adair (1775); Benjamin Smith Barton (1798) — Tier 1 intellectual-history sources",
       "North American Aboriginal Society, The Book of North American Tribes, Chiefs, Warriors & Their Stories (2019) — Tier 3 community source index"
+    ],
+    sourceCards: [
+      {
+        year: "1588",
+        title: "Thomas Hariot, A Briefe and True Report",
+        locator: "1588 edition; Internet Archive / Project Gutenberg working text; exact page-image quotation not yet published",
+        establishes: "The tract provides direct evidence of an English promoter’s stated commodity, settlement, and investment program, including reliance on local knowledge for provisions.",
+        limitation: "It is promotional colonial writing, not an Indigenous account of consent, sovereignty, or social life. A page image must be checked before a public direct quotation is added.",
+        source: "Thomas Hariot, A Briefe and True Report of the New Found Land of Virginia (1588)"
+      },
+      {
+        year: "1613",
+        title: "Alexander Whitaker, Good Newes from Virginia",
+        locator: "1613 John Carter Brown Library scan; working text indexed; exact page-image quotation not yet published",
+        establishes: "The tract documents a Virginia Company–era minister’s effort to connect plantation, conversion, English settlement, and colonial legitimacy.",
+        limitation: "It cannot establish Indigenous belief, consent, or the lived effect of mission policy. Its genre and advocacy must remain visible.",
+        source: "Alexander Whitaker, Good Newes from Virginia (1613)"
+      },
+      {
+        year: "1621",
+        title: "William Bradford, Of Plymouth Plantation",
+        locator: "1898 transcription, pp. 57–59, for the Tisquantum passage; colonial manuscript tradition",
+        establishes: "Bradford records an English account of Thomas Hunt’s seizure of Tisquantum and other captives, supporting the timeline’s narrowly stated captivity event when paired with institutional context.",
+        limitation: "The citation is a later transcription of a colonial manuscript, not a complete Wampanoag archive. The account does not prove a complete route, sale outcome, or Indigenous interpretation on its own.",
+        source: "William Bradford, Of Plymouth Plantation; Plimoth Patuxet Museums contextual materials"
+      },
+      {
+        year: "1657",
+        title: "Richard Ligon, A True and Exact History of Barbados",
+        locator: "1657 Internet Archive / Getty Research Institute scan; plantation-labor passages indexed; exact page-image quotation not yet published",
+        establishes: "Ligon’s text provides firsthand-era evidence of one writer’s description of sugar production, forced labor, provisions, and plantation organization in Barbados.",
+        limitation: "It is neither a full demographic record nor a complete legal account. The Barbados code and other records remain stronger evidence for statutory rules and enslaved people’s experience requires additional sources.",
+        source: "Richard Ligon, A True and Exact History of the Island of Barbados (1657)"
+      }
     ]
   }
 };

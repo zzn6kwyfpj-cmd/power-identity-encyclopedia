@@ -110,6 +110,30 @@ export const FINAL_3_CONTENT: Record<string, {
         establishes: "Congress required equal enjoyment of listed public accommodations and created a federal remedy for racial denial of access.",
         limitation: "The Supreme Court invalidated key provisions in the Civil Rights Cases (1883), a rollback already documented in this encyclopedia.",
         source: "U.S. Senate Historical Office; Civil Rights Act of 1875, 18 Stat. 335"
+      },
+      {
+        year: "1876",
+        title: "United States v. Cruikshank",
+        locator: "92 U.S. 542; Library of Congress U.S. Reports scan, PDF, and IIIF manifest",
+        establishes: "The Court narrowly construed federal enforcement in the Colfax Massacre prosecutions, treating cited Fourteenth Amendment protections as directed at state action rather than private individuals.",
+        limitation: "The holding did not approve the massacre or define every federal power. Its public significance here is the documented narrowing of Reconstruction enforcement.",
+        source: "U.S. Reports; Federal Judicial Center; National Archives"
+      },
+      {
+        year: "1876",
+        title: "United States v. Reese",
+        locator: "92 U.S. 214; Library of Congress U.S. Reports record",
+        establishes: "The Court held that the Fifteenth Amendment bars race-based denial or abridgment of voting rights but does not independently create an affirmative right to vote.",
+        limitation: "This legal holding does not establish that all later restrictions were lawful; it helps explain why formal amendment language alone did not end disenfranchisement.",
+        source: "U.S. Reports; National Archives, Laws and Court Cases"
+      },
+      {
+        year: "1944",
+        title: "Smith v. Allwright",
+        locator: "321 U.S. 649; decision PDF preserved by NAACP Legal Defense Fund",
+        establishes: "The Court held that Texas’s race-based Democratic primary violated the Fourteenth and Fifteenth Amendments and rejected the effort to shield the primary as merely private party action.",
+        limitation: "The decision removed the white primary barrier but did not eliminate every tool of Black voter suppression or create full political equality by itself.",
+        source: "Smith v. Allwright, 321 U.S. 649 (1944); NAACP Legal Defense Fund"
       }
     ],
     didYouKnow: "Within hours of the Supreme Court's ruling in Shelby County v. Holder (2013), which gutted the Voting Rights Act's preclearance requirement, Texas announced a voter ID law and a redistricting plan that had previously been blocked under Section 5. North Carolina and Georgia followed within days. The states that had been most aggressively blocked from voter suppression under the Voting Rights Act moved the fastest to implement new restrictions the moment the enforcement mechanism was removed."

@@ -666,4 +666,25 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "civil-rights-acts",
     chapterTitle: "The Civil Rights Act and the Voting Rights Act",
   },
+  "1876_cruikshank": {
+    description: "United States v. Cruikshank grew out of federal prosecutions after the 1873 Colfax Massacre, in which armed white attackers killed more than one hundred Black men in Louisiana during a political conflict. The Supreme Court reversed the convictions on indictment grounds and adopted a narrow view of the constitutional protections at issue. The Federal Judicial Center summarizes the Court’s reasoning: the cited First and Second Amendment rights restricted the federal government, while Fourteenth Amendment due-process and equal-protection protections required state action rather than private conduct. The decision did not approve the massacre; its historical consequence was to narrow federal capacity in a period of racial terror and weakening Reconstruction enforcement.",
+    keyFact: "Cruikshank is a documented legal rollback: it narrowed the federal enforcement path used after anti-Reconstruction violence, without making the underlying violence lawful or acceptable.",
+    primarySource: "United States v. Cruikshank, 92 U.S. 542 (1876), Library of Congress U.S. Reports; Federal Judicial Center",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1876_reese": {
+    description: "United States v. Reese was the Supreme Court’s first voting-rights case after the Fifteenth Amendment and the 1870 Enforcement Act. It arose after Kentucky election inspectors refused to permit William Garner, a Black voter, to vote over a claimed tax requirement. The Court held that the Fifteenth Amendment prohibited exclusion from voting on racial grounds but did not itself grant an affirmative right to vote. The National Archives identifies the decision as part of the pathway through which states later adopted poll taxes, literacy tests, and residency rules. That later history is not a claim that Reese authorized every restriction; it is evidence that a formal anti-race-discrimination rule remained vulnerable to other exclusionary mechanisms.",
+    keyFact: "The Fifteenth Amendment barred racial denial of the vote, but Reese’s distinction between that prohibition and an affirmative voting right left a structural opening for later restrictions.",
+    primarySource: "United States v. Reese, 92 U.S. 214 (1876); National Archives, 'Laws and Court Cases'",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1944_smith_allwright": {
+    description: "In Smith v. Allwright, the Supreme Court held that Texas’s Democratic primary could not bar Black voters on racial grounds. Lonnie Smith, a Black dentist in Harris County, challenged the white-primary system; Thurgood Marshall argued the case. The Court rejected the claim that the party’s racial exclusion was purely private conduct outside constitutional review, holding that the state could not structure its electoral process to permit racial discrimination. The ruling was a major voting-rights breakthrough, but it did not eliminate poll taxes, intimidation, registration barriers, or other obstacles that made federal voting-rights legislation necessary two decades later.",
+    keyFact: "Smith v. Allwright dismantled the Texas white primary as a constitutional barrier, yet the remaining system of disenfranchisement required further legal and political struggle.",
+    primarySource: "Smith v. Allwright, 321 U.S. 649 (1944); NAACP Legal Defense Fund decision archive; National Archives",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
 };
