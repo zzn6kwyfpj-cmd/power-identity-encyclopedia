@@ -163,6 +163,51 @@ export const FINAL_3_CONTENT: Record<string, {
         limitation: "The enactment did not erase prior redlining, residential segregation, or later enforcement gaps; its legal text and its outcomes must be evaluated separately.",
         source: "U.S. House Office of the Historian; U.S. Department of Justice",
         sourceUrl: "https://history.house.gov/Historical-Highlights/1951-2000/hh_1968_04_10/"
+      },
+      {
+        year: "1964",
+        title: "Twenty-fourth Amendment",
+        locator: "Ratified January 23, 1964; 78 Stat. 1117",
+        establishes: "The amendment prohibited poll taxes as a prerequisite to voting in federal elections.",
+        limitation: "It did not itself reach state elections, where poll-tax barriers required separate constitutional litigation.",
+        source: "U.S. House Office of the Historian, Twenty-fourth Amendment",
+        sourceUrl: "https://history.house.gov/HistoricalHighlight/Detail/37045"
+      },
+      {
+        year: "1966",
+        title: "Harper v. Virginia Board of Elections",
+        locator: "383 U.S. 663; decided March 24, 1966; Library of Congress U.S. Reports scan",
+        establishes: "The Court held that a state violates the Fourteenth Amendment when it makes payment of a fee or tax an electoral standard.",
+        limitation: "The decision ended the poll-tax requirement at issue; it did not remove literacy tests, registration manipulation, intimidation, or every other voting barrier.",
+        source: "Harper v. Virginia Board of Elections, 383 U.S. 663 (1966)",
+        sourceUrl: "https://tile.loc.gov/storage-services/service/ll/usrep/usrep383/usrep383663/usrep383663.pdf"
+      },
+      {
+        year: "1975",
+        title: "Voting Rights Act Amendments of 1975",
+        locator: "Pub. L. 94-73, 89 Stat. 400",
+        establishes: "Congress extended temporary Voting Rights Act provisions, permanently banned literacy tests, and required bilingual election materials in qualifying language-minority jurisdictions.",
+        limitation: "The statutory rule depended on coverage criteria and enforcement; it did not itself guarantee language access in every locality.",
+        source: "U.S. House Office of the Historian, Constitutional Amendments and Major Civil Rights Acts",
+        sourceUrl: "https://history.house.gov/Exhibitions-and-Publications/BAIC/Historical-Data/Constitutional-Amendments-and-Legislation/"
+      },
+      {
+        year: "1982",
+        title: "Voting Rights Act Amendments of 1982",
+        locator: "Pub. L. 97-205, 96 Stat. 131",
+        establishes: "Congress extended key Voting Rights Act provisions for 25 years and continued language-minority protections, while preserving a path for eligible jurisdictions to seek exemption from preclearance coverage.",
+        limitation: "The extension did not make preclearance permanent and did not settle later constitutional challenges to the coverage formula.",
+        source: "U.S. House Office of the Historian, Constitutional Amendments and Major Civil Rights Acts",
+        sourceUrl: "https://history.house.gov/Exhibitions-and-Publications/BAIC/Historical-Data/Constitutional-Amendments-and-Legislation/"
+      },
+      {
+        year: "2006",
+        title: "Voting Rights Act Reauthorization",
+        locator: "Pub. L. 109-246, 120 Stat. 577",
+        establishes: "Congress extended specified Voting Rights Act and bilingual-election provisions for 25 years after assembling a legislative record on their continued need.",
+        limitation: "The 2013 Shelby County decision later invalidated the coverage formula that activated the preclearance mechanism, not the entire Voting Rights Act.",
+        source: "U.S. House Office of the Historian, Constitutional Amendments and Major Civil Rights Acts",
+        sourceUrl: "https://history.house.gov/Exhibitions-and-Publications/BAIC/Historical-Data/Constitutional-Amendments-and-Legislation/"
       }
     ],
     didYouKnow: "Within hours of the Supreme Court's ruling in Shelby County v. Holder (2013), which gutted the Voting Rights Act's preclearance requirement, Texas announced a voter ID law and a redistricting plan that had previously been blocked under Section 5. North Carolina and Georgia followed within days. The states that had been most aggressively blocked from voter suppression under the Voting Rights Act moved the fastest to implement new restrictions the moment the enforcement mechanism was removed."

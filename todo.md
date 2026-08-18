@@ -63,3 +63,10 @@
 - [x] Verify holding language, dates, and scope against institutional sources and preserve all source URLs in the research ledger.
 - [x] Prepare linked evidence cards and source-critical chronology panels without conflating legal text with implementation.
 - [x] Integrate the verified additions, validate the site, and save the next research checkpoint.
+
+# Voting-Rights Enforcement and Retrenchment Sequence
+
+- [x] Identify absent Twenty-fourth Amendment, voting-rights amendment, court, and enforcement records that complete the 1964–2013 chronology.
+- [x] Verify dates, holding language, statutory scope, and stable institutional source links.
+- [x] Prepare source cards and detail panels that distinguish rights on paper, enforcement mechanisms, and subsequent retrenchment.
+- [x] Integrate verified records, validate the site, and save the next research checkpoint.
