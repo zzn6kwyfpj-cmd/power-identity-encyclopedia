@@ -208,6 +208,42 @@ export const FINAL_3_CONTENT: Record<string, {
         limitation: "The 2013 Shelby County decision later invalidated the coverage formula that activated the preclearance mechanism, not the entire Voting Rights Act.",
         source: "U.S. House Office of the Historian, Constitutional Amendments and Major Civil Rights Acts",
         sourceUrl: "https://history.house.gov/Exhibitions-and-Publications/BAIC/Historical-Data/Constitutional-Amendments-and-Legislation/"
+      },
+      {
+        year: "1957",
+        title: "Civil Rights Act of 1957",
+        locator: "Pub. L. 85-315, 71 Stat. 634",
+        establishes: "The Act created the Civil Rights Commission and the Justice Department’s Civil Rights Division, and authorized the Attorney General to seek injunctions against voting-rights obstruction by state officials.",
+        limitation: "It relied on case-by-case enforcement and did not create the automatic coverage, federal examiners, or preclearance system introduced by the Voting Rights Act of 1965.",
+        source: "U.S. House Office of the Historian; Constitution Annotated",
+        sourceUrl: "https://constitution.congress.gov/browse/essay/amdt15-S2-2/ALDE_00013501/"
+      },
+      {
+        year: "1960",
+        title: "Civil Rights Act of 1960",
+        locator: "Pub. L. 86-449, 74 Stat. 86",
+        establishes: "The Act expanded federal voting-rights enforcement, including voter-registration record preservation and pattern-or-practice litigation tools.",
+        limitation: "The statutory tools did not replace the later Voting Rights Act’s coverage formula, preclearance, and federal-examiner mechanisms.",
+        source: "U.S. House Office of the Historian; Constitution Annotated",
+        sourceUrl: "https://constitution.congress.gov/browse/essay/amdt15-S2-2/ALDE_00013501/"
+      },
+      {
+        year: "1966",
+        title: "South Carolina v. Katzenbach",
+        locator: "383 U.S. 301; Library of Congress U.S. Reports scan",
+        establishes: "The Supreme Court upheld the Voting Rights Act provisions before it as an appropriate exercise of Congress’s power to enforce the Fifteenth Amendment, including affirmative remedies for voting discrimination.",
+        limitation: "The decision confirmed constitutional authority; it did not establish that every covered jurisdiction complied or that enforcement would remain unchanged.",
+        source: "South Carolina v. Katzenbach, 383 U.S. 301 (1966); Constitution Annotated",
+        sourceUrl: "https://www.loc.gov/item/usrep383301/"
+      },
+      {
+        year: "1969",
+        title: "Allen v. State Board of Elections",
+        locator: "393 U.S. 544; Library of Congress U.S. Reports scan and IIIF manifest",
+        establishes: "The decision affirmed the broad scope of Section 5 preclearance for covered changes in voting practices and procedures.",
+        limitation: "It establishes the scope of the preclearance system, not the outcome of every later dispute or the permanence of the system.",
+        source: "Allen v. State Board of Elections, 393 U.S. 544 (1969); National Archives; Library of Congress",
+        sourceUrl: "https://www.loc.gov/item/usrep393544/"
       }
     ],
     didYouKnow: "Within hours of the Supreme Court's ruling in Shelby County v. Holder (2013), which gutted the Voting Rights Act's preclearance requirement, Texas announced a voter ID law and a redistricting plan that had previously been blocked under Section 5. North Carolina and Georgia followed within days. The states that had been most aggressively blocked from voter suppression under the Voting Rights Act moved the fastest to implement new restrictions the moment the enforcement mechanism was removed."

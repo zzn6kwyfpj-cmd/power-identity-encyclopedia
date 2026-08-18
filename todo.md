@@ -70,3 +70,10 @@
 - [x] Verify dates, holding language, statutory scope, and stable institutional source links.
 - [x] Prepare source cards and detail panels that distinguish rights on paper, enforcement mechanisms, and subsequent retrenchment.
 - [x] Integrate verified records, validate the site, and save the next research checkpoint.
+
+# 1957–1960 Acts and Voting-Rights Enforcement Cases
+
+- [x] Identify absent 1957–1960 civil-rights statutes and Supreme Court enforcement cases without duplicating existing chronology records.
+- [x] Verify the statutory text, dates, holdings, and public institutional source records.
+- [x] Prepare source cards and timeline panels that distinguish new legal tools from their practical enforcement limits.
+- [x] Integrate verified records, validate the site, and save the next research checkpoint.

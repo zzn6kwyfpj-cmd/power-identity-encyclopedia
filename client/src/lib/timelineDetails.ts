@@ -750,4 +750,32 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "civil-rights-acts",
     chapterTitle: "The Civil Rights Act and the Voting Rights Act",
   },
+  "1957_civil_rights_act": {
+    description: "The Civil Rights Act of 1957 created the U.S. Commission on Civil Rights and the Justice Department’s Civil Rights Division. It also authorized the Attorney General to seek injunctions against deprivation or obstruction of voting rights by state officials. The statute marked a renewed federal voting-rights intervention after decades in which Reconstruction-era enforcement had weakened, but its case-by-case approach did not supply the automatic coverage, federal examiners, or preclearance framework enacted in 1965.",
+    keyFact: "The 1957 Act rebuilt federal voting-rights enforcement capacity, but its injunction-based approach was not yet the stronger structural remedy of the 1965 Voting Rights Act.",
+    primarySource: "Civil Rights Act of 1957, Pub. L. 85-315, 71 Stat. 634; Constitution Annotated; U.S. House Office of the Historian",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1960_civil_rights_act": {
+    description: "The Civil Rights Act of 1960 expanded the 1957 law’s voting-rights enforcement tools. Official constitutional-history materials identify its authorization for the Attorney General to seek a court finding of a pattern or practice of discrimination in a jurisdiction; the U.S. House record also identifies voter-registration record preservation and penalties for obstruction of federal court orders. These provisions strengthened litigation and documentation, but did not yet create the 1965 Act’s federal-examiner or preclearance system.",
+    keyFact: "The 1960 Act expanded pattern-or-practice and record-preservation tools, documenting the incremental federal effort that preceded the 1965 Act’s more direct enforcement structure.",
+    primarySource: "Civil Rights Act of 1960, Pub. L. 86-449, 74 Stat. 86; Constitution Annotated; U.S. House Office of the Historian",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1966_katzenbach": {
+    description: "South Carolina challenged key Voting Rights Act provisions shortly after enactment. In South Carolina v. Katzenbach, the Supreme Court upheld the provisions before it as an appropriate exercise of Congress’s power under Section 2 of the Fifteenth Amendment. The Court recognized Congress’s authority to use affirmative remedies, including the Act’s coverage and preclearance system, in response to persistent discrimination. The decision established constitutional authority for the Act’s enforcement architecture; it did not establish that discriminatory practices ceased or that enforcement would remain fixed over time.",
+    keyFact: "Katzenbach upheld the Voting Rights Act’s core enforcement approach as an appropriate Fifteenth Amendment remedy against persistent voting discrimination.",
+    primarySource: "South Carolina v. Katzenbach, 383 U.S. 301 (1966); Library of Congress; Constitution Annotated",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1969_allen": {
+    description: "Allen v. State Board of Elections addressed state voting changes in jurisdictions covered by the Voting Rights Act. The Supreme Court read Section 5 broadly so that covered changes in voting practices and procedures could not take effect without the required federal review. The decision is important because it concerns the operational reach of preclearance after South Carolina v. Katzenbach had upheld the constitutional framework. It does not mean every later voting dispute was resolved in favor of plaintiffs; it identifies the breadth of a statutory enforcement mechanism that later reauthorizations maintained and Shelby County changed.",
+    keyFact: "Allen confirmed that Section 5 preclearance reached a broad range of covered voting changes, strengthening the Act’s preventive enforcement function.",
+    primarySource: "Allen v. State Board of Elections, 393 U.S. 544 (1969), Library of Congress; National Archives",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
 };
