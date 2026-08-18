@@ -15,6 +15,7 @@ export const FINAL_3_CONTENT: Record<string, {
     establishes: string;
     limitation: string;
     source: string;
+    sourceUrl?: string;
   }>;
 }> = {
 
@@ -133,7 +134,35 @@ export const FINAL_3_CONTENT: Record<string, {
         locator: "321 U.S. 649; decision PDF preserved by NAACP Legal Defense Fund",
         establishes: "The Court held that Texas’s race-based Democratic primary violated the Fourteenth and Fifteenth Amendments and rejected the effort to shield the primary as merely private party action.",
         limitation: "The decision removed the white primary barrier but did not eliminate every tool of Black voter suppression or create full political equality by itself.",
-        source: "Smith v. Allwright, 321 U.S. 649 (1944); NAACP Legal Defense Fund"
+        source: "Smith v. Allwright, 321 U.S. 649 (1944); NAACP Legal Defense Fund",
+        sourceUrl: "https://www.naacpldf.org/case-issue/landmark-smith-v-allwright/"
+      },
+      {
+        year: "1955",
+        title: "Brown II",
+        locator: "National Archives Record Group 267; implementation order issued May 31, 1955",
+        establishes: "The Supreme Court directed states to begin desegregation plans ‘with all deliberate speed’ after the existing Brown decision held school segregation unconstitutional.",
+        limitation: "The implementation phrase was not a guarantee of prompt compliance; resistance and delay remained a central enforcement problem.",
+        source: "National Archives, Brown v. Board of Education of Topeka, Opinion",
+        sourceUrl: "https://www.archives.gov/milestone-documents/brown-v-board-of-education"
+      },
+      {
+        year: "1964",
+        title: "Civil Rights Act of 1964",
+        locator: "Pub. L. 88-352, 78 Stat. 241; National Archives Record Group 11",
+        establishes: "The Act prohibited discrimination in public accommodations, expanded school and public-facility desegregation tools, prohibited employment discrimination, and created the EEOC.",
+        limitation: "The statute created enforceable prohibitions but did not by itself eliminate local resistance, discrimination, or unequal access.",
+        source: "National Archives, Civil Rights Act (1964)",
+        sourceUrl: "https://www.archives.gov/milestone-documents/civil-rights-act"
+      },
+      {
+        year: "1968",
+        title: "Civil Rights Act of 1968 / Fair Housing Act",
+        locator: "Pub. L. 90-284, 82 Stat. 73; Title VIII",
+        establishes: "Title VIII prohibited discrimination in the sale or rental of housing and authorized specified federal and private enforcement mechanisms.",
+        limitation: "The enactment did not erase prior redlining, residential segregation, or later enforcement gaps; its legal text and its outcomes must be evaluated separately.",
+        source: "U.S. House Office of the Historian; U.S. Department of Justice",
+        sourceUrl: "https://history.house.gov/Historical-Highlights/1951-2000/hh_1968_04_10/"
       }
     ],
     didYouKnow: "Within hours of the Supreme Court's ruling in Shelby County v. Holder (2013), which gutted the Voting Rights Act's preclearance requirement, Texas announced a voter ID law and a redistricting plan that had previously been blocked under Section 5. North Carolina and Georgia followed within days. The states that had been most aggressively blocked from voter suppression under the Voting Rights Act moved the fastest to implement new restrictions the moment the enforcement mechanism was removed."

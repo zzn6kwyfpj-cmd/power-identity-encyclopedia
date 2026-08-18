@@ -27,6 +27,7 @@ type SourceCard = {
   establishes: string;
   limitation: string;
   source: string;
+  sourceUrl?: string;
 };
 
 export default function ChapterPage() {
@@ -272,6 +273,11 @@ export default function ChapterPage() {
                         <p style={{ color: "#cbd5e1", fontFamily: "Cormorant Garamond, serif", fontSize: 15, lineHeight: 1.65, margin: "0 0 10px" }}><strong style={{ color: "#4ade80", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.1em" }}>ESTABLISHES</strong><br />{card.establishes}</p>
                         <p style={{ color: "#fca5a5", fontFamily: "Cormorant Garamond, serif", fontSize: 15, lineHeight: 1.65, margin: "0 0 10px" }}><strong style={{ color: "#f87171", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.1em" }}>LIMIT</strong><br />{card.limitation}</p>
                         <p style={{ color: "#64748b", fontFamily: "Cormorant Garamond, serif", fontSize: 13, margin: 0 }}>{card.source}</p>
+                        {card.sourceUrl && (
+                          <a href={card.sourceUrl} target="_blank" rel="noreferrer" style={{ display: "inline-block", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.12em", marginTop: 10, textDecoration: "none", borderBottom: "1px solid rgba(212,175,55,0.45)" }}>
+                            OPEN SOURCE RECORD ↗
+                          </a>
+                        )}
                       </div>
                     ))}
                   </div>

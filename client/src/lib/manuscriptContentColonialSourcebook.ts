@@ -14,6 +14,7 @@ type ChapterContent = {
     establishes: string;
     limitation: string;
     source: string;
+    sourceUrl?: string;
   }>;
 };
 
@@ -58,7 +59,8 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
         locator: "1588 edition; Internet Archive / Project Gutenberg working text; exact page-image quotation not yet published",
         establishes: "The tract provides direct evidence of an English promoter’s stated commodity, settlement, and investment program, including reliance on local knowledge for provisions.",
         limitation: "It is promotional colonial writing, not an Indigenous account of consent, sovereignty, or social life. A page image must be checked before a public direct quotation is added.",
-        source: "Thomas Hariot, A Briefe and True Report of the New Found Land of Virginia (1588)"
+        source: "Thomas Hariot, A Briefe and True Report of the New Found Land of Virginia (1588)",
+        sourceUrl: "https://archive.org/details/abriefeandtruere04247gut"
       },
       {
         year: "1613",
@@ -66,7 +68,8 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
         locator: "1613 John Carter Brown Library scan; working text indexed; exact page-image quotation not yet published",
         establishes: "The tract documents a Virginia Company–era minister’s effort to connect plantation, conversion, English settlement, and colonial legitimacy.",
         limitation: "It cannot establish Indigenous belief, consent, or the lived effect of mission policy. Its genre and advocacy must remain visible.",
-        source: "Alexander Whitaker, Good Newes from Virginia (1613)"
+        source: "Alexander Whitaker, Good Newes from Virginia (1613)",
+        sourceUrl: "https://archive.org/details/goodnewesfromvir00whit"
       },
       {
         year: "1621",
@@ -74,7 +77,8 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
         locator: "1898 transcription, pp. 57–59, for the Tisquantum passage; colonial manuscript tradition",
         establishes: "Bradford records an English account of Thomas Hunt’s seizure of Tisquantum and other captives, supporting the timeline’s narrowly stated captivity event when paired with institutional context.",
         limitation: "The citation is a later transcription of a colonial manuscript, not a complete Wampanoag archive. The account does not prove a complete route, sale outcome, or Indigenous interpretation on its own.",
-        source: "William Bradford, Of Plymouth Plantation; Plimoth Patuxet Museums contextual materials"
+        source: "William Bradford, Of Plymouth Plantation; Plimoth Patuxet Museums contextual materials",
+        sourceUrl: "https://plimoth.org/yath/unit-2/plymouth-pokanoket-alliance"
       },
       {
         year: "1657",
@@ -82,7 +86,8 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
         locator: "1657 Internet Archive / Getty Research Institute scan; plantation-labor passages indexed; exact page-image quotation not yet published",
         establishes: "Ligon’s text provides firsthand-era evidence of one writer’s description of sugar production, forced labor, provisions, and plantation organization in Barbados.",
         limitation: "It is neither a full demographic record nor a complete legal account. The Barbados code and other records remain stronger evidence for statutory rules and enslaved people’s experience requires additional sources.",
-        source: "Richard Ligon, A True and Exact History of the Island of Barbados (1657)"
+        source: "Richard Ligon, A True and Exact History of the Island of Barbados (1657)",
+        sourceUrl: "https://archive.org/details/trueexacthistory00ligo"
       }
     ]
   }

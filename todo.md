@@ -56,3 +56,10 @@
 - [x] Verify major Reconstruction-to–civil-rights court holdings against institutional records and identify absent chronology entries.
 - [x] Create transparent source cards and evidence-tiered timeline details that distinguish direct testimony, colonial argument, and legal holding.
 - [x] Integrate the verified additions, validate the site, and save the next research checkpoint.
+
+# Facsimile Links and 1954–1968 Legal Sequence
+
+- [x] Prioritize stable source-image or institutional-record links for the public evidence cards and identify missing 1954–1968 court and statute records.
+- [x] Verify holding language, dates, and scope against institutional sources and preserve all source URLs in the research ledger.
+- [x] Prepare linked evidence cards and source-critical chronology panels without conflating legal text with implementation.
+- [x] Integrate the verified additions, validate the site, and save the next research checkpoint.

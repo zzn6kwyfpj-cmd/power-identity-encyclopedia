@@ -687,4 +687,25 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "civil-rights-acts",
     chapterTitle: "The Civil Rights Act and the Voting Rights Act",
   },
+  "1955_brown_ii": {
+    description: "After deciding Brown v. Board of Education in 1954, the Supreme Court heard further argument on the form of relief. In Brown II, decided May 31, 1955, the Court directed district courts to require states to make a prompt and reasonable start toward compliance and used the phrase ‘with all deliberate speed.’ The instruction imposed a legal duty, but its flexible language did not itself secure prompt desegregation. The continued resistance that led to federal action in Little Rock and later legislation shows why a constitutional holding and its implementation must be recorded separately.",
+    keyFact: "Brown II ordered a start toward desegregation, but its ‘all deliberate speed’ language became part of the documented enforcement gap between legal rule and lived change.",
+    primarySource: "Brown v. Board of Education of Topeka, Opinion, May 17, 1954; National Archives, Records of the Supreme Court, Record Group 267",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1964_civil_rights_act": {
+    description: "President Lyndon B. Johnson signed the Civil Rights Act of 1964 on July 2. The act prohibited discrimination in public accommodations, created tools for desegregation of public facilities and schools, prohibited employment discrimination, and created the Equal Employment Opportunity Commission. Its legal architecture is central to the modern civil-rights record, but an enacted act did not complete the work of enforcement; the next year’s Voting Rights Act addressed voting barriers that remained, while later housing law addressed another major domain of exclusion.",
+    keyFact: "The 1964 Act was the broadest federal civil-rights law since Reconstruction, creating enforceable prohibitions in public accommodations, education, employment, and federally assisted programs.",
+    primarySource: "Civil Rights Act of 1964, Pub. L. 88-352, 78 Stat. 241; National Archives, Enrolled Acts and Resolutions of Congress, Record Group 11",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1968_fair_housing": {
+    description: "The Civil Rights Act of 1968, commonly called the Fair Housing Act for its Title VIII, prohibited discrimination in the sale or rental of housing. Congress acted in April 1968 after a prolonged legislative process, and President Johnson signed the bill on April 11. The statute created federal and private enforcement paths, yet it did not retroactively undo redlining, restore lost wealth, or automatically end residential segregation. The record is strongest when it shows both the federal prohibition and the need to evaluate its enforcement and outcomes over time.",
+    keyFact: "The 1968 Fair Housing Act made housing discrimination a matter of federal law; it did not erase the accumulated effects of prior exclusion or guarantee equal access in practice.",
+    primarySource: "Civil Rights Act of 1968, Pub. L. 90-284, 82 Stat. 73; U.S. House Office of the Historian; U.S. Department of Justice",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
 };
