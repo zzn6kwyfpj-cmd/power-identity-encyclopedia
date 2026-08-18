@@ -1008,7 +1008,7 @@ export const FIGURES: Figure[] = [
     heritage: "African American / Black Native American (Choctaw Freedmen Descent)",
     role: "Genealogist and Author of Black Indian Genealogy Research",
     quote: "The records are there. The ancestors are waiting to be found. The only question is whether we are willing to do the work.",
-    image: "",
+    image: "/manus-storage/portrait_walton_raji_6913ad64.png",
     connection: "Her 1993 book Black Indian Genealogy Research is the foundational methodology for recovering Black Native American ancestry from the Dawes Rolls and Freedmen's Bureau records. Her personal research began when she discovered her great-grandmother Sally's Choctaw heritage — a heritage that had been administratively erased by the Freedmen enrollment process. She has helped hundreds of families recover what the Dawes Commission took from them."
   },
   {
@@ -1017,7 +1017,7 @@ export const FIGURES: Figure[] = [
     heritage: "African American",
     role: "Community Educator and YouTube Researcher (525+ Videos, 81,000 Subscribers)",
     quote: "The word 'Black' was invented specifically by the European colonist for a specific purpose: to serve their needs as slaves. Holding onto that identity is holding onto a slave name.",
-    image: "",
+    image: "/manus-storage/portrait_brooklyn_saint_mickell_f2a37966.png",
     connection: "His 525+ video numbered series documents the suppressed history of Black identity as a colonial administrative category rather than an ethnic identity. His video #5, 'Why I'm Not African or African American,' cites Richard B. Moore's The Name Negro: Its Origin and Evil Use (1960) and argues that the word 'negro' first appeared as a legal category in Romanus Pontifex (1455) — a claim this encyclopedia confirms with Tier 1 primary source evidence. Presented here as Tier 3 — Community Historical Tradition — with the recognition that his core argument is supported by documented primary sources."
   },
   {
@@ -1026,7 +1026,7 @@ export const FIGURES: Figure[] = [
     heritage: "African American (ADOS — American Descendant of Slavery)",
     role: "Founder of The Brister English Project (bristerep.org)",
     quote: "I was told that my history never existed. The records proved otherwise.",
-    image: "",
+    image: "/manus-storage/portrait_walter_english_b1af2a00.png",
     connection: "Founded the Brister English Project in 2021 after discovering his great-great-grandfather Brister English on a slave schedule. His non-profit has helped over 200 families recover erased ancestry and maintains a waitlist of 5,000+ individuals. His own great-grandfather's Navy card listed his nationality as 'American.' The census said 'Negro.' The difference between those two words is the history this encyclopedia documents. The Brister English Project is named in honor of the ancestor whose name survived on a single document."
   },
 ];

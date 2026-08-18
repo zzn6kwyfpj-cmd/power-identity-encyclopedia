@@ -16,11 +16,11 @@ function getEra(years: string): string {
 }
 
 const ERA_COLORS: Record<string, string> = {
-  "Era I: Pre-Columbian & Imperial Origins (850 CE–1732)": "#8b1a1a",
-  "Era II: Slavery & Removal (1800–1877)": "#d4af37",
-  "Era III: Jim Crow & Allotment (1877–1930)": "#2d6a4f",
-  "Era IV: Civil Rights & Resistance (1930–1970)": "#6b3fa0",
-  "Era V: Modern Era (1970–Present)": "#1d6fa4",
+  "Era I: Pre-Columbian & Imperial Origins (850 CE–1732)": "#d4af37",
+  "Era II: Slavery & Removal (1800–1877)": "#8b1a1a",
+  "Era III: Jim Crow & Allotment (1877–1930)": "#d4af37",
+  "Era IV: Civil Rights & Resistance (1930–1970)": "#8b1a1a",
+  "Era V: Modern Era (1970–Present)": "#d4af37",
 };
 
 export default function FiguresPage() {
@@ -45,6 +45,11 @@ export default function FiguresPage() {
     });
   }, [enrichedFigures, searchQuery, selectedEra]);
 
+  const groupedFigures = eras.map(era => ({
+    era,
+    figures: filteredFigures.filter(figure => figure.era === era),
+  })).filter(group => group.figures.length > 0);
+
   return (
     <div style={{ backgroundColor: "#0a1118", minHeight: "100vh" }}>
       <Navigation />
@@ -56,7 +61,7 @@ export default function FiguresPage() {
             <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ APPENDIX A ✦</div>
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 16 }}>Figures of Resistance and Legacy</h1>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 700, margin: "0 auto 12px" }}>
-              Across 1,100+ years of documented history, these individuals did not merely survive the system documented in this encyclopedia. They resisted it, documented it, and built the intellectual and moral architecture that makes liberation possible.
+              A curated catalog of people who resisted, documented, and reshaped the record. Each archive plate preserves a life, a contribution, and its connection to the evidence assembled here.
             </p>
             <p style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 10, letterSpacing: "0.2em" }}>
               {filteredFigures.length} OF {FIGURES.length} FIGURES SHOWN
@@ -124,65 +129,55 @@ export default function FiguresPage() {
             </div>
           </div>
 
-          {/* Figures Grid */}
+          {/* Curated Archive Plates */}
           {filteredFigures.length === 0 ? (
             <div className="text-center" style={{ padding: "60px 0", color: "#64748b", fontFamily: "Cormorant Garamond, serif", fontSize: "1.2rem" }}>
-              No figures found matching your search. Try different keywords.
+              No archive entries match this search. Try another name, role, heritage, or era.
             </div>
           ) : (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
-              {filteredFigures.map(figure => {
-                const eraColor = ERA_COLORS[figure.era] || "#d4af37";
+            <div style={{ display: "flex", flexDirection: "column", gap: 56 }}>
+              {groupedFigures.map(({ era, figures }) => {
+                const eraColor = ERA_COLORS[era] || "#d4af37";
                 return (
-                  <div key={figure.name} style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", borderTop: `3px solid ${eraColor}` }}>
-                    {/* Portrait */}
-                    {figure.image ? (
-                      <div style={{ height: 200, overflow: "hidden" }}>
-                        <LightboxImage
-                          src={figure.image}
-                          alt={figure.name}
-                          caption={`${figure.name} (${figure.years}) — ${figure.role}. ${figure.connection}`}
-                        />
+                  <section key={era} aria-label={era}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 20, borderBottom: `1px solid ${eraColor}55`, paddingBottom: 14, marginBottom: 22, flexWrap: "wrap" }}>
+                      <div>
+                        <div style={{ fontFamily: "Cinzel, serif", color: eraColor, fontSize: 9, letterSpacing: "0.28em", marginBottom: 8 }}>ARCHIVE PLATE · {era.split(":")[0].toUpperCase()}</div>
+                        <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.1rem, 2vw, 1.45rem)", letterSpacing: "0.04em", margin: 0 }}>{era.split(":")[1].trim()}</h2>
                       </div>
-                    ) : (
-                      <div style={{
-                        height: 120,
-                        background: "linear-gradient(135deg, #050b10 0%, #0f1923 50%, #050b10 100%)",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        position: "relative", overflow: "hidden",
-                      }}>
-                        <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "repeating-linear-gradient(0deg, #d4af37, #d4af37 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, #d4af37, #d4af37 1px, transparent 1px, transparent 20px)" }} />
-                        <div style={{ textAlign: "center", zIndex: 1 }}>
-                          <div style={{ fontFamily: "Cinzel, serif", color: eraColor, fontSize: 24, opacity: 0.5 }}>✦</div>
-                          <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 8, letterSpacing: "0.3em", marginTop: 4 }}>HISTORICAL FIGURE</div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Info */}
-                    <div style={{ padding: "18px 20px" }}>
-                      {/* Era badge */}
-                      <div style={{ fontFamily: "Cinzel, serif", color: eraColor, fontSize: 8, letterSpacing: "0.15em", marginBottom: 8 }}>
-                        {figure.era.split(":")[0]}
-                      </div>
-                      <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 14, marginBottom: 2 }}>{figure.name}</div>
-                      <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, marginBottom: 2 }}>{figure.years}</div>
-                      <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 11, marginBottom: 12, fontStyle: "italic" }}>{figure.heritage}</div>
-                      <div style={{ fontFamily: "Cinzel, serif", color: "#94a3b8", fontSize: 10, letterSpacing: "0.05em", marginBottom: 12 }}>{figure.role}</div>
-
-                      {/* Quote */}
-                      <div style={{ borderLeft: `3px solid ${eraColor}60`, paddingLeft: 12, marginBottom: 12 }}>
-                        <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, fontStyle: "italic", lineHeight: 1.6, margin: 0 }}>
-                          "{figure.quote}"
-                        </p>
-                      </div>
-
-                      {/* Connection */}
-                      <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, lineHeight: 1.7, margin: 0 }}>
-                        {figure.connection}
-                      </p>
+                      <div style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9, letterSpacing: "0.16em" }}>{figures.length} CATALOG ENTR{figures.length === 1 ? "Y" : "IES"}</div>
                     </div>
-                  </div>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
+                      {figures.map(figure => (
+                        <div key={figure.name} style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", borderTop: `3px solid ${eraColor}` }}>
+                          {figure.image ? (
+                            <div style={{ height: 200, overflow: "hidden" }}>
+                              <LightboxImage src={figure.image} alt={figure.name} caption={`${figure.name} (${figure.years}) — ${figure.role}. ${figure.connection}`} />
+                            </div>
+                          ) : (
+                            <div style={{ height: 120, background: "linear-gradient(135deg, #050b10 0%, #0f1923 50%, #050b10 100%)", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden" }}>
+                              <div style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "repeating-linear-gradient(0deg, #d4af37, #d4af37 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg, #d4af37, #d4af37 1px, transparent 1px, transparent 20px)" }} />
+                              <div style={{ textAlign: "center", zIndex: 1 }}>
+                                <div style={{ fontFamily: "Cinzel, serif", color: eraColor, fontSize: 24, opacity: 0.5 }}>✦</div>
+                                <div style={{ fontFamily: "Cinzel, serif", color: "#475569", fontSize: 8, letterSpacing: "0.3em", marginTop: 4 }}>ARCHIVE ENTRY</div>
+                              </div>
+                            </div>
+                          )}
+                          <div style={{ padding: "18px 20px" }}>
+                            <div style={{ fontFamily: "Cinzel, serif", color: eraColor, fontSize: 8, letterSpacing: "0.15em", marginBottom: 8 }}>{figure.era.split(":")[0]}</div>
+                            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 14, marginBottom: 2 }}>{figure.name}</div>
+                            <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, marginBottom: 2 }}>{figure.years}</div>
+                            <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 12, marginBottom: 12, fontStyle: "italic" }}>{figure.heritage}</div>
+                            <div style={{ fontFamily: "Cinzel, serif", color: "#94a3b8", fontSize: 10, letterSpacing: "0.05em", marginBottom: 12 }}>{figure.role}</div>
+                            <div style={{ borderLeft: `3px solid ${eraColor}60`, paddingLeft: 12, marginBottom: 12 }}>
+                              <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#cbd5e1", fontSize: 14, fontStyle: "italic", lineHeight: 1.6, margin: 0 }}>“{figure.quote}”</p>
+                            </div>
+                            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, lineHeight: 1.75, margin: 0 }}>{figure.connection}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
                 );
               })}
             </div>

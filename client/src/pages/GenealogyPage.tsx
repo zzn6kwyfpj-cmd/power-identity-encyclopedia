@@ -47,7 +47,7 @@ const GUIDES = [
     id: "dna",
     title: "DNA Testing for Black and Indigenous Ancestry",
     subtitle: "Using Genetic Evidence to Supplement Documentary Research",
-    color: "#6b3fa0",
+    color: "#d4af37",
     intro: "DNA testing can provide evidence of Indigenous and African ancestry that documentary records may not capture — especially given the deliberate erasure of mixed Black-Indigenous identity documented in this encyclopedia. However, DNA results must be interpreted carefully and in combination with documentary research.",
     steps: [
       { step: "1", title: "Choose the Right Test", content: "For genealogical research, use an autosomal DNA test (AncestryDNA, 23andMe, or MyHeritage). These tests examine DNA inherited from all your ancestors and can identify both African and Indigenous ancestry. Y-DNA tests (for paternal line) and mtDNA tests (for maternal line) can provide additional information about specific ancestral lines." },
@@ -61,6 +61,45 @@ const GUIDES = [
       { name: "23andMe", url: "https://www.23andme.com/" },
       { name: "ISOGG — International Society of Genetic Genealogy", url: "https://isogg.org/" },
       { name: "Black Indian Genealogy Research (Walton-Raji)", url: "https://www.blackindian.com/" },
+    ],
+  },
+  {
+    id: "brister-english",
+    title: "The Brister English Project — No-Cost Genealogy Support",
+    subtitle: "A Community Research Project for American Descendants of Slavery",
+    color: "#d4af37",
+    intro: "The Brister English Project, founded by Walter English (FormerLovePoet), helps American descendants of chattel slavery begin or extend documentary family research. Its public work centers the recovery of names, relationships, and records that were fragmented by enslavement and later administrative classification. This guide uses the project as a practical starting point, alongside the official archives named throughout this encyclopedia.",
+    steps: [
+      { step: "1", title: "Begin With What Your Family Knows", content: "Gather the names of parents, grandparents, and great-grandparents; the counties and states where they lived; any family Bibles, obituaries, funeral programs, photographs, or military papers; and oral histories. Write down name variants exactly as remembered, because census and enrollment records often changed spelling." },
+      { step: "2", title: "Request Research Support", content: "Visit bristerep.org to review its research-support process and resource library. The project can help readers organize an initial research question and identify documentary sources to pursue. Its services and availability may change, so confirm current requirements directly with the organization." },
+      { step: "3", title: "Build a Documentary Trail", content: "Use the 1870 Census as a named starting point, then work backward through Freedmen's Bureau labor contracts, marriages, ration records, military files, probate records, cemetery records, newspapers, and 1850–1860 slave schedules. Treat every connection as a hypothesis until it is supported by multiple records." },
+      { step: "4", title: "Preserve the Evidence", content: "For each finding, save the repository name, collection title, record date, page or image number, URL, and a transcription of the relevant passage. A research log protects families from repeating work and makes every conclusion reviewable by relatives, archivists, and tribal citizenship offices." },
+      { step: "5", title: "Separate Ancestry Research From Citizenship Decisions", content: "Documentary or genetic evidence may illuminate family history, but it does not by itself establish citizenship in a sovereign Indigenous nation. Each nation determines its own citizenship requirements. Contact the relevant tribal citizenship office directly before making any claim about enrollment or affiliation." },
+    ],
+    resources: [
+      { name: "The Brister English Project", url: "https://bristerep.org/" },
+      { name: "National Archives — African American Research", url: "https://www.archives.gov/research/african-americans" },
+      { name: "FamilySearch — African American Genealogy", url: "https://www.familysearch.org/en/wiki/African_American_Genealogy" },
+    ],
+  },
+  {
+    id: "blood-quantum-research",
+    title: "Blood Quantum, Enrollment, and the Documentary Record",
+    subtitle: "Researching Historical Classification Without Treating a Record as a Citizenship Decision",
+    color: "#8b1a1a",
+    intro: "Federal and tribal enrollment systems have used different definitions of identity at different times. The Indian Reorganization Act of 1934 included a federal blood-quantum definition, while individual sovereign nations retain authority over their own citizenship rules. For Black Native American family research, the central task is to read enrollment, census, and family records critically — including the ways they separated people into 'by blood' and Freedmen categories.",
+    steps: [
+      { step: "1", title: "Read the Roll Category Before Drawing a Conclusion", content: "On the Dawes Rolls, record the nation, roll number, enrollment category, age, relationship, and residence for every potential ancestor. A Freedmen enrollment category is an administrative record; it is not a complete account of a person's kinship, culture, or ancestry." },
+      { step: "2", title: "Request the Full Enrollment Jacket", content: "An enrollment jacket can include applications, testimony, correspondence, and supporting documents absent from the published roll. Request the relevant Dawes Commission file from the National Archives and compare it with earlier tribal censuses and family documents." },
+      { step: "3", title: "Cross-Reference Earlier Community Records", content: "Compare enrollment files with pre-allotment tribal censuses, Freedmen's Bureau records, county deeds, probate files, military records, and the 1870 Census. For Creek research, investigate the 1832 Parsons and Abbott Census alongside later enrollment records. The goal is to document relationships over time rather than rely on one label." },
+      { step: "4", title: "Use DNA Carefully and as Supplementary Evidence", content: "DNA matches can suggest family connections, but ethnicity estimates cannot determine tribal citizenship or replace documentary research. Use them to generate questions, then test those questions against records and the requirements of the relevant nation." },
+      { step: "5", title: "Consult the Nation and a Specialized Researcher", content: "For a citizenship question, contact the relevant tribal citizenship office. For historical-method questions, review Angela Y. Walton-Raji's Black Indian genealogy guidance and seek assistance from qualified archival or genealogical researchers." },
+    ],
+    resources: [
+      { name: "National Archives — Dawes Rolls", url: "https://www.archives.gov/research/native-americans/dawes" },
+      { name: "Oklahoma Historical Society — Dawes Rolls", url: "https://www.okhistory.org/research/dawes" },
+      { name: "National Archives — Native American Research", url: "https://www.archives.gov/research/native-americans" },
+      { name: "Black Indian Genealogy Research — Angela Y. Walton-Raji", url: "https://www.blackindian.com/" },
     ],
   },
   {
@@ -94,6 +133,7 @@ function GuideSection({ guide }: { guide: typeof GUIDES[0] }) {
         style={{ width: "100%", background: "transparent", border: "none", padding: "20px 24px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, textAlign: "left" }}
       >
         <div>
+          <div style={{ fontFamily: "Cinzel, serif", color: guide.color, fontSize: 8, letterSpacing: "0.22em", marginBottom: 6 }}>ARCHIVE DOSSIER · {guide.id.replace(/-/g, " ").toUpperCase()}</div>
           <div style={{ fontFamily: "Cinzel, serif", color: guide.color, fontSize: 14, marginBottom: 4 }}>{guide.title}</div>
           <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 13, fontStyle: "italic" }}>{guide.subtitle}</div>
         </div>
@@ -112,7 +152,7 @@ function GuideSection({ guide }: { guide: typeof GUIDES[0] }) {
                 </div>
                 <div>
                   <div style={{ fontFamily: "Cinzel, serif", color: guide.color, fontSize: 11, letterSpacing: "0.05em", marginBottom: 4 }}>{step.title}</div>
-                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "0.95rem", lineHeight: 1.8, margin: 0 }}>{step.content}</p>
+                  <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1rem", lineHeight: 1.85, margin: 0 }}>{step.content}</p>
                 </div>
               </div>
             ))}
@@ -152,6 +192,12 @@ export default function GenealogyPage() {
           <div style={{ background: "rgba(212,175,55,0.05)", border: "1px solid rgba(212,175,55,0.2)", padding: "20px 24px", marginBottom: 40 }}>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>
               <strong style={{ color: "#d4af37" }}>A note on the 1930 Census erasure:</strong> If your family has oral traditions of Indigenous ancestry but you cannot find it in the documentary record, the 1930 Census instruction may be the reason. The instruction that 'a person of mixed Indian and Negro blood should be returned a Negro' erased generations of mixed Black-Indigenous identity from the official record. The Freedmen's Bureau records and Dawes Rolls may contain evidence of that ancestry that the Census erased.
+            </p>
+          </div>
+
+          <div style={{ background: "rgba(74,222,128,0.04)", border: "1px solid rgba(74,222,128,0.22)", borderLeft: "4px solid #4ade80", padding: "18px 22px", marginBottom: 24 }}>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>
+              <strong style={{ color: "#4ade80" }}>Research standard:</strong> Work from records outward, not from a desired conclusion inward. Genealogy can document ancestors, relationships, and the historical labels applied to them. It cannot independently confer tribal citizenship, which remains the authority of each sovereign nation.
             </p>
           </div>
 

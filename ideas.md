@@ -43,3 +43,6 @@
 - All images use object-fit: contain with gold frames
 - Navigation: sticky top bar with chapter dropdown
 - Mobile: collapsible sidebar navigation
+- Non-evidence accents are used sparingly: antique gold is the default accent, crimson marks conflict and resistance, and green is reserved for verified primary-source or evidence guidance.
+- Long galleries are divided into archive plates and era breaks so the reader experiences curation rather than a continuous card wall.
+- Body copy prioritizes readable Cormorant Garamond at a literary scale; Cinzel is reserved for titles, labels, and formal archive inscriptions.
