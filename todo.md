@@ -97,4 +97,12 @@
 - [x] Add page-specific facsimile or stable section anchors to the existing Hariot, Whitaker, Bradford, and Ligon source cards; record the edition and contextual limitation for each locator.
 - [x] Verify and integrate *Gaston County v. United States* (1969) and *City of Rome v. United States* (1980) as Voting Rights Act enforcement records with institutional decision links, source cards, timeline events, and detail panels.
 - [x] Create a primary-record Freedmen’s Bureau evidence plan identifying record groups, document types, potential case-file standards, legal or land-policy links, and research safeguards before expanding Chapter 59.
-- [ ] Type-check, visually verify, checkpoint, and update the canonical roadmap after all three workstreams are complete.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after all three workstreams are complete.
+
+# Freedmen’s Bureau Evidence-Packet Release
+
+- [ ] Verify page-level or stable institutional records for the 1865 and 1866 Freedmen’s Bureau Acts, Special Field Orders No. 15, NAID 595044 land applications, and a land-restoration policy record.
+- [ ] Resolve any date or provenance discrepancy before using a Bureau circular or other document as a public evidence card.
+- [ ] Prepare source cards and chronology panels that distinguish formal mandate, application, possessory settlement, restoration, and documented outcome.
+- [ ] Integrate the verified evidence packet into Chapter 59 and related chronology records without treating Bureau records as universal proof of Indigenous identity.
+- [ ] Type-check, visually verify, checkpoint, and update the canonical roadmap after the evidence-packet release.

@@ -8,6 +8,15 @@ export interface ChapterContent {
   pullQuote?: { text: string; attribution: string };
   didYouKnow?: string;
   keyDocuments?: string[];
+  sourceCards?: Array<{
+    year: string;
+    title: string;
+    locator: string;
+    establishes: string;
+    limitation: string;
+    source: string;
+    sourceUrl?: string;
+  }>;
 }
 
 export const GAPS_CONTENT: Record<string, ChapterContent> = {
@@ -66,43 +75,96 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
   'freedmens-bureau': {
     slug: 'freedmens-bureau',
     fullText: [
-      'The Bureau of Refugees, Freedmen, and Abandoned Lands — known as the Freedmen\'s Bureau — was established by an act of Congress on March 3, 1865. It was the first federal social welfare agency in American history. It was also the institution that created the administrative framework that would be used, thirty-three years later, to enroll Black Native Americans as "Freedmen" rather than "by blood" in the Dawes Rolls — erasing their Indigenous ancestry from the official record in a single administrative stroke.',
+      'The Bureau of Refugees, Freedmen, and Abandoned Lands—commonly called the Freedmen\'s Bureau—was established by Congress on March 3, 1865, inside the War Department. The founding statute assigned it responsibility for abandoned lands and for matters relating to refugees and freedpeople in the former Confederate states and areas under Army operations. It authorized temporary relief and created a limited framework for land assignments, rental, and possible purchase. These were federal powers with real practical consequences, but the statute did not automatically give permanent title or guarantee equal enforcement in every locality.',
 
-      'The Bureau\'s mandate was to provide relief and aid to formerly enslaved people and impoverished white Southerners in the aftermath of the Civil War. Major General Oliver Otis Howard was appointed as its Commissioner. The Bureau\'s functions were extensive: issuing rations and clothing, operating hospitals and refugee camps, supervising labor contracts between freedpeople and planters, managing apprenticeship disputes, assisting benevolent societies in establishing schools, helping legalize marriages entered into during slavery, and providing transportation for family reunification or relocation. Later, it assisted Black soldiers and sailors in obtaining back pay, bounty payments, and pensions.',
+      'The Bureau\'s records document relief, hospitals and camps, labor contracts, apprenticeship disputes, schooling, marriage recognition, transportation, claims, and land/property administration. National Archives Record Group 105 preserves both central-office files and local field-office records. A Bureau record can therefore be an unusually valuable trace of a person, family, place, or request. At the same time, the archive reflects the Bureau\'s administrative vocabulary, jurisdiction, and unequal capacity; it is not a complete or neutral record of every freedperson\'s life.',
 
       '— THE RECORDS —',
 
-      'The Freedmen\'s Bureau created one of the most extraordinary documentary archives in American history. The records are held at the National Archives under Record Group 105 and include: Headquarters Records (microfilm publications M742, M752, M803); State Records of Assistant Commissioners; and Field Office Records. The Field Office Records are particularly rich in individual-level data: reports, letters received and sent, contracts, certificates, registers, censuses, affidavits, marriage certificates, schooling information, labor contracts, hospital records, complaints, relief rolls, land applications, requests for legal aid, and trial summaries. These records contain the names, family relationships, and locations of hundreds of thousands of individual people — the most complete documentation of the formerly enslaved population ever created.',
+      'Record Group 105 includes Commissioner\'s Office correspondence and reports; Land Division records; Complaint Branch records; Education Division records; and field-office material. National Archives guidance identifies field-office letters, contracts, certificates, registers, affidavits, marriage documents, school information, hospital records, complaints, relief rolls, land applications, requests for legal aid, and trial summaries. The holdings are rich in individual names and relationships, but they must be read at the level of the document: an application is not a grant, a complaint is not an adjudicated finding, and a classification is not a complete identity.',
 
-      'Today, these records are accessible through the Freedmen\'s Bureau Search Portal and digitized collections on FamilySearch.org and Ancestry.com. The Brister English Project (bristerep.org) uses these records as one of its primary tools for recovering erased Black Native American ancestry. Angela Y. Walton-Raji\'s genealogical methodology begins with the Freedmen\'s Bureau records and cross-references them against the Dawes Rolls to identify Black Native Americans whose Indigenous ancestry was not recorded at enrollment.',
+      'The National Museum of African American History and Culture\'s Freedmen\'s Bureau Search Portal and the Smithsonian Transcription Center make discovery across images and transcriptions more feasible. Their value for genealogy is substantial: a researcher can use a Bureau item to identify names, locations, household relationships, labor arrangements, or a land request, then test those details against tribal, treaty, census, court, enrollment, and local records. The Brister English Project and related genealogy practice offer useful source-first workflows, but no Bureau record by itself establishes a person\'s tribal citizenship or a universal Black-Indigenous ancestry claim.',
 
       '— THE BUREAU AS INSTRUMENT OF ERASURE —',
 
-      'The Freedmen\'s Bureau\'s mandate was to assist "freedmen" — a legal category that encompassed formerly enslaved African Americans. The Bureau did not investigate Indigenous ancestry claims. It did not ask whether a person classified as a "freedman" had Cherokee, Creek, Choctaw, Chickasaw, or Seminole ancestry. It enforced the "Freedmen" classification regardless of ancestry. This administrative decision — made in 1865, before the Dawes Commission was even created — established the framework that the Dawes Commission would use thirty-three years later to enroll Black Native Americans as Freedmen rather than by blood.',
+      '— CLASSIFICATION, RECORDS, AND LIMITS —',
 
-      'The specific policy is documented in the Bureau\'s own records. The Bureau\'s labor contracts in the Five Civilized Tribes territory (1865–1872) classified all formerly enslaved people as "freedmen" — a category that, under the 1866 Reconstruction treaties with the Five Civilized Tribes, entitled them to tribal citizenship but not necessarily to "by blood" status. The distinction between "Freedmen" citizenship and "by blood" citizenship would become the legal mechanism for the Dawes Commission\'s enrollment decisions thirty years later.',
+      '“Freedmen” was a nineteenth-century legal and administrative term for people emerging from slavery. It does not, by itself, adjudicate a person\'s ancestry, community relationship, or the citizenship law of an Indigenous nation. The later Dawes Commission used distinct enrollment categories, including “by blood” and “Freedmen,” in a different statutory and historical setting. The two archives can be compared in a documented family history, but this chapter does not treat the Bureau as the direct cause of every later Dawes enrollment decision. Any Black Native case requires a person-specific chain of records and the relevant nation\'s own citizenship standards.',
 
       '— THE BUREAU AS TOOL OF RECOVERY —',
 
-      'The same records that enforced the "Freedmen" classification can now be used to recover the Indigenous ancestry that the classification erased. Genealogists cross-reference Bureau labor contracts with tribal census rolls from the same period. A person who appears in a Bureau labor contract as a "freedman" working on Creek land may also appear in the 1832 Parsons and Abbott Census of the Creek Nation as the child of a Creek household — documenting Indigenous ancestry that the Bureau\'s classification system did not record. This cross-referencing methodology, developed by Angela Y. Walton-Raji and practiced by the Brister English Project, is the most powerful tool available for recovering Black Native American ancestry from the documentary record.',
+      '— LAND: AUTHORITY, APPLICATION, AND RESTORATION —',
 
-      'The Bureau\'s records are not complete. Many were destroyed by fire, flood, and deliberate destruction during the post-Reconstruction period. The records that survive are fragmentary. But they are the best evidence available — and they are available. The National Archives holds them. The Freedmen\'s Bureau Search Portal makes them searchable. The methodology for using them to recover erased Indigenous ancestry is documented. The work of recovery is ongoing.',
+      'The federal record makes the limits of Reconstruction land policy unusually visible. Sherman\'s Special Field Orders No. 15, issued January 16, 1865, set aside a defined coastal region for settlement, allowed plots of no more than forty acres, and described the relevant writings as possessory titles pending future congressional action. The order was geographically bounded and was not a nationwide permanent land-grant statute. The March 1865 Bureau Act separately authorized limited assignments of abandoned or confiscated land, short-term use, and potential purchase under stated conditions.',
+
+      'A Louisiana register in Record Group 105, covering applications made in September and October 1865, shows how freedpeople applied for government land. The entries record names, household composition, acreage requested, locations, resources, and comments. They are powerful evidence of application and stated need; they are not evidence that every applicant received a lease, possession, title, or a lasting recovery from dispossession. Circular No. 15, issued September 12, 1865, simultaneously set procedures that permitted restoration of abandoned lands to pardoned former owners, while requiring crop protection or compensation for loyal freedpeople already cultivating land.',
 
       '— THE BUREAU\'S LEGACY —',
 
-      'The Freedmen\'s Bureau was abolished in 1872 — seven years after its creation. Its personnel were later repurposed for Native American affairs, creating a functional separation between the administration of "freedmen" and the administration of "Indians" that would persist through the Dawes Commission era and into the present day. The administrative separation of "Black" and "Indian" — enforced by the Bureau, codified by the Dawes Commission, and completed by the 1930 Census enumerator instructions — is the institutional history of Black Native American identity erasure. The Bureau did not create this separation. But it administered it. And its records are the primary tool for undoing it.',
+      'Congress continued and amended the Bureau in July 1866 over President Andrew Johnson\'s veto. Yet its authority remained time-limited, local enforcement was uneven, and most district-level operations were withdrawn after 1868; the Bureau was abolished in 1872. The institution belongs in the encyclopedia because it documents an essential Reconstruction struggle over relief, work, family, schooling, legal claims, and land. Its records can support careful Black Native genealogy when combined with community-specific sources; they cannot replace nation-specific evidence or decide sovereign membership.',
     ],
     pullQuote: {
-      text: 'The Freedmen\'s Bureau did not investigate Indigenous ancestry claims. It enforced the "Freedmen" classification regardless of ancestry. This administrative decision — made in 1865 — established the framework that the Dawes Commission would use thirty-three years later to enroll Black Native Americans as Freedmen rather than by blood. The same records that enforced the erasure are now the primary tool for recovering it.',
-      attribution: 'The Archive Encyclopedia, citing National Archives Record Group 105 and Angela Y. Walton-Raji, Black Indian Genealogy Research (1993)'
+      text: 'A Freedmen\'s Bureau record can document an application, a complaint, a relationship, a place, or an official action. It cannot by itself prove a completed land title, a universal outcome, or a person\'s tribal citizenship. Its value is greatest when it is read alongside the other records that a documented family and community history requires.',
+      attribution: 'The Archive Encyclopedia, citing National Archives Record Group 105'
     },
-    didYouKnow: 'The Freedmen\'s Bureau Search Portal, developed through a collaboration between the Smithsonian Institution and FamilySearch, has digitized over 1.8 million Freedmen\'s Bureau records. The project, completed in 2021, makes searchable the names of hundreds of thousands of individuals who appear in Bureau records — many of whom have undocumented Indigenous ancestry that can be recovered by cross-referencing these records with tribal census rolls.',
+    didYouKnow: 'The Smithsonian states that its Freedmen’s Bureau Transcription Project has transcribed more than 1.7 million image files. The Search Portal allows research across indexed names, places, and dates, and across transcribed terms and institutions—but every result should still be checked against its original document image and archival locator.',
     keyDocuments: [
+      'Freedmen’s Bureau Act (1865), 13 Stat. 507–09 — Tier 1 Primary Source',
+      'Freedmen’s Bureau Act extension (1866), 14 Stat. 173–77 — Tier 1 Primary Source',
+      'Special Field Orders No. 15 (1865), National Archives Record Group 94 — Tier 1 Primary Source',
+      'Register of Applications of Freedmen for Land (1865), National Archives Record Group 105, NAID 595044 — Tier 1 Primary Source',
+      'Circular No. 15 (1865), Bureau of Refugees, Freedmen, and Abandoned Lands — Tier 1 Primary Source',
       'Bureau of Refugees, Freedmen, and Abandoned Lands Records, National Archives, Record Group 105 (1865–1872) — Tier 1 Primary Source',
-      'Freedmen\'s Bureau Search Portal, FamilySearch.org and Smithsonian Institution — Tier 1 Primary Source',
       'Walton-Raji, Angela Y. Black Indian Genealogy Research (1993), Heritage Books — Tier 2 Scholarly',
       'Parsons and Abbott Census of the Creek Nation (1832), National Archives, Record Group 75, M275 — Tier 1 Primary Source',
       'Walter English, The Brister English Project (2021), bristerep.org — Tier 2 Scholarly/Community',
+    ],
+    sourceCards: [
+      {
+        year: '1865',
+        title: 'Freedmen’s Bureau Act',
+        locator: '13 Stat. 507–09, ch. 90; approved March 3, 1865',
+        establishes: 'Congress created the Bureau in the War Department, assigned it responsibilities over abandoned lands and matters involving refugees and freedpeople, authorized temporary relief, and provided a limited land-assignment and purchase framework.',
+        limitation: 'The statute did not automatically provide permanent title, establish uniform local enforcement, or determine an individual’s ancestry or tribal citizenship.',
+        source: 'An Act to establish a Bureau for the Relief of Freedmen and Refugees, 13 Stat. 507–09 (1865)',
+        sourceUrl: 'https://www.freedmen.umd.edu/fbact.htm'
+      },
+      {
+        year: '1865',
+        title: 'Special Field Orders No. 15',
+        locator: 'January 16, 1865; National Archives Record Group 94, Orders & Circulars, series 44',
+        establishes: 'Sherman’s order reserved specified coastal lands for settlement, capped plots at forty acres, and described related writings as possessory titles pending later congressional action.',
+        limitation: 'It was a geographically limited wartime military order, not a permanent nationwide land-grant statute.',
+        source: 'Special Field Orders No. 15, Headquarters, Military Division of the Mississippi',
+        sourceUrl: 'https://www.freedmen.umd.edu/sfo15.htm'
+      },
+      {
+        year: '1865',
+        title: 'Louisiana Land-Application Register',
+        locator: 'Register of Applications of Freedmen for Land, September–October 1865; RG 105; National Archives Identifier 595044',
+        establishes: 'Named freedpeople applied to lease abandoned or confiscated land, with the register recording household information, acreage sought, location, means, and remarks.',
+        limitation: 'An application is not proof of an approved lease, possession, title, or long-term ownership; it also does not establish Indigenous affiliation.',
+        source: 'National Archives DocsTeach, Applications of Freedmen for Land',
+        sourceUrl: 'https://docsteach.org/document/land-applications/'
+      },
+      {
+        year: '1865',
+        title: 'Circular No. 15: Land Restoration Policy',
+        locator: 'Bureau of Refugees, Freedmen, and Abandoned Lands; September 12, 1865',
+        establishes: 'The circular rescinded Circular No. 13, set procedures for Bureau land administration, permitted restoration of abandoned land to pardoned owners under stated conditions, and protected existing crops or required compensation.',
+        limitation: 'The document states policy; it does not itself establish the outcome for every settlement, claimant, or former owner.',
+        source: 'Circular No. 15, approved by President Andrew Johnson',
+        sourceUrl: 'https://www.presidency.ucsb.edu/documents/circular-no-15'
+      },
+      {
+        year: '1866',
+        title: 'Freedmen’s Bureau Act Extension',
+        locator: '14 Stat. 173–77, ch. 200; approved July 16, 1866',
+        establishes: 'Congress continued and amended the Bureau’s authority after overriding President Andrew Johnson’s veto.',
+        limitation: 'Statutory continuation does not establish effective protection for every claimant or continued district-level operations after the Bureau’s later contraction.',
+        source: 'An Act to continue in force and to amend the Act establishing a Bureau for the Relief of Freedmen and Refugees',
+        sourceUrl: 'https://www.govinfo.gov/app/details/STATUTE-14/STATUTE-14-Pg173'
+      }
     ],
   },
 
