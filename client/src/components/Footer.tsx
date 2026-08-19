@@ -1,3 +1,4 @@
+// Editorial scope: shared footer reinforces anonymous stewardship and the archive’s Black Native, continental, and diaspora-facing research frame.
 export default function Footer() {
   return (
     <footer style={{ background: "#050b10", borderTop: "1px solid rgba(212,175,55,0.2)", padding: "40px 0", textAlign: "center" }}>
@@ -5,7 +6,7 @@ export default function Footer() {
         ARCHIVE
       </div>
       <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, letterSpacing: "0.1em", marginBottom: 10 }}>
-        American Records of Contested History, Identity, and Verified Evidence
+        A Source-Critical Encyclopedia of Black Native History, Law, and Memory
       </div>
       <div style={{ width: 40, height: 1, background: "rgba(212,175,55,0.3)", margin: "0 auto 10px" }} />
       <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, lineHeight: 1.6, maxWidth: 620, margin: "0 auto" }}>

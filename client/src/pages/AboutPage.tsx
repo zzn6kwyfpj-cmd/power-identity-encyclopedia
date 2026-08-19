@@ -1,3 +1,4 @@
+// Editorial scope: explain the archive’s continental and diaspora-facing research frame, evidence tiers, anonymous stewardship, and regional-case-study method.
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { AudioPlayer } from "@/components/AudioPlayer";
@@ -14,7 +15,7 @@ export default function AboutPage() {
             <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ ABOUT THIS WORK ✦</div>
             <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 16 }}>About The Archive Encyclopedia</h1>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 560, margin: "0 auto" }}>
-              American Records of Contested History, Identity, and Verified Evidence
+              A Source-Critical Encyclopedia of Black Native History, Law, and Memory
             </p>
           </div>
 
@@ -22,21 +23,21 @@ export default function AboutPage() {
           <div style={{ background: "linear-gradient(135deg, #0f1923 0%, #111d2b 100%)", border: "1px solid rgba(212,175,55,0.3)", padding: "40px 48px", marginBottom: 40 }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", marginBottom: 20, textAlign: "center" }}>✦ SYNOPSIS ✦</div>
             <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)", marginBottom: 28, textAlign: "center", lineHeight: 1.5 }}>
-              Power, Identity, and Contested Origins:<br />
-              <span style={{ color: "#e2e8f0", fontSize: "0.85em", fontStyle: "normal" }}>A History of America's Suppressed Truths</span>
+              Power, Identity, and Contested Records:<br />
+              <span style={{ color: "#e2e8f0", fontSize: "0.85em", fontStyle: "normal" }}>A Public Research Archive Across North America and Connected Diasporas</span>
             </h2>
             <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1.1rem", lineHeight: 2, maxWidth: 680, margin: "0 auto" }}>
               <p style={{ marginBottom: 20 }}>
-                The Archive Encyclopedia is a comprehensive, evidence-based educational resource documenting the unbroken chain of power, dispossession, and resistance that begins with the pre-Columbian civilizations of 850 CE and extends to the present day. It covers 67 chapters across over 1,100 years of American history — from the legal fictions of European colonialism, through the forced removal of Indigenous nations, the architecture of chattel slavery, the systematic erasure of Black and Native identity, and the ongoing struggle for sovereignty, recognition, and economic justice.
+                The Archive Encyclopedia is a collaboratively stewarded public educational resource examining Black Native histories across North America and connected diasporic records. Its 67 chapters provide a source-tiered path through Indigenous deep history, colonial law, forced movement, land policy, family research, community traditions, and contemporary questions of sovereignty, recognition, and economic justice.
               </p>
               <p style={{ marginBottom: 20 }}>
-                The purpose of this work is to document what happened, to whom, by whose authority, and with what consequences — using primary sources, court records, census data, peer-reviewed scholarship, and the documented words of the people who lived through it. This encyclopedia does not tell you what to think. It presents the evidence and allows the record to speak for itself.
+                The purpose of this work is to identify what a record documents, whose authority produced it, how it circulated, and where its limits begin. The archive uses primary records, court files, census materials, nation-authored histories, peer-reviewed scholarship, and carefully attributed community accounts. It does not settle any individual’s ancestry, Nation citizenship, or identity from a category alone.
               </p>
               <p style={{ marginBottom: 20 }}>
-                The events documented here are not matters of opinion; they are matters of record. The connections between them are not conspiracy; they are chronology. The racial wealth gap, the mass incarceration crisis, the ongoing dispossession of Indigenous land — these are the documented mathematical results of specific legal instruments, specific enforcement decisions, and specific economic policies that can be traced, named, and cited.
+                Historical materials do not all carry the same evidentiary force. Some document law, classification, land administration, court decisions, and particular events; others preserve scholarly interpretation or community knowledge. The archive maps continuities where citations support them, distinguishes argument from record, and identifies questions that still require person-specific, community-specific, or jurisdiction-specific research.
               </p>
               <p>
-                This encyclopedia was built for the student who cannot find their family in the official record. For the researcher who suspects the story they were taught is incomplete. For the community organizer who needs the documented evidence to make the argument. For anyone who wants to understand how the America we live in today was built, and by whom.
+                This encyclopedia is for the student who cannot locate a family in the official record; the researcher testing a historical claim; the community member preserving an attributed tradition; and anyone seeking a clearer account of how laws, land, categories, and institutions shaped Black Native life across regions and generations.
               </p>
             </div>
             <div style={{ display: "flex", gap: 32, justifyContent: "center", marginTop: 36, flexWrap: "wrap" }}>
@@ -44,7 +45,7 @@ export default function AboutPage() {
                 { number: "67", label: "Chapters" },
                 { number: "850 CE", label: "to 2024" },
                 { number: "125+", label: "Primary Sources" },
-                { number: "48", label: "Figures of Resistance" },
+                { number: "49+", label: "Figures & Research Profiles" },
               ].map(({ number, label }) => (
                 <div key={label} style={{ textAlign: "center" }}>
                   <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700 }}>{number}</div>
@@ -62,7 +63,7 @@ export default function AboutPage() {
                 Each chapter is self-contained and can be read independently. The chapters are organized chronologically across five historical eras, from 850 CE to 2024. Use the <strong style={{ color: "#e2e8f0" }}>Timeline</strong> to navigate by date, the <strong style={{ color: "#e2e8f0" }}>Search</strong> to find specific events, people, or legislation, and the <strong style={{ color: "#e2e8f0" }}>Figures</strong> gallery to explore the individuals documented throughout.
               </p>
               <p style={{ marginBottom: 16 }}>
-                The <strong style={{ color: "#e2e8f0" }}>Georgia</strong> page provides a deep dive into the state that serves as the central geographic lens of this encyclopedia — connecting the Etowah Mounds, the 1732 Georgia Charter, the Indian Removal Act, and the modern city of Atlanta into a single documented narrative. The <strong style={{ color: "#e2e8f0" }}>Genealogy</strong> page provides step-by-step guidance for readers who want to research their own family history using the Freedmen's Bureau records, the Dawes Rolls, and other primary source archives.
+                The <strong style={{ color: "#e2e8f0" }}>Georgia Case Study</strong> follows one regional sequence linking the Etowah Mounds, the 1732 Georgia Charter, land policy, removal, and Atlanta. It is a bounded case study, not the archive’s central geographic lens or a stand-in for the continent. The <strong style={{ color: "#e2e8f0" }}>Genealogy</strong> guide offers research pathways through Freedmen’s Bureau, Dawes, census, and other primary-record collections.
               </p>
               <p>
                 Every claim in this encyclopedia is labeled by evidence tier. Look for the colored badge on each chapter and each chart to understand the evidentiary basis for what you are reading.
@@ -75,7 +76,7 @@ export default function AboutPage() {
             <h2 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "1.4rem", marginBottom: 20, letterSpacing: "0.05em" }}>Evidence Tier System</h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
-                { tier: 1, color: "#4ade80", label: "Tier 1 — Primary Source", desc: "National Archives documents, Supreme Court rulings, peer-reviewed archaeological and genetic studies, federal census records, congressional testimony, and other verifiable primary sources. These are the foundation of every argument in this encyclopedia." },
+                { tier: 1, color: "#4ade80", label: "Tier 1 — Primary Record", desc: "Archival documents, court rulings, nation-authored records, federal census materials, legislative texts, and other traceable primary sources. Each is published with a stated scope and limitation." },
                 { tier: 2, color: "#d4af37", label: "Tier 2 — Scholarly Analysis", desc: "Peer-reviewed academic works, Pulitzer Prize-winning journalism, and rigorous historical synthesis that draws on primary sources. These sources interpret and contextualize the primary record." },
                 { tier: 3, color: "#f87171", label: "Tier 3 — Community Historical Tradition", desc: "Alternative reclamation narratives and community oral traditions. Included for their cultural and psychological significance and clearly labeled to distinguish them from primary source evidence. The distinction matters. Truth requires precision." },
               ].map(({ tier, color, label, desc }) => (
@@ -94,11 +95,11 @@ export default function AboutPage() {
               {[
                 {
                   label: "The Central Finding",
-                  text: "The evidence assembled in this encyclopedia demonstrates that the racial wealth gap, the mass incarceration crisis, and the ongoing dispossession of Indigenous land are not the products of cultural failure or individual circumstance. They are the documented mathematical results of specific legal instruments — the 13th Amendment's 'except as punishment for crime' clause, the HOLC redlining maps, the 1930 Census enumerator instructions, the Dawes Act allotment system — that can be traced, named, and cited."
+                  text: "The archive documents legal instruments and administrative practices that shaped land, labor, classification, mobility, and access to rights. It treats no record as self-explanatory: readers can inspect each source, its jurisdiction, the mechanism it describes, and the limits of the conclusion that follows."
                 },
                 {
-                  label: "The Unanswered Question",
-                  text: "The evidence assembled in this encyclopedia raises a question that each reader must answer for themselves: whether the consistency, precision, and durability of this system across five centuries represents the accumulated effect of individual self-interest, or something more deliberately organized. The primary sources do not answer that question. They simply make it impossible to avoid asking."
+                  label: "The Continuing Research Question",
+                  text: "When official categories, family memory, and community history do not align, what can person-specific and community-specific records establish? The archive does not treat a racial label as proof of Indigenous ancestry, Nation citizenship, or a universal historical identity; it directs readers toward the records needed to test particular claims."
                 },
                 {
                   label: "The Scholarly Disclaimer",
@@ -134,6 +135,12 @@ export default function AboutPage() {
           </div>
 
           {/* Public-domain dedication and source rights */}
+          <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", padding: "24px", textAlign: "center", marginBottom: 16 }}>
+            <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 12 }}>DEDICATION</div>
+            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "0.95rem", lineHeight: 1.7, margin: 0 }}>
+              In loving memory of Luka Strickland (Native American), Carolyn Strickland, and Pauline Pasley.
+            </p>
+          </div>
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.15)", padding: "24px", textAlign: "center" }}>
             <div style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 11, letterSpacing: "0.2em", marginBottom: 12 }}>PUBLIC-DOMAIN DEDICATION & SOURCE USE</div>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "0.95rem", lineHeight: 1.7 }}>

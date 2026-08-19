@@ -23,6 +23,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     documentedLimit: "The statute establishes a legal rule; it does not establish the ancestry, kinship, or lived experience of every person later classified under colonial categories.",
     sourceUrl: "https://encyclopediavirginia.org/primary-documents/negro-womens-children-to-serve-according-to-the-condition-of-the-mother-1662/"
   },
+  "1705_virginia_office_status": {
+    recordType: "Statute",
+    jurisdiction: "Colony and Dominion of Virginia",
+    citation: "An Act Declaring Who Shall Not Bear Office in This Country, ch. IV, 3 Hening 250–52 (Oct. 1705)",
+    mechanism: "Barred people the act called ‘negro, mulatto or Indian’ from ecclesiastical, civil, military, and public-trust offices, and stated that the child of an Indian and specified degrees of descent from a Negro would be deemed a mulatto.",
+    enforcementPath: "Colonial office and public-trust administration, with stated monetary penalties recoverable through courts of record.",
+    documentedLimit: "The act establishes an office-holding disqualification and a definition in this Virginia legal context. It does not prove an individual’s ancestry, define every Native descendant as ‘mulatto,’ describe an entire population, or establish the category’s meaning in another jurisdiction, record type, or year.",
+    sourceUrl: "https://encyclopediavirginia.org/primary-documents/an-act-declaring-who-shall-not-bear-office-in-this-country-october-1705/"
+  },
   "1723_classification": {
     recordType: "Statute",
     jurisdiction: "Colony of Virginia",
@@ -265,6 +274,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     enforcementPath: "County boards of registrars, local election officials, state election administration, and state courts.",
     documentedLimit: "The archival record identifies statewide qualifications; it does not establish the application of every qualification in every county or a particular voter’s experience.",
     sourceUrl: "https://digital.archives.alabama.gov/digital/collection/voices/id/11307/"
+  },
+  "1901_alabama_constitution_marriage": {
+    recordType: "Constitution",
+    jurisdiction: "State of Alabama",
+    citation: "Constitution of Alabama (1901), Article IV, §102",
+    mechanism: "Declared that the legislature shall never pass any law to authorize or legalize any marriage between any white person and a negro, or descendant of a negro.",
+    enforcementPath: "State marriage law, local marriage-license administration, courts, and related civil-status processes. Removed by Amendment 667 approved by voters in 2000.",
+    documentedLimit: "The provision establishes a specific Alabama constitutional marriage restriction; it does not prove an individual’s ancestry, demonstrate actual enforcement in every case, or define a uniform classification rule across jurisdictions or decades.",
+    sourceUrl: "https://digital.archives.alabama.gov/digital/collection/constitutions/id/112/"
   },
   "1900_north_carolina_suffrage": {
     recordType: "Constitution",

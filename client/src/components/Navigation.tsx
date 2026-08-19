@@ -1,3 +1,4 @@
+// Editorial scope: a source-critical Black Native encyclopedia spanning North America and connected diasporic records; regional pages are case studies, not the archive’s center.
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, BookOpen, Users, Clock, BookMarked, Info, Search } from "lucide-react";
@@ -38,7 +39,7 @@ export default function Navigation() {
 
   const moreLinks = [
     { href: "/map", label: "Interactive Map" },
-    { href: "/georgia", label: "Georgia Deep Dive" },
+    { href: "/georgia", label: "Georgia Case Study" },
     { href: "/glossary", label: "Glossary" },
     { href: "/genealogy", label: "Genealogy Guide" },
     { href: "/sources-claims", label: "Sources & Claims Index" },

@@ -138,11 +138,11 @@ function splitTimelineEvent(event: string): [string, string] {
 const CATEGORY_COLORS: Record<string, string> = {
   legislation: "#d4af37",
   violence: "#8b1a1a",
-  resistance: "#2d6a4f",
-  economic: "#6b3fa0",
-  treaty: "#1d6fa4",
-  precolumbian: "#c9a84c",
-  blacknative: "#b87333",
+  resistance: "#d4af37",
+  economic: "#d4af37",
+  treaty: "#d4af37",
+  precolumbian: "#d4af37",
+  blacknative: "#d4af37",
 };
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -163,7 +163,7 @@ export default function TimelinePage() {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [showFilters, setShowFilters] = useState(false);
 
-  const eraColors = ["#8b1a1a", "#d4af37", "#2d6a4f", "#6b3fa0", "#1d6fa4"];
+  const eraColors = ["#d4af37", "#d4af37", "#d4af37", "#d4af37", "#d4af37"];
   const eraBanners = [
     "/manus-storage/era_banner_0_precolumbian_a7aa2715.png",
     "/manus-storage/era_banner_1_1ad8b855.png",
@@ -346,7 +346,7 @@ export default function TimelinePage() {
           ) : (
             <div style={{ position: "relative", paddingLeft: 48 }}>
               {/* Vertical line */}
-              <div style={{ position: "absolute", left: 20, top: 0, bottom: 0, width: 2, background: "linear-gradient(to bottom, #8b1a1a, #d4af37, #2d6a4f, #6b3fa0, #1d6fa4)" }} />
+              <div style={{ position: "absolute", left: 20, top: 0, bottom: 0, width: 2, background: "linear-gradient(to bottom, rgba(212,175,55,0.45), #d4af37, rgba(212,175,55,0.35))" }} />
 
               {filteredEvents.map((event, i) => {
                 // Show era banner when era changes
@@ -356,7 +356,7 @@ export default function TimelinePage() {
                 const isExpanded = expandedEvent === i;
                 const isCopied = copiedIndex === i;
                 const [recordTitle, recordAbstract] = splitTimelineEvent(event.event);
-                const isEraLead = showEraBanner;
+                const isEraLead = showEraBanner || (i + 1) % 12 === 0;
 
                 return (
                   <>
@@ -548,7 +548,7 @@ export default function TimelinePage() {
                       })()}
                     </div>
                   </div>
-                  {(i + 1) % 10 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "42px 0 54px -48px", padding: "22px 24px", display: "flex", alignItems: "center", gap: 12, color: "#d4af37", borderTop: "1px solid rgba(212,175,55,0.52)", borderBottom: "1px solid rgba(212,175,55,0.30)", background: "linear-gradient(90deg, rgba(212,175,55,0.13), transparent 70%)" }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>✦ ARCHIVAL PAUSE · NEXT RECORD SEQUENCE ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                  {(i + 1) % 12 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "42px 0 54px -48px", padding: "22px 24px", display: "flex", alignItems: "center", gap: 12, color: "#d4af37", borderTop: "1px solid rgba(212,175,55,0.52)", borderBottom: "1px solid rgba(212,175,55,0.30)", background: "linear-gradient(90deg, rgba(212,175,55,0.13), transparent 70%)" }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>✦ ARCHIVAL PAUSE · NEXT RECORD SEQUENCE ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                   </>
                 );
               })}

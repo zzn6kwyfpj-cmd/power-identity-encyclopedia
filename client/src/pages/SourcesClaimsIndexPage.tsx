@@ -166,7 +166,7 @@ export default function SourcesClaimsIndexPage() {
                   </div>
                   <div style={{ color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>{items.length} RECORD{items.length === 1 ? "" : "S"}</div>
                 </div>
-                <div className="grid gap-4 md:grid-cols-2">
+                <div className="grid gap-5">
                   {items.map((item, index) => {
                     const tierTone = item.tier.startsWith("Tier 1") ? "#4ade80" : item.tier.startsWith("Tier 3") ? "#c2414b" : "#d4af37";
                     const harmfulTone = item.topic === "Racial Violence & Due Process" ? "#8b1a1a" : "#d4af37";
@@ -197,7 +197,7 @@ export default function SourcesClaimsIndexPage() {
                         </div>
                       </article>
                       {isLeadRecord && items.length > 1 && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "28px 0 4px", color: "#d4af37" }}><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.46)" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>✦ SUPPORTING RECORDS · CATALOGUE BAYS ✦</span><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.46)" }} /></div>}
-                      {(index + 1) % 3 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "24px 0 5px", color: "#d4af37", opacity: 0.72 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>✦ ARCHIVAL PAUSE · CATALOGUE BAY {String(Math.floor((index + 1) / 3) + 1).padStart(2, "0")} ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                      {(index + 1) % 3 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "28px 0 8px", color: "#d4af37", opacity: 0.72 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>✦ ARCHIVAL PAUSE · CATALOGUE BAY {String(Math.floor((index + 1) / 3) + 1).padStart(2, "0")} ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                     </div>;
                   })}
                 </div>

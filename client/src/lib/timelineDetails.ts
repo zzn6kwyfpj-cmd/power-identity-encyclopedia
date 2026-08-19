@@ -33,6 +33,13 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "captivity-classification-colonial-law",
     chapterTitle: "Captivity, Classification, and Colonial Law",
   },
+  "1901_alabama_constitution_marriage": {
+    description: "Article IV, §102 of Alabama’s 1901 constitution stated that the legislature could never authorize or legalize marriage between a White person and a person the provision called a ‘negro, or descendant of a negro.’ The text establishes a particular constitutional restriction on the state’s marriage-law authority. It does not prove an individual’s ancestry, demonstrate actual enforcement in every case, or define a uniform classification rule across places or decades. Voters removed the provision through Amendment 667 in 2000.",
+    keyFact: "Article IV, §102 was a specific constitutional marriage restriction, distinct from the 1901 constitution’s suffrage provisions and later removed by Amendment 667.",
+    primarySource: "Constitution of Alabama (1901), Article IV, §102; Alabama Department of Archives and History digital collection",
+    chapterSlug: "captivity-classification-colonial-law",
+    chapterTitle: "Captivity, Classification, and Colonial Law",
+  },
   "1933_georgia_persons_of_color": {
     description: "Georgia’s 1933 Code defined ‘persons of color’ through named categories and any ascertainable trace of specified ancestry. Its linked marriage provision made it unlawful for a White person to marry anyone except a White person and declared a marriage in violation void. The code establishes a state definition and a linked marriage consequence in its stated legal context. It does not establish an individual’s ancestry, identity, community affiliation, citizenship, or a uniform administrative outcome.",
     keyFact: "The 1933 Georgia code connected a classification definition to a separate marriage rule; it is not evidence of an individual’s ancestry or citizenship.",
@@ -175,6 +182,20 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     primarySource: "Virginia General Assembly, 'An act concerning Servants and Slaves' (1705), Virginia State Law Library",
     chapterSlug: "psychological-warfare",
     chapterTitle: "The Architecture of Psychological Warfare",
+  },
+  "1705_virginia_office_status": {
+    description: "A separate October 1705 Virginia act barred people it called ‘negro, mulatto or Indian’ from ecclesiastical, civil, military, and public-trust offices. To resolve the statute’s own construction question, it also stated that the child of an Indian and the child, grandchild, or great-grandchild of a Negro would be deemed a mulatto. The text establishes an office-holding disqualification and a definition in that Virginia legal context. It does not prove an individual’s ancestry, define every Native descendant as ‘mulatto,’ describe an entire population, or establish the category’s meaning in another place, record type, or year.",
+    keyFact: "The October 1705 office act’s category definition and its public-office disqualification must be read as one jurisdiction-specific legal rule, not as a universal ancestry formula.",
+    primarySource: "Virginia General Assembly, An Act Declaring Who Shall Not Bear Office in This Country, ch. IV, 3 Hening 250–52 (Oct. 1705); Encyclopedia Virginia transcription",
+    chapterSlug: "captivity-classification-colonial-law",
+    chapterTitle: "Captivity, Classification, and Colonial Law",
+  },
+  "1774_wheatley_occom": {
+    description: "Phillis Wheatley’s letter dated February 11, 1774 to the Mohegan Presbyterian minister Samson Occom expressed approval of his reasons ‘in Vindication of’ Black people’s natural rights and challenged the contradiction between a cry for liberty and oppressive power over others. The text was printed in the Connecticut Gazette on March 11 and, in another documented printing, in the Connecticut Journal on April 1. These records document a specific antislavery and natural-rights correspondence. They do not establish Wheatley’s Indigenous identity, an enduring personal alliance beyond the surviving correspondence, or a general Black–Native political program.",
+    keyFact: "The letter’s February 11 date and its March 11 / April 1 newspaper printings support a bounded record of antislavery correspondence between Wheatley and Occom.",
+    primarySource: "Phillis Wheatley to Reverend Samson Occom, dated Feb. 11, 1774; Connecticut Gazette (Mar. 11, 1774); Connecticut Journal (Apr. 1, 1774); Museum of the American Revolution / Gilder Lehrman Institute",
+    chapterSlug: "black-native-identity",
+    chapterTitle: "Black Native American Identity: The Suppressed History",
   },
   "1732": {
     description: "King George II granted the 1732 Georgia Charter to a corporate body of Trustees, describing the inhabited territories of the Creek and Cherokee Nations as 'waste and desolate' — a legal fiction that erased thousands of Indigenous inhabitants with a single phrase. The Charter granted the Trustees the right to 'hold, possess, and enjoy all and singular the lands, countries, and territories' between the Savannah and Altamaha Rivers. The Etowah Mounds — a Mississippian city that had been continuously inhabited for 500 years — stood within the chartered territory. The Creek Nation had been living in this region for centuries. The Charter's description of their homeland as 'waste and desolate' is the Doctrine of Discovery applied to Georgia soil — the legal erasure of a people before their physical removal.",

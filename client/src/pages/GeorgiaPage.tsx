@@ -1,3 +1,4 @@
+// Editorial scope: Georgia is a source-linked regional case study within a continental and diaspora-facing Black Native encyclopedia, not its organizing center.
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
@@ -145,10 +146,10 @@ export default function GeorgiaPage() {
         paddingBottom: 48,
       }}>
         <div className="container" style={{ maxWidth: 900 }}>
-          <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ GEORGIA — THE CENTRAL LENS ✦</div>
-          <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 12 }}>Georgia: Where This History Lives</h1>
+          <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ GEORGIA — A REGIONAL CASE STUDY ✦</div>
+          <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 12 }}>Georgia: A Documented Regional Sequence</h1>
           <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: "1.2rem", fontStyle: "italic", maxWidth: 700 }}>
-            From the Etowah Mounds to the 1732 Georgia Charter, from the Land Lottery to the Trail of Tears, from Sweet Auburn to the highway that destroyed it — Georgia is not just where this encyclopedia begins. It is where every chapter of this history played out in documented, verifiable detail.
+            From the Etowah Mounds to the 1732 Georgia Charter, from land lotteries to removal, from Sweet Auburn to highway construction, this page follows one source-linked regional sequence. It does not represent every Black Native history or stand in for the continent; it offers a focused case study alongside records from other regions and connected diasporas.
           </p>
         </div>
       </section>

@@ -1,3 +1,4 @@
+// Editorial scope: this entry page introduces a collaboratively stewarded, source-critical archive of Black Native histories across North America and connected diasporas.
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -83,7 +84,7 @@ export default function LandingPage() {
           marginBottom: 20,
           fontStyle: "italic",
         }}>
-          American Records of Contested History, Identity, and Verified Evidence
+          A Source-Critical Encyclopedia of Black Native History, Law, and Memory
         </p>
         <p style={{
           fontFamily: "Cormorant Garamond, serif",
@@ -91,7 +92,7 @@ export default function LandingPage() {
           fontSize: "clamp(0.9rem, 1.5vw, 1rem)",
           lineHeight: 1.9,
         }}>
-          A comprehensive, evidence-based educational resource documenting the history of Black Native Americans and the systematic erasure of their identity, land, and sovereignty. From the pre-Columbian civilizations of 850 CE to the Cherokee Freedmen citizenship case of 2017. 67 chapters. 125+ primary source citations. An unbroken chain of causation from 850 CE to 2024.
+          A collaboratively stewarded public resource examining Black Native histories across North America and connected diasporic archives. The collection follows law, land, forced movement, census practice, sovereignty, and community memory from the 850 CE navigation threshold to contemporary records. 67 chapters. 125+ traceable primary-record citations. Every claim carries an evidence tier and stated limit.
         </p>
       </div>
 

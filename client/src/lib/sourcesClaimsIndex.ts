@@ -32,7 +32,7 @@ function legalTopic(recordKey: string) {
   if (recordKey.includes("freedmens") || recordKey.includes("field_order") || recordKey.includes("land_restoration")) {
     return { topic: "Freedmen’s Bureau & Land", chapterSlug: "freedmens-bureau" };
   }
-  if (/north_carolina_persons_of_color|mississippi_marriage|georgia_persons_of_color/.test(recordKey)) {
+  if (/north_carolina_persons_of_color|mississippi_marriage|georgia_persons_of_color|1901_alabama_constitution_marriage/.test(recordKey)) {
     return { topic: "Classification & State Law", chapterSlug: "captivity-classification-colonial-law" };
   }
   if (
@@ -336,6 +336,25 @@ const censusInstructionEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
+const wheatleyOccomEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "1774-wheatley-occom-correspondence",
+    yearLabel: "1774",
+    sortYear: 1774,
+    title: "Phillis Wheatley–Samson Occom antislavery correspondence",
+    tier: "Tier 1 — Primary record",
+    topic: "Black & Indigenous Intellectual History",
+    region: "Boston, Connecticut, and Mohegan intellectual history",
+    sourceType: "Letter / newspaper printing",
+    verification: "Institutional record",
+    establishes: "A letter dated February 11, 1774 from Phillis Wheatley to the Mohegan minister Samson Occom endorsed the vindication of Black people’s natural rights and criticized oppressive power. The letter was printed in the Connecticut Gazette on March 11 and in the Connecticut Journal on April 1.",
+    limitation: "The surviving letter documents a specific antislavery and natural-rights correspondence. It does not establish Wheatley’s Indigenous identity, an enduring personal alliance beyond the surviving record, or a general Black–Native political program.",
+    citation: "Phillis Wheatley to Reverend Samson Occom, dated Feb. 11, 1774; Connecticut Gazette (Mar. 11, 1774); Connecticut Journal (Apr. 1, 1774)",
+    sourceUrl: "https://hamilton.gilderlehrman.org/supporting-document/phillis-wheatley-reverend-samson-occom-slavery-1774",
+    chapterSlug: "black-native-identity",
+  },
+];
+
 const a00EvidenceItems: SourceClaimIndexItem[] = [
   {
     id: "mendez-2013-a00-y-chromosome",
@@ -422,7 +441,7 @@ const tiktokHistoryVerifiedEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
-export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
+export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...wheatleyOccomEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
   (a, b) => a.sortYear - b.sortYear || a.title.localeCompare(b.title),
 );
 

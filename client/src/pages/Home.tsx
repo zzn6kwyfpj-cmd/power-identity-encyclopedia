@@ -1,3 +1,4 @@
+// Editorial scope: a national and diaspora-facing Black Native encyclopedia; local histories appear as explicitly bounded regional case studies.
 import { useState } from "react";
 import { Link } from "wouter";
 import { Search, ChevronRight, BookOpen, Clock, Users, BookMarked, Database } from "lucide-react";
@@ -87,7 +88,7 @@ export default function Home() {
             marginBottom: 20,
             lineHeight: 1.4,
           }}>
-            American Records of Contested History, Identity, and Verified Evidence
+            A Source-Critical Encyclopedia of Black Native History, Law, and Memory
           </div>
 
           <h2 style={{
@@ -100,7 +101,7 @@ export default function Home() {
             marginBottom: 8,
             fontStyle: "italic",
           }}>
-            Power, Identity, and Contested Origins
+            Power, Identity, and Contested Records
           </h2>
 
           <div style={{ width: 80, height: 2, background: "linear-gradient(to right, transparent, #d4af37, transparent)", margin: "0 auto 24px" }} />
@@ -114,16 +115,16 @@ export default function Home() {
             margin: "0 auto 16px",
             fontStyle: "italic",
           }}>
-            A History of America's Suppressed Truths
+            A documented inquiry across North America and connected diasporas
           </p>
 
           {/* Stats */}
           <div style={{ display: "flex", justifyContent: "center", gap: "clamp(24px, 5vw, 60px)", flexWrap: "wrap", marginBottom: 48 }}>
             {[
               { value: "67", label: "Chapters" },
-              { value: "1,100+", label: "Years Documented" },
+              { value: "1,100+", label: "Years Navigated" },
               { value: "125+", label: "Primary Sources" },
-              { value: "850 CE", label: "to 2024" },
+              { value: "49+", label: "Figures" },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
                 <div style={{ fontFamily: "Cinzel, serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: "#d4af37", fontWeight: 700 }}>{value}</div>
@@ -195,7 +196,7 @@ export default function Home() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12 }}>
             {[
-              { tier: "TIER 1", color: "#4ade80", label: "Primary Source", desc: "National Archives, court rulings, peer-reviewed studies, census records, SEC filings. Verifiable fact." },
+              { tier: "TIER 1", color: "#4ade80", label: "Primary Record", desc: "Archival documents, constitutional and court records, nation-authored records, census instructions, and other traceable sources. Each entry states what the record establishes and what it cannot establish." },
               { tier: "TIER 2", color: "#d4af37", label: "Scholarly Analysis", desc: "Peer-reviewed academic works, Pulitzer Prize journalism, rigorous historical synthesis drawing on primary sources." },
               { tier: "TIER 3", color: "#f87171", label: "Community Historical Tradition", desc: "Reclamation narratives and oral traditions. Included for cultural significance. Clearly labeled to distinguish from primary evidence." },
             ].map(({ tier, color, label, desc }) => (
@@ -255,7 +256,7 @@ export default function Home() {
               All 67 Chapters
             </h2>
             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 600, margin: "0 auto" }}>
-              From the Papal Bulls of 1452 to the Emmett Till Antilynching Act of 2022 — an unbroken chain of causation.
+              A navigable, source-linked chronology that keeps record type, jurisdiction, evidence tier, and documented limits visible.
             </p>
           </div>
 
@@ -396,7 +397,7 @@ export default function Home() {
           ARCHIVE
         </div>
         <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 11, letterSpacing: "0.1em", marginBottom: 8 }}>
-          American Records of Contested History, Identity, and Verified Evidence
+          A Source-Critical Encyclopedia of Black Native History, Law, and Memory
         </div>
         <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: 12, lineHeight: 1.6, maxWidth: 620, margin: "0 auto" }}>
           Collaboratively stewarded · No individual author attribution is claimed. Original editorial work is dedicated to the public domain to the fullest extent permitted by law. Cited materials may carry separate source rights.
