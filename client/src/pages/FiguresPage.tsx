@@ -169,9 +169,11 @@ export default function FiguresPage() {
                             <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, marginBottom: 2 }}>{figure.years}</div>
                             <div style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 12, marginBottom: 12, fontStyle: "italic" }}>{figure.heritage}</div>
                             <div style={{ fontFamily: "Cinzel, serif", color: "#94a3b8", fontSize: 10, letterSpacing: "0.05em", marginBottom: 12 }}>{figure.role}</div>
-                            <div style={{ borderLeft: `3px solid ${eraColor}60`, paddingLeft: 12, marginBottom: 12 }}>
-                              <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#cbd5e1", fontSize: 14, fontStyle: "italic", lineHeight: 1.6, margin: 0 }}>“{figure.quote}”</p>
-                            </div>
+                            {figure.quote && (
+                              <div style={{ borderLeft: `3px solid ${eraColor}60`, paddingLeft: 12, marginBottom: 12 }}>
+                                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#cbd5e1", fontSize: 14, fontStyle: "italic", lineHeight: 1.6, margin: 0 }}>“{figure.quote}”</p>
+                              </div>
+                            )}
                             <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#94a3b8", fontSize: 13, lineHeight: 1.75, margin: 0 }}>{figure.connection}</p>
                           </div>
                         </div>

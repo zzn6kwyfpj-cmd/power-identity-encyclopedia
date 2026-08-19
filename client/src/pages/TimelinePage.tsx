@@ -7,6 +7,8 @@ import { TIMELINE_DETAILS } from "@/lib/timelineDetails";
 import { LEGAL_RECORDS } from "@/lib/legalRecordMetadata";
 import { Search, Share2, Filter, ChevronDown, ChevronUp, BookOpen, X } from "lucide-react";
 
+// Royal Archive design: exhibit-title wall, era plates, gold catalogue structure, green reserved for verified evidence, and crimson reserved for violence or contested history.
+
 // Categorize each event for filtering
 const EVENT_CATEGORIES: Record<string, string> = {
   "Papal Bull": "legislation",
@@ -118,6 +120,7 @@ const EVENT_CATEGORIES: Record<string, string> = {
   "Treaty of San Lorenzo": "treaty",
   "United States v. Turner": "blacknative",
   "Return of the Ancient Ones": "blacknative",
+  "Elaine": "violence",
 };
 
 function getCategory(event: string): string {
@@ -201,16 +204,25 @@ export default function TimelinePage() {
         <div className="container" style={{ maxWidth: 960 }}>
 
           {/* Header */}
-          <div className="text-center" style={{ marginBottom: 48 }}>
-            <div style={{ color: "#d4af37", fontSize: 11, letterSpacing: "0.4em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>✦ APPENDIX B ✦</div>
-            <h1 style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: "clamp(1.8rem, 4vw, 3rem)", marginBottom: 12 }}>Master Chronological Timeline</h1>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#64748b", fontSize: "1.1rem", maxWidth: 600, margin: "0 auto 8px" }}>
-              850 CE to 2024 — an unbroken chain of causation. Every event connects to the next.
-            </p>
-            <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#475569", fontSize: "0.95rem" }}>
-              {filteredEvents.length} of {enrichedEvents.length} events shown
-            </p>
-          </div>
+          <header style={{ border: "1px solid rgba(212,175,55,0.42)", background: "linear-gradient(120deg, rgba(212,175,55,0.08), rgba(10,17,24,0.1) 52%, rgba(139,26,26,0.12))", padding: "clamp(26px, 5vw, 46px)", marginBottom: 36, position: "relative", overflow: "hidden" }}>
+            <div aria-hidden="true" style={{ position: "absolute", top: 14, left: 18, right: 18, display: "flex", alignItems: "center", gap: 10, color: "#d4af37", opacity: 0.62 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.32em" }}>CHRONOLOGICAL EXHIBITION</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>
+            <div className="flex flex-col gap-6 md:flex-row md:items-center">
+              <div aria-hidden="true" style={{ width: 84, height: 84, border: "2px solid #d4af37", borderRadius: "50%", boxShadow: "0 0 0 6px rgba(212,175,55,0.07), inset 0 0 24px rgba(212,175,55,0.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 26, flexShrink: 0 }}>✦</div>
+              <div className="min-w-0 flex-1">
+                <div style={{ color: "#d4af37", fontSize: 10, letterSpacing: "0.34em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>APPENDIX B · RECORDS IN SEQUENCE</div>
+                <h1 style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: "clamp(2rem, 4vw, 3.45rem)", lineHeight: 1.06, margin: 0 }}>Master Chronological Timeline</h1>
+                <div style={{ width: 170, borderTop: "1px solid #d4af37", marginTop: 17, marginBottom: 13 }} />
+                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#c4cedb", fontSize: "1.2rem", maxWidth: 680, lineHeight: 1.55, margin: 0 }}>
+                  850 CE to 2024: a documented sequence of law, resistance, classification, and consequence. Open a record to examine its source and its limit.
+                </p>
+              </div>
+              <aside style={{ borderLeft: "1px solid rgba(212,175,55,0.55)", paddingLeft: 20, minWidth: 180 }}>
+                <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>DISPLAYED RECORDS</div>
+                <div style={{ color: "#f0e3bc", fontFamily: "Cormorant Garamond, serif", fontSize: "1.75rem", marginTop: 7 }}>{filteredEvents.length} / {enrichedEvents.length}</div>
+                <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "0.96rem", lineHeight: 1.35, marginTop: 5 }}>Filter the catalogue without flattening the chronology.</div>
+              </aside>
+            </div>
+          </header>
 
           {/* Search and Filter Bar */}
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "20px 24px", marginBottom: 32 }}>
@@ -298,13 +310,16 @@ export default function TimelinePage() {
           </div>
 
           {/* Era Legend */}
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", marginBottom: 32 }}>
+          <div style={{ borderTop: "1px solid rgba(212,175,55,0.22)", borderBottom: "1px solid rgba(212,175,55,0.22)", padding: "14px 0", marginBottom: 32 }}>
+            <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.22em", textAlign: "center", marginBottom: 10 }}>CATALOGUE KEY · EVIDENCE AND HISTORICAL CONTEXT</div>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
             {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
               <div key={key} style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <div style={{ width: 10, height: 10, background: CATEGORY_COLORS[key], borderRadius: 2 }} />
                 <span style={{ fontFamily: "Cinzel, serif", color: "#64748b", fontSize: 9, letterSpacing: "0.05em" }}>{label}</span>
               </div>
             ))}
+            </div>
           </div>
 
           {/* Timeline */}
@@ -512,6 +527,7 @@ export default function TimelinePage() {
                       })()}
                     </div>
                   </div>
+                  {(i + 1) % 14 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "30px 0 42px -48px", display: "flex", alignItems: "center", gap: 12, color: "#d4af37", opacity: 0.55 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>ARCHIVE INTERLUDE</span><span style={{ fontSize: 12 }}>✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                   </>
                 );
               })}

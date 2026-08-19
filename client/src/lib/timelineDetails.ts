@@ -862,4 +862,32 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "civil-rights-acts",
     chapterTitle: "The Civil Rights Act and the Voting Rights Act",
   },
+  "1919_elaine_massacre": {
+    description: "Violence in Phillips County, Arkansas followed a September 30, 1919 meeting of Black sharecroppers’ Progressive Farmers and Household Union near Elaine. The historical record documents mass violence, arrests, and prosecutions, but it does not support one uncontested death total. The Federal Judicial Center reports estimates ranging from 11 to 856 Black people killed, while the Encyclopedia of Arkansas describes estimates in the hundreds and identifies historian Grif Stockley’s 100–200 estimate. The difference is material: this archive records the violence and the uncertainty in its accounting rather than converting a contested estimate into a fixed fact.",
+    keyFact: "Elaine is a documented episode of racial mass violence and coercive prosecution; the number of Black victims remains historically unresolved and must be reported as a sourced range, not a single settled figure.",
+    primarySource: "Federal Judicial Center, ‘Moore v. Dempsey’ (2023); Encyclopedia of Arkansas, ‘Elaine Massacre of 1919’; Moore v. Dempsey, 261 U.S. 86 (1923)",
+    chapterSlug: "psychological-warfare",
+    chapterTitle: "The Architecture of Psychological Warfare",
+  },
+  "1921_1890_census_fire": {
+    description: "On January 10, 1921, a fire in the U.S. Department of Commerce building damaged or destroyed most 1890 population schedules. The Census Bureau’s account and National Archives records show a more complex history than the shorthand phrase ‘destroyed by fire’: records sustained fire and water damage, a limited number of schedules and special series survived, and the remaining unsalvageable schedules were later authorized for disposal. Surviving general-population fragments, veterans’ schedules, Oklahoma territorial schedules, selected Delaware African American lists, and published statistical reports remain important research sources.",
+    keyFact: "The 1890 census loss is a documented research limitation, not evidence by itself of a particular family’s identity change, ancestry, or classification history.",
+    primarySource: "U.S. Census Bureau, ‘History and the Census: 1890 Census Fire’; National Archives, ‘1890 Census’; NARA Microfilm M407, M496, M123, M1811, and M1919",
+    chapterSlug: "black-native-american-identity",
+    chapterTitle: "The Black Native American Identity",
+  },
+  "1923_moore_dempsey": {
+    description: "In Moore v. Dempsey, the Supreme Court considered a habeas petition arising from the prosecutions after the Elaine violence. The Court held that a state murder trial hurried to conviction under mob domination, without regard for the accused persons’ rights, is without due process and void. When the alleged facts would make a trial void and state corrective process is insufficient, the federal district court must examine the facts. The decision did not decide the petitioners’ factual guilt or innocence, nor did it resolve every reported event at Elaine. Its direct legal significance is the rule concerning federal review of alleged mob-dominated state proceedings.",
+    keyFact: "Moore v. Dempsey made the constitutional adequacy of a mob-dominated state trial a question federal courts could be required to examine through habeas corpus.",
+    primarySource: "Moore v. Dempsey, 261 U.S. 86 (1923), Library of Congress U.S. Reports; Federal Judicial Center, ‘Moore v. Dempsey’",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1933_1890_census_disposal": {
+    description: "After years of deterioration and limited salvage following the 1921 fire, the Census Bureau proposed disposal of unsalvageable 1890 schedules in December 1932. Congress authorized disposal on February 21, 1933. The National Archives’ history of the records reports uncertainty over the final disposal date, citing accounts that point to 1934 or 1935. The date of authorization is clear; the record does not justify claiming certainty about the final destruction date beyond the documented range.",
+    keyFact: "Congress authorized disposal of the remaining unsalvageable 1890 schedules on February 21, 1933; the final disposal date is reported with uncertainty in the archival record.",
+    primarySource: "U.S. Census Bureau, ‘History and the Census: 1890 Census Fire’; Kellee Blake, ‘First in the Path of the Firemen,’ National Archives Prologue (1996)",
+    chapterSlug: "black-native-american-identity",
+    chapterTitle: "The Black Native American Identity",
+  },
 };

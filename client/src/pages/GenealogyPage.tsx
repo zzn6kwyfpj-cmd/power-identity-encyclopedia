@@ -28,12 +28,12 @@ const GUIDES = [
     title: "Dawes Rolls — Tracing Indigenous Ancestry",
     subtitle: "The Official Enrollment Records of the Five Civilized Tribes (1898–1914)",
     color: "#4ade80",
-    intro: "The Dawes Rolls are the official enrollment records of the Cherokee, Creek, Choctaw, Chickasaw, and Seminole Nations compiled by the Dawes Commission between 1898 and 1914. If you have Cherokee, Creek, Choctaw, Chickasaw, or Seminole ancestry, your ancestor may be on these rolls. The rolls are critical for establishing tribal citizenship and for understanding how mixed Black-Indigenous identity was classified.",
+    intro: "The Dawes Rolls are historical enrollment records for the Cherokee, Creek, Choctaw, Chickasaw, and Seminole Nations in Indian Territory, compiled by the Dawes Commission between 1898 and 1914. They can help document a named ancestor’s enrollment history and the administrative categories applied to a family. They do not, by themselves, establish ancestry, cultural affiliation, or present-day citizenship in a sovereign nation.",
     steps: [
       { step: "1", title: "Access the Dawes Rolls Online (Free)", content: "The Dawes Rolls are available free online through the National Archives. Go to archives.gov and search 'Dawes Rolls' or access them directly through the Oklahoma Historical Society." },
-      { step: "2", title: "Understand the Four Rolls", content: "The Dawes Commission created four separate rolls: (1) Citizens by Blood — tribal members with documented Indigenous ancestry; (2) Citizens by Intermarriage — non-Indigenous people who married tribal citizens; (3) Delaware Cherokees — a specific subgroup; (4) Freedmen — formerly enslaved people and their descendants. If your ancestor was of mixed Black-Indigenous heritage, they may have been placed on the Freedmen roll rather than the Citizens by Blood roll, regardless of their actual Indigenous ancestry." },
+      { step: "2", title: "Read the Enrollment Category Exactly", content: "The National Archives lists categories that vary by tribe and case, including citizens by blood, intermarried citizens, Freedmen, minor Freedmen, newborn Freedmen, and rejected or doubtful applications. NARA describes Freedmen as people formerly enslaved by the Five Tribes and their descendants. Record the category, roll number, census-card number, ages, relationships, and every notation. A category is an administrative record, not a complete account of kinship, culture, ancestry, or citizenship." },
       { step: "3", title: "Search by Name and Nation", content: "Search the rolls by your ancestor's name and the specific nation (Cherokee, Creek, Choctaw, Chickasaw, or Seminole). Note that names were often anglicized or misspelled. Try multiple spellings." },
-      { step: "4", title: "Request the Full Enrollment Jacket", content: "Each person on the Dawes Rolls has an 'enrollment jacket' — a file containing their application, testimony, and any supporting documents. These jackets often contain family history information. Request them from the National Archives." },
+      { step: "4", title: "Locate the Full Record Set", content: "Use the census-card number to locate an enrollment application; if approved, use the roll or application number to locate the land-allotment jacket. Applications can include testimony, correspondence, relatives’ names, and older-roll references. Rejected applicants may still have a census card and application, even though they have no allotment jacket." },
       { step: "5", title: "Contact the Tribal Nation Directly", content: "For citizenship questions, contact the tribal nation directly. The Cherokee Nation, Muscogee (Creek) Nation, Choctaw Nation, Chickasaw Nation, and Seminole Nation all have citizenship offices that can assist with research." },
     ],
     resources: [
@@ -41,6 +41,26 @@ const GUIDES = [
       { name: "Oklahoma Historical Society — Dawes Rolls", url: "https://www.okhistory.org/research/dawes" },
       { name: "Cherokee Nation Citizenship Office", url: "https://www.cherokee.org/all-services/citizenship/" },
       { name: "Muscogee (Creek) Nation Citizenship", url: "https://www.muscogeenation.com/services/citizenship/" },
+    ],
+  },
+  {
+    id: "related-enrollment-records",
+    title: "Related Enrollment Records — A Nation-Specific Research Path",
+    subtitle: "Using Wallace, Guion Miller, Baker, Earlier Census, and BIA Records Without Overclaiming",
+    color: "#4ade80",
+    intro: "No federal roll is a universal list of people with Native ancestry. The National Archives preserves multiple record sets created for different legal and administrative purposes. Choose records by a known person, place, community, and period; treat both inclusion and exclusion as historical evidence that requires context rather than as a final identity judgment.",
+    steps: [
+      { step: "1", title: "Start With a Documented Person and Place", content: "Begin with named relatives in census, vital, land, military, probate, church, or Freedmen’s Bureau records. Record counties, communities, and possible nation-specific connections before selecting a roll. This prevents a broad surname search from becoming a claim of descent." },
+      { step: "2", title: "Use the Correct Roll for the Research Question", content: "For Cherokee Freedmen in Indian Territory, consult the revised Wallace Roll (c. 1890–c. 1896). For Eastern Cherokee judgment-award claims, use Guion Miller applications and the final roll (1906–1911). For Eastern Band enrollment and related testimony, use the Baker Roll (1924–1929). For a broader agency context, consult Indian Census Rolls and earlier nation-specific census records." },
+      { step: "3", title: "Follow the Record Chain", content: "For each candidate, save the roll number, application number, microfilm or National Archives identifier, image/page number, names and ages of relatives, and cited earlier rolls. Compare applications, affidavits, testimony, rejections, and later land files rather than relying on an index alone." },
+      { step: "4", title: "Read Rejection and Eligibility Rules", content: "A denial may reflect a deadline, residence rule, statutory eligibility standard, required prior roll, or a finding about affiliation—not a complete finding about family history. For example, Guion Miller was a judgment-award process, while Baker was tied to Eastern Band allotment and membership rules. Preserve the reason given in the file." },
+      { step: "5", title: "Keep History and Citizenship Distinct", content: "Use records to build a documented family history. If your research concerns current citizenship, contact the relevant sovereign nation directly. The National Archives states that it does not determine tribal citizenship, and each nation sets its own criteria." },
+    ],
+    resources: [
+      { name: "National Archives — Bureau of Indian Affairs Tribal Rolls", url: "https://www.archives.gov/research/native-americans/rolls" },
+      { name: "National Archives — Wallace Rolls of Cherokee Freedmen", url: "https://www.archives.gov/research/native-americans/rolls/wallace.html" },
+      { name: "National Archives — Guion Miller Roll", url: "https://www.archives.gov/research/native-americans/rolls/guion-miller-rolls" },
+      { name: "National Archives — Baker Roll", url: "https://www.archives.gov/research/native-americans/rolls/baker-roll.html" },
     ],
   },
   {

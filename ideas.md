@@ -52,3 +52,7 @@
 - Sources & Claims Index pages use numbered archive-section plates, a seal-style opening panel, and gold structural frames so evidence records read as a curated museum catalogue rather than an uninterrupted database.
 - In source-index cards, green appears only as an explicit evidence-tier indicator; antique gold frames the record and its navigation, while crimson is reserved for materially contested or harmful-history groupings.
 - Source-index microcopy uses formal catalogue language—such as “archive section,” “verification route,” and “documented limit”—to reinforce the role of the reader as an evidence examiner.
+- All catalogue routes open as an exhibit title wall with a seal, formal inscription, thesis, and current-record count before any search control or record list.
+- Source records use a fixed reading order: evidence tier, date and source type, catalogue record label, title, verification route, what the source establishes, and documented limit.
+- Crimson is reserved for harmful or contested-history material and Tier 3 community theory; green signals verified Tier 1 evidence; gold remains the structural material of the archive.
+- Long chronology and source lists include restrained ornamental interludes in addition to named sections so the reader moves through curated rooms rather than an uninterrupted record wall.

@@ -17,8 +17,8 @@ export interface Figure {
   years: string;
   heritage: string;
   role: string;
-  quote: string;
-  image: string;
+  quote?: string;
+  image?: string;
   connection: string;
 }
 
@@ -1059,6 +1059,13 @@ export const FIGURES: Figure[] = [
     image: "/manus-storage/portrait_walter_english_b1af2a00.png",
     connection: "Founded the Brister English Project in 2021 after discovering his great-great-grandfather Brister English on a slave schedule. His non-profit has helped over 200 families recover erased ancestry and maintains a waitlist of 5,000+ individuals. His own great-grandfather's Navy card listed his nationality as 'American.' The census said 'Negro.' The difference between those two words is the history this encyclopedia documents. The Brister English Project is named in honor of the ancestor whose name survived on a single document."
   },
+  {
+    name: "Lee McQueen",
+    years: "Contemporary",
+    heritage: "Community researcher and independent author (self-described heritage in supplied works)",
+    role: "Independent Researcher, Educator, and Author",
+    connection: "McQueen’s supplied essays, legal advocacy materials, and image collection are credited in the Sources & Claims Index as Tier 3 community research. Her work raises research leads concerning family records, classification, Elaine, and reparations. The Archive treats her Atlantic, Richat, and universal-origin propositions as attributed theory rather than established history, and separately verifies any historical lead before publication. No portrait is displayed because this public archive entry has not been supplied with a verified, permission-cleared image."
+  },
 ];
 
 export interface TimelineEvent {
@@ -1154,12 +1161,16 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
   { year: 1900, event: "North Carolina Suffrage Amendment — the state adds literacy and poll-tax requirements to voting while temporarily exempting those eligible before January 1, 1867 and their lineal descendants from the educational test if registered by 1908. The text establishes statewide qualifications; local administration requires separate evidence. Source: North Carolina Digital Collections", era: 3, detailKey: "1900_north_carolina_suffrage" },
   { year: 1901, event: "Alabama Constitution of 1901 — the state constitutional voting framework used literacy, employment, and property qualifications. The Alabama Department of Archives and History preserves the original 61-page document and identifies those restrictions. Source: Alabama Department of Archives and History", era: 3, detailKey: "1901_alabama_constitution" },
   { year: 1909, event: "NAACP founded by Du Bois, Wells, and others", era: 3 },
+  { year: 1919, event: "Elaine Massacre — violence followed a September 30 meeting of Black sharecroppers’ Progressive Farmers and Household Union in Phillips County, Arkansas. The number of Black people killed remains unresolved; historical estimates vary substantially. Source: Federal Judicial Center; Encyclopedia of Arkansas", era: 3, detailKey: "1919_elaine_massacre" },
+  { year: 1921, event: "1890 U.S. Census fire — a January 10 fire in the Commerce Department building damaged or destroyed most 1890 population schedules. Surviving fragments and special schedules remain, but the loss creates a documented genealogical gap. Source: U.S. Census Bureau; National Archives", era: 3, detailKey: "1921_1890_census_fire" },
   { year: 1921, event: "Tulsa Race Massacre — Greenwood District destroyed", era: 3 },
   { year: 1921, event: "Dyer Anti-Lynching Bill killed by Senate filibuster", era: 3 },
   { year: 1921, event: "Dyer Anti-Lynching Bill passes the House 230-119 — killed by Senate filibuster; federal government had the mechanism to stop lynching and chose not to use it", era: 3 },
+  { year: 1923, event: "Moore v. Dempsey — the Supreme Court holds that a state murder trial hurried to conviction under mob domination, without due process, is void; where state corrective process is insufficient, a federal court must examine the alleged facts. Source: 261 U.S. 86; Federal Judicial Center", era: 3, detailKey: "1923_moore_dempsey" },
   { year: 1924, event: "Indian Citizenship Act — Native Americans are granted U.S. citizenship for the first time, 56 years after the 14th Amendment granted citizenship to formerly enslaved people. Several states continue to bar Native Americans from voting until 1948. The people whose land was taken are the last to be recognized as citizens of the country built on it", era: 3 },
   { year: 1924, event: "Virginia Racial Integrity Act — the Commonwealth creates a restrictive legal classification regime for marriage and vital records, later used in a wider administrative system that harmed Black and Indigenous Virginians. A state classification is not evidence of a person’s ancestry or sovereign citizenship. Source: Virginia Acts of Assembly; Library of Virginia", era: 3, detailKey: "1924_racial_integrity" },
   { year: 1930, event: "Census instructions erase Black Indigenous identity", era: 3 },
+  { year: 1933, event: "1890 census disposal authorization — after limited salvage following the 1921 fire, Congress authorized disposal of the remaining unsalvageable 1890 schedules on February 21, 1933. The National Archives notes uncertainty about the final disposal date. Source: U.S. Census Bureau; National Archives Prologue", era: 3, detailKey: "1933_1890_census_disposal" },
   { year: 1934, event: "Indian Reorganization Act ends Dawes Act allotment", era: 3 },
   { year: 1935, event: "HOLC redlining maps — 'infiltration of Negro occupancy' explicitly listed as negative factor in neighborhood ratings", era: 3 },
   { year: 1942, event: "Bracero Program begins — 4.6 million Mexican workers exploited under conditions mirroring convict leasing", era: 3 },

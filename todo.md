@@ -141,3 +141,11 @@
 - [x] Add consistent year-range, region, evidence-tier, and verification-status filters to the public Sources & Claims Index.
 - [x] Verify and integrate one state Black Code local enforcement record with a primary or institutional source route, a jurisdiction-specific mechanism, and explicit limits.
 - [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the release.
+
+# Lee McQueen Corpus Intake and Source-Traceability Release
+
+- [x] Inventory every supplied Lee McQueen PDF, preserve authorship and publication metadata, and map each work’s stated subject, evidence type, and cited-source structure.
+- [x] Extract consequential claims and distinguish traceable primary or institutional records, scholarly interpretations, community historical traditions, and speculative or unverified propositions.
+- [x] Build a source-traceability coverage model so each public timeline record and source card displays a source route or an explicit evidence tier, attribution, and limitation.
+- [x] Integrate only attributable, evidence-limited findings and preserve author credit for works and claims represented in the encyclopedia.
+- [ ] Type-check, visually verify, checkpoint, and update the canonical roadmap after the research intake and traceability release.

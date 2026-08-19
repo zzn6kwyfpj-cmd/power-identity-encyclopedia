@@ -1,4 +1,4 @@
-// Royal Manuscript evidence index: a restrained archive interface that foregrounds provenance, scope, and limitation over visual spectacle.
+// Royal Archive design: ceremonial exhibit title wall, gold structural frames, green only for verified evidence, crimson for contested or harmful-history material, and archival pauses within long catalogues.
 
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
@@ -17,6 +17,13 @@ const controlStyle = {
   padding: "0 12px",
   width: "100%",
 } as const;
+
+const EXHIBIT_NOTES: Record<string, string> = {
+  "Census & Classification": "Administrative records that shape what can—and cannot—be seen in a family or population history.",
+  "Community Research & Theory": "Credited community scholarship preserved with attribution, evidence tier, and an explicit boundary between lead and established finding.",
+  "Racial Violence & Due Process": "Records of coercion, legal response, and the limits of historical accounting.",
+  "Treaty & Sovereignty": "Documents of nation-to-nation obligation, jurisdiction, and the federal record of change.",
+};
 
 export default function SourcesClaimsIndexPage() {
   const [query, setQuery] = useState("");
@@ -58,7 +65,8 @@ export default function SourcesClaimsIndexPage() {
       <Navigation />
       <main style={{ paddingTop: 102, paddingBottom: 88 }}>
         <div className="container" style={{ maxWidth: 1180 }}>
-          <header style={{ border: "1px solid rgba(212,175,55,0.38)", background: "linear-gradient(135deg, rgba(212,175,55,0.09), rgba(10,17,24,0.25) 45%, rgba(139,26,26,0.08))", padding: "30px", marginBottom: 30 }}>
+          <header style={{ border: "1px solid rgba(212,175,55,0.48)", background: "linear-gradient(135deg, rgba(212,175,55,0.11), rgba(10,17,24,0.25) 45%, rgba(139,26,26,0.10))", padding: "clamp(26px, 4vw, 46px)", marginBottom: 30, position: "relative", overflow: "hidden" }}>
+            <div aria-hidden="true" style={{ position: "absolute", top: 14, left: 18, right: 18, display: "flex", alignItems: "center", gap: 10, color: "#d4af37", opacity: 0.64 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.32em" }}>EVIDENCE EXHIBITION</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>
             <div className="flex flex-col gap-7 md:flex-row md:items-center">
               <div aria-hidden="true" style={{ width: 86, height: 86, borderRadius: "50%", border: "2px solid #d4af37", boxShadow: "0 0 0 5px rgba(212,175,55,0.08), inset 0 0 22px rgba(212,175,55,0.12)", color: "#d4af37", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                 <span style={{ fontFamily: "Cinzel, serif", fontSize: 22 }}>✦</span>
@@ -69,13 +77,13 @@ export default function SourcesClaimsIndexPage() {
                 <h1 style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.06, margin: 0 }}>Inspect the evidence trail.</h1>
                 <div style={{ width: 160, borderTop: "1px solid #d4af37", marginTop: 18, marginBottom: 17 }} />
                 <p style={{ color: "#c4cedb", fontFamily: "Cormorant Garamond, serif", fontSize: "1.28rem", lineHeight: 1.65, margin: 0, maxWidth: 730 }}>
-                  This initial index makes the evidence structure inspectable: each record states what it establishes, what it does not establish, its source route, and its related chapter. It currently covers the verified legal-record registry and the complete 24-work colonial sourcebook—not the entire bibliography.
+                  Enter a reading room rather than a database: every plate distinguishes the documentary record, its verification route, and the boundary of what the record can support. The index grows by evidence release; it is not a claim that every source in the wider bibliography has yet been normalized.
                 </p>
               </div>
               <aside style={{ borderLeft: "1px solid rgba(212,175,55,0.55)", paddingLeft: 21, minWidth: 220 }}>
                 <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.22em" }}>CURRENT INDEX SCOPE</div>
-                <div style={{ color: "#f0e3bc", fontFamily: "Cormorant Garamond, serif", fontSize: "1.65rem", marginTop: 8 }}>{SOURCES_CLAIMS_INDEX.length} traceable records</div>
-                <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", lineHeight: 1.45, marginTop: 6 }}>Primary legal instruments, court decisions, public facsimiles, and colonial editions.</div>
+                <div style={{ color: "#f0e3bc", fontFamily: "Cormorant Garamond, serif", fontSize: "1.65rem", marginTop: 8 }}>{SOURCES_CLAIMS_INDEX.length} catalogue records</div>
+                <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", lineHeight: 1.45, marginTop: 6 }}>Source routes, court decisions, public facsimiles, and author-attributed community research.</div>
               </aside>
             </div>
           </header>
@@ -137,41 +145,48 @@ export default function SourcesClaimsIndexPage() {
 
           <section className="grid gap-10" aria-live="polite">
             {Object.entries(groupedResults).map(([group, items], groupIndex) => (
-              <div key={group}>
+                <div key={group}>
                 <div className="flex items-center gap-4" style={{ marginBottom: 16 }}>
                   <div style={{ width: 42, height: 42, border: "1px solid #d4af37", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{String(groupIndex + 1).padStart(2, "0")}</div>
                   <div className="min-w-0 flex-1">
                     <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.23em", marginBottom: 5 }}>ARCHIVE SECTION</div>
                     <div style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: "1.15rem", letterSpacing: "0.08em" }}>{group.toUpperCase()}</div>
+                    <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", fontStyle: "italic", marginTop: 5 }}>{EXHIBIT_NOTES[group] ?? "A curated sequence of source routes, claims, and documented limits."}</div>
                   </div>
                   <div style={{ color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>{items.length} RECORD{items.length === 1 ? "" : "S"}</div>
                 </div>
                 <div style={{ borderTop: "1px solid rgba(212,175,55,0.38)", marginBottom: 14 }} />
                 <div className="grid gap-4">
-                  {items.map((item) => (
-              <article key={item.id} style={{ background: "#0d1721", border: "1px solid rgba(212,175,55,0.2)", borderLeft: "3px solid #d4af37", padding: "22px" }}>
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-2" style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>
-                  <span style={{ color: "#4ade80", border: "1px solid rgba(74,222,128,0.45)", padding: "3px 6px" }}>{item.tier.toUpperCase()}</span><span>•</span><span>{item.yearLabel}</span><span>•</span><span>{item.sourceType.toUpperCase()}</span><span>•</span><span>{item.topic.toUpperCase()}</span>
-                </div>
-                <h2 style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: "1.1rem", lineHeight: 1.45, marginTop: 10, marginBottom: 8 }}>{item.title}</h2>
-                <p style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", margin: 0 }}>{item.region} · {item.verification}</p>
-                <div className="grid gap-4 md:grid-cols-2" style={{ marginTop: 17 }}>
-                  <div>
-                    <div style={{ color: "#4ade80", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.15em", marginBottom: 7 }}>WHAT THIS RECORD ESTABLISHES</div>
-                    <p style={{ color: "#d6dee8", fontFamily: "Cormorant Garamond, serif", fontSize: "1.08rem", lineHeight: 1.55, margin: 0 }}>{item.establishes}</p>
-                  </div>
-                  <div>
-                    <div style={{ color: "#f87171", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.15em", marginBottom: 7 }}>DOCUMENTED LIMIT</div>
-                    <p style={{ color: "#d6dee8", fontFamily: "Cormorant Garamond, serif", fontSize: "1.08rem", lineHeight: 1.55, margin: 0 }}>{item.limitation}</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-2" style={{ borderTop: "1px solid rgba(148,163,184,0.14)", marginTop: 18, paddingTop: 14 }}>
-                  <span style={{ color: "#64748b", fontFamily: "Cormorant Garamond, serif", fontSize: "0.95rem" }}>{item.citation}</span>
-                  {item.sourceUrl && <a href={item.sourceUrl} target="_blank" rel="noreferrer" style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.12em", textDecoration: "none" }}>OPEN SOURCE RECORD ↗</a>}
-                  <Link href={`/chapter/${item.chapterSlug}`}><span style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.12em", cursor: "pointer" }}>RELATED CHAPTER →</span></Link>
-                </div>
-              </article>
-                  ))}
+                  {items.map((item, index) => {
+                    const tierTone = item.tier.startsWith("Tier 1") ? "#4ade80" : item.tier.startsWith("Tier 3") ? "#c2414b" : "#d4af37";
+                    const harmfulTone = item.topic === "Racial Violence & Due Process" ? "#8b1a1a" : "#d4af37";
+                    return <div key={item.id}>
+                      <article style={{ background: "#0d1721", border: "1px solid rgba(212,175,55,0.2)", borderLeft: `4px solid ${harmfulTone}`, padding: "22px", position: "relative" }}>
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-2" style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>
+                          <span style={{ color: tierTone, border: `1px solid ${tierTone}80`, padding: "3px 6px" }}>{item.tier.toUpperCase()}</span><span>•</span><span>{item.yearLabel}</span><span>•</span><span>{item.sourceType.toUpperCase()}</span>
+                        </div>
+                        <div style={{ color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em", marginTop: 13 }}>CATALOGUE RECORD · {item.topic.toUpperCase()}</div>
+                        <h2 style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: "1.1rem", lineHeight: 1.45, marginTop: 7, marginBottom: 8 }}>{item.title}</h2>
+                        <p style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", margin: 0 }}>{item.region} · {item.verification}</p>
+                        <div className="grid gap-4 md:grid-cols-2" style={{ marginTop: 17 }}>
+                          <div>
+                            <div style={{ color: tierTone, fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.15em", marginBottom: 7 }}>WHAT THIS RECORD ESTABLISHES</div>
+                            <p style={{ color: "#d6dee8", fontFamily: "Cormorant Garamond, serif", fontSize: "1.08rem", lineHeight: 1.55, margin: 0 }}>{item.establishes}</p>
+                          </div>
+                          <div>
+                            <div style={{ color: "#f87171", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.15em", marginBottom: 7 }}>DOCUMENTED LIMIT</div>
+                            <p style={{ color: "#d6dee8", fontFamily: "Cormorant Garamond, serif", fontSize: "1.08rem", lineHeight: 1.55, margin: 0 }}>{item.limitation}</p>
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap items-center gap-x-5 gap-y-2" style={{ borderTop: "1px solid rgba(148,163,184,0.14)", marginTop: 18, paddingTop: 14 }}>
+                          <span style={{ color: "#64748b", fontFamily: "Cormorant Garamond, serif", fontSize: "0.95rem" }}>{item.citation}</span>
+                          {item.sourceUrl && <a href={item.sourceUrl} target="_blank" rel="noreferrer" style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.12em", textDecoration: "none" }}>OPEN SOURCE RECORD ↗</a>}
+                          <Link href={`/chapter/${item.chapterSlug}`}><span style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.12em", cursor: "pointer" }}>RELATED CHAPTER →</span></Link>
+                        </div>
+                      </article>
+                      {(index + 1) % 4 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ display: "flex", alignItems: "center", gap: 10, margin: "18px 0", color: "#d4af37", opacity: 0.55 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontSize: 12 }}>✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                    </div>;
+                  })}
                 </div>
               </div>
             ))}
