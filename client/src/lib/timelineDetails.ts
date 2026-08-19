@@ -33,10 +33,24 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "captivity-classification-colonial-law",
     chapterTitle: "Captivity, Classification, and Colonial Law",
   },
+  "1894_louisiana_act_54_marriage": {
+    description: "Louisiana Act No. 54, approved July 5, 1894, amended and re-enacted Civil Code Article 94. The session-law text prohibited marriage between white persons and persons of color, forbade the celebration of such marriages, and declared the celebrations null and void. This establishes a specific state marriage restriction in the act’s stated context. It does not establish an individual’s ancestry, prove a particular marriage outcome or uniform enforcement, or define a general classification rule beyond this provision.",
+    keyFact: "Act No. 54 linked a marriage prohibition, a restriction on officiation, and a nullity consequence within one 1894 Louisiana Civil Code amendment.",
+    primarySource: "Acts Passed by the General Assembly of the State of Louisiana (1894), Act No. 54, p. 63; Law Library of Louisiana / HathiTrust scan",
+    chapterSlug: "captivity-classification-colonial-law",
+    chapterTitle: "Captivity, Classification, and Colonial Law",
+  },
   "1901_alabama_constitution_marriage": {
     description: "Article IV, §102 of Alabama’s 1901 constitution stated that the legislature could never authorize or legalize marriage between a White person and a person the provision called a ‘negro, or descendant of a negro.’ The text establishes a particular constitutional restriction on the state’s marriage-law authority. It does not prove an individual’s ancestry, demonstrate actual enforcement in every case, or define a uniform classification rule across places or decades. Voters removed the provision through Amendment 667 in 2000.",
     keyFact: "Article IV, §102 was a specific constitutional marriage restriction, distinct from the 1901 constitution’s suffrage provisions and later removed by Amendment 667.",
     primarySource: "Constitution of Alabama (1901), Article IV, §102; Alabama Department of Archives and History digital collection",
+    chapterSlug: "captivity-classification-colonial-law",
+    chapterTitle: "Captivity, Classification, and Colonial Law",
+  },
+  "1907_oklahoma_constitution_definition_of_races": {
+    description: "Article XXIII, §11 of Oklahoma’s 1907 constitution, historically headed ‘Definition of Races,’ stated that the terms ‘colored’ or ‘negro’ in the constitution or state laws applied to all persons of African descent and that ‘white race’ included all other persons. The provision establishes a historic state constitutional interpretation rule for specified terms. It does not establish an individual’s ancestry, Nation affiliation, citizenship, lived identity, or a uniform classification rule in another jurisdiction or time. Oklahoma repealed the provision in 1978.",
+    keyFact: "The 1907 provision was a state constitutional construction rule for specified legal terms; its 1978 repeal does not erase the historic record or turn it into evidence about any individual.",
+    primarySource: "Oklahoma Constitution (1907), Article XXIII, §11, printed p. 99; Oklahoma Historical Society original manuscript scan",
     chapterSlug: "captivity-classification-colonial-law",
     chapterTitle: "Captivity, Classification, and Colonial Law",
   },
@@ -189,6 +203,13 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     primarySource: "Virginia General Assembly, An Act Declaring Who Shall Not Bear Office in This Country, ch. IV, 3 Hening 250–52 (Oct. 1705); Encyclopedia Virginia transcription",
     chapterSlug: "captivity-classification-colonial-law",
     chapterTitle: "Captivity, Classification, and Colonial Law",
+  },
+  "1772_tom_surry_advertisement": {
+    description: "A December 3, 1772 Virginia Gazette notice stated that a man who said his name was Tom had been committed to the Surry County jail, said he belonged to Benjamin Clements of Sussex, and ‘appears to be of the Indian Breed.’ The notice was signed by Drury Warren and identified marks on Tom’s cheeks. It documents an imposed description within a coercive jail and enslavement context. It does not establish Tom’s ancestry, Nation affiliation, self-identification, citizenship, kinship, or a general meaning of ‘Indian Breed’ across Virginia or other jurisdictions.",
+    keyFact: "The recovered record documents one 1772 jail notice’s language about Tom; it cannot convert an imposed colonial description into an ancestry or citizenship conclusion.",
+    primarySource: "Virginia Gazette (Purdie & Dixon), Dec. 3, 1772; University of Virginia, Geography of Slavery in Virginia, record v1772120786",
+    chapterSlug: "black-native-identity",
+    chapterTitle: "Black Native American Identity: The Suppressed History",
   },
   "1774_wheatley_occom": {
     description: "Phillis Wheatley’s letter dated February 11, 1774 to the Mohegan Presbyterian minister Samson Occom expressed approval of his reasons ‘in Vindication of’ Black people’s natural rights and challenged the contradiction between a cry for liberty and oppressive power over others. The text was printed in the Connecticut Gazette on March 11 and, in another documented printing, in the Connecticut Journal on April 1. These records document a specific antislavery and natural-rights correspondence. They do not establish Wheatley’s Indigenous identity, an enduring personal alliance beyond the surviving correspondence, or a general Black–Native political program.",

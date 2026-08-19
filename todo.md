@@ -175,7 +175,7 @@
 - [x] Secure lawful, edition-specific access to Jack D. Forbes’s *Africans and Native Americans* and Kyle T. Mays’s *An Afro-Indigenous History of the United States*; create separate source-critical intake ledgers before any public integration.
 - [x] Verify the supplied Kyle T. Mays PDF against the identified edition; extract its chapter structure, pages, cited primary-record leads, scholarly arguments, and limitation notes into a source-critical intake ledger before proposing any integration.
 - [x] Inventory the supplied Are.na block `15107788`, preserve its creator, item links, media, and stated context as platform provenance, and verify any consequential claim through its underlying source before considering public use.
-- [ ] Verify exact statutory text, jurisdiction, dates, and enforcement limits for the remaining deferred Tennessee, Louisiana, and Oklahoma classification-law records; integrate only records with stable primary or institutional routes.
+- [ ] Verify exact statutory text, jurisdiction, dates, and enforcement limits for the remaining deferred Tennessee classification-law record; Louisiana and Oklahoma are integrated only at their verified, jurisdiction-specific scope.
 - [x] Expand nation-specific Indigenous sourcing beyond Oneida and Eastern Pequot through nation-authored or authorized public records, preserving consultation-sensitive language and prohibiting universalization.
 - [x] Draft the community-submission moderation, provenance, privacy, review-state, correction, and publication-tier specification before building a public submission hub.
 - [x] Reassess deferred TikTok leads only when complete citations, page images, repository routes, or specific record identifiers become available; retain unsupported and refuted claims as excluded.
@@ -183,7 +183,16 @@
 # Next Three Evidence Tasks and Editorial Recalibration
 
 - [x] Verify and integrate Alabama Constitution of 1901, Article IV, §102 from the Alabama Department of Archives and History primary scan, with source-visible scope, enforcement path, repeal note, and limitation.
-- [ ] Recover official primary text or institutional facsimiles for the remaining Tennessee, Louisiana, and Oklahoma classification-law leads; add only records whose wording, jurisdiction, date, mechanism, and limit can be independently verified.
-- [x] Complete the first prioritized underlying-record checks: independently verify the Wheatley–Occom correspondence and Virginia’s October 1705 office-holding act; integrate only bounded Tier 1 entries. Preserve the Forbes runaway-advertisement terminology cluster as deferred because no matching, fully contextualized primary advertisement was recovered.
+- [ ] Recover an official Tennessee primary-text page or authenticated institutional transcription; Louisiana Act No. 54 (1894) and Oklahoma Constitution Article XXIII, §11 (1907) are now integrated only with their verified text, scope, source routes, and limits.
+- [x] Complete the first prioritized underlying-record checks: independently verify the Wheatley–Occom correspondence, Virginia’s October 1705 office-holding act, and a single 1772 Virginia Gazette jail notice concerning Tom. Preserve the wider Forbes runaway-advertisement terminology cluster as deferred beyond that one contextualized record.
 - [x] Run a private, non-sensitive governance dry run against the community-submission moderation and provenance specification; document review states, privacy handling, decisions, and the implementation controls still required before any public form.
 - [x] Audit and revise legacy landing-page, navigation, chapter-summary, and recurring editorial language so the site reflects its expanded national and diaspora scope, preserves Cartersville and regional context as bounded case studies, and maintains a source-critical non-partisan tone.
+
+# Continuing Evidence Recovery Queue
+
+- [x] Recover Louisiana 1894 Act No. 54 and Oklahoma 1907 Article XXIII, §11 through readable institutional primary-text routes; integrate only their verified wording, jurisdiction, mechanism, repeal context where applicable, and stated limits. Tennessee remains deferred.
+- [x] Identify a named Forbes-cluster candidate through the University of Virginia’s institutional runaway-advertisement database; integrate the Tom record as an imposed description in a coercive context, not as ancestry or Nation evidence.
+- [ ] Recover an original newspaper page-and-column locator for the Tom notice if a public image route becomes available; its existing institutional transcription is sufficient only for the current, narrow source card.
+- [x] Add only records that satisfy the archive’s legal and evidence-card requirements; preserve incomplete, contradictory, or unlocated leads—including Tennessee’s wording and the broader Forbes cluster—as documented deferrals.
+- [x] Type-check, visually validate, and update research ledgers and the canonical roadmap for the resulting evidence release.
+- [ ] Save the release checkpoint and report the completed work with the remaining Tennessee and source-locator priorities.

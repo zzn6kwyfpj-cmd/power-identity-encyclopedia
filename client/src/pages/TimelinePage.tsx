@@ -7,7 +7,7 @@ import { TIMELINE_DETAILS } from "@/lib/timelineDetails";
 import { LEGAL_RECORDS } from "@/lib/legalRecordMetadata";
 import { Search, Share2, Filter, ChevronDown, ChevronUp, BookOpen, X } from "lucide-react";
 
-// Royal Archive design: exhibit-title wall, institutional seals and gold rules as recurring archive grammar, contextual era plates, featured room-opening records, and restrained pauses before supporting entries. Green remains evidence-specific; crimson remains conflict-specific.
+// Royal Archive design: ceremonial title walls, institutional seals, contextual era plates, featured room-opening records, and generous archival pauses prevent a continuous card wall. Green remains evidence-specific; crimson remains conflict-specific.
 
 // Categorize each event for filtering
 const EVENT_CATEGORIES: Record<string, string> = {
@@ -215,7 +215,7 @@ export default function TimelinePage() {
               <div aria-hidden="true" style={{ width: 84, height: 84, border: "2px solid #d4af37", borderRadius: "50%", boxShadow: "0 0 0 6px rgba(212,175,55,0.07), inset 0 0 24px rgba(212,175,55,0.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 26, flexShrink: 0 }}>✦</div>
               <div className="min-w-0 flex-1">
                 <div style={{ color: "#d4af37", fontSize: 10, letterSpacing: "0.34em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>APPENDIX B · RECORDS IN SEQUENCE</div>
-                <h1 style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: "clamp(2rem, 4vw, 3.45rem)", lineHeight: 1.06, margin: 0 }}>Master Chronological Timeline</h1>
+                <h1 style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: "clamp(2.35rem, 5vw, 4.35rem)", letterSpacing: "0.015em", lineHeight: 1.01, margin: 0 }}>Master Chronological Timeline</h1>
                 <div style={{ width: 170, borderTop: "1px solid #d4af37", marginTop: 17, marginBottom: 13 }} />
                 <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#c4cedb", fontSize: "1.2rem", maxWidth: 680, lineHeight: 1.55, margin: 0 }}>
                   850 CE to 2024: a documented sequence of law, resistance, classification, and consequence. Open a record to examine its source and its limit.
@@ -361,7 +361,7 @@ export default function TimelinePage() {
                 return (
                   <>
                   {showEraBanner && (
-                    <div style={{ marginLeft: -48, marginBottom: 32, marginTop: i > 0 ? 58 : 0, position: "relative", overflow: "hidden", height: 276, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80`, boxShadow: `0 22px 38px ${eraColors[event.era - 1]}12` }}>
+                    <div style={{ marginLeft: -48, marginBottom: 38, marginTop: i > 0 ? 74 : 0, position: "relative", overflow: "hidden", minHeight: 332, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80`, boxShadow: `0 24px 44px ${eraColors[event.era - 1]}16` }}>
                       <img
                         src={eraBanners[event.era - 1]}
                         alt={`Era ${event.era}`}
@@ -375,8 +375,8 @@ export default function TimelinePage() {
                           </div>
                           <div>
                             <div style={{ fontFamily: "Cinzel, serif", color: eraColors[event.era - 1], fontSize: 10, letterSpacing: "0.3em", marginBottom: 8 }}>CURATED GALLERY · ERA {["I","II","III","IV","V"][event.era - 1]}</div>
-                            <div style={{ fontFamily: "Cinzel, serif", color: "#e2e8f0", fontSize: "clamp(1.05rem, 2vw, 1.45rem)", marginBottom: 8 }}>{ERAS[event.era - 1]?.name}</div>
-                            <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", fontStyle: "italic" }}>✦ — archival records, law, resistance, and consequence — ✦</div>
+                            <div style={{ fontFamily: "Cinzel, serif", color: "#f0e3bc", fontSize: "clamp(1.35rem, 2.45vw, 2.15rem)", lineHeight: 1.23, marginBottom: 11 }}>{ERAS[event.era - 1]?.name}</div>
+                            <div style={{ color: "#c4cedb", fontFamily: "Cormorant Garamond, serif", fontSize: "1.14rem", lineHeight: 1.45, fontStyle: "italic", maxWidth: 630 }}>✦ — archival records, law, resistance, and consequence — ✦</div>
                           </div>
                         </div>
                         <div aria-hidden="true" style={{ position: "absolute", right: 25, bottom: 16, color: "#c4cedb", fontFamily: "Cinzel, serif", fontSize: 7, letterSpacing: "0.16em", opacity: 0.78 }}>CONTEXT PLATE · PERIOD TRANSITION · NOT EVIDENCE</div>
@@ -421,8 +421,8 @@ export default function TimelinePage() {
                               ERA {["I","II","III","IV","V"][event.era - 1]}
                             </span>
                           </div>
-                          <h2 style={{ color: "#f0e3bc", fontFamily: "Cinzel, serif", fontSize: isEraLead ? "1.46rem" : "1.13rem", lineHeight: 1.35, margin: "0 0 9px" }}>{recordTitle}</h2>
-                          {recordAbstract && <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#b8c4d2", fontSize: isEraLead ? "1.16rem" : "1.04rem", lineHeight: 1.62, margin: 0, maxWidth: isEraLead ? 940 : undefined }}>{recordAbstract}</p>}
+                          <h2 style={{ color: "#f0e3bc", fontFamily: "Cinzel, serif", fontSize: isEraLead ? "1.68rem" : "1.22rem", lineHeight: 1.3, margin: "0 0 10px" }}>{recordTitle}</h2>
+                          {recordAbstract && <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#c4cedb", fontSize: isEraLead ? "1.24rem" : "1.1rem", lineHeight: 1.68, margin: 0, maxWidth: isEraLead ? 940 : undefined }}>{recordAbstract}</p>}
                         </div>
 
                         {/* Action buttons */}

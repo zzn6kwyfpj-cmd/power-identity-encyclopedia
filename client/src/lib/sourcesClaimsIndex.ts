@@ -32,7 +32,7 @@ function legalTopic(recordKey: string) {
   if (recordKey.includes("freedmens") || recordKey.includes("field_order") || recordKey.includes("land_restoration")) {
     return { topic: "Freedmen’s Bureau & Land", chapterSlug: "freedmens-bureau" };
   }
-  if (/north_carolina_persons_of_color|mississippi_marriage|georgia_persons_of_color|1901_alabama_constitution_marriage/.test(recordKey)) {
+  if (/north_carolina_persons_of_color|mississippi_marriage|1894_louisiana_act_54_marriage|georgia_persons_of_color|1901_alabama_constitution_marriage|1907_oklahoma_constitution_definition_of_races/.test(recordKey)) {
     return { topic: "Classification & State Law", chapterSlug: "captivity-classification-colonial-law" };
   }
   if (
@@ -355,6 +355,25 @@ const wheatleyOccomEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
+const tom1772AdvertisementEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "1772-tom-surry-county-jail-advertisement",
+    yearLabel: "1772",
+    sortYear: 1772,
+    title: "Tom: Surry County jail advertisement and imposed ‘Indian Breed’ description",
+    tier: "Tier 1 — Primary record",
+    topic: "Colonial Classification & Captivity",
+    region: "Surry and Sussex Counties, Virginia",
+    sourceType: "Newspaper advertisement / jail notice",
+    verification: "Institutional record",
+    establishes: "A December 3, 1772 Virginia Gazette jail notice reported that a man who said his name was Tom had been committed in Surry County, said he belonged to Benjamin Clements of Sussex, and ‘appears to be of the Indian Breed.’",
+    limitation: "The notice records an imposed description in a coercive jail and enslavement context. It does not establish Tom’s ancestry, Nation affiliation, self-identification, citizenship, kinship, or a general meaning of ‘Indian Breed’ across Virginia or elsewhere.",
+    citation: "Virginia Gazette (Purdie & Dixon), Williamsburg, Dec. 3, 1772; University of Virginia, Geography of Slavery in Virginia, record v1772120786",
+    sourceUrl: "http://www2.vcdh.virginia.edu/saxon/servlet/SaxonServlet?source=/xml_docs/slavery/ads/rg72.xml&style=/xml_docs/slavery/ads/display_ad.xsl&ad=v1772120786",
+    chapterSlug: "black-native-identity",
+  },
+];
+
 const a00EvidenceItems: SourceClaimIndexItem[] = [
   {
     id: "mendez-2013-a00-y-chromosome",
@@ -441,7 +460,7 @@ const tiktokHistoryVerifiedEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
-export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...wheatleyOccomEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
+export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...wheatleyOccomEvidenceItems, ...tom1772AdvertisementEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
   (a, b) => a.sortYear - b.sortYear || a.title.localeCompare(b.title),
 );
 

@@ -60,3 +60,6 @@
 - Timeline and source-index sequences must alternate a ceremonial room opening, a featured lead record, supporting records, and a restrained ornamental pause; no long catalogue route should read as a uniform wall of cards.
 - The institutional seal, antique-gold rulework, and ✦ archive dividers are recurring navigation grammar across chapter, timeline, and source-index routes.
 - Archival imagery appears only as a distinct contextual exhibit plate with a period caption and generous space; it is never repeated as decorative wallpaper or a generic record thumbnail.
+- Supporting evidence records resolve into paired catalogue bays on desktop after a full-width curatorial lead, producing a more legible gallery rhythm without weakening the documented-limit hierarchy.
+- Titles, era plates, and source-room headings use a distinctly larger Cinzel scale than record metadata; body copy remains literary and legible at a confident reading size.
+- Global error and unavailable states use a formal Royal Archive catalogue notice with midnight ink, antique-gold rulework, an institutional seal, and a scholarly recovery path.

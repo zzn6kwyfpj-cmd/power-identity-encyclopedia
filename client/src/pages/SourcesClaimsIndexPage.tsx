@@ -6,6 +6,8 @@ import { SOURCE_INDEX_FILTERS, SOURCES_CLAIMS_INDEX } from "@/lib/sourcesClaimsI
 import { Link } from "wouter";
 import { useMemo, useState } from "react";
 
+// Royal Archive design: the source index is a sequence of ceremonial rooms and catalogue bays, with a lead record spanning the gallery and supporting records read in paired bays on desktop.
+
 const controlStyle = {
   background: "#0f1923",
   border: "1px solid rgba(212,175,55,0.28)",
@@ -74,7 +76,7 @@ export default function SourcesClaimsIndexPage() {
               </div>
               <div className="min-w-0 flex-1">
                 <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.34em", marginBottom: 13 }}>CATALOGUE PLATE I · SOURCE & CLAIMS INDEX</div>
-                <h1 style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.06, margin: 0 }}>Inspect the evidence trail.</h1>
+                <h1 style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: "clamp(2.35rem, 5vw, 4.45rem)", letterSpacing: "0.015em", lineHeight: 1.02, margin: 0 }}>Inspect the evidence trail.</h1>
                 <div style={{ width: 160, borderTop: "1px solid #d4af37", marginTop: 18, marginBottom: 17 }} />
                 <p style={{ color: "#c4cedb", fontFamily: "Cormorant Garamond, serif", fontSize: "1.28rem", lineHeight: 1.65, margin: 0, maxWidth: 730 }}>
                   Enter a reading room rather than a database: every plate distinguishes the documentary record, its verification route, and the boundary of what the record can support. The index grows by evidence release; it is not a claim that every source in the wider bibliography has yet been normalized.
@@ -166,28 +168,28 @@ export default function SourcesClaimsIndexPage() {
                   </div>
                   <div style={{ color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>{items.length} RECORD{items.length === 1 ? "" : "S"}</div>
                 </div>
-                <div className="grid gap-5">
+                <div className="grid gap-5 md:grid-cols-2">
                   {items.map((item, index) => {
                     const tierTone = item.tier.startsWith("Tier 1") ? "#4ade80" : item.tier.startsWith("Tier 3") ? "#c2414b" : "#d4af37";
                     const harmfulTone = item.topic === "Racial Violence & Due Process" ? "#8b1a1a" : "#d4af37";
                     const isLeadRecord = index === 0;
                     return <div key={item.id} style={isLeadRecord ? { gridColumn: "1 / -1" } : undefined}>
-                      <article style={{ background: isLeadRecord ? "linear-gradient(115deg, rgba(212,175,55,0.14), #14212c 42%, #0d1721 78%)" : "#0d1721", border: `1px solid ${isLeadRecord ? "rgba(212,175,55,0.62)" : "rgba(212,175,55,0.2)"}`, borderLeft: `${isLeadRecord ? 6 : 5}px solid ${harmfulTone}`, padding: isLeadRecord ? "32px" : "22px", position: "relative", boxShadow: isLeadRecord ? "0 22px 34px rgba(0,0,0,0.18)" : "none" }}>
+                      <article style={{ background: isLeadRecord ? "linear-gradient(115deg, rgba(212,175,55,0.14), #14212c 42%, #0d1721 78%)" : "linear-gradient(150deg, #101b27, #0d1721 72%)", border: `1px solid ${isLeadRecord ? "rgba(212,175,55,0.62)" : "rgba(212,175,55,0.24)"}`, borderLeft: `${isLeadRecord ? 6 : 5}px solid ${harmfulTone}`, padding: isLeadRecord ? "34px" : "26px", position: "relative", boxShadow: isLeadRecord ? "0 22px 34px rgba(0,0,0,0.18)" : "none", minHeight: isLeadRecord ? undefined : 320 }}>
                         {isLeadRecord && <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#d4af37", marginBottom: 18 }}><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.60)" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.19em" }}>✦ FEATURED EVIDENCE RECORD ✦</span><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.60)" }} /></div>}
                         <div className="flex flex-wrap items-center gap-x-3 gap-y-2" style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>
                           <span style={{ color: tierTone, border: `1px solid ${tierTone}80`, padding: "3px 6px" }}>{item.tier.toUpperCase()}</span><span>•</span><span>{item.yearLabel}</span><span>•</span><span>{item.sourceType.toUpperCase()}</span>
                         </div>
                         <div style={{ color: isLeadRecord ? "#d4af37" : "#64748b", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em", marginTop: 13 }}>{isLeadRecord ? "CURATORIAL LEAD · " : "CATALOGUE RECORD · "}{item.topic.toUpperCase()}</div>
-                        <h2 style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: isLeadRecord ? "1.55rem" : "1.1rem", lineHeight: 1.35, marginTop: 7, marginBottom: 8 }}>{item.title}</h2>
-                        <p style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", margin: 0 }}>{item.region} · {item.verification}</p>
+                        <h2 style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: isLeadRecord ? "1.78rem" : "1.25rem", lineHeight: 1.3, marginTop: 8, marginBottom: 10 }}>{item.title}</h2>
+                        <p style={{ color: "#aebbc9", fontFamily: "Cormorant Garamond, serif", fontSize: "1.08rem", lineHeight: 1.35, margin: 0 }}>{item.region} · {item.verification}</p>
                         <div className="grid gap-4 md:grid-cols-2" style={{ marginTop: 17 }}>
                           <div>
                             <div style={{ color: tierTone, fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.15em", marginBottom: 7 }}>WHAT THIS RECORD ESTABLISHES</div>
-                            <p style={{ color: "#d6dee8", fontFamily: "Cormorant Garamond, serif", fontSize: "1.08rem", lineHeight: 1.55, margin: 0 }}>{item.establishes}</p>
+                            <p style={{ color: "#d6dee8", fontFamily: "Cormorant Garamond, serif", fontSize: "1.14rem", lineHeight: 1.6, margin: 0 }}>{item.establishes}</p>
                           </div>
                           <div>
                             <div style={{ color: "#f87171", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.15em", marginBottom: 7 }}>DOCUMENTED LIMIT</div>
-                            <p style={{ color: "#d6dee8", fontFamily: "Cormorant Garamond, serif", fontSize: "1.08rem", lineHeight: 1.55, margin: 0 }}>{item.limitation}</p>
+                            <p style={{ color: "#d6dee8", fontFamily: "Cormorant Garamond, serif", fontSize: "1.14rem", lineHeight: 1.6, margin: 0 }}>{item.limitation}</p>
                           </div>
                         </div>
                         <div className="flex flex-wrap items-center gap-x-5 gap-y-2" style={{ borderTop: "1px solid rgba(148,163,184,0.14)", marginTop: 18, paddingTop: 14 }}>

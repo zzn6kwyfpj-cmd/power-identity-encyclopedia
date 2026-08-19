@@ -95,6 +95,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     documentedLimit: "The provision establishes a marriage-law classification rule as written; it does not prove an individual’s ancestry, define every Mississippi legal category, establish uniform enforcement, or demonstrate a single statewide rule across legal settings.",
     sourceUrl: "http://www.mshistorynow.mdah.ms.gov/issue/mississippi-constitution-of-1890-as-originally-adopted"
   },
+  "1894_louisiana_act_54_marriage": {
+    recordType: "Statute",
+    jurisdiction: "State of Louisiana",
+    citation: "Act No. 54, Acts Passed by the General Assembly of the State of Louisiana, p. 63 (July 5, 1894)",
+    mechanism: "Amended and re-enacted Civil Code Article 94 to prohibit marriage between white persons and persons of color, forbid celebration of such marriages, and declare them null and void.",
+    enforcementPath: "State marriage law, officiants, local marriage-license administration, courts, and related civil-status processes.",
+    documentedLimit: "The act establishes a particular Louisiana marriage restriction. It does not prove an individual’s ancestry, establish a particular marriage outcome or uniform enforcement, or define a classification rule beyond this provision.",
+    sourceUrl: "https://babel.hathitrust.org/cgi/pt?id=osu.32437123304632&seq=69&q1=marriage&start=1"
+  },
   "1924_virginia_racial_integrity": {
     recordType: "Statute",
     jurisdiction: "Commonwealth of Virginia",
@@ -283,6 +292,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     enforcementPath: "State marriage law, local marriage-license administration, courts, and related civil-status processes. Removed by Amendment 667 approved by voters in 2000.",
     documentedLimit: "The provision establishes a specific Alabama constitutional marriage restriction; it does not prove an individual’s ancestry, demonstrate actual enforcement in every case, or define a uniform classification rule across jurisdictions or decades.",
     sourceUrl: "https://digital.archives.alabama.gov/digital/collection/constitutions/id/112/"
+  },
+  "1907_oklahoma_constitution_definition_of_races": {
+    recordType: "Constitution",
+    jurisdiction: "State of Oklahoma",
+    citation: "Oklahoma Constitution (1907), Article XXIII, §11, ‘Definition of Races’ (repealed 1978)",
+    mechanism: "Provided that ‘colored’ or ‘negro’ terms in the constitution or state laws applied to persons of African descent, and that ‘white race’ included all other persons.",
+    enforcementPath: "Constitutional and statutory construction in state and local administration, courts, and other legal processes using the specified terms.",
+    documentedLimit: "The provision establishes a historic Oklahoma interpretation rule for specified terms. It does not establish an individual’s ancestry, Nation affiliation, citizenship, lived identity, or a uniform classification rule in another jurisdiction or time.",
+    sourceUrl: "https://www.okhistory.org/images/research/br/OK%20Constitution_Page_105.jpg"
   },
   "1900_north_carolina_suffrage": {
     recordType: "Constitution",
