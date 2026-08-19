@@ -32,6 +32,9 @@ function legalTopic(recordKey: string) {
   if (recordKey.includes("freedmens") || recordKey.includes("field_order") || recordKey.includes("land_restoration")) {
     return { topic: "Freedmen’s Bureau & Land", chapterSlug: "freedmens-bureau" };
   }
+  if (/north_carolina_persons_of_color|mississippi_marriage|georgia_persons_of_color/.test(recordKey)) {
+    return { topic: "Classification & State Law", chapterSlug: "captivity-classification-colonial-law" };
+  }
   if (
     /fifteenth|enforcement|kkk_act|reese|smith_allwright|twenty_fourth|harper|katzenbach|allen|gaston|city_of_rome|vra|mississippi|alabama|north_carolina/.test(recordKey)
   ) {
@@ -228,6 +231,92 @@ const pre850TurtleIslandEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
+const nationSpecificEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "seminole-nation-freedmen-bands",
+    yearLabel: "1866 / public page accessed 2026",
+    sortYear: 1866,
+    title: "Seminole Nation of Oklahoma: band structure and Freedmen bands",
+    tier: "Tier 1 — Primary record",
+    topic: "Nation-Specific Indigenous History",
+    region: "Seminole Nation of Oklahoma",
+    sourceType: "Nation-authored government history",
+    verification: "Nation-authored record",
+    establishes: "The Seminole Nation of Oklahoma states that bands were central to Seminole life and that two Freedmen bands, associated with the Seminole before removal, were recognized in 1866.",
+    limitation: "The page does not decide any individual’s present citizenship or enrollment, settle treaty interpretation beyond its stated account, or establish a general rule for other Seminole governments, the Five Tribes, or Indigenous peoples broadly.",
+    citation: "Seminole Nation of Oklahoma, ‘Band Chiefs of the Seminole Nation’",
+    sourceUrl: "https://www.sno-nsn.gov/getpage.php?name=band_chiefs_of_the_seminole_nation&sub=government",
+    chapterSlug: "turtle-island-niji",
+  },
+  {
+    id: "catawba-nation-public-history",
+    yearLabel: "Public page accessed 2026",
+    sortYear: 0,
+    title: "Catawba Nation: people of the river and historical continuity",
+    tier: "Tier 1 — Primary record",
+    topic: "Nation-Specific Indigenous History",
+    region: "Catawba Nation / Catawba River Piedmont",
+    sourceType: "Nation-authored public history",
+    verification: "Nation-authored record",
+    establishes: "The Catawba Nation identifies the people’s self-name as yeh is-WAH h’reh (‘people of the river’) and publishes its account of ancestral territory, land loss, termination, and restored federal recognition in 1993.",
+    limitation: "This is a Catawba Nation public history, not a universal Indigenous origin account, an archaeological chronology, a Black Native history claim, or evidence of any individual’s citizenship or genealogy.",
+    citation: "Catawba Nation, ‘About the Nation’",
+    sourceUrl: "https://www.catawba.com/about-the-nation",
+    chapterSlug: "turtle-island-niji",
+  },
+  {
+    id: "oklahoma-historical-society-freedmen-research-guide",
+    yearLabel: "Institutional guide accessed 2026",
+    sortYear: 0,
+    title: "Oklahoma Historical Society: Freedmen record-research guide",
+    tier: "Tier 2 — Scholarly analysis",
+    topic: "Freedmen Genealogy & Records",
+    region: "Indian Territory and Oklahoma",
+    sourceType: "State historical institution / archival guide",
+    verification: "Institutional record",
+    establishes: "The Oklahoma Historical Society identifies Dawes census cards, per-capita payments, correspondence, and citizenship-related materials among its Five Tribes Freedmen records, and describes the guide as a route to family-history research.",
+    limitation: "An archival guide does not replace the underlying card, application, enrollment jacket, related records, or the relevant Nation’s governing standards; it cannot establish ancestry, citizenship, or enrollment for a particular person.",
+    citation: "Oklahoma Historical Society, ‘Freedmen History’",
+    sourceUrl: "https://www.okhistory.org/learn/freedmen",
+    chapterSlug: "freedmens-bureau",
+  },
+];
+
+const israeliteIndianTheoryEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "boudinot-1816-israelite-indian-theory",
+    yearLabel: "1816",
+    sortYear: 1816,
+    title: "Elias Boudinot’s Israelite-Indian theory",
+    tier: "Tier 1 — Primary record",
+    topic: "Intellectual History & Origin Theories",
+    region: "Early United States",
+    sourceType: "Printed religious-origin theory",
+    verification: "Stable facsimile / edition route",
+    establishes: "The 1816 title page of Elias Boudinot’s A Star in the West states an aim to discover the ‘long lost ten tribes of Israel’ in relation to American Indians, documenting that a named early nineteenth-century writer advanced that proposition.",
+    limitation: "The work is evidence of Boudinot’s historical theory, not empirical proof of the theory, Indigenous descent, Black Native ancestry, a Nation relationship, or present citizenship. The author is Elias Boudinot (1740–1821), not the later Cherokee editor of the same name.",
+    citation: "Elias Boudinot, A Star in the West (Trenton: D. Fenton, S. Hutchinson and J. Dunham, 1816)",
+    sourceUrl: "https://archive.org/details/starinwestorhumb00boud",
+    chapterSlug: "counter-narrative",
+  },
+  {
+    id: "dougherty-2021-lost-tribes-found",
+    yearLabel: "2021",
+    sortYear: 2021,
+    title: "Matthew W. Dougherty: Israelite Indians and religious nationalism",
+    tier: "Tier 2 — Scholarly analysis",
+    topic: "Intellectual History & Origin Theories",
+    region: "Early United States",
+    sourceType: "Scholarly monograph",
+    verification: "Institutional record",
+    establishes: "Dougherty’s Lost Tribes Found is a 2021 University of Oklahoma Press monograph explicitly framed as a study of ‘Israelite Indians and Religious Nationalism in Early America.’",
+    limitation: "Publisher metadata establishes the book’s bibliographic identity and stated subject, not the accuracy of any individual historical claim within it. The book’s historical interpretation does not establish ancestry, Nation relationship, or citizenship for any person or community.",
+    citation: "Matthew W. Dougherty, Lost Tribes Found: Israelite Indians and Religious Nationalism in Early America (University of Oklahoma Press, 2021)",
+    sourceUrl: "https://www.oupress.com/9780806168883/lost-tribes-found/",
+    chapterSlug: "counter-narrative",
+  },
+];
+
 const censusInstructionEvidenceItems: SourceClaimIndexItem[] = [
   {
     id: "1930-census-racial-classification-instructions",
@@ -333,7 +422,7 @@ const tiktokHistoryVerifiedEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
-export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...censusInstructionEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
+export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
   (a, b) => a.sortYear - b.sortYear || a.title.localeCompare(b.title),
 );
 

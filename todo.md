@@ -88,9 +88,12 @@
 - [x] Deepen Chapter 59 on the Freedmen’s Bureau with page-verified primary records, including both recovery efforts and classification or land-restoration limits.
 - [x] Add a practical Walter English / Brister English Project methodology section that explains a documentary genealogy workflow without equating ancestry research with tribal citizenship.
 - [ ] Research and lawfully obtain controlled-access scholarship, beginning with Jack D. Forbes’s *Africans and Native Americans* and Kyle T. Mays’s *An Afro-Indigenous History of the United States*.
+- [ ] Inspect the supplied Internet Archive record for Forbes (`archive.org/details/africansnativeam0000forb`), verify its edition and lending permissions, and perform page-level intake only through an authorized reading route or a lawfully supplied copy.
+- [ ] Complete page-level intake of the now-borrowed Forbes edition: verify its front matter and chapter structure, log authorial framework and source trails, and independently corroborate any claim proposed for public integration.
+- [x] Correct every public description that overstates the 1930 census instruction; retain the verified mixed Indian–Negro exception and prohibit ancestry, citizenship, or universal-erasure conclusions from the instruction alone.
 - [x] Expand page-verified civil-rights movement coverage beyond legal milestones, including Birmingham, Selma, voting-registration campaigns, and the roles of local organizers.
 - [x] Strengthen the pre-850 CE chronology rationale and the Turtle Island / Niji source base with clearly distinguished Indigenous knowledge traditions and archaeological or historical scholarship.
-- [ ] Design the staged architecture, evidence policy, moderation workflow, and provenance model for a future community-submission verification hub before building it.
+- [x] Design the staged architecture, evidence policy, moderation workflow, and provenance model for a future community-submission verification hub before building it.
 
 # Sequential Execution — Current Release
 
@@ -166,3 +169,13 @@
 - [x] Integrate only the independently supported Brereton (corrected geography), De Soto–Coosa, King Philip’s War forced-movement, and Eastern Pequot records with source-visible limitations; do not cite TikTok posts as public evidence.
 - [x] Record the exclusions: the unverified John Eliot-return-letter claim, the unverified Tuskaloosa etymology quotation, the unspecified 1910 terminology work, and the refuted Machiavelli/America-as-Africa claim.
 - [x] Use the user’s connected personal browser to lawfully extend extraction beyond the original 86-item public-page batch.
+
+# Next Five Evidence-Development Workstreams — Authorized Sequence
+
+- [x] Secure lawful, edition-specific access to Jack D. Forbes’s *Africans and Native Americans* and Kyle T. Mays’s *An Afro-Indigenous History of the United States*; create separate source-critical intake ledgers before any public integration.
+- [x] Verify the supplied Kyle T. Mays PDF against the identified edition; extract its chapter structure, pages, cited primary-record leads, scholarly arguments, and limitation notes into a source-critical intake ledger before proposing any integration.
+- [x] Inventory the supplied Are.na block `15107788`, preserve its creator, item links, media, and stated context as platform provenance, and verify any consequential claim through its underlying source before considering public use.
+- [ ] Verify exact statutory text, jurisdiction, dates, and enforcement limits for proposed North Carolina, Georgia, Alabama, Mississippi, Louisiana, Tennessee, and Oklahoma classification-law records; integrate only records with stable primary or institutional routes.
+- [x] Expand nation-specific Indigenous sourcing beyond Oneida and Eastern Pequot through nation-authored or authorized public records, preserving consultation-sensitive language and prohibiting universalization.
+- [x] Draft the community-submission moderation, provenance, privacy, review-state, correction, and publication-tier specification before building a public submission hub.
+- [x] Reassess deferred TikTok leads only when complete citations, page images, repository routes, or specific record identifiers become available; retain unsupported and refuted claims as excluded.

@@ -68,6 +68,24 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     documentedLimit: "These provisions establish the local enforcement powers the statute assigned; they do not prove that a named judge or magistrate imposed a punishment in a particular case without a docket, complaint, order, or other case-specific record.",
     sourceUrl: "https://ldhi.library.cofc.edu/exhibits/show/after_slavery_educator/unit_three_documents/document_eight"
   },
+  "1866_north_carolina_persons_of_color": {
+    recordType: "Statute",
+    jurisdiction: "State of North Carolina",
+    citation: "Public Laws of North Carolina, Sessions of 1865–’66, pp. 99–102, §1",
+    mechanism: "Defined ‘persons of color’ in the stated act as Negroes and their issue even where one ancestor in each succeeding generation to the fourth inclusive was White, then applied the act’s specified legal rules to that category.",
+    enforcementPath: "State and local courts, contract and testimony rules, apprenticeship administration, and other legal processes specified by the 1866 act.",
+    documentedLimit: "The act establishes a North Carolina legal classification in its stated context; it does not establish an individual’s ancestry, Nation affiliation, sovereign citizenship, uniform local enforcement, or a later marriage rule’s separate threshold.",
+    sourceUrl: "https://digital.ncdcr.gov/Documents/Detail/public-laws-of-the-state-of-north-carolina-passed-by-the-general-assembly-1865-1866/1952729?item=2024062"
+  },
+  "1890_mississippi_marriage": {
+    recordType: "Constitution",
+    jurisdiction: "State of Mississippi",
+    citation: "Constitution of the State of Mississippi (1890), Article XIV, §263",
+    mechanism: "Declared unlawful and void the marriage of a White person with a Negro or mulatto, or a person with one-eighth or more Negro blood.",
+    enforcementPath: "State marriage law, local marriage-license administration, courts, and related civil-status processes.",
+    documentedLimit: "The provision establishes a marriage-law classification rule as written; it does not prove an individual’s ancestry, define every Mississippi legal category, establish uniform enforcement, or demonstrate a single statewide rule across legal settings.",
+    sourceUrl: "http://www.mshistorynow.mdah.ms.gov/issue/mississippi-constitution-of-1890-as-originally-adopted"
+  },
   "1924_virginia_racial_integrity": {
     recordType: "Statute",
     jurisdiction: "Commonwealth of Virginia",
@@ -76,6 +94,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     enforcementPath: "Virginia Bureau of Vital Statistics, local clerks, marriage-license administration, and associated vital-record processes.",
     documentedLimit: "The law documents a state classification regime; it does not prove a person’s ancestry, erase a community’s self-identification, or determine sovereign tribal citizenship.",
     sourceUrl: "https://www.lva.virginia.gov/collections/educator-resources/dbva/items/show/226"
+  },
+  "1933_georgia_persons_of_color": {
+    recordType: "Statute",
+    jurisdiction: "State of Georgia",
+    citation: "Code of Georgia of 1933, §§53-106, 79-103",
+    mechanism: "Defined ‘persons of color’ through listed categories and any ascertainable trace of specified ancestry, while a linked marriage provision declared marriages by a White person to anyone other than a White person unlawful and void.",
+    enforcementPath: "State marriage law, local license administration, courts, and related civil-status processes under the cited code provisions.",
+    documentedLimit: "The code establishes the stated Georgia definition and marriage rule; it does not prove an individual’s ancestry, identity, community affiliation, citizenship, or uniform administrative outcome, and it must not be generalized across jurisdictions or decades.",
+    sourceUrl: "https://archive.org/details/codeofgeorgiaof100prep"
   },
   "1930_census_instructions": {
     recordType: "Federal administrative instruction",
