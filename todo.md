@@ -134,3 +134,10 @@
 - [x] Add a second jurisdiction-specific voting-barrier and local-law cluster with primary-record source routes, enforcement context, and explicit limits.
 - [x] Create the Sources & Claims Index data schema and public interface specification from the established source-card, legal-record, and timeline-detail fields.
 - [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the release.
+
+# Expanded Sources & Claims Index and Local-Law Release
+
+- [x] Normalize active source cards from the Freedmen’s Bureau and civil-rights chapters into the public Sources & Claims Index contract with tier, source route, claim scope, and limitation.
+- [x] Add consistent year-range, region, evidence-tier, and verification-status filters to the public Sources & Claims Index.
+- [x] Verify and integrate one state Black Code local enforcement record with a primary or institutional source route, a jurisdiction-specific mechanism, and explicit limits.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the release.

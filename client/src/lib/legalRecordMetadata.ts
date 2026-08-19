@@ -59,6 +59,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     documentedLimit: "The statute’s text does not establish a uniform local outcome, a complete history of racial categories, or the identity of any specific individual or family.",
     sourceUrl: "https://ldhi.library.cofc.edu/exhibits/show/after_slavery_educator/unit_three_documents/document_eight"
   },
+  "1865_sc_black_code_local_enforcement": {
+    recordType: "Statute",
+    jurisdiction: "South Carolina district courts and magistrates",
+    citation: "South Carolina Act to Establish and Regulate the Domestic Relations of Persons of Colour, §§ XLVII, LII–LIII (Dec. 21, 1865)",
+    mechanism: "Assigned District Judges and Magistrates authority to alter a labor task after a complaint, to impose corporal punishment or fines for specified alleged contract misconduct, and to order a servant remanded to work under the statute’s terms.",
+    enforcementPath: "District Judges, Magistrates, District Court clerks, local complaint proceedings, and labor-contract enforcement under the stated act.",
+    documentedLimit: "These provisions establish the local enforcement powers the statute assigned; they do not prove that a named judge or magistrate imposed a punishment in a particular case without a docket, complaint, order, or other case-specific record.",
+    sourceUrl: "https://ldhi.library.cofc.edu/exhibits/show/after_slavery_educator/unit_three_documents/document_eight"
+  },
   "1924_virginia_racial_integrity": {
     recordType: "Statute",
     jurisdiction: "Commonwealth of Virginia",

@@ -20,9 +20,13 @@ const controlStyle = {
 
 export default function SourcesClaimsIndexPage() {
   const [query, setQuery] = useState("");
+  const [tier, setTier] = useState("all");
   const [topic, setTopic] = useState("all");
+  const [region, setRegion] = useState("all");
   const [sourceType, setSourceType] = useState("all");
   const [verification, setVerification] = useState("all");
+  const [yearStart, setYearStart] = useState("");
+  const [yearEnd, setYearEnd] = useState("");
 
   const results = useMemo(() => {
     const needle = query.trim().toLowerCase();
@@ -30,12 +34,16 @@ export default function SourcesClaimsIndexPage() {
       const searchable = `${item.title} ${item.citation} ${item.establishes} ${item.limitation} ${item.region} ${item.topic}`.toLowerCase();
       return (
         (!needle || searchable.includes(needle)) &&
+        (tier === "all" || item.tier === tier) &&
         (topic === "all" || item.topic === topic) &&
+        (region === "all" || item.region === region) &&
         (sourceType === "all" || item.sourceType === sourceType) &&
-        (verification === "all" || item.verification === verification)
+        (verification === "all" || item.verification === verification) &&
+        (!yearStart || item.sortYear >= Number(yearStart)) &&
+        (!yearEnd || item.sortYear <= Number(yearEnd))
       );
     });
-  }, [query, topic, sourceType, verification]);
+  }, [query, tier, topic, region, sourceType, verification, yearStart, yearEnd]);
 
   const groupedResults = useMemo(() => {
     return results.reduce<Record<string, typeof results>>((groups, item) => {
@@ -79,10 +87,24 @@ export default function SourcesClaimsIndexPage() {
                 <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Title, claim, place, statute…" style={{ ...controlStyle, fontFamily: "Cormorant Garamond, serif", fontSize: 16, letterSpacing: 0 }} />
               </label>
               <label>
+                <span style={{ display: "block", color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.16em", marginBottom: 8 }}>EVIDENCE TIER</span>
+                <select value={tier} onChange={(event) => setTier(event.target.value)} style={controlStyle}>
+                  <option value="all">All tiers</option>
+                  {SOURCE_INDEX_FILTERS.tiers.map((value) => <option key={value} value={value}>{value}</option>)}
+                </select>
+              </label>
+              <label>
                 <span style={{ display: "block", color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.16em", marginBottom: 8 }}>TOPIC</span>
                 <select value={topic} onChange={(event) => setTopic(event.target.value)} style={controlStyle}>
                   <option value="all">All topics</option>
                   {SOURCE_INDEX_FILTERS.topics.map((value) => <option key={value} value={value}>{value}</option>)}
+                </select>
+              </label>
+              <label>
+                <span style={{ display: "block", color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.16em", marginBottom: 8 }}>REGION / JURISDICTION</span>
+                <select value={region} onChange={(event) => setRegion(event.target.value)} style={controlStyle}>
+                  <option value="all">All regions and jurisdictions</option>
+                  {SOURCE_INDEX_FILTERS.regions.map((value) => <option key={value} value={value}>{value}</option>)}
                 </select>
               </label>
               <label>
@@ -93,11 +115,21 @@ export default function SourcesClaimsIndexPage() {
                 </select>
               </label>
               <label>
-                <span style={{ display: "block", color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.16em", marginBottom: 8 }}>VERIFICATION ROUTE</span>
+                <span style={{ display: "block", color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.16em", marginBottom: 8 }}>VERIFICATION STATUS</span>
                 <select value={verification} onChange={(event) => setVerification(event.target.value)} style={controlStyle}>
                   <option value="all">All routes</option>
                   {SOURCE_INDEX_FILTERS.verifications.map((value) => <option key={value} value={value}>{value}</option>)}
                 </select>
+              </label>
+            </div>
+            <div className="grid gap-3 md:grid-cols-2" style={{ marginTop: 13 }}>
+              <label>
+                <span style={{ display: "block", color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.16em", marginBottom: 8 }}>YEAR FROM</span>
+                <input type="number" value={yearStart} onChange={(event) => setYearStart(event.target.value)} placeholder="e.g., 1865" style={{ ...controlStyle, fontFamily: "Cormorant Garamond, serif", fontSize: 16, letterSpacing: 0 }} />
+              </label>
+              <label>
+                <span style={{ display: "block", color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.16em", marginBottom: 8 }}>YEAR TO</span>
+                <input type="number" value={yearEnd} onChange={(event) => setYearEnd(event.target.value)} placeholder="e.g., 1965" style={{ ...controlStyle, fontFamily: "Cormorant Garamond, serif", fontSize: 16, letterSpacing: 0 }} />
               </label>
             </div>
             <div style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.12em", marginTop: 16 }}>{results.length} OF {SOURCES_CLAIMS_INDEX.length} RECORDS SHOWN</div>

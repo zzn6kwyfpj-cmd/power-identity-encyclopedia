@@ -2,6 +2,8 @@
 // This initial public dataset exposes only source cards and legal records that already carry a public route and a limit statement.
 
 import { COLONIAL_SOURCEBOOK_CONTENT } from "./manuscriptContentColonialSourcebook";
+import { FINAL_3_CONTENT } from "./manuscriptContentFinal3";
+import { GAPS_CONTENT } from "./manuscriptContentGaps";
 import { LEGAL_RECORDS } from "./legalRecordMetadata";
 
 export type SourceClaimIndexItem = {
@@ -9,11 +11,11 @@ export type SourceClaimIndexItem = {
   yearLabel: string;
   sortYear: number;
   title: string;
-  tier: "Tier 1 — Primary record";
+  tier: "Tier 1 — Primary record" | "Tier 2 — Scholarly analysis" | "Tier 3 — Community historical tradition";
   topic: string;
   region: string;
   sourceType: string;
-  verification: "Institutional record" | "Stable facsimile / edition route";
+  verification: "Institutional record" | "Stable facsimile / edition route" | "Linked chapter evidence card";
   establishes: string;
   limitation: string;
   citation: string;
@@ -80,13 +82,75 @@ const colonialItems: SourceClaimIndexItem[] = colonialCards.map((card, index) =>
   chapterSlug: "colonial-archive-sourcebook",
 }));
 
-export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems].sort(
+type ChapterSourceCard = {
+  year: string;
+  title: string;
+  locator: string;
+  establishes: string;
+  limitation: string;
+  source: string;
+  sourceUrl?: string;
+};
+
+const chapterSourceUrlOverrides: Record<string, string> = {
+  "Civil Rights Act of 1866": LEGAL_RECORDS["1866_civil_rights_act"].sourceUrl,
+  "Fourteenth Amendment": LEGAL_RECORDS["1868_fourteenth_amendment"].sourceUrl,
+  "Enforcement Acts and the Ku Klux Klan Act": LEGAL_RECORDS["1870_enforcement_act"].sourceUrl,
+  "Civil Rights Act of 1875": LEGAL_RECORDS["1875_civil_rights_act"].sourceUrl,
+  "United States v. Cruikshank": LEGAL_RECORDS["1876_cruikshank"].sourceUrl,
+  "United States v. Reese": LEGAL_RECORDS["1876_reese"].sourceUrl,
+};
+
+function chapterCardType(title: string) {
+  if (/v\.|county|city of rome|katzenbach|harper|allen/i.test(title)) return "Court decision";
+  if (/amendment/i.test(title)) return "Constitutional amendment";
+  if (/circular/i.test(title)) return "Administrative circular";
+  if (/field orders/i.test(title)) return "Executive / military order";
+  if (/register|case file/i.test(title)) return "Archival register / case file";
+  return "Statute / chapter evidence card";
+}
+
+function chapterCardsToIndex(
+  cards: ChapterSourceCard[],
+  chapterSlug: string,
+  topic: string,
+  region: string,
+  collection: string,
+): SourceClaimIndexItem[] {
+  return cards.map((card, index) => ({
+    id: `chapter-${collection}-${index}-${card.year}`,
+    yearLabel: card.year,
+    sortYear: firstYear(card.year),
+    title: card.title,
+    tier: "Tier 1 — Primary record",
+    topic,
+    region,
+    sourceType: chapterCardType(card.title),
+    verification: "Linked chapter evidence card",
+    establishes: card.establishes,
+    limitation: card.limitation,
+    citation: `${card.source} · ${card.locator}`,
+    sourceUrl: card.sourceUrl ?? chapterSourceUrlOverrides[card.title],
+    chapterSlug,
+  }));
+}
+
+const freedmensCards = (GAPS_CONTENT["freedmens-bureau"]?.sourceCards ?? []) as ChapterSourceCard[];
+const civilRightsCards = (FINAL_3_CONTENT["civil-rights-acts"]?.sourceCards ?? []) as ChapterSourceCard[];
+
+const chapterEvidenceItems = [
+  ...chapterCardsToIndex(freedmensCards, "freedmens-bureau", "Freedmen’s Bureau & Land", "Federal Reconstruction and Louisiana", "freedmens-bureau"),
+  ...chapterCardsToIndex(civilRightsCards, "civil-rights-acts", "Civil Rights & Voting", "Federal and state civil-rights enforcement", "civil-rights"),
+];
+
+export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems].sort(
   (a, b) => a.sortYear - b.sortYear || a.title.localeCompare(b.title),
 );
 
 export const SOURCE_INDEX_FILTERS = {
   tiers: ["Tier 1 — Primary record"],
   topics: Array.from(new Set(SOURCES_CLAIMS_INDEX.map((item) => item.topic))).sort(),
+  regions: Array.from(new Set(SOURCES_CLAIMS_INDEX.map((item) => item.region))).sort(),
   sourceTypes: Array.from(new Set(SOURCES_CLAIMS_INDEX.map((item) => item.sourceType))).sort(),
   verifications: Array.from(new Set(SOURCES_CLAIMS_INDEX.map((item) => item.verification))).sort(),
 };
