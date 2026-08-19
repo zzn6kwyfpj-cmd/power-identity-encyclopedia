@@ -101,9 +101,9 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
 
       '— LOCAL RESEARCH CASE FILE: LOUISIANA, 1865 —',
 
-      'One local record cluster illustrates both the promise and the discipline of Bureau research. The land-application register records “Robert Butler and 5 others” applying in New Orleans on October 7, 1865, naming Logan Plantation in St. Charles Parish and listing horses, plows, rice, and wages due. A separate Louisiana Plantation Department register records a Robert Butler in St. Charles Parish as a twenty-seven-year-old male. The original image improves the research trail, but the land-application entry does not supply a matching age or another shared identifier. The records therefore remain a useful local research path, not a completed identity claim.',
+      'One local record cluster illustrates both the promise and the discipline of Bureau research. Land-application no. 32 records Robert Butler applying from New Orleans on September 15, 1865 to lease sixty acres at Logan Plantation in St. Charles Parish, with one man, one woman, and two children listed. Entry no. 187, dated October 7, records “Robert Butler and 5 others” at the same plantation and explicitly directs the reader to “See No 32”; it lists six men, four women, two children, horses, plows, rice, and wages due. The cross-reference documents a connected administrative effort within the land register. A separate Louisiana Plantation Department register records a Robert Butler in St. Charles Parish as a twenty-seven-year-old male, but neither land entry supplies that age or another shared identifier. The person-level linkage therefore remains unresolved.',
 
-      'This is a source-complete local case file at the administrative level. It links a named land application, the governing Bureau land framework, an adjacent plantation-department register, and the National Archives finding aid for the Louisiana field-office series. It demonstrates how a researcher should proceed: compare original images; extract every identifier; search contracts, complaints, hospital, school, court, census, treaty, and local records; and publish a person-level conclusion only when the chain is independently supported. It establishes no Indigenous affiliation, land title, or later outcome for Robert Butler or any other applicant.',
+      'This is a source-complete local case file at the administrative level. It links two explicitly related land-register entries, the governing Bureau land framework, an adjacent plantation-department register, and the National Archives finding aid for the Louisiana field-office series. It demonstrates how a researcher should proceed: compare original images; extract every identifier; search contracts, complaints, hospital, school, court, census, treaty, and local records; and publish a person-level conclusion only when the chain is independently supported. It establishes no Indigenous affiliation, land title, or later outcome for Robert Butler or any other applicant.',
 
       '— THE BUREAU\'S LEGACY —',
 
@@ -165,11 +165,11 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
       {
         year: '1865–1872',
         title: 'Louisiana Local Research Case File: Robert Butler (Unresolved)',
-        locator: 'Land application no. 187, New Orleans, October 7, 1865, RG 105, NAID 595044; adjacent Plantation Department register, M1905 roll 27, volume 110',
-        establishes: 'The land register records “Robert Butler and 5 others” applying for land connected to St. Charles Parish. An original-image review of the separate Plantation Department register identifies a Robert Butler in St. Charles Parish as a twenty-seven-year-old male, creating a more specific—but still unresolved—research path.',
-        limitation: 'The land application does not supply a matching age or another independent identifier. The records do not establish that both entries identify the same person, and do not prove an approved lease, a later land outcome, Indigenous affiliation, or tribal citizenship.',
-        source: 'National Archives RG 105 land-application register; NMAAHC Freedmen’s Bureau Digital Collection, M1905 roll 27, volume 110',
-        sourceUrl: 'https://nmaahc.si.edu/freedmens-bureau/record/fbs-1662423774659-1662425557069-0'
+        locator: 'Land applications nos. 32 and 187, New Orleans, September 15 and October 7, 1865, RG 105, NAID 595044; adjacent Plantation Department register, M1905 roll 27, volume 110',
+        establishes: 'The land register explicitly links no. 187 (“Robert Butler and 5 others”) to no. 32, recording two connected Logan Plantation applications with different household or group information. An original-image review of a separate Plantation Department register identifies a Robert Butler in St. Charles Parish as a twenty-seven-year-old male, creating a more specific—but still unresolved—research path.',
+        limitation: 'The linked land entries are within the same administrative register and do not supply a matching age or another shared identifier with the separate Plantation Department record. The records do not establish a person-level match, an approved lease, a later land outcome, Indigenous affiliation, or tribal citizenship.',
+        source: 'National Archives RG 105 land-application register, entries 32 and 187; NMAAHC Freedmen’s Bureau Digital Collection, M1905 roll 27, volume 110',
+        sourceUrl: 'https://docsteach.org/document/land-applications/'
       },
       {
         year: '1866',

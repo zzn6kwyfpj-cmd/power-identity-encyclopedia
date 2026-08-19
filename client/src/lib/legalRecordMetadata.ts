@@ -1,7 +1,7 @@
 // Royal Archive legal-record registry: normalizes jurisdiction, mechanism, and enforcement limits.
 // Each entry describes what the named record establishes; it does not convert a legal rule into proof of uniform outcome.
 
-export type LegalRecordType = "Statute" | "Constitutional amendment" | "Court decision" | "Executive / military order" | "Administrative circular";
+export type LegalRecordType = "Statute" | "Constitutional amendment" | "Constitution" | "Treaty" | "Court decision" | "Executive / military order" | "Administrative circular";
 
 export interface LegalRecordMetadata {
   recordType: LegalRecordType;
@@ -113,6 +113,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     documentedLimit: "Black Codes, private violence, local administration, and the statute’s treatment of American Indians limited its practical reach.",
     sourceUrl: "https://history.house.gov/Historical-Highlights/1851-1900/The-Civil-Rights-Bill-of-1866/"
   },
+  "1866_cherokee_treaty": {
+    recordType: "Treaty",
+    jurisdiction: "United States and Cherokee Nation",
+    citation: "Treaty with the Cherokee, Art. IX, 14 Stat. 799 (July 19, 1866; ratified July 27; proclaimed Aug. 11)",
+    mechanism: "Article IX prohibited slavery or involuntary servitude in the Cherokee Nation except as punishment for crime and specified that identified Freedmen, free colored persons, and their descendants would have all the rights of native Cherokees, subject to the article’s stated residence or return conditions.",
+    enforcementPath: "Treaty terms, Cherokee Nation law and institutions, federal treaty obligations, and later litigation interpreting the treaty.",
+    documentedLimit: "The treaty text establishes its stated legal terms; it does not by itself establish the ancestry, present citizenship, or individual eligibility of every person claiming a Cherokee Freedmen connection.",
+    sourceUrl: "https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942"
+  },
   "1868_fourteenth_amendment": {
     recordType: "Constitutional amendment",
     jurisdiction: "Federal and state governments",
@@ -149,6 +158,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     documentedLimit: "Its use and constitutional reach remained vulnerable to enforcement choices and subsequent court decisions.",
     sourceUrl: "https://history.house.gov/Historical-Highlights/1851-1900/The-Enforcement-Acts-of-1870-and-1871/"
   },
+  "1871_indian_appropriations_act": {
+    recordType: "Statute",
+    jurisdiction: "Federal; United States–Indian nation treaty process",
+    citation: "Indian Appropriations Act, ch. 120, §1, 16 Stat. 566 (Mar. 3, 1871); codified at 25 U.S.C. §71",
+    mechanism: "Ended future federal recognition of an Indian nation or tribe as an independent nation, tribe, or power with whom the United States could contract by treaty, while preserving obligations of treaties lawfully made and ratified before March 3, 1871.",
+    enforcementPath: "Congressional legislation, executive orders, executive agreements, federal administration, and judicial interpretation after the change in federal treaty-making procedure.",
+    documentedLimit: "The statute did not invalidate earlier ratified treaties or independently settle the scope of tribal sovereignty, treaty rights, or the outcome of a particular nation’s claims.",
+    sourceUrl: "https://docsteach.org/document/indian-appropriations-act/"
+  },
   "1875_civil_rights_act": {
     recordType: "Statute",
     jurisdiction: "Federal public-accommodations law",
@@ -184,6 +202,24 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     enforcementPath: "Constitutional litigation against state-sanctioned electoral exclusion.",
     documentedLimit: "The ruling addressed the white primary but did not eliminate all voting barriers or ensure registration access.",
     sourceUrl: "https://tile.loc.gov/storage-services/service/ll/usrep/usrep321/usrep321649/usrep321649.pdf"
+  },
+  "1890_mississippi_constitution": {
+    recordType: "Constitution",
+    jurisdiction: "State of Mississippi",
+    citation: "Constitution of the State of Mississippi (adopted Nov. 1, 1890), Article XII, Franchise",
+    mechanism: "Established state constitutional voting and registration qualifications. The Mississippi Department of Archives and History describes the convention’s literacy-test and poll-tax voting requirements and their exclusionary operation.",
+    enforcementPath: "County election officials, registrars, tax administration, state election law, and state courts.",
+    documentedLimit: "The constitution and historical context identify a state legal framework; they do not establish identical administration in every county or the voting history of any particular person.",
+    sourceUrl: "http://www.mshistorynow.mdah.ms.gov/issue/mississippi-constitution-of-1890-as-originally-adopted"
+  },
+  "1901_alabama_constitution": {
+    recordType: "Constitution",
+    jurisdiction: "State of Alabama",
+    citation: "Constitution of Alabama (1901), suffrage and elections provisions",
+    mechanism: "Created a state constitutional voting framework that the Alabama Department of Archives and History describes as restricting suffrage through literacy, employment, and property qualifications.",
+    enforcementPath: "County boards of registrars, local election officials, state election administration, and state courts.",
+    documentedLimit: "The archival record identifies statewide qualifications; it does not establish the application of every qualification in every county or a particular voter’s experience.",
+    sourceUrl: "https://digital.archives.alabama.gov/digital/collection/voices/id/11307/"
   },
   "1957_civil_rights_act": {
     recordType: "Statute",

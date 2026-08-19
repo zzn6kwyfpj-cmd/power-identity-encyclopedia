@@ -435,12 +435,33 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "black-native-american-identity",
     chapterTitle: "Black Native American Identity: The Suppressed History",
   },
-  "1866": {
-    description: "The 1866 Treaty with the Cherokee Nation, concluded on July 19, 1866, was a Reconstruction-era agreement that required the Cherokee Nation to formally abolish slavery and grant full citizenship to their Freedmen. Article IX of the treaty states: 'They further agree that all freedmen who have been liberated by voluntary act of their former owners or by law, as well as all free colored persons who were in the country at the commencement of the rebellion, and are now residents therein, or who may return within six months, and their descendants, shall have all the rights of native Cherokees.' This is the first federal recognition of Black Native American rights — a treaty provision that explicitly granted Black people the same rights as Indigenous people within a sovereign tribal nation. Similar provisions were included in the 1866 treaties with the Creek, Choctaw, Chickasaw, and Seminole nations. The Cherokee Nation would violate this treaty 141 years later, in 2007.",
-    keyFact: "Article IX of the 1866 Cherokee Treaty is the first federal recognition of Black Native American rights. It explicitly granted Black Freedmen 'all the rights of native Cherokees.' The Cherokee Nation violated this treaty in 2007 — 141 years after signing it.",
-    primarySource: "Treaty with the Cherokee (1866), Article IX, U.S. Department of the Interior; 14 Stat. 799, National Archives",
+  "1866_cherokee_treaty": {
+    description: "The United States and the Cherokee Nation concluded this Reconstruction-era treaty on July 19, 1866; it was ratified July 27 and proclaimed August 11. Article IX states that slavery or involuntary servitude would not exist in the Cherokee Nation except as punishment for crime, and it provides that identified Freedmen, certain free colored persons, and their descendants would have all the rights of native Cherokees, subject to the article’s stated residence or return conditions. This is a treaty-text record of the parties’ stated legal terms. It does not, standing alone, decide a particular person’s ancestry, present citizenship, or eligibility; those questions require an independently documented family record and the Cherokee Nation’s governing law and institutions.",
+    keyFact: "Article IX is a ratified treaty provision that states specified Freedmen and free colored persons, with their descendants and subject to its stated conditions, would have all the rights of native Cherokees.",
+    primarySource: "Treaty with the Cherokee (1866), Article IX, 14 Stat. 799; Oklahoma State University Tribal Treaties Database; National Archives catalog record",
     chapterSlug: "black-native-american-identity",
     chapterTitle: "Black Native American Identity: The Suppressed History",
+  },
+  "1871_indian_appropriations_act": {
+    description: "Section 1 of the Indian Appropriations Act of March 3, 1871 barred future federal recognition of an Indian nation or tribe as an independent nation, tribe, or power with whom the United States could contract by treaty. The same sentence expressly states that it did not invalidate or impair obligations of treaties lawfully made and ratified before March 3, 1871. National Archives guidance describes the measure as ending formal treaty-making and the Senate’s treaty-ratification role for future agreements. This is a change in the federal government’s procedure for future dealings; it is not proof that earlier treaty obligations disappeared or that any particular nation’s sovereignty or treaty rights were extinguished by this provision alone.",
+    keyFact: "The 1871 statute stopped future federal treaty-making while expressly preserving obligations of earlier lawfully made and ratified treaties.",
+    primarySource: "Indian Appropriations Act, ch. 120, §1, 16 Stat. 566 (1871); National Archives DocsTeach; 25 U.S.C. §71",
+    chapterSlug: "treaties-broken-promises",
+    chapterTitle: "The Treaties: Sovereign Agreements Made and Broken",
+  },
+  "1890_mississippi_constitution": {
+    description: "Mississippi adopted a new constitution on November 1, 1890. Its Article XII established the state’s franchise framework. The Mississippi Department of Archives and History preserves the original constitutional text and explains that literacy tests and poll taxes were central voting requirements at the convention, with the tests excluding almost all Black voters and the tax also excluding many voters with limited means. The record establishes a state constitutional and administrative framework. It does not establish identical treatment in every county or the voting history of a particular individual without county-level registration, tax, election, or court evidence.",
+    keyFact: "The state archival record identifies the 1890 constitution’s franchise article and describes literacy tests and poll taxes as its key voting requirements.",
+    primarySource: "Constitution of the State of Mississippi (1890), Article XII; Mississippi Department of Archives and History",
+    chapterSlug: "civil-rights-and-voting",
+    chapterTitle: "Civil Rights and the Voting-Rights Record",
+  },
+  "1901_alabama_constitution": {
+    description: "The Alabama Department of Archives and History preserves the original 1901 constitution in a 61-page Secretary of State record. Its catalog describes the suffrage-and-elections framework as restricting voting through literacy, employment, and property qualifications. That state archival description supports a careful legal-history entry about the constitution’s formal voting qualifications. It does not establish how any specific registrar acted, how every county administered the rules, or the voting history of any individual; those questions require local registration, tax, election, or court records.",
+    keyFact: "Alabama’s state archive describes the 1901 constitution as restricting suffrage through literacy, employment, and property qualifications.",
+    primarySource: "Constitution of Alabama (1901), Alabama Department of Archives and History digital collection",
+    chapterSlug: "civil-rights-and-voting",
+    chapterTitle: "Civil Rights and the Voting-Rights Record",
   },
   "1898": {
     description: "The Curtis Act of 1898 authorized the Dawes Commission to enroll members of the Five Civilized Tribes for land allotment. The enrollment process created separate categories: 'Indians by blood,' 'intermarried whites,' and 'Freedmen.' Black Native Americans with Cherokee, Creek, Choctaw, Chickasaw, or Seminole ancestry were enrolled as 'Freedmen' rather than 'by blood' — regardless of their actual Indigenous ancestry. This created a racial hierarchy within the tribal nations: 'by blood' enrollees received allotments of tribal land; Freedmen received smaller allotments on inferior land. By 1907, 4,924 Freedmen had been enrolled in the Cherokee Nation alone. A 1872 petition from Cherokee Freedmen to President Ulysses S. Grant documents the injustice: 'Some of us had fled North to get away from slavery... we were so far that we had no way of getting back to our old homes so that we could not possibly have reached there in time, even if we had known what provision was made for us in the Treaty.' The Dawes Rolls are the primary genealogical record for Black Native Americans today — and the primary mechanism of their erasure.",

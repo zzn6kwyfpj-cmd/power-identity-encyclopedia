@@ -120,3 +120,10 @@
 - [x] Add page-verified or stable-facsimile cards for Percy, Johnson, Ashe, Archdale, Lawson, Dampier, Exquemelin, and Purchas, preserving authorial and edition limits.
 - [x] Extend the legal-record registry to selected state Black Codes, classification statutes, and linked federal legal records with jurisdiction-bounded enforcement analysis.
 - [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the three releases are complete.
+
+# Evergreen Evidence Block — Next Sequence
+
+- [x] Search for a Louisiana Freedmen’s Bureau record that shares a concrete identifier with the Robert Butler land application; retain the case as unresolved if no defensible linkage is found.
+- [x] Add source-critical public cards for the remaining transferred colonial works, beginning with Ogilby/Montanus, Adair, Barton, Frere, and unrepresented Carolina sources.
+- [x] Add jurisdiction-specific legal records for voting barriers and treaty-related legal instruments, with exact text or holding, enforcement path, and documented limit.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the evidence block is complete.

@@ -223,6 +223,51 @@ export const COLONIAL_SOURCEBOOK_CONTENT: Record<string, ChapterContent> = {
         limitation: "Purchas is a compiler as well as an author. A public claim must identify the underlying relation and exact section, rather than attributing a broad proposition to Purchas as a single eyewitness authority.",
         source: "Samuel Purchas, Purchas His Pilgrimes (1625)",
         sourceUrl: "https://quod.lib.umich.edu/e/eebo/A68617.0001.001?view=toc"
+      },
+      {
+        year: "1670–1671",
+        title: "John Ogilby / Arnoldus Montanus, America",
+        locator: "John Carter Brown Library copy; Smithsonian Libraries digital record and Internet Archive full-scan route; English edition based on the related Dutch Montanus work",
+        establishes: "The work documents a European publisher-editorial representation of the Americas, including the arrangement of descriptions, maps, plates, and speculative accounts offered to English readers.",
+        limitation: "The volume’s translated, compiled, and illustrated form makes it evidence of seventeenth-century European representation rather than direct evidence of Indigenous origins, identity, sovereignty, or community self-description.",
+        source: "John Ogilby and Arnoldus Montanus, America: Being an Accurate Description of the New World (1670–1671)",
+        sourceUrl: "https://library.si.edu/digital-library/book/america00ogil"
+      },
+      {
+        year: "1775",
+        title: "James Adair, The History of the American Indians",
+        locator: "1775 London edition; John Carter Brown Library copy hosted by Internet Archive, title-page and full-scan route",
+        establishes: "Adair’s work records a British trader’s stated descriptions of Southeastern nations, language, governance, and colonial policy, as well as his own theory of Hebrew descent.",
+        limitation: "Adair’s origin theory is an eighteenth-century authorial claim, not proof of Indigenous ancestry. His observations require nation-specific scholarship and source comparison before use beyond the narrow question of what he asserted.",
+        source: "James Adair, The History of the American Indians (1775)",
+        sourceUrl: "https://archive.org/details/historyofamerica01adai/page/1/mode/1up"
+      },
+      {
+        year: "1798",
+        title: "Benjamin Smith Barton, New Views of the Origin of the Tribes and Nations of America",
+        locator: "1798 Philadelphia edition; John Carter Brown Library copy hosted by Internet Archive, title-page and full-scan route",
+        establishes: "The book documents an early United States comparative study that assembled vocabularies, traditions, and origin hypotheses about Indigenous peoples.",
+        limitation: "Its premodern comparative method and origin hypotheses are historical evidence about late-eighteenth-century intellectual practice, not current archaeological, linguistic, genetic, or citizenship evidence.",
+        source: "Benjamin Smith Barton, New Views of the Origin of the Tribes and Nations of America (1798)",
+        sourceUrl: "https://archive.org/details/newviewsoforigin00bart/page/n2/mode/1up"
+      },
+      {
+        year: "1768",
+        title: "A Short History of Barbados (catalogued under George Frere)",
+        locator: "1768 London printing; John Adams Library / Boston Public Library copy hosted by Internet Archive; copy inscription attributes the work to Samuel Frere",
+        establishes: "The book is a traceable late-colonial Barbados historical narrative, useful for studying how a contemporary author or publisher represented settlement and imperial history.",
+        limitation: "The surviving catalog and copy inscription differ on the author’s given name. Until that provenance question is resolved, the card does not rely on personal-author attribution, and the work cannot substitute for plantation, legal, demographic, African-diaspora, or Indigenous community records.",
+        source: "A Short History of Barbados: From Its First Discovery and Settlement, to the End of the Year 1767 (1768)",
+        sourceUrl: "https://archive.org/details/shorthistoryofba00john"
+      },
+      {
+        year: "1911 / late seventeenth century",
+        title: "Narratives of Early Carolina",
+        locator: "1911 edited source collection; Internet Archive title-page and full-scan route; includes later printed access to selected earlier Carolina narratives",
+        establishes: "The collection makes a selected group of early Carolina narratives available in a traceable twentieth-century edition and is useful for locating the underlying author, edition, and passage for further verification.",
+        limitation: "It is an edited compilation, not an original seventeenth-century edition. A public quotation must identify the underlying author and check the relevant page, edition history, and context rather than treating the collection as a single eyewitness source.",
+        source: "Narratives of Early Carolina, 1650–1708, ed. Alexander S. Salley Jr. (1911)",
+        sourceUrl: "https://archive.org/details/narrearlycarolina00sallrich/page/n5/mode/1up"
       }
     ]
   }
