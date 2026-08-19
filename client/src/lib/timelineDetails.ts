@@ -456,6 +456,13 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "civil-rights-and-voting",
     chapterTitle: "Civil Rights and the Voting-Rights Record",
   },
+  "1900_north_carolina_suffrage": {
+    description: "North Carolina’s Suffrage Amendment was submitted by the legislature in 1899 and ratified in 1900, replacing Article VI of the state constitution. Section 4 required a person seeking registration to read and write a section of the constitution in English and, before voting, to pay the prior year’s poll tax by the stated date. Section 5 temporarily exempted people entitled to vote before January 1, 1867 and their lineal descendants from the educational qualification if they registered by the specified 1908 deadline. The legal text establishes a state constitutional framework and its stated exemption; it does not establish how a particular registrar administered it or the voting history of any individual without local records.",
+    keyFact: "The amendment combined literacy and poll-tax requirements with a temporary pre-1867 ancestry-based exemption from the educational test.",
+    primarySource: "Suffrage Amendment to the North Carolina Constitution, Article VI (1899–1900); North Carolina Digital Collections and State Archives",
+    chapterSlug: "civil-rights-and-voting",
+    chapterTitle: "Civil Rights and the Voting-Rights Record",
+  },
   "1901_alabama_constitution": {
     description: "The Alabama Department of Archives and History preserves the original 1901 constitution in a 61-page Secretary of State record. Its catalog describes the suffrage-and-elections framework as restricting voting through literacy, employment, and property qualifications. That state archival description supports a careful legal-history entry about the constitution’s formal voting qualifications. It does not establish how any specific registrar acted, how every county administered the rules, or the voting history of any individual; those questions require local registration, tax, election, or court records.",
     keyFact: "Alabama’s state archive describes the 1901 constitution as restricting suffrage through literacy, employment, and property qualifications.",

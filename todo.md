@@ -127,3 +127,10 @@
 - [x] Add source-critical public cards for the remaining transferred colonial works, beginning with Ogilby/Montanus, Adair, Barton, Frere, and unrepresented Carolina sources.
 - [x] Add jurisdiction-specific legal records for voting barriers and treaty-related legal instruments, with exact text or holding, enforcement path, and documented limit.
 - [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the evidence block is complete.
+
+# Evidence Linkage and Sources & Claims Index Release
+
+- [x] Search Louisiana contracts, complaints, employer, tax, census, court, and local records for a concrete cross-series identifier before altering the Robert Butler linkage status; retain the case as unresolved when no shared identifier is found.
+- [x] Add a second jurisdiction-specific voting-barrier and local-law cluster with primary-record source routes, enforcement context, and explicit limits.
+- [x] Create the Sources & Claims Index data schema and public interface specification from the established source-card, legal-record, and timeline-detail fields.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the release.

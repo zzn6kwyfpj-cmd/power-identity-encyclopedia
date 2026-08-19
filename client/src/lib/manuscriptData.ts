@@ -1150,6 +1150,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
   { year: 1896, event: "Plessy v. Ferguson — 'separate but equal' enshrined in law", era: 3 },
   { year: 1898, event: "Spanish-American War — Buffalo Soldiers fight for a country that returns them to Jim Crow", era: 3 },
   { year: 1898, event: "Wilmington Massacre — only successful coup d'état in U.S. history", era: 3 },
+  { year: 1900, event: "North Carolina Suffrage Amendment — the state adds literacy and poll-tax requirements to voting while temporarily exempting those eligible before January 1, 1867 and their lineal descendants from the educational test if registered by 1908. The text establishes statewide qualifications; local administration requires separate evidence. Source: North Carolina Digital Collections", era: 3, detailKey: "1900_north_carolina_suffrage" },
   { year: 1901, event: "Alabama Constitution of 1901 — the state constitutional voting framework used literacy, employment, and property qualifications. The Alabama Department of Archives and History preserves the original 61-page document and identifies those restrictions. Source: Alabama Department of Archives and History", era: 3, detailKey: "1901_alabama_constitution" },
   { year: 1909, event: "NAACP founded by Du Bois, Wells, and others", era: 3 },
   { year: 1921, event: "Tulsa Race Massacre — Greenwood District destroyed", era: 3 },

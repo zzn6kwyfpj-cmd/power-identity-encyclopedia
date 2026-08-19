@@ -18,6 +18,7 @@ import GeorgiaPage from "./pages/GeorgiaPage";
 import GlossaryPage from "./pages/GlossaryPage";
 import GenealogyPage from "./pages/GenealogyPage";
 import MapPage from "./pages/MapPage";
+import SourcesClaimsIndexPage from "./pages/SourcesClaimsIndexPage";
 
 function Router() {
   return (
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/glossary" component={GlossaryPage} />
       <Route path="/genealogy" component={GenealogyPage} />
       <Route path="/map" component={MapPage} />
+      <Route path="/sources-claims" component={SourcesClaimsIndexPage} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

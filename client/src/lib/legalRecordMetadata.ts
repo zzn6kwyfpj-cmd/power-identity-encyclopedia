@@ -221,6 +221,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     documentedLimit: "The archival record identifies statewide qualifications; it does not establish the application of every qualification in every county or a particular voter’s experience.",
     sourceUrl: "https://digital.archives.alabama.gov/digital/collection/voices/id/11307/"
   },
+  "1900_north_carolina_suffrage": {
+    recordType: "Constitution",
+    jurisdiction: "State of North Carolina",
+    citation: "Suffrage Amendment to Article VI of the North Carolina Constitution (submitted 1899; ratified 1900; State Archives record dated 1901)",
+    mechanism: "Required a voter to read and write a section of the constitution in English and to pay a poll tax, while temporarily exempting people entitled to vote before January 1, 1867 and their lineal descendants from the educational qualification if registered by the stated 1908 deadline.",
+    enforcementPath: "County registrars, local election administrators, poll-tax administration, permanent registration records, and state election law.",
+    documentedLimit: "The amendment’s text identifies statewide qualifications and an exemption; it does not establish the administration of every registrar, the voting history of a particular person, or a universal outcome for all North Carolinians.",
+    sourceUrl: "https://digital.ncdcr.gov/Documents/Detail/amendment-of-the-north-carolina-constitution-regarding-suffrage-1901/789530"
+  },
   "1957_civil_rights_act": {
     recordType: "Statute",
     jurisdiction: "Federal",

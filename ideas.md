@@ -49,3 +49,6 @@
 - Timeline era transitions use cinematic archive plates, a recurring institutional seal, formal gallery titles, and ornamental pauses before entries resume.
 - New long-form chapters include a gold-framed archival context plate tied to their documentary period; the visual treatment supports context rather than presenting generated imagery as evidence.
 - Timeline cataloging hierarchy distinguishes the date, archive-entry label, category, and historical era while retaining crimson and green only for evidence meaning.
+- Sources & Claims Index pages use numbered archive-section plates, a seal-style opening panel, and gold structural frames so evidence records read as a curated museum catalogue rather than an uninterrupted database.
+- In source-index cards, green appears only as an explicit evidence-tier indicator; antique gold frames the record and its navigation, while crimson is reserved for materially contested or harmful-history groupings.
+- Source-index microcopy uses formal catalogue language—such as “archive section,” “verification route,” and “documented limit”—to reinforce the role of the reader as an evidence examiner.

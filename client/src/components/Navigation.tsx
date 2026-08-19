@@ -41,6 +41,7 @@ export default function Navigation() {
     { href: "/georgia", label: "Georgia Deep Dive" },
     { href: "/glossary", label: "Glossary" },
     { href: "/genealogy", label: "Genealogy Guide" },
+    { href: "/sources-claims", label: "Sources & Claims Index" },
     { href: "/bibliography", label: "Sources" },
     { href: "/resources", label: "Resources" },
   ];
