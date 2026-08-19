@@ -84,12 +84,12 @@
 - [x] Update the canonical master roadmap after each substantive research or product checkpoint.
 - [x] Add page-specific facsimile anchors for the colonial passages currently linked only at the item level, beginning with Hariot, Whitaker, Bradford, and Ligon.
 - [x] Add the Voting Rights Act companion enforcement holdings: *Gaston County v. United States* (1969) and *City of Rome v. United States* (1980), with institutional record links and bounded claims.
-- [ ] Build a filterable Sources & Claims Index that lets readers browse evidence cards by tier, year, topic, source type, and verification status.
-- [ ] Deepen Chapter 59 on the Freedmen’s Bureau with page-verified primary records, including both recovery efforts and classification or land-restoration limits.
-- [ ] Add a practical Walter English / Brister English Project methodology section that explains a documentary genealogy workflow without equating ancestry research with tribal citizenship.
+- [x] Build a filterable Sources & Claims Index that lets readers browse evidence cards by tier, year, topic, source type, and verification status.
+- [x] Deepen Chapter 59 on the Freedmen’s Bureau with page-verified primary records, including both recovery efforts and classification or land-restoration limits.
+- [x] Add a practical Walter English / Brister English Project methodology section that explains a documentary genealogy workflow without equating ancestry research with tribal citizenship.
 - [ ] Research and lawfully obtain controlled-access scholarship, beginning with Jack D. Forbes’s *Africans and Native Americans* and Kyle T. Mays’s *An Afro-Indigenous History of the United States*.
-- [ ] Expand page-verified civil-rights movement coverage beyond legal milestones, including Birmingham, Selma, voting-registration campaigns, and the roles of local organizers.
-- [ ] Strengthen the pre-850 CE chronology rationale and the Turtle Island / Niji source base with clearly distinguished Indigenous knowledge traditions and archaeological or historical scholarship.
+- [x] Expand page-verified civil-rights movement coverage beyond legal milestones, including Birmingham, Selma, voting-registration campaigns, and the roles of local organizers.
+- [x] Strengthen the pre-850 CE chronology rationale and the Turtle Island / Niji source base with clearly distinguished Indigenous knowledge traditions and archaeological or historical scholarship.
 - [ ] Design the staged architecture, evidence policy, moderation workflow, and provenance model for a future community-submission verification hub before building it.
 
 # Sequential Execution — Current Release
@@ -156,3 +156,13 @@
 - [x] Establish a pre-850 chronology rationale and deepen the Turtle Island/Niji frame with nation-specific Indigenous sources, archaeology, and explicit knowledge-category boundaries.
 - [x] Verify state classification statutes, relevant census instructions, institutional records for Aleš Hrdlička and Melville Herskovits, and the A00/Perry-family genetic finding before any public integration; preserve unsupported labels as deferred rather than factual claims.
 - [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after all three releases are complete.
+
+# TikTok History Collection — Evidence Release
+
+- [x] Resolve and review the supplied TikTok short link as the 432-item @justabystander “History” collection; preserve the account, collection, and access boundary as platform provenance only.
+- [x] Complete a reproducible register for all 394 items TikTok rendered in authenticated review, recording the remaining 38 displayed-but-unrendered items as an explicit access gap.
+- [x] Classify the registered posts by citation detail, claim type, scope, and verification priority; retain unsupported community, speculative, and universal-identity posts as discovery leads rather than public evidence.
+- [x] Create and complete a priority cross-reference queue for consequential leads; maintain a claim-level verification ledger with primary, nation, university, institutional, and scholarly routes.
+- [x] Integrate only the independently supported Brereton (corrected geography), De Soto–Coosa, King Philip’s War forced-movement, and Eastern Pequot records with source-visible limitations; do not cite TikTok posts as public evidence.
+- [x] Record the exclusions: the unverified John Eliot-return-letter claim, the unverified Tuskaloosa etymology quotation, the unspecified 1910 terminology work, and the refuted Machiavelli/America-as-Africa claim.
+- [x] Use the user’s connected personal browser to lawfully extend extraction beyond the original 86-item public-page batch.

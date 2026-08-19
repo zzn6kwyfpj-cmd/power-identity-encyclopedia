@@ -85,6 +85,13 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "georgia-charter",
     chapterTitle: "The 1732 Georgia Charter",
   },
+  "1540_de_soto_coosa": {
+    description: "National Park Service historical accounts place Hernando de Soto’s 1539–1542 expedition in the Coosa chiefdom and describe the expedition’s seizure of the Coosa leader as a hostage for passage. The later sequence includes De Soto’s violent encounter at Mabila under Chief Tuskaloosa. These accounts document a specific encounter between a Spanish invasion force and Southeastern Indigenous polities. They do not make a claim about the ancestry, phenotype, or present identity of the Coosa people, and they do not verify the TikTok caption’s precise place-name etymology quotation.",
+    keyFact: "The verified record concerns coercion, hostage-taking, and violence in a named Indigenous polity. A “Black Warrior” place-name gloss is not a racial classification and is not used here as an ancestry claim.",
+    primarySource: "National Park Service, ‘De Soto Expedition, 1539–1542’ and ‘Hernando de Soto and the Coosa chiefdom’",
+    chapterSlug: "colonial-archive-sourcebook",
+    chapterTitle: "The Colonial Archive: A Sourcebook for Reading Power",
+  },
   "1606": {
     description: "On April 10, 1606, King James I of England granted the Virginia Company of London a royal charter to colonize the eastern coast of North America. The charter granted the company the right to 'make habitation, plantation, and to deduce a colony of sundry of our people' in the territory between the 34th and 41st parallels — land that was home to the Powhatan Confederacy, a sophisticated alliance of approximately 30 Algonquian-speaking tribes with a population of 14,000 to 21,000 people. The Virginia Company was a joint-stock corporation — private investors funded the colonization in exchange for a share of the profits. This corporate structure — private investment, royal charter, Indigenous land seizure — is the direct template for the Georgia Charter (1732) and every subsequent colonial land grant. The Virginia Company's charter is the first corporate colonialism in American history.",
     keyFact: "The Virginia Company Charter (1606) was the first corporate colonialism in American history. Private investors funded the seizure of Powhatan Confederacy land for profit. This corporate structure was the direct template for the Georgia Charter 126 years later.",
@@ -126,6 +133,20 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     primarySource: "Facing History & Ourselves, 'Inventing Black and White' (2016); Edmund Morgan, American Slavery, American Freedom (1975)",
     chapterSlug: "psychological-warfare",
     chapterTitle: "The Architecture of Psychological Warfare",
+  },
+  "1676_wampanoag_deportation": {
+    description: "During and after King Philip’s War, colonial authorities used captivity, forced labor, sale, and overseas movement against Native people. Linford D. Fisher’s research reconstructs forced movement to Barbados, Bermuda, Jamaica, Spain, the Azores, and Tangier from colonial correspondence, shipping records, court cases, town records, official histories, and related materials. The Native Northeast Portal identifies a 1677 list of New England Indians held at the Bagnio in Tangier, a 1675 John Eliot letter objecting to the sale of Indians as slaves, and a 1676 Admiralty record concerning Indian slaves. The records establish a coercive Atlantic system; they do not establish the TikTok caption’s unverified claim that Tangier captives wrote John Eliot requesting return.",
+    keyFact: "The publication-approved finding is the documented forced overseas movement of Native captives, including Wampanoag people—not the unverified claim of letters from Tangier captives to John Eliot.",
+    primarySource: "Native Northeast Portal, King Philip’s War record routes; Linford D. Fisher, ‘Why shall wee have peace to bee made slaves’ (Ethnohistory, 2017)",
+    chapterSlug: "colonial-archive-sourcebook",
+    chapterTitle: "The Colonial Archive: A Sourcebook for Reading Power",
+  },
+  "1683_eastern_pequot": {
+    description: "The Eastern Pequot Tribal Nation describes its reservation in North Stonington, Connecticut, as established in 1683 and continuously occupied; Connecticut educational materials likewise identify the reservation as established in 1683. The University of Massachusetts Boston documents a community-engaged archaeological field school with the Nation on that historic reservation since 2003. The federal-status record must be reported precisely: an initial 2002 positive final determination was superseded by a 2005 reconsidered final determination declining federal acknowledgment, and the Bureau of Indian Affairs lists the petition as denied. This administrative outcome does not negate the Nation’s history or determine cultural continuity, community self-understanding, individual ancestry, or citizenship in any other nation.",
+    keyFact: "The controlling federal-acknowledgment outcome is the 2005 decline (70 FR 60099), not the earlier 2002 positive determination.",
+    primarySource: "Eastern Pequot Tribal Nation; UMass Boston; Bureau of Indian Affairs; Federal Register, 70 FR 60099 (2005)",
+    chapterSlug: "turtle-island-niji",
+    chapterTitle: "Turtle Island: The Name of This Place and the People Who Named It",
   },
   "1705": {
     description: "The Virginia Slave Code of 1705 was the most comprehensive codification of American chattel slavery to that point. It consolidated and expanded dozens of earlier laws into a single comprehensive statute. Key provisions: enslaved people were defined as 'real estate' — property, not persons; enslaved people could not own property, testify in court, or make contracts; any white person could kill an enslaved person who resisted; enslaved people who converted to Christianity were not freed; and the children of enslaved mothers were enslaved regardless of their father's status. The code explicitly stated that 'all negro, mulatto, and Indian slaves' were 'real estate.' Every Southern slave code that followed — including Georgia's — was modeled on this document. The Virginia Slave Code of 1705 is the legal foundation of American chattel slavery.",

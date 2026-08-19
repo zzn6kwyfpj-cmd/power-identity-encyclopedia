@@ -1,4 +1,4 @@
-// Royal Archive design: ceremonial exhibit title wall, gold structural frames, green only for verified evidence, crimson for contested or harmful-history material, and archival pauses within long catalogues.
+// Royal Archive design: ceremonial exhibit title wall, recurring institutional seals and gold rulework, featured evidence openings before supporting records, and archival pauses within long catalogues. Green only signals evidence verification; crimson signals contested or harmful-history material.
 
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
@@ -157,10 +157,10 @@ export default function SourcesClaimsIndexPage() {
           <section className="grid gap-10" aria-live="polite">
             {Object.entries(groupedResults).map(([group, items], groupIndex) => (
                 <div key={group} style={{ position: "relative", paddingTop: groupIndex === 0 ? 0 : 22 }}>
-                <div className="flex items-center gap-4" style={{ marginBottom: 18, borderTop: "1px solid rgba(212,175,55,0.52)", borderBottom: "1px solid rgba(212,175,55,0.28)", background: "linear-gradient(90deg, rgba(212,175,55,0.12), rgba(13,23,33,0.88) 60%)", padding: "18px 20px" }}>
-                  <div style={{ width: 42, height: 42, border: "1px solid #d4af37", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{String(groupIndex + 1).padStart(2, "0")}</div>
+                <div className="flex items-center gap-4" style={{ marginBottom: 22, borderTop: "1px solid rgba(212,175,55,0.60)", borderBottom: "1px solid rgba(212,175,55,0.30)", background: "linear-gradient(90deg, rgba(212,175,55,0.16), rgba(13,23,33,0.92) 62%)", padding: "20px 22px" }}>
+                  <div aria-hidden="true" style={{ width: 50, height: 50, border: "1px solid #d4af37", borderRadius: "50%", color: "#d4af37", fontFamily: "Cinzel, serif", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 0 0 4px rgba(212,175,55,0.08)" }}><span style={{ fontSize: 15 }}>✦</span><span style={{ fontSize: 7, letterSpacing: "0.12em", marginTop: 2 }}>{String(groupIndex + 1).padStart(2, "0")}</span></div>
                   <div className="min-w-0 flex-1">
-                    <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.23em", marginBottom: 5 }}>ARCHIVE SECTION</div>
+                    <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.23em", marginBottom: 5 }}>ARCHIVE ROOM · FEATURED EVIDENCE OPENS THE SEQUENCE</div>
                     <div style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: "1.15rem", letterSpacing: "0.08em" }}>{group.toUpperCase()}</div>
                     <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", fontStyle: "italic", marginTop: 5 }}>{EXHIBIT_NOTES[group] ?? "A curated sequence of source routes, claims, and documented limits."}</div>
                   </div>
@@ -172,11 +172,12 @@ export default function SourcesClaimsIndexPage() {
                     const harmfulTone = item.topic === "Racial Violence & Due Process" ? "#8b1a1a" : "#d4af37";
                     const isLeadRecord = index === 0;
                     return <div key={item.id} style={isLeadRecord ? { gridColumn: "1 / -1" } : undefined}>
-                      <article style={{ background: isLeadRecord ? "linear-gradient(110deg, #13212c, #0d1721 62%)" : "#0d1721", border: `1px solid ${isLeadRecord ? "rgba(212,175,55,0.52)" : "rgba(212,175,55,0.2)"}`, borderLeft: `5px solid ${harmfulTone}`, padding: isLeadRecord ? "28px" : "22px", position: "relative" }}>
+                      <article style={{ background: isLeadRecord ? "linear-gradient(115deg, rgba(212,175,55,0.14), #14212c 42%, #0d1721 78%)" : "#0d1721", border: `1px solid ${isLeadRecord ? "rgba(212,175,55,0.62)" : "rgba(212,175,55,0.2)"}`, borderLeft: `${isLeadRecord ? 6 : 5}px solid ${harmfulTone}`, padding: isLeadRecord ? "32px" : "22px", position: "relative", boxShadow: isLeadRecord ? "0 22px 34px rgba(0,0,0,0.18)" : "none" }}>
+                        {isLeadRecord && <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#d4af37", marginBottom: 18 }}><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.60)" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.19em" }}>✦ FEATURED EVIDENCE RECORD ✦</span><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.60)" }} /></div>}
                         <div className="flex flex-wrap items-center gap-x-3 gap-y-2" style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>
                           <span style={{ color: tierTone, border: `1px solid ${tierTone}80`, padding: "3px 6px" }}>{item.tier.toUpperCase()}</span><span>•</span><span>{item.yearLabel}</span><span>•</span><span>{item.sourceType.toUpperCase()}</span>
                         </div>
-                        <div style={{ color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em", marginTop: 13 }}>CATALOGUE RECORD · {item.topic.toUpperCase()}</div>
+                        <div style={{ color: isLeadRecord ? "#d4af37" : "#64748b", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em", marginTop: 13 }}>{isLeadRecord ? "CURATORIAL LEAD · " : "CATALOGUE RECORD · "}{item.topic.toUpperCase()}</div>
                         <h2 style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: isLeadRecord ? "1.55rem" : "1.1rem", lineHeight: 1.35, marginTop: 7, marginBottom: 8 }}>{item.title}</h2>
                         <p style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", margin: 0 }}>{item.region} · {item.verification}</p>
                         <div className="grid gap-4 md:grid-cols-2" style={{ marginTop: 17 }}>
@@ -195,7 +196,8 @@ export default function SourcesClaimsIndexPage() {
                           <Link href={`/chapter/${item.chapterSlug}`}><span style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.12em", cursor: "pointer" }}>RELATED CHAPTER →</span></Link>
                         </div>
                       </article>
-                      {(index + 1) % 3 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "20px 0 2px", color: "#d4af37", opacity: 0.62 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>CATALOGUE BAY {String(Math.floor((index + 1) / 3) + 1).padStart(2, "0")}</span><span style={{ fontSize: 12 }}>✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                      {isLeadRecord && items.length > 1 && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "28px 0 4px", color: "#d4af37" }}><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.46)" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>✦ SUPPORTING RECORDS · CATALOGUE BAYS ✦</span><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.46)" }} /></div>}
+                      {(index + 1) % 3 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "24px 0 5px", color: "#d4af37", opacity: 0.72 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>✦ ARCHIVAL PAUSE · CATALOGUE BAY {String(Math.floor((index + 1) / 3) + 1).padStart(2, "0")} ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                     </div>;
                   })}
                 </div>

@@ -7,7 +7,7 @@ import { TIMELINE_DETAILS } from "@/lib/timelineDetails";
 import { LEGAL_RECORDS } from "@/lib/legalRecordMetadata";
 import { Search, Share2, Filter, ChevronDown, ChevronUp, BookOpen, X } from "lucide-react";
 
-// Royal Archive design: exhibit-title wall, era plates, gold catalogue structure, green reserved for verified evidence, and crimson reserved for violence or contested history.
+// Royal Archive design: exhibit-title wall, institutional seals and gold rules as recurring archive grammar, contextual era plates, featured room-opening records, and restrained pauses before supporting entries. Green remains evidence-specific; crimson remains conflict-specific.
 
 // Categorize each event for filtering
 const EVENT_CATEGORIES: Record<string, string> = {
@@ -356,20 +356,22 @@ export default function TimelinePage() {
                 const isExpanded = expandedEvent === i;
                 const isCopied = copiedIndex === i;
                 const [recordTitle, recordAbstract] = splitTimelineEvent(event.event);
+                const isEraLead = showEraBanner;
 
                 return (
                   <>
                   {showEraBanner && (
-                    <div style={{ marginLeft: -48, marginBottom: 32, marginTop: i > 0 ? 58 : 0, position: "relative", overflow: "hidden", height: 252, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80` }}>
+                    <div style={{ marginLeft: -48, marginBottom: 32, marginTop: i > 0 ? 58 : 0, position: "relative", overflow: "hidden", height: 276, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80`, boxShadow: `0 22px 38px ${eraColors[event.era - 1]}12` }}>
                       <img
                         src={eraBanners[event.era - 1]}
                         alt={`Era ${event.era}`}
                         style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.7 }}
                       />
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(10,17,24,0.96), rgba(10,17,24,0.52), rgba(10,17,24,0.92))", display: "flex", alignItems: "center", padding: "0 64px" }}>
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(10,17,24,0.97), rgba(10,17,24,0.55), rgba(10,17,24,0.94))", display: "flex", alignItems: "center", padding: "0 64px" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-                          <div style={{ width: 52, height: 52, flexShrink: 0, border: `1px solid ${eraColors[event.era - 1]}`, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 28px ${eraColors[event.era - 1]}35` }}>
+                          <div style={{ width: 58, height: 58, flexShrink: 0, border: `1px solid ${eraColors[event.era - 1]}`, borderRadius: "50%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: `0 0 0 5px ${eraColors[event.era - 1]}12, 0 0 28px ${eraColors[event.era - 1]}35` }}>
                             <span style={{ color: eraColors[event.era - 1], fontFamily: "Cinzel, serif", fontSize: 18 }}>✦</span>
+                            <span style={{ color: eraColors[event.era - 1], fontFamily: "Cinzel, serif", fontSize: 6, letterSpacing: "0.12em", marginTop: 3 }}>ROOM {event.era}</span>
                           </div>
                           <div>
                             <div style={{ fontFamily: "Cinzel, serif", color: eraColors[event.era - 1], fontSize: 10, letterSpacing: "0.3em", marginBottom: 8 }}>CURATED GALLERY · ERA {["I","II","III","IV","V"][event.era - 1]}</div>
@@ -377,6 +379,7 @@ export default function TimelinePage() {
                             <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", fontStyle: "italic" }}>✦ — archival records, law, resistance, and consequence — ✦</div>
                           </div>
                         </div>
+                        <div aria-hidden="true" style={{ position: "absolute", right: 25, bottom: 16, color: "#c4cedb", fontFamily: "Cinzel, serif", fontSize: 7, letterSpacing: "0.16em", opacity: 0.78 }}>CONTEXT PLATE · PERIOD TRANSITION · NOT EVIDENCE</div>
                       </div>
                     </div>
                   )}
@@ -396,19 +399,21 @@ export default function TimelinePage() {
 
                     {/* Event card */}
                     <div style={{
-                      background: "linear-gradient(100deg, #0f1923 0%, #101b27 100%)",
-                      border: `1px solid ${catColor}30`,
-                      borderLeft: `3px solid ${catColor}`,
-                      padding: "20px 22px",
+                      background: isEraLead ? `linear-gradient(110deg, ${catColor}16 0%, #14212c 37%, #0d1721 100%)` : "linear-gradient(100deg, #0f1923 0%, #101b27 100%)",
+                      border: `1px solid ${isEraLead ? `${catColor}85` : `${catColor}30`}`,
+                      borderLeft: `${isEraLead ? 5 : 3}px solid ${catColor}`,
+                      padding: isEraLead ? "30px 32px" : "18px 22px",
+                      boxShadow: isEraLead ? `0 20px 32px ${catColor}13` : "none",
                       transition: "all 0.2s",
                     }}>
+                      {isEraLead && <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#d4af37", marginBottom: 18 }}><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.56)" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.19em" }}>✦ FEATURED RECORD · ROOM OPENING ✦</span><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.56)" }} /></div>}
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
                         <div style={{ flex: 1 }}>
                           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, flexWrap: "wrap" }}>
                             <span style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: 22, fontWeight: 700, lineHeight: 1, flexShrink: 0 }}>
                               {event.year}
                             </span>
-                            <span style={{ color: "#475569", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.14em" }}>ARCHIVE ENTRY</span>
+                            <span style={{ color: isEraLead ? "#d4af37" : "#475569", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.14em" }}>{isEraLead ? "FEATURED EVIDENCE RECORD" : "ARCHIVE ENTRY"}</span>
                             <span style={{ fontFamily: "Cinzel, serif", color: catColor, fontSize: 8, letterSpacing: "0.1em", border: `1px solid ${catColor}40`, padding: "1px 6px", flexShrink: 0 }}>
                               {CATEGORY_LABELS[event.category]}
                             </span>
@@ -416,8 +421,8 @@ export default function TimelinePage() {
                               ERA {["I","II","III","IV","V"][event.era - 1]}
                             </span>
                           </div>
-                          <h2 style={{ color: "#f0e3bc", fontFamily: "Cinzel, serif", fontSize: "1.13rem", lineHeight: 1.35, margin: "0 0 9px" }}>{recordTitle}</h2>
-                          {recordAbstract && <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#b8c4d2", fontSize: "1.04rem", lineHeight: 1.62, margin: 0 }}>{recordAbstract}</p>}
+                          <h2 style={{ color: "#f0e3bc", fontFamily: "Cinzel, serif", fontSize: isEraLead ? "1.46rem" : "1.13rem", lineHeight: 1.35, margin: "0 0 9px" }}>{recordTitle}</h2>
+                          {recordAbstract && <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#b8c4d2", fontSize: isEraLead ? "1.16rem" : "1.04rem", lineHeight: 1.62, margin: 0, maxWidth: isEraLead ? 940 : undefined }}>{recordAbstract}</p>}
                         </div>
 
                         {/* Action buttons */}
@@ -543,7 +548,7 @@ export default function TimelinePage() {
                       })()}
                     </div>
                   </div>
-                  {(i + 1) % 10 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "38px 0 50px -48px", padding: "18px 22px", display: "flex", alignItems: "center", gap: 12, color: "#d4af37", borderTop: "1px solid rgba(212,175,55,0.42)", borderBottom: "1px solid rgba(212,175,55,0.26)", background: "linear-gradient(90deg, rgba(212,175,55,0.11), transparent)" }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>GALLERY ROOM · NEXT RECORD SEQUENCE</span><span style={{ fontSize: 12 }}>✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                  {(i + 1) % 10 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "42px 0 54px -48px", padding: "22px 24px", display: "flex", alignItems: "center", gap: 12, color: "#d4af37", borderTop: "1px solid rgba(212,175,55,0.52)", borderBottom: "1px solid rgba(212,175,55,0.30)", background: "linear-gradient(90deg, rgba(212,175,55,0.13), transparent 70%)" }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>✦ ARCHIVAL PAUSE · NEXT RECORD SEQUENCE ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                   </>
                 );
               })}

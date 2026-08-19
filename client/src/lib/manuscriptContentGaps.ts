@@ -244,6 +244,12 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
 
       'The opening boundary therefore carries three distinct categories: first, nation-specific Indigenous knowledge; second, archaeological research and its changing interpretations; and third, the archive’s own editorial decision to begin detailed event navigation at 850 CE. None of these categories independently establishes a universal origin story, a single population history, or a person’s present identity or citizenship.',
 
+      '— A NATION-SPECIFIC EASTERN PEQUOT RECORD —',
+
+      'The Eastern Pequot Tribal Nation describes its reservation in North Stonington, Connecticut, as established in 1683 and continuously occupied. Connecticut’s educational materials likewise identify the Eastern Pequot reservation as established in 1683. Since 2003, the University of Massachusetts Boston has documented a community-engaged archaeological field school with the Nation on its historic reservation. These records make a particular nation, place, and collaborative project visible; they should not be generalized into a claim about a continental or universal Black Native identity.',
+
+      'The federal acknowledgment record requires particular care. The Department of the Interior issued a positive final determination in 2002, but a reconsidered final determination in 2005 declined acknowledgment; the Bureau of Indian Affairs lists the petition as denied. Federal acknowledgment status is an administrative determination with real consequences, but it is not a measure of cultural continuity, community self-understanding, or the validity of a people’s history.',
+
       '— THE NIJI COMMUNITY TRADITION —',
 
       'Within some Black Native American communities, “Niji” is used as a term for an original dark-skinned Indigenous population of Turtle Island or for a distinct ancestral lineage. The Archive preserves this as Tier 3 community historical tradition because the supplied corpus and the sources reviewed for this chapter do not provide primary or peer-reviewed evidence sufficient to establish the claim at the required level of specificity. Respectful preservation requires attribution and a clear limit, not conversion into a universal historical finding.',
@@ -259,7 +265,30 @@ export const GAPS_CONTENT: Record<string, ChapterContent> = {
       'Oneida Indian Nation, “The Haudenosaunee creation story” — Nation-authored knowledge tradition',
       'National Park Service, “Native Americans – Archeology” — institutional archaeological overview',
       'National Park Service links to Paleo-Indian, Archaic, Woodland, and Mississippian-period resources — regional period frameworks',
+      'Eastern Pequot Tribal Nation and Connecticut State Department of Education — 1683 reservation context; nation- and state-published records',
+      'University of Massachusetts Boston, Eastern Pequot Archaeological Field School — community-engaged archaeology record',
+      'Bureau of Indian Affairs and Federal Register, 70 FR 60099 (2005) — controlling federal-acknowledgment outcome',
       'Community uses of “Niji” — Tier 3; requires claim-specific independent corroboration before factual integration',
+    ],
+    sourceCards: [
+      {
+        year: '1683 / 2003–present',
+        title: 'Eastern Pequot Tribal Nation: reservation continuity and community-engaged archaeology',
+        locator: 'Nation history and Connecticut state educational record on the 1683 reservation; UMass Boston description of field school active since 2003',
+        establishes: 'The Eastern Pequot Tribal Nation and Connecticut sources identify the reservation in North Stonington as established in 1683. UMass Boston documents a community-engaged archaeology, heritage, preservation, and education project with the Nation on that historic reservation.',
+        limitation: 'These records document a specific nation, place, and collaborative project. They do not establish a generalized Black Native identity, an individual’s genealogy, or present citizenship in any nation.',
+        source: 'Eastern Pequot Tribal Nation; Connecticut State Department of Education; University of Massachusetts Boston, Eastern Pequot Archaeological Field School',
+        sourceUrl: 'https://www.easternpequottribalnation.org/',
+      },
+      {
+        year: '2005',
+        title: 'Eastern Pequot Indians of Connecticut: reconsidered federal acknowledgment determination',
+        locator: 'Reconsidered Final Determination to Decline to Acknowledge, 70 FR 60099 (October 14, 2005); BIA resolved-petition record',
+        establishes: 'The controlling 2005 reconsidered final determination declined federal acknowledgment of the Eastern Pequot Indians of Connecticut, and the Bureau of Indian Affairs lists the petition as denied.',
+        limitation: 'The administrative determination addresses federal acknowledgment under its regulatory criteria. It does not determine cultural continuity, community self-understanding, the full history of the Eastern Pequot people, or the validity of any person’s claimed ancestry.',
+        source: 'U.S. Department of the Interior, Bureau of Indian Affairs; Federal Register, 70 FR 60099',
+        sourceUrl: 'https://www.bia.gov/as-ia/ofa/resolved/eastern-pequot-indians-connecticut',
+      },
     ],
   },
 

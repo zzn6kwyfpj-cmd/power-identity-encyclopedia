@@ -57,3 +57,6 @@
 - Crimson is reserved for harmful or contested-history material and Tier 3 community theory; green signals verified Tier 1 evidence; gold remains the structural material of the archive.
 - Long chronology and source lists include restrained ornamental interludes in addition to named sections so the reader moves through curated rooms rather than an uninterrupted record wall.
 - Gallery-room plates use a ceremonial scope statement and a featured lead record at the start of each catalogue sequence; only evidence meaning—not decorative variation—uses green or crimson.
+- Timeline and source-index sequences must alternate a ceremonial room opening, a featured lead record, supporting records, and a restrained ornamental pause; no long catalogue route should read as a uniform wall of cards.
+- The institutional seal, antique-gold rulework, and ✦ archive dividers are recurring navigation grammar across chapter, timeline, and source-index routes.
+- Archival imagery appears only as a distinct contextual exhibit plate with a period caption and generous space; it is never repeated as decorative wallpaper or a generic record thumbnail.
