@@ -104,6 +104,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     documentedLimit: "The act establishes a particular Louisiana marriage restriction. It does not prove an individual’s ancestry, establish a particular marriage outcome or uniform enforcement, or define a classification rule beyond this provision.",
     sourceUrl: "https://babel.hathitrust.org/cgi/pt?id=osu.32437123304632&seq=69&q1=marriage&start=1"
   },
+  "1823_moultrie_creek_fugitive_capture": {
+    recordType: "Treaty",
+    jurisdiction: "United States and the Florida Tribes of Indians; Florida Territory",
+    citation: "Treaty with the Florida Tribes of Indians, Article VII, 7 Stat. 224, 225 (Sept. 18, 1823; proclaimed Jan. 2, 1824)",
+    mechanism: "Required the named chiefs and warriors, for themselves and their tribes, to prevent absconding enslaved people and fugitives from justice from retreating to or passing through the assigned district, and to use necessary exertions to apprehend and deliver them to the agent; the agent was to receive orders to compensate them according to the trouble and expense incurred.",
+    enforcementPath: "Federal treaty administration, the Indian agent named in the treaty framework, and the stated delivery-to-agent and compensation-order process.",
+    documentedLimit: "Article VII establishes a treaty obligation and conditional compensation mechanism. It does not document an actual apprehension or payment, prove uniform compliance, determine the status of a named person, or characterize every Seminole or other Florida Indigenous person.",
+    sourceUrl: "https://catalog.archives.gov/id/100378116"
+  },
   "1924_virginia_racial_integrity": {
     recordType: "Statute",
     jurisdiction: "Commonwealth of Virginia",

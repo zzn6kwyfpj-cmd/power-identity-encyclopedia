@@ -195,4 +195,12 @@
 - [ ] Recover an original newspaper page-and-column locator for the Tom notice if a public image route becomes available; its existing institutional transcription is sufficient only for the current, narrow source card.
 - [x] Add only records that satisfy the archive’s legal and evidence-card requirements; preserve incomplete, contradictory, or unlocated leads—including Tennessee’s wording and the broader Forbes cluster—as documented deferrals.
 - [x] Type-check, visually validate, and update research ledgers and the canonical roadmap for the resulting evidence release.
-- [ ] Save the release checkpoint and report the completed work with the remaining Tennessee and source-locator priorities.
+- [x] Save the release checkpoint and report the completed work with the remaining Tennessee and source-locator priorities.
+
+# Next Three Evidence Tasks — Authorized August 2026
+
+- [x] Recover and assess the Tennessee 1865 lead through the confirmed session-laws volume. The reported hiring-out passage belongs to the Mississippi Black Code, not the reviewed Tennessee volume; do not create a Tennessee public legal record without a new specific, source-complete lead.
+- [x] Locate an original issue page and column for the December 3, 1772 Virginia Gazette notice concerning Tom. The Library of Congress scan confirms page 2, rightmost (third) column; the public record now carries the primary-image route and retains its imposed-label limitation.
+- [x] Test the Paul Cuffe and 1823 Florida treaty leads against authoritative institutional records. Integrate the original 1780 Cuffe petition and Ratified Indian Treaty 120 only with their documented scope, mechanism, and limits.
+- [x] Produce a source-critical progress and gap assessment covering completed evidence architecture, deferred primary-record queues, geographic and thematic balance, and platform-governance prerequisites.
+- [ ] Synchronize the canonical roadmap, run final validation, save a checkpoint, and report the release.

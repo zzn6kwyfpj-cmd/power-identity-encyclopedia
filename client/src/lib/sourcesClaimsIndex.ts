@@ -26,7 +26,7 @@ export type SourceClaimIndexItem = {
 const firstYear = (value: string) => Number(value.match(/\d{4}/)?.[0] ?? 9999);
 
 function legalTopic(recordKey: string) {
-  if (recordKey.includes("cherokee") || recordKey.includes("indian_appropriations")) {
+  if (recordKey.includes("cherokee") || recordKey.includes("indian_appropriations") || recordKey.includes("moultrie_creek")) {
     return { topic: "Treaty & Sovereignty", chapterSlug: "treaties-broken-promises" };
   }
   if (recordKey.includes("freedmens") || recordKey.includes("field_order") || recordKey.includes("land_restoration")) {
@@ -365,11 +365,30 @@ const tom1772AdvertisementEvidenceItems: SourceClaimIndexItem[] = [
     topic: "Colonial Classification & Captivity",
     region: "Surry and Sussex Counties, Virginia",
     sourceType: "Newspaper advertisement / jail notice",
-    verification: "Institutional record",
-    establishes: "A December 3, 1772 Virginia Gazette jail notice reported that a man who said his name was Tom had been committed in Surry County, said he belonged to Benjamin Clements of Sussex, and ‘appears to be of the Indian Breed.’",
+    verification: "Stable facsimile / edition route",
+    establishes: "A December 3, 1772 Virginia Gazette jail notice, directly confirmed on the Library of Congress scan at page 2, rightmost column, reported that a man who said his name was Tom had been committed in Surry County, said he belonged to Benjamin Clements of Sussex, and ‘appears to be of the Indian Breed.’",
     limitation: "The notice records an imposed description in a coercive jail and enslavement context. It does not establish Tom’s ancestry, Nation affiliation, self-identification, citizenship, kinship, or a general meaning of ‘Indian Breed’ across Virginia or elsewhere.",
-    citation: "Virginia Gazette (Purdie & Dixon), Williamsburg, Dec. 3, 1772; University of Virginia, Geography of Slavery in Virginia, record v1772120786",
-    sourceUrl: "http://www2.vcdh.virginia.edu/saxon/servlet/SaxonServlet?source=/xml_docs/slavery/ads/rg72.xml&style=/xml_docs/slavery/ads/display_ad.xsl&ad=v1772120786",
+    citation: "Virginia Gazette (Purdie & Dixon), Williamsburg, Dec. 3, 1772, p. 2, rightmost column; Library of Congress Chronicling America; University of Virginia, Geography of Slavery in Virginia, record v1772120786",
+    sourceUrl: "https://www.loc.gov/resource/sn84024739/1772-12-03/ed-1/?sp=2&st=image",
+    chapterSlug: "black-native-identity",
+  },
+];
+
+const paulCuffeEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "1780-john-paul-cuffe-tax-petition",
+    yearLabel: "1780",
+    sortYear: 1780,
+    title: "John and Paul Cuffe: Bristol County tax-abatement petition",
+    tier: "Tier 1 — Primary record",
+    topic: "Black & Indigenous Civic History",
+    region: "Dartmouth and Bristol County, Massachusetts",
+    sourceType: "Signed court petition",
+    verification: "Institutional record",
+    establishes: "The original December 19, 1780 petition signed by John and Paul Cuffe described them as ‘Indian man’ and as sons of ‘Ruth Cuff Indian woman,’ then requested abatement of the stated tax assessment on that legal premise.",
+    limitation: "The petition records the brothers’ historical legal claim and the document’s language in one Massachusetts tax dispute. It does not, by itself, document Aquinnah citizenship, prove every lineage detail, establish a universal Massachusetts rule, or support a general conclusion about Black or Native identity.",
+    citation: "Petition signed by John Cuffe and Paul Cuffe regarding taxation, Bristol County, Massachusetts, Dec. 19, 1780, Smithsonian NMAAHC object 2009.26.1",
+    sourceUrl: "https://nmaahc.si.edu/object/nmaahc_2009.26.1",
     chapterSlug: "black-native-identity",
   },
 ];
@@ -460,7 +479,7 @@ const tiktokHistoryVerifiedEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
-export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...wheatleyOccomEvidenceItems, ...tom1772AdvertisementEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
+export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...wheatleyOccomEvidenceItems, ...tom1772AdvertisementEvidenceItems, ...paulCuffeEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
   (a, b) => a.sortYear - b.sortYear || a.title.localeCompare(b.title),
 );
 

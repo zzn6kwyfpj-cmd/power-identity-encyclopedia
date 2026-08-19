@@ -207,7 +207,7 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
   "1772_tom_surry_advertisement": {
     description: "A December 3, 1772 Virginia Gazette notice stated that a man who said his name was Tom had been committed to the Surry County jail, said he belonged to Benjamin Clements of Sussex, and ‘appears to be of the Indian Breed.’ The notice was signed by Drury Warren and identified marks on Tom’s cheeks. It documents an imposed description within a coercive jail and enslavement context. It does not establish Tom’s ancestry, Nation affiliation, self-identification, citizenship, kinship, or a general meaning of ‘Indian Breed’ across Virginia or other jurisdictions.",
     keyFact: "The recovered record documents one 1772 jail notice’s language about Tom; it cannot convert an imposed colonial description into an ancestry or citizenship conclusion.",
-    primarySource: "Virginia Gazette (Purdie & Dixon), Dec. 3, 1772; University of Virginia, Geography of Slavery in Virginia, record v1772120786",
+    primarySource: "Virginia Gazette (Purdie & Dixon), Dec. 3, 1772, p. 2, rightmost column; Library of Congress Chronicling America; University of Virginia, Geography of Slavery in Virginia, record v1772120786",
     chapterSlug: "black-native-identity",
     chapterTitle: "Black Native American Identity: The Suppressed History",
   },
@@ -215,6 +215,13 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     description: "Phillis Wheatley’s letter dated February 11, 1774 to the Mohegan Presbyterian minister Samson Occom expressed approval of his reasons ‘in Vindication of’ Black people’s natural rights and challenged the contradiction between a cry for liberty and oppressive power over others. The text was printed in the Connecticut Gazette on March 11 and, in another documented printing, in the Connecticut Journal on April 1. These records document a specific antislavery and natural-rights correspondence. They do not establish Wheatley’s Indigenous identity, an enduring personal alliance beyond the surviving correspondence, or a general Black–Native political program.",
     keyFact: "The letter’s February 11 date and its March 11 / April 1 newspaper printings support a bounded record of antislavery correspondence between Wheatley and Occom.",
     primarySource: "Phillis Wheatley to Reverend Samson Occom, dated Feb. 11, 1774; Connecticut Gazette (Mar. 11, 1774); Connecticut Journal (Apr. 1, 1774); Museum of the American Revolution / Gilder Lehrman Institute",
+    chapterSlug: "black-native-identity",
+    chapterTitle: "Black Native American Identity: The Suppressed History",
+  },
+  "1780_cuffe_tax_petition": {
+    description: "A December 19, 1780 petition to the Bristol County court in Taunton, Massachusetts, signed by John and Paul Cuffe, described John as ‘Cuff Indian man’ and Paul as a ‘minor Indian man,’ and called them sons of ‘Ruth Cuff Indian woman.’ The petition asked for tax abatement on the stated premise that they were Indian men not subject to the asserted tax obligation. It preserves a specific legal claim and historical description within one Massachusetts dispute. It does not, by itself, establish Aquinnah citizenship, a complete genealogy, a universal Massachusetts rule, or a broad conclusion about Black or Native identity.",
+    keyFact: "The original 1780 petition documents the Cuffe brothers’ own legal claim and its historically specific ‘Indian’ descriptions; its evidentiary reach does not extend beyond that record without additional documentation.",
+    primarySource: "Petition signed by John Cuffe and Paul Cuffe regarding taxation, Bristol County, Massachusetts (Dec. 19, 1780), Smithsonian NMAAHC object 2009.26.1",
     chapterSlug: "black-native-identity",
     chapterTitle: "Black Native American Identity: The Suppressed History",
   },
@@ -289,6 +296,13 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     primarySource: "Mooney, James. Myths of the Cherokee (1900), Bureau of American Ethnology; Cherokee Phoenix, Vol. 1, No. 1 (February 21, 1828)",
     chapterSlug: "sovereignty",
     chapterTitle: "The Enforcement Gap",
+  },
+  "1823_moultrie_creek_treaty": {
+    description: "The September 18, 1823 Treaty with the Florida Tribes of Indians at Camp on Moultrie Creek, preserved by the National Archives as Ratified Indian Treaty 120, required the named chiefs and warriors, for themselves and their tribes, to prevent absconding enslaved people and fugitives from justice from retreating to or passing through the district assigned in the treaty. Article VII further required necessary efforts to apprehend and deliver such people to the federal agent, who was to receive orders to compensate them according to the trouble and expenses incurred. The provision records a federal treaty obligation and a conditional compensation mechanism. It does not document an actual apprehension, delivery, payment, uniform compliance, the status of a named person, or the acts and views of every Seminole or other Florida Indigenous person.",
+    keyFact: "Article VII records the 1823 treaty’s specific federal fugitive-capture obligation and conditional compensation language; it cannot be converted into a claim about actual enforcement or collective conduct.",
+    primarySource: "Treaty with the Florida Tribes of Indians, Article VII, 7 Stat. 224, 225 (Sept. 18, 1823); National Archives, Ratified Indian Treaty 120 (NAID 100378116)",
+    chapterSlug: "treaties-broken-promises",
+    chapterTitle: "The Treaties: Sovereign Agreements Made and Broken",
   },
   "1825": {
     description: "The second Treaty of Indian Springs (February 12, 1825) was signed by William McIntosh, a Creek chief of mixed Creek and Scottish heritage, without authorization from the Creek National Council. McIntosh signed away all remaining Creek lands in Georgia — approximately 5.2 million acres — in exchange for $200,000 and personal land grants for himself. The Creek National Council had explicitly warned McIntosh that signing any treaty without their authorization was punishable by death under Creek law. On April 30, 1825, approximately 200 Creek warriors surrounded McIntosh's home and executed him. The U.S. Senate ratified the fraudulent treaty anyway. This is the most documented case of treaty fraud in American history — the U.S. government knowingly ratified a treaty that its own signatories had been executed for signing.",
