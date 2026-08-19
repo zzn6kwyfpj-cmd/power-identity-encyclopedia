@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ArchiveInstitutionalLockup from "@/components/ArchiveInstitutionalLockup";
 import { TIMELINE_EVENTS, ERAS } from "@/lib/manuscriptData";
 import { TIMELINE_DETAILS } from "@/lib/timelineDetails";
 import { LEGAL_RECORDS } from "@/lib/legalRecordMetadata";
@@ -208,26 +209,15 @@ export default function TimelinePage() {
       <section style={{ paddingTop: 100, paddingBottom: 80 }}>
         <div className="container" style={{ maxWidth: 1180 }}>
 
-          {/* Header */}
-          <header style={{ border: "1px solid rgba(212,175,55,0.58)", background: "radial-gradient(circle at 80% 20%, rgba(212,175,55,0.16), transparent 31%), linear-gradient(120deg, rgba(212,175,55,0.1), rgba(10,17,24,0.1) 52%, rgba(139,26,26,0.14))", padding: "clamp(34px, 5vw, 64px)", marginBottom: 18, position: "relative", overflow: "hidden" }}>
-            <div aria-hidden="true" style={{ position: "absolute", top: 14, left: 18, right: 18, display: "flex", alignItems: "center", gap: 10, color: "#d4af37", opacity: 0.62 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.32em" }}>CHRONOLOGICAL EXHIBITION</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>
-            <div className="flex flex-col gap-6 md:flex-row md:items-center">
-              <div aria-hidden="true" style={{ width: 84, height: 84, border: "2px solid #d4af37", borderRadius: "50%", boxShadow: "0 0 0 6px rgba(212,175,55,0.07), inset 0 0 24px rgba(212,175,55,0.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 26, flexShrink: 0 }}>✦</div>
-              <div className="min-w-0 flex-1">
-                <div style={{ color: "#d4af37", fontSize: 10, letterSpacing: "0.34em", fontFamily: "Cinzel, serif", marginBottom: 12 }}>APPENDIX B · RECORDS IN SEQUENCE</div>
-                <h1 style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: "clamp(2.35rem, 5vw, 4.35rem)", letterSpacing: "0.015em", lineHeight: 1.01, margin: 0 }}>Master Chronological Timeline</h1>
-                <div style={{ width: 170, borderTop: "1px solid #d4af37", marginTop: 17, marginBottom: 13 }} />
-                <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#c4cedb", fontSize: "1.2rem", maxWidth: 680, lineHeight: 1.55, margin: 0 }}>
-                  850 CE to 2024: a documented sequence of law, resistance, classification, and consequence. Open a record to examine its source and its limit.
-                </p>
-              </div>
-              <aside style={{ borderLeft: "1px solid rgba(212,175,55,0.55)", paddingLeft: 20, minWidth: 180 }}>
-                <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>DISPLAYED RECORDS</div>
-                <div style={{ color: "#f0e3bc", fontFamily: "Cormorant Garamond, serif", fontSize: "1.75rem", marginTop: 7 }}>{filteredEvents.length} / {enrichedEvents.length}</div>
-                <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "0.96rem", lineHeight: 1.35, marginTop: 5 }}>Filter the catalogue without flattening the chronology.</div>
-              </aside>
-            </div>
-          </header>
+          <ArchiveInstitutionalLockup
+            exhibitionLabel="CHRONOLOGICAL EXHIBITION"
+            cataloguePlate="APPENDIX B · RECORDS IN SEQUENCE"
+            title="Master Chronological Timeline"
+            subtitle="850 CE to 2024: a documented sequence of law, resistance, classification, and consequence. Open a record to examine its source and its limit."
+            recordLabel="DISPLAYED RECORDS"
+            recordValue={`${filteredEvents.length} / ${enrichedEvents.length}`}
+            recordDescription="Filter the catalogue without flattening the chronology."
+          />
 
           <section aria-label="Chronology scope" className="grid gap-px md:grid-cols-3" style={{ border: "1px solid rgba(212,175,55,0.28)", background: "rgba(212,175,55,0.22)", marginBottom: 32 }}>
             {[
@@ -356,18 +346,19 @@ export default function TimelinePage() {
                 const isExpanded = expandedEvent === i;
                 const isCopied = copiedIndex === i;
                 const [recordTitle, recordAbstract] = splitTimelineEvent(event.event);
-                const isEraLead = showEraBanner || (i + 1) % 12 === 0;
+                const isEraLead = showEraBanner || i % 6 === 0;
 
                 return (
                   <>
                   {showEraBanner && (
-                    <div style={{ marginLeft: -48, marginBottom: 38, marginTop: i > 0 ? 74 : 0, position: "relative", overflow: "hidden", minHeight: 332, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80`, boxShadow: `0 24px 44px ${eraColors[event.era - 1]}16` }}>
+                    <div style={{ marginLeft: -48, marginBottom: 42, marginTop: i > 0 ? 84 : 0, position: "relative", overflow: "hidden", minHeight: 420, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80`, boxShadow: `0 26px 54px ${eraColors[event.era - 1]}16` }}>
+                      <div aria-hidden="true" style={{ position: "absolute", right: 34, top: -8, color: "rgba(212,175,55,0.15)", fontFamily: "Cinzel, serif", fontSize: "clamp(7rem, 17vw, 14rem)", lineHeight: 1, zIndex: 1 }}>{String(event.era).padStart(2, "0")}</div>
                       <img
                         src={eraBanners[event.era - 1]}
                         alt={`Era ${event.era}`}
                         style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.7 }}
                       />
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(10,17,24,0.97), rgba(10,17,24,0.55), rgba(10,17,24,0.94))", display: "flex", alignItems: "center", padding: "0 64px" }}>
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(10,17,24,0.98), rgba(10,17,24,0.52), rgba(10,17,24,0.95))", display: "flex", alignItems: "center", padding: "0 clamp(30px, 5vw, 70px)" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
                           <div style={{ width: 58, height: 58, flexShrink: 0, border: `1px solid ${eraColors[event.era - 1]}`, borderRadius: "50%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: `0 0 0 5px ${eraColors[event.era - 1]}12, 0 0 28px ${eraColors[event.era - 1]}35` }}>
                             <span style={{ color: eraColors[event.era - 1], fontFamily: "Cinzel, serif", fontSize: 18 }}>✦</span>
@@ -375,8 +366,8 @@ export default function TimelinePage() {
                           </div>
                           <div>
                             <div style={{ fontFamily: "Cinzel, serif", color: eraColors[event.era - 1], fontSize: 10, letterSpacing: "0.3em", marginBottom: 8 }}>CURATED GALLERY · ERA {["I","II","III","IV","V"][event.era - 1]}</div>
-                            <div style={{ fontFamily: "Cinzel, serif", color: "#f0e3bc", fontSize: "clamp(1.35rem, 2.45vw, 2.15rem)", lineHeight: 1.23, marginBottom: 11 }}>{ERAS[event.era - 1]?.name}</div>
-                            <div style={{ color: "#c4cedb", fontFamily: "Cormorant Garamond, serif", fontSize: "1.14rem", lineHeight: 1.45, fontStyle: "italic", maxWidth: 630 }}>✦ — archival records, law, resistance, and consequence — ✦</div>
+                            <div style={{ fontFamily: "Cinzel, serif", color: "#f0e3bc", fontSize: "clamp(2rem, 4.25vw, 3.85rem)", lineHeight: 1.1, marginBottom: 14, maxWidth: 780 }}>{ERAS[event.era - 1]?.name}</div>
+                            <div style={{ color: "#c4cedb", fontFamily: "Cormorant Garamond, serif", fontSize: "1.28rem", lineHeight: 1.5, fontStyle: "italic", maxWidth: 670 }}>A curated room of archival records: first a lead exhibit, then supporting catalogue entries, then a pause before the next sequence.</div>
                           </div>
                         </div>
                         <div aria-hidden="true" style={{ position: "absolute", right: 25, bottom: 16, color: "#c4cedb", fontFamily: "Cinzel, serif", fontSize: 7, letterSpacing: "0.16em", opacity: 0.78 }}>CONTEXT PLATE · PERIOD TRANSITION · NOT EVIDENCE</div>
@@ -548,7 +539,7 @@ export default function TimelinePage() {
                       })()}
                     </div>
                   </div>
-                  {(i + 1) % 12 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "42px 0 54px -48px", padding: "22px 24px", display: "flex", alignItems: "center", gap: 12, color: "#d4af37", borderTop: "1px solid rgba(212,175,55,0.52)", borderBottom: "1px solid rgba(212,175,55,0.30)", background: "linear-gradient(90deg, rgba(212,175,55,0.13), transparent 70%)" }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>✦ ARCHIVAL PAUSE · NEXT RECORD SEQUENCE ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                  {(i + 1) % 6 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "52px 0 66px -48px", padding: "28px 28px", display: "flex", alignItems: "center", gap: 14, color: "#d4af37", borderTop: "1px solid rgba(212,175,55,0.52)", borderBottom: "1px solid rgba(212,175,55,0.30)", background: "linear-gradient(90deg, rgba(212,175,55,0.14), rgba(13,23,33,0.16) 52%, transparent 86%)" }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.2em", textAlign: "center" }}>✦ ARCHIVAL PAUSE · SUPPORTING BAYS COMPLETE · NEXT RECORD SEQUENCE ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                   </>
                 );
               })}

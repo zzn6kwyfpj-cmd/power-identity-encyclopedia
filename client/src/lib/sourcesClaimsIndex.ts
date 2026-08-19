@@ -282,6 +282,57 @@ const nationSpecificEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
+const northeastNationAuthoredEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "aquinnah-wampanoag-public-history",
+    yearLabel: "Public page accessed 2026",
+    sortYear: 0,
+    title: "Wampanoag Tribe of Gay Head (Aquinnah): public history of Noepe and Aquinnah",
+    tier: "Tier 1 — Primary record",
+    topic: "Nation-Specific Indigenous History",
+    region: "Wampanoag Tribe of Gay Head (Aquinnah) / Noepe (Martha’s Vineyard)",
+    sourceType: "Nation-authored current public history",
+    verification: "Nation-authored record",
+    establishes: "The Wampanoag Tribe of Gay Head (Aquinnah) publicly presents its history of Noepe (Martha’s Vineyard), Aquinnah, continuing community, land history, and Tribal Council governance.",
+    limitation: "This is a Nation-authored public-history source. It does not independently resolve every historical proposition on the page, establish an individual’s ancestry or citizenship, or speak for other Wampanoag communities or Indigenous nations.",
+    citation: "Wampanoag Tribe of Gay Head (Aquinnah), ‘Wampanoag History’",
+    sourceUrl: "https://wampanoagtribe-nsn.gov/wampanoag-history",
+    chapterSlug: "turtle-island-niji",
+  },
+  {
+    id: "mashpee-wampanoag-public-timeline",
+    yearLabel: "Nation-authored timeline accessed 2026",
+    sortYear: 0,
+    title: "Mashpee Wampanoag Tribe: public contact, governance, and land timeline",
+    tier: "Tier 1 — Primary record",
+    topic: "Nation-Specific Indigenous History",
+    region: "Mashpee Wampanoag Tribe / Massachusetts",
+    sourceType: "Nation-authored current public history",
+    verification: "Nation-authored record",
+    establishes: "The Mashpee Wampanoag Tribe publishes a timeline of its contact experience, governance, land history, federal-policy context, and continuing community, including its account of 1675 wartime death and enslavement impacts.",
+    limitation: "The page is a Nation-authored historical account. Specific events require their own record-level review before being recast as independent general chronology claims; the source does not establish an individual’s identity, ancestry, enrollment, or citizenship.",
+    citation: "Mashpee Wampanoag Tribe, ‘Timeline’",
+    sourceUrl: "https://mashpeewampanoagtribe-nsn.gov/timeline",
+    chapterSlug: "turtle-island-niji",
+  },
+  {
+    id: "mohegan-tribe-public-history",
+    yearLabel: "Public page accessed 2026",
+    sortYear: 0,
+    title: "Mohegan Tribe: public history, oral-history framing, and continuity",
+    tier: "Tier 1 — Primary record",
+    topic: "Nation-Specific Indigenous History",
+    region: "Mohegan Tribe / southeastern Connecticut",
+    sourceType: "Nation-authored current public history",
+    verification: "Nation-authored record",
+    establishes: "The Mohegan Tribe publicly distinguishes its oral-history framing from scientific evidence and presents its own account of history, vision, continuity, and relationship to place.",
+    limitation: "The source is a current Mohegan public-history and governance resource, not an ancestry test, a substitute for a specific historical record, or a rule for other Nations; its oral-history framing remains attributed to the Mohegan Tribe.",
+    citation: "Mohegan Tribe, ‘Our Tribal History’",
+    sourceUrl: "https://www.mohegan.nsn.us/about/our-tribal-history",
+    chapterSlug: "turtle-island-niji",
+  },
+];
+
 const israeliteIndianTheoryEvidenceItems: SourceClaimIndexItem[] = [
   {
     id: "boudinot-1816-israelite-indian-theory",
@@ -370,6 +421,41 @@ const tom1772AdvertisementEvidenceItems: SourceClaimIndexItem[] = [
     limitation: "The notice records an imposed description in a coercive jail and enslavement context. It does not establish Tom’s ancestry, Nation affiliation, self-identification, citizenship, kinship, or a general meaning of ‘Indian Breed’ across Virginia or elsewhere.",
     citation: "Virginia Gazette (Purdie & Dixon), Williamsburg, Dec. 3, 1772, p. 2, rightmost column; Library of Congress Chronicling America; University of Virginia, Geography of Slavery in Virginia, record v1772120786",
     sourceUrl: "https://www.loc.gov/resource/sn84024739/1772-12-03/ed-1/?sp=2&st=image",
+    chapterSlug: "black-native-identity",
+  },
+];
+
+const annisAndFlorenceAdvertisementEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "1770-annis-mustee-advertisement",
+    yearLabel: "1770",
+    sortYear: 1770,
+    title: "Annis: advertiser’s imposed ‘mustee’ description",
+    tier: "Tier 1 — Primary record",
+    topic: "Colonial Classification & Captivity",
+    region: "Northampton County, North Carolina; Virginia",
+    sourceType: "Newspaper advertisement",
+    verification: "Institutional record",
+    establishes: "A June 7, 1770 Virginia Gazette notice placed by Edward Rutland described Annis as a ‘mustee woman slave’ and reported her flight from Northampton County, North Carolina. The Library of Congress scan places the notice at page 3, center column.",
+    limitation: "The notice preserves an advertiser’s imposed description in an enslavement context. It does not establish Annis’s ancestry, Nation affiliation, self-description, citizenship, kinship, or a stable legal or social definition of ‘mustee.’",
+    citation: "Virginia Gazette (Purdie & Dixon), Williamsburg, June 7, 1770, p. 3, center column; Library of Congress Chronicling America; University of Virginia, Geography of Slavery in Virginia, record v1770060445",
+    sourceUrl: "https://www.loc.gov/resource/sn84024739/1770-06-07/ed-1/?sp=3&st=image",
+    chapterSlug: "black-native-identity",
+  },
+  {
+    id: "1770-william-florence-jail-notice",
+    yearLabel: "1770",
+    sortYear: 1770,
+    title: "William Florence: jail notice reporting ‘Indian town on Pamunkey river’",
+    tier: "Tier 1 — Primary record",
+    topic: "Colonial Classification & Captivity",
+    region: "York County and Pamunkey River, Virginia",
+    sourceType: "Newspaper advertisement / jail notice",
+    verification: "Institutional record",
+    establishes: "A July 19, 1770 Virginia Gazette jail notice reported that a person called William Florence said he was free and had been born in ‘the Indian town on Pamunkey river.’ The Library of Congress scan places the notice at page 3, rightmost column.",
+    limitation: "The notice records a jailer’s printed account of reported statements in a carceral setting. It does not establish Florence’s ancestry, Nation citizenship, the exact place meant by the phrase, the truth of each statement, or the outcome of his confinement.",
+    citation: "Virginia Gazette (Purdie & Dixon), Williamsburg, July 19, 1770, p. 3, rightmost column; Library of Congress Chronicling America; University of Virginia, Geography of Slavery in Virginia, record v1770070451",
+    sourceUrl: "https://www.loc.gov/resource/sn84024739/1770-07-19/ed-1/?sp=3&st=image",
     chapterSlug: "black-native-identity",
   },
 ];
@@ -479,7 +565,7 @@ const tiktokHistoryVerifiedEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
-export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...wheatleyOccomEvidenceItems, ...tom1772AdvertisementEvidenceItems, ...paulCuffeEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
+export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...nationSpecificEvidenceItems, ...northeastNationAuthoredEvidenceItems, ...israeliteIndianTheoryEvidenceItems, ...censusInstructionEvidenceItems, ...wheatleyOccomEvidenceItems, ...tom1772AdvertisementEvidenceItems, ...annisAndFlorenceAdvertisementEvidenceItems, ...paulCuffeEvidenceItems, ...a00EvidenceItems, ...tiktokHistoryVerifiedEvidenceItems].sort(
   (a, b) => a.sortYear - b.sortYear || a.title.localeCompare(b.title),
 );
 

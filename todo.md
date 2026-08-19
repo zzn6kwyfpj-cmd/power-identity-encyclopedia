@@ -203,4 +203,15 @@
 - [x] Locate an original issue page and column for the December 3, 1772 Virginia Gazette notice concerning Tom. The Library of Congress scan confirms page 2, rightmost (third) column; the public record now carries the primary-image route and retains its imposed-label limitation.
 - [x] Test the Paul Cuffe and 1823 Florida treaty leads against authoritative institutional records. Integrate the original 1780 Cuffe petition and Ratified Indian Treaty 120 only with their documented scope, mechanism, and limits.
 - [x] Produce a source-critical progress and gap assessment covering completed evidence architecture, deferred primary-record queues, geographic and thematic balance, and platform-governance prerequisites.
-- [ ] Synchronize the canonical roadmap, run final validation, save a checkpoint, and report the release.
+- [x] Synchronize the canonical roadmap, run final validation, save a checkpoint, and report the release.
+
+# Roadmap Transparency
+
+- [x] Consolidate the active tracker, canonical roadmap, and evidence-gap assessment into one full prioritized list of remaining evidence, editorial, governance, and platform tasks; distinguish release-ready work from dependency-gated long-term work.
+
+# Priority 0 Evidence Release — Continuing August 2026
+
+- [x] Verify two additional named Forbes advertisement candidates using original issue images, page or column locators, named-person and location context, institutional routes, and non-genealogical limitation statements. The June 7 Annis and July 19 William Florence notices were each confirmed on the Library of Congress page-three scan and integrated only at their record-specific scope.
+- [x] Complete an initial Moultrie Creek Article VII enforcement search in NARA M234/M18 routes and preserve the result accurately. Roll 800 and January 1825 M18 register images were investigated; the hypothesized McIntosh letter was not located, so no enforcement outcome is publicized and the lead remains active.
+- [x] Add a small Nation-authorized Northeast source tranche, preserving each Nation’s terminology, source context, and sovereignty limits. Wampanoag Tribe of Gay Head (Aquinnah), Mashpee Wampanoag Tribe, and Mohegan Tribe public-history routes are now indexed with explicit non-generalization limits.
+- [x] Integrate only fully source-complete records, preserve unresolved leads in research ledgers, validate the public routes, synchronize the roadmap, checkpoint, and report. The public release contains Annis, William Florence, and the Northeast Nation-authored tranche; the unlocated Moultrie Creek correspondence remains a documented deferral.

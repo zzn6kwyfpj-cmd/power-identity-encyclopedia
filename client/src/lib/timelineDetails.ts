@@ -204,6 +204,20 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     chapterSlug: "captivity-classification-colonial-law",
     chapterTitle: "Captivity, Classification, and Colonial Law",
   },
+  "1770_annis_advertisement": {
+    description: "A June 7, 1770 Virginia Gazette notice placed by Edward Rutland described Annis as a ‘mustee woman slave’ and reported her flight from Northampton County, North Carolina. The original issue is directly available through the Library of Congress at page 3, center column. It documents an advertiser’s imposed description in a coercive enslavement context. It does not establish Annis’s ancestry, Nation affiliation, self-identification, citizenship, kinship, or a stable legal or social definition of ‘mustee.’",
+    keyFact: "The record preserves one advertiser’s 1770 description of Annis; it cannot turn an imposed colonial label into an ancestry or citizenship conclusion.",
+    primarySource: "Virginia Gazette (Purdie & Dixon), Williamsburg, June 7, 1770, p. 3, center column; Library of Congress Chronicling America; University of Virginia, Geography of Slavery in Virginia, record v1770060445",
+    chapterSlug: "black-native-identity",
+    chapterTitle: "Black Native American Identity: The Suppressed History",
+  },
+  "1770_william_florence_advertisement": {
+    description: "A July 19, 1770 Virginia Gazette jail notice signed by W. Mitchell reported that a person called William Florence said he was free and had been born in ‘the Indian town on Pamunkey river.’ The original issue is directly available through the Library of Congress at page 3, rightmost column. It records a jailer’s printed account of reported statements in a carceral setting. It does not independently establish Florence’s ancestry, membership or citizenship in any Nation, the exact place meant by the phrase, the truth of each reported statement, or the outcome of his confinement.",
+    keyFact: "The notice is evidence of one 1770 carceral report about William Florence; it is not proof of identity, citizenship, or a universal meaning of ‘Indian town.’",
+    primarySource: "Virginia Gazette (Purdie & Dixon), Williamsburg, July 19, 1770, p. 3, rightmost column; Library of Congress Chronicling America; University of Virginia, Geography of Slavery in Virginia, record v1770070451",
+    chapterSlug: "black-native-identity",
+    chapterTitle: "Black Native American Identity: The Suppressed History",
+  },
   "1772_tom_surry_advertisement": {
     description: "A December 3, 1772 Virginia Gazette notice stated that a man who said his name was Tom had been committed to the Surry County jail, said he belonged to Benjamin Clements of Sussex, and ‘appears to be of the Indian Breed.’ The notice was signed by Drury Warren and identified marks on Tom’s cheeks. It documents an imposed description within a coercive jail and enslavement context. It does not establish Tom’s ancestry, Nation affiliation, self-identification, citizenship, kinship, or a general meaning of ‘Indian Breed’ across Virginia or other jurisdictions.",
     keyFact: "The recovered record documents one 1772 jail notice’s language about Tom; it cannot convert an imposed colonial description into an ancestry or citizenship conclusion.",

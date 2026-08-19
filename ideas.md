@@ -63,3 +63,6 @@
 - Supporting evidence records resolve into paired catalogue bays on desktop after a full-width curatorial lead, producing a more legible gallery rhythm without weakening the documented-limit hierarchy.
 - Titles, era plates, and source-room headings use a distinctly larger Cinzel scale than record metadata; body copy remains literary and legible at a confident reading size.
 - Global error and unavailable states use a formal Royal Archive catalogue notice with midnight ink, antique-gold rulework, an institutional seal, and a scholarly recovery path.
+- Catalogue rhythm rule: no long chronology or source-index route may continue as an uninterrupted wall of records; each sequence visibly alternates a ceremonial room opening, one featured lead record, supporting catalogue bays, and an ornamental or contextual pause.
+- Typography hierarchy rule: route title walls and era-room headings use monumental Cinzel, record metadata uses restrained small-label typography, and body evidence text remains literary Cormorant Garamond so no catalogue card competes with the archive’s major headings.
+- Brand grammar rule: every major archive route opens with the same institutional seal and wordmark treatment, formal inscription voice, and museum-catalogue framing so the site reads as one named Royal Archive rather than separate styled lists.

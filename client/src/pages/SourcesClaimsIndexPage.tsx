@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import ArchiveInstitutionalLockup from "@/components/ArchiveInstitutionalLockup";
 import { SOURCE_INDEX_FILTERS, SOURCES_CLAIMS_INDEX } from "@/lib/sourcesClaimsIndex";
 import { Link } from "wouter";
 import { useMemo, useState } from "react";
@@ -67,28 +68,15 @@ export default function SourcesClaimsIndexPage() {
       <Navigation />
       <main style={{ paddingTop: 102, paddingBottom: 88 }}>
         <div className="container" style={{ maxWidth: 1280 }}>
-          <header style={{ border: "1px solid rgba(212,175,55,0.58)", background: "radial-gradient(circle at 82% 18%, rgba(212,175,55,0.16), transparent 28%), linear-gradient(135deg, rgba(212,175,55,0.13), rgba(10,17,24,0.25) 45%, rgba(139,26,26,0.13))", padding: "clamp(34px, 5vw, 62px)", marginBottom: 18, position: "relative", overflow: "hidden" }}>
-            <div aria-hidden="true" style={{ position: "absolute", top: 14, left: 18, right: 18, display: "flex", alignItems: "center", gap: 10, color: "#d4af37", opacity: 0.64 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.32em" }}>EVIDENCE EXHIBITION</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>
-            <div className="flex flex-col gap-7 md:flex-row md:items-center">
-              <div aria-hidden="true" style={{ width: 86, height: 86, borderRadius: "50%", border: "2px solid #d4af37", boxShadow: "0 0 0 5px rgba(212,175,55,0.08), inset 0 0 22px rgba(212,175,55,0.12)", color: "#d4af37", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                <span style={{ fontFamily: "Cinzel, serif", fontSize: 22 }}>✦</span>
-                <span style={{ fontFamily: "Cinzel, serif", fontSize: 7, letterSpacing: "0.17em", marginTop: 3 }}>ARCHIVE</span>
-              </div>
-              <div className="min-w-0 flex-1">
-                <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.34em", marginBottom: 13 }}>CATALOGUE PLATE I · SOURCE & CLAIMS INDEX</div>
-                <h1 style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: "clamp(2.35rem, 5vw, 4.45rem)", letterSpacing: "0.015em", lineHeight: 1.02, margin: 0 }}>Inspect the evidence trail.</h1>
-                <div style={{ width: 160, borderTop: "1px solid #d4af37", marginTop: 18, marginBottom: 17 }} />
-                <p style={{ color: "#c4cedb", fontFamily: "Cormorant Garamond, serif", fontSize: "1.28rem", lineHeight: 1.65, margin: 0, maxWidth: 730 }}>
-                  Enter a reading room rather than a database: every plate distinguishes the documentary record, its verification route, and the boundary of what the record can support. The index grows by evidence release; it is not a claim that every source in the wider bibliography has yet been normalized.
-                </p>
-              </div>
-              <aside style={{ borderLeft: "1px solid rgba(212,175,55,0.55)", paddingLeft: 21, minWidth: 220 }}>
-                <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.22em" }}>CURRENT INDEX SCOPE</div>
-                <div style={{ color: "#f0e3bc", fontFamily: "Cormorant Garamond, serif", fontSize: "1.65rem", marginTop: 8 }}>{SOURCES_CLAIMS_INDEX.length} catalogue records</div>
-                <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", lineHeight: 1.45, marginTop: 6 }}>Source routes, court decisions, public facsimiles, and author-attributed community research.</div>
-              </aside>
-            </div>
-          </header>
+          <ArchiveInstitutionalLockup
+            exhibitionLabel="EVIDENCE EXHIBITION"
+            cataloguePlate="CATALOGUE PLATE I · SOURCE & CLAIMS INDEX"
+            title="The Evidence Trail"
+            subtitle="Enter a reading room rather than a database: every plate distinguishes the documentary record, its verification route, and the boundary of what the record can support. The index grows by evidence release; it is not a claim that every source in the wider bibliography has yet been normalized."
+            recordLabel="CURRENT INDEX SCOPE"
+            recordValue={`${SOURCES_CLAIMS_INDEX.length} CATALOGUE RECORDS`}
+            recordDescription="Source routes, court decisions, public facsimiles, and author-attributed community research."
+          />
 
           <section aria-label="Catalogue scope" className="grid gap-px md:grid-cols-3" style={{ border: "1px solid rgba(212,175,55,0.28)", background: "rgba(212,175,55,0.22)", marginBottom: 30 }}>
             {[
@@ -159,22 +147,23 @@ export default function SourcesClaimsIndexPage() {
           <section className="grid gap-10" aria-live="polite">
             {Object.entries(groupedResults).map(([group, items], groupIndex) => (
                 <div key={group} style={{ position: "relative", paddingTop: groupIndex === 0 ? 0 : 22 }}>
-                <div className="flex items-center gap-4" style={{ marginBottom: 22, borderTop: "1px solid rgba(212,175,55,0.60)", borderBottom: "1px solid rgba(212,175,55,0.30)", background: "linear-gradient(90deg, rgba(212,175,55,0.16), rgba(13,23,33,0.92) 62%)", padding: "20px 22px" }}>
+                <div className="flex items-center gap-4" style={{ marginBottom: 28, borderTop: "1px solid rgba(212,175,55,0.60)", borderBottom: "1px solid rgba(212,175,55,0.30)", background: "linear-gradient(90deg, rgba(212,175,55,0.17), rgba(13,23,33,0.92) 62%)", padding: "28px 26px", position: "relative", overflow: "hidden" }}>
+                  <div aria-hidden="true" style={{ position: "absolute", right: 20, top: -28, color: "rgba(212,175,55,0.08)", fontFamily: "Cinzel, serif", fontSize: "7rem", lineHeight: 1 }}>{String(groupIndex + 1).padStart(2, "0")}</div>
                   <div aria-hidden="true" style={{ width: 50, height: 50, border: "1px solid #d4af37", borderRadius: "50%", color: "#d4af37", fontFamily: "Cinzel, serif", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 0 0 4px rgba(212,175,55,0.08)" }}><span style={{ fontSize: 15 }}>✦</span><span style={{ fontSize: 7, letterSpacing: "0.12em", marginTop: 2 }}>{String(groupIndex + 1).padStart(2, "0")}</span></div>
                   <div className="min-w-0 flex-1">
                     <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.23em", marginBottom: 5 }}>ARCHIVE ROOM · FEATURED EVIDENCE OPENS THE SEQUENCE</div>
-                    <div style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: "1.15rem", letterSpacing: "0.08em" }}>{group.toUpperCase()}</div>
-                    <div style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", fontStyle: "italic", marginTop: 5 }}>{EXHIBIT_NOTES[group] ?? "A curated sequence of source routes, claims, and documented limits."}</div>
+                    <div style={{ color: "#f0e3bc", fontFamily: "Cinzel, serif", fontSize: "clamp(1.55rem, 3vw, 2.55rem)", letterSpacing: "0.045em", lineHeight: 1.18 }}>{group.toUpperCase()}</div>
+                    <div style={{ color: "#b7c2cf", fontFamily: "Cormorant Garamond, serif", fontSize: "1.15rem", lineHeight: 1.45, fontStyle: "italic", marginTop: 8, maxWidth: 760 }}>{EXHIBIT_NOTES[group] ?? "A curated sequence of source routes, claims, and documented limits."}</div>
                   </div>
                   <div style={{ color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>{items.length} RECORD{items.length === 1 ? "" : "S"}</div>
                 </div>
                 <div className="grid gap-5 md:grid-cols-2">
                   {items.map((item, index) => {
                     const tierTone = item.tier.startsWith("Tier 1") ? "#4ade80" : item.tier.startsWith("Tier 3") ? "#c2414b" : "#d4af37";
-                    const harmfulTone = item.topic === "Racial Violence & Due Process" ? "#8b1a1a" : "#d4af37";
+                    const harmfulTone = item.topic === "Racial Violence & Due Process" || item.tier.startsWith("Tier 3") ? "#8b1a1a" : "#94a3b8";
                     const isLeadRecord = index === 0;
                     return <div key={item.id} style={isLeadRecord ? { gridColumn: "1 / -1" } : undefined}>
-                      <article style={{ background: isLeadRecord ? "linear-gradient(115deg, rgba(212,175,55,0.14), #14212c 42%, #0d1721 78%)" : "linear-gradient(150deg, #101b27, #0d1721 72%)", border: `1px solid ${isLeadRecord ? "rgba(212,175,55,0.62)" : "rgba(212,175,55,0.24)"}`, borderLeft: `${isLeadRecord ? 6 : 5}px solid ${harmfulTone}`, padding: isLeadRecord ? "34px" : "26px", position: "relative", boxShadow: isLeadRecord ? "0 22px 34px rgba(0,0,0,0.18)" : "none", minHeight: isLeadRecord ? undefined : 320 }}>
+                      <article style={{ background: isLeadRecord ? "linear-gradient(115deg, rgba(212,175,55,0.14), #14212c 42%, #0d1721 78%)" : "linear-gradient(150deg, #101b27, #0d1721 72%)", border: `1px solid ${isLeadRecord ? "rgba(212,175,55,0.62)" : "rgba(148,163,184,0.20)"}`, borderLeft: `${isLeadRecord ? 6 : 4}px solid ${isLeadRecord ? "#d4af37" : harmfulTone}`, padding: isLeadRecord ? "38px" : "28px", position: "relative", boxShadow: isLeadRecord ? "0 24px 38px rgba(0,0,0,0.20)" : "none", minHeight: isLeadRecord ? undefined : 330 }}>
                         {isLeadRecord && <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#d4af37", marginBottom: 18 }}><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.60)" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.19em" }}>✦ FEATURED EVIDENCE RECORD ✦</span><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.60)" }} /></div>}
                         <div className="flex flex-wrap items-center gap-x-3 gap-y-2" style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>
                           <span style={{ color: tierTone, border: `1px solid ${tierTone}80`, padding: "3px 6px" }}>{item.tier.toUpperCase()}</span><span>•</span><span>{item.yearLabel}</span><span>•</span><span>{item.sourceType.toUpperCase()}</span>
@@ -199,7 +188,7 @@ export default function SourcesClaimsIndexPage() {
                         </div>
                       </article>
                       {isLeadRecord && items.length > 1 && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "28px 0 4px", color: "#d4af37" }}><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.46)" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>✦ SUPPORTING RECORDS · CATALOGUE BAYS ✦</span><span style={{ flex: 1, borderTop: "1px solid rgba(212,175,55,0.46)" }} /></div>}
-                      {(index + 1) % 3 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "28px 0 8px", color: "#d4af37", opacity: 0.72 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>✦ ARCHIVAL PAUSE · CATALOGUE BAY {String(Math.floor((index + 1) / 3) + 1).padStart(2, "0")} ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                      {(index + 1) % 4 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 12, margin: "38px 0 16px", padding: "23px 0", color: "#d4af37", opacity: 0.78, borderTop: "1px solid rgba(212,175,55,0.38)", borderBottom: "1px solid rgba(212,175,55,0.20)" }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em", textAlign: "center" }}>✦ ARCHIVAL PAUSE · CATALOGUE BAY {String(Math.floor((index + 1) / 4) + 1).padStart(2, "0")} · CONTEXT BEFORE THE NEXT RECORDS ✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                     </div>;
                   })}
                 </div>
