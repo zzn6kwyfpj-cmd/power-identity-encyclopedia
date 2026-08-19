@@ -156,6 +156,42 @@ export const FINAL_3_CONTENT: Record<string, {
         sourceUrl: "https://www.archives.gov/milestone-documents/civil-rights-act"
       },
       {
+        year: "1963",
+        title: "Birmingham campaign / Project C",
+        locator: "Birmingham Civil Rights National Monument, ‘History & Culture’; Library of Congress Civil Rights exhibition",
+        establishes: "The National Park Service identifies Project C as a Birmingham direct-action campaign directed in April and May 1963 by SCLC leaders and Reverend Fred Shuttlesworth’s ACMHR, with the A. G. Gaston Motel serving as a strategic headquarters. Publicly circulated images documented police dogs and high-pressure hoses used against nonviolent protesters.",
+        limitation: "The record establishes campaign, response, and political context. It does not establish that one event or organization solely caused the Civil Rights Act of 1964, nor does it replace individual records for every arrest, injury, or official action.",
+        source: "National Park Service; Library of Congress",
+        sourceUrl: "https://www.nps.gov/bicr/learn/historyculture.htm"
+      },
+      {
+        year: "1963",
+        title: "Medgar Evers and the Jackson movement",
+        locator: "NPS Medgar and Myrlie Evers Home National Monument; Library of Congress NAACP Records; National Archives Record Group 65 description",
+        establishes: "Institutional sources document Evers’s work as a Mississippi NAACP organizer in voter registration, boycotts, desegregation, branch building, and investigations of racial violence before he was killed at his Jackson home on June 12, 1963. NARA describes federal investigative and prosecution records in Record Group 65.",
+        limitation: "A public-history account and an archival-series description do not substitute for the full investigative or court record. Evers’s work must be situated among the many people and organizations active in the Jackson movement.",
+        source: "National Park Service; Library of Congress; National Archives",
+        sourceUrl: "https://www.nps.gov/memy/learn/historyculture/campaigns-and-causes.htm"
+      },
+      {
+        year: "1964",
+        title: "Freedom Summer",
+        locator: "National Archives, ‘Freedom Summer’; National Archives Catalog search route",
+        establishes: "NARA documents COFO’s 1964 Mississippi voting-rights project, its coalition membership, the participation of approximately 1,000 out-of-state volunteers alongside thousands of Black Mississippians, its organizing programs, and NARA’s reported arrest and violence figures.",
+        limitation: "NARA’s figures are source-specific reported totals. The page does not adjudicate every local incident, establish individual responsibility, or make Freedom Summer the sole cause of the Civil Rights Act or Voting Rights Act.",
+        source: "National Archives",
+        sourceUrl: "https://www.archives.gov/research/african-americans/vote/freedom-summer"
+      },
+      {
+        year: "1965",
+        title: "Selma marches / Bloody Sunday",
+        locator: "National Archives, ‘Selma Marches’; linked National Archives Catalog records",
+        establishes: "NARA documents the three 1965 Selma-to-Montgomery marches, the organizing roles of the Dallas County Voters League, SNCC, and SCLC, the March 7 attack at the Edmund Pettus Bridge, and the sequence through the March 25 arrival in Montgomery.",
+        limitation: "The campaign is central context for the Voting Rights Act but does not alone explain the statute’s enactment or prove that voting discrimination ended after August 1965.",
+        source: "National Archives",
+        sourceUrl: "https://www.archives.gov/research/african-americans/vote/selma-marches"
+      },
+      {
         year: "1968",
         title: "Civil Rights Act of 1968 / Fair Housing Act",
         locator: "Pub. L. 90-284, 82 Stat. 73; Title VIII",

@@ -12,6 +12,20 @@ export interface TimelineDetail {
 }
 
 export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
+  "1930_census_instructions": {
+    description: "The Census Bureau’s published 1930 instructions directed an enumerator to return a person of mixed White and Negro ancestry as Negro regardless of the percentage of Negro blood. For a person of mixed Indian and Negro ancestry, the instruction directed return as Negro unless Indian blood predominated and the person was generally accepted as Indian in the community. A person of mixed White and Indian ancestry was generally to be returned as Indian, with stated exceptions for very small Indian ancestry or social acceptance as White. The record establishes a federal administrative classification rule with inconsistent criteria across mixtures. It does not establish a person’s full genealogy, community affiliation, or sovereign tribal citizenship.",
+    keyFact: "The 1930 instructions did not create a universal ancestry rule; they supplied enumerators with different administrative tests for different mixed-ancestry classifications.",
+    primarySource: "U.S. Census Bureau, ‘1930 Census Instructions to Enumerators’",
+    chapterSlug: "black-native-identity",
+    chapterTitle: "Black Native American Identity: The Suppressed History",
+  },
+  "850_chronology_threshold": {
+    description: "The 850 CE start marks the beginning of this public timeline’s detailed navigation, not the beginning of Indigenous history or presence in the Americas. The National Park Service’s archaeological overview states that, despite continuing research questions about the peopling of the Americas, archaeologists and Native Americans generally agree that a sustainable population lived in the Americas by the end of the last ice age, about 15,000 years before present. A Oneida Indian Nation source separately preserves a Haudenosaunee creation account involving Sky Woman, water animals, turtle-backed earth, and the formation of North America as a great island. The sources answer different questions and use different knowledge systems. The archive presents neither as a universal continental origin claim.",
+    keyFact: "850 CE is an editorial navigation threshold; it does not limit Indigenous histories, replace nation-specific knowledge, or establish a single origin account for the Americas.",
+    primarySource: "Oneida Indian Nation, ‘The Haudenosaunee creation story’; National Park Service, ‘Native Americans – Archeology’",
+    chapterSlug: "turtle-island-niji",
+    chapterTitle: "Turtle Island: The Name of This Place and the People Who Named It",
+  },
   "850": {
     description: "Between 850 and 1200 CE, the Ancestral Puebloans built Chaco Canyon in present-day New Mexico into the most sophisticated urban center in pre-Columbian North America. The great houses — multi-story stone buildings containing hundreds of rooms — were aligned with solar and lunar cycles with astronomical precision. A road system spanning over 400 miles connected Chaco to outlying communities across the Colorado Plateau. The population at its peak was estimated at 5,000 to 6,000 people. Chaco was not just a city — it was a ceremonial, political, and trade hub for a civilization that stretched across the entire American Southwest. It was abandoned around 1150 CE — 340 years before European contact — likely due to prolonged drought. The descendants of the Ancestral Puebloans are the modern Pueblo peoples of New Mexico and Arizona.",
     keyFact: "Chaco Canyon's great houses were aligned to solar and lunar cycles with precision that rivals modern astronomy. The civilization thrived for 300 years and was abandoned 340 years before any European arrived.",
@@ -889,5 +903,33 @@ export const TIMELINE_DETAILS: Record<string, TimelineDetail> = {
     primarySource: "U.S. Census Bureau, ‘History and the Census: 1890 Census Fire’; Kellee Blake, ‘First in the Path of the Firemen,’ National Archives Prologue (1996)",
     chapterSlug: "black-native-american-identity",
     chapterTitle: "The Black Native American Identity",
+  },
+  "1963_birmingham_campaign": {
+    description: "The National Park Service identifies Project C—‘for confrontation’—as the direct-action campaign through which civil-rights leaders from the Southern Christian Leadership Conference and Reverend Fred Shuttlesworth’s Alabama Christian Movement for Human Rights challenged Birmingham’s segregated order in April and May 1963. The A. G. Gaston Motel served as a headquarters for strategy, events, and press conferences. The public record includes widely circulated images of police dogs and high-pressure hoses used against nonviolent protesters, including children. The Library of Congress notes that national and international coverage created a crisis for the Kennedy administration and that the May 11 bombings and riots compelled the call-up of federal troops. These records establish campaign, response, and political context; they do not make a single event the exclusive cause of the Civil Rights Act of 1964.",
+    keyFact: "Birmingham documents how local direct action, violent official response, and national media attention became part of the political setting for federal civil-rights legislation.",
+    primarySource: "National Park Service, ‘History & Culture,’ Birmingham Civil Rights National Monument; Library of Congress, ‘Civil Rights Era (1950–1963)’",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1963_medgar_evers": {
+    description: "The Medgar and Myrlie Evers Home National Monument documents Medgar Evers’s work as a Mississippi NAACP organizer across voter registration, boycotts, school desegregation, investigations of racial violence, branch building, and national media. The Library of Congress identifies him as the NAACP’s first Mississippi field secretary beginning in 1954 and records his organizing, investigation, and campaign activity in the years before his killing. The National Archives identifies federal records in Record Group 65 concerning the investigation of Evers’s killing and related prosecution; it notes that some records require privacy and law-enforcement screening. Evers was killed at his Jackson home on June 12, 1963. This panel records an organizer working within a wider movement and a documented federal archival trail; it does not substitute a public-history summary for the complete investigative or trial file.",
+    keyFact: "Medgar Evers’s record links local voter-registration and desegregation work to national legal, media, and federal institutions, while remaining one part of a broader Mississippi movement.",
+    primarySource: "National Park Service, ‘Campaigns and Causes’; Library of Congress, ‘Medgar W. Evers’; National Archives, Record Group 65 description",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1964_freedom_summer": {
+    description: "The National Archives describes Freedom Summer as a 1964 voting-rights project organized by the Council of Federated Organizations, a Mississippi coalition of SNCC, CORE, the NAACP, and SCLC. It brought about 1,000 out-of-state volunteers together with thousands of Black Mississippians and included voter-registration work, meetings, protests, Freedom Schools, Freedom Houses, Freedom Libraries, and the Mississippi Freedom Democratic Party. NARA reports 1,062 arrests, 80 Freedom Summer workers beaten, 37 churches bombed or burned, 30 Black homes or businesses bombed or burned, four civil-rights workers killed, and at least three Mississippi African Americans murdered because of involvement; these numbers are presented here as NARA’s reported figures. The campaign belongs in the documented context of the 1964 Civil Rights Act and 1965 Voting Rights Act, but neither statute is reducible to one campaign alone.",
+    keyFact: "Freedom Summer joined local Mississippi organizing with national volunteer networks while exposing the scale of violence and obstruction surrounding Black voter registration.",
+    primarySource: "National Archives, ‘Freedom Summer’; National Archives Catalog, NAID 5635105",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
+  },
+  "1965_selma_marches": {
+    description: "The National Archives identifies the Selma marches as a three-march 1965 voting-rights campaign organized by the Dallas County Voters League, SNCC, SCLC, and local participants in response to systematic barriers to Black voting. On March 7, marchers led by John Lewis and Hosea Williams were attacked by Alabama law-enforcement officials at the Edmund Pettus Bridge; the Archives reports that more than 60 marchers were injured. The second march occurred March 9, and the third departed March 21 and reached Montgomery March 25. The Archives places the campaign in the immediate historical pathway to the Voting Rights Act, which President Johnson signed August 6, 1965. That linkage is significant, but the panel does not claim that the march alone explains the Act’s enactment or that the statute ended later voting barriers.",
+    keyFact: "Selma made local voter-registration organizing, state violence, federal attention, and voting-rights legislation visible within one documented 1965 sequence.",
+    primarySource: "National Archives, ‘Selma Marches’; National Archives Catalog records NAID 7722076, 16899041, 17364209, and 2050837",
+    chapterSlug: "civil-rights-acts",
+    chapterTitle: "The Civil Rights Act and the Voting Rights Act",
   },
 };

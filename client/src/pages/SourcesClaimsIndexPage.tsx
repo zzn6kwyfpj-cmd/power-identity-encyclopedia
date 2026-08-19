@@ -64,8 +64,8 @@ export default function SourcesClaimsIndexPage() {
     <div style={{ backgroundColor: "#0a1118", minHeight: "100vh" }}>
       <Navigation />
       <main style={{ paddingTop: 102, paddingBottom: 88 }}>
-        <div className="container" style={{ maxWidth: 1180 }}>
-          <header style={{ border: "1px solid rgba(212,175,55,0.48)", background: "linear-gradient(135deg, rgba(212,175,55,0.11), rgba(10,17,24,0.25) 45%, rgba(139,26,26,0.10))", padding: "clamp(26px, 4vw, 46px)", marginBottom: 30, position: "relative", overflow: "hidden" }}>
+        <div className="container" style={{ maxWidth: 1280 }}>
+          <header style={{ border: "1px solid rgba(212,175,55,0.58)", background: "radial-gradient(circle at 82% 18%, rgba(212,175,55,0.16), transparent 28%), linear-gradient(135deg, rgba(212,175,55,0.13), rgba(10,17,24,0.25) 45%, rgba(139,26,26,0.13))", padding: "clamp(34px, 5vw, 62px)", marginBottom: 18, position: "relative", overflow: "hidden" }}>
             <div aria-hidden="true" style={{ position: "absolute", top: 14, left: 18, right: 18, display: "flex", alignItems: "center", gap: 10, color: "#d4af37", opacity: 0.64 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.32em" }}>EVIDENCE EXHIBITION</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>
             <div className="flex flex-col gap-7 md:flex-row md:items-center">
               <div aria-hidden="true" style={{ width: 86, height: 86, borderRadius: "50%", border: "2px solid #d4af37", boxShadow: "0 0 0 5px rgba(212,175,55,0.08), inset 0 0 22px rgba(212,175,55,0.12)", color: "#d4af37", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -87,6 +87,17 @@ export default function SourcesClaimsIndexPage() {
               </aside>
             </div>
           </header>
+
+          <section aria-label="Catalogue scope" className="grid gap-px md:grid-cols-3" style={{ border: "1px solid rgba(212,175,55,0.28)", background: "rgba(212,175,55,0.22)", marginBottom: 30 }}>
+            {[
+              ["READING ROOM", "Catalogue records are grouped as exhibits, not a claim that the wider archive is complete."],
+              ["VERIFICATION ROUTE", "Each entry visibly distinguishes its original route, evidence tier, and source type."],
+              ["DOCUMENTED LIMIT", "A record is never used to say more than its text, provenance, and scope permit."],
+            ].map(([label, copy], index) => <div key={label} style={{ background: index === 1 ? "#101c27" : "#0d1721", padding: "18px 20px" }}>
+              <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.2em", marginBottom: 8 }}>{String(index + 1).padStart(2, "0")} · {label}</div>
+              <p style={{ color: "#b7c2cf", fontFamily: "Cormorant Garamond, serif", fontSize: "1.02rem", lineHeight: 1.45, margin: 0 }}>{copy}</p>
+            </div>)}
+          </section>
 
           <section aria-label="Filter the sources and claims index" style={{ background: "#0d1721", border: "1px solid rgba(212,175,55,0.2)", padding: "20px", marginBottom: 26 }}>
             <div className="grid gap-3 md:grid-cols-4">
@@ -145,8 +156,8 @@ export default function SourcesClaimsIndexPage() {
 
           <section className="grid gap-10" aria-live="polite">
             {Object.entries(groupedResults).map(([group, items], groupIndex) => (
-                <div key={group}>
-                <div className="flex items-center gap-4" style={{ marginBottom: 16 }}>
+                <div key={group} style={{ position: "relative", paddingTop: groupIndex === 0 ? 0 : 22 }}>
+                <div className="flex items-center gap-4" style={{ marginBottom: 18, borderTop: "1px solid rgba(212,175,55,0.52)", borderBottom: "1px solid rgba(212,175,55,0.28)", background: "linear-gradient(90deg, rgba(212,175,55,0.12), rgba(13,23,33,0.88) 60%)", padding: "18px 20px" }}>
                   <div style={{ width: 42, height: 42, border: "1px solid #d4af37", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{String(groupIndex + 1).padStart(2, "0")}</div>
                   <div className="min-w-0 flex-1">
                     <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.23em", marginBottom: 5 }}>ARCHIVE SECTION</div>
@@ -155,18 +166,18 @@ export default function SourcesClaimsIndexPage() {
                   </div>
                   <div style={{ color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>{items.length} RECORD{items.length === 1 ? "" : "S"}</div>
                 </div>
-                <div style={{ borderTop: "1px solid rgba(212,175,55,0.38)", marginBottom: 14 }} />
-                <div className="grid gap-4">
+                <div className="grid gap-4 md:grid-cols-2">
                   {items.map((item, index) => {
                     const tierTone = item.tier.startsWith("Tier 1") ? "#4ade80" : item.tier.startsWith("Tier 3") ? "#c2414b" : "#d4af37";
                     const harmfulTone = item.topic === "Racial Violence & Due Process" ? "#8b1a1a" : "#d4af37";
-                    return <div key={item.id}>
-                      <article style={{ background: "#0d1721", border: "1px solid rgba(212,175,55,0.2)", borderLeft: `4px solid ${harmfulTone}`, padding: "22px", position: "relative" }}>
+                    const isLeadRecord = index === 0;
+                    return <div key={item.id} style={isLeadRecord ? { gridColumn: "1 / -1" } : undefined}>
+                      <article style={{ background: isLeadRecord ? "linear-gradient(110deg, #13212c, #0d1721 62%)" : "#0d1721", border: `1px solid ${isLeadRecord ? "rgba(212,175,55,0.52)" : "rgba(212,175,55,0.2)"}`, borderLeft: `5px solid ${harmfulTone}`, padding: isLeadRecord ? "28px" : "22px", position: "relative" }}>
                         <div className="flex flex-wrap items-center gap-x-3 gap-y-2" style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.14em" }}>
                           <span style={{ color: tierTone, border: `1px solid ${tierTone}80`, padding: "3px 6px" }}>{item.tier.toUpperCase()}</span><span>•</span><span>{item.yearLabel}</span><span>•</span><span>{item.sourceType.toUpperCase()}</span>
                         </div>
                         <div style={{ color: "#64748b", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em", marginTop: 13 }}>CATALOGUE RECORD · {item.topic.toUpperCase()}</div>
-                        <h2 style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: "1.1rem", lineHeight: 1.45, marginTop: 7, marginBottom: 8 }}>{item.title}</h2>
+                        <h2 style={{ color: "#e7c454", fontFamily: "Cinzel, serif", fontSize: isLeadRecord ? "1.55rem" : "1.1rem", lineHeight: 1.35, marginTop: 7, marginBottom: 8 }}>{item.title}</h2>
                         <p style={{ color: "#94a3b8", fontFamily: "Cormorant Garamond, serif", fontSize: "1rem", margin: 0 }}>{item.region} · {item.verification}</p>
                         <div className="grid gap-4 md:grid-cols-2" style={{ marginTop: 17 }}>
                           <div>
@@ -184,7 +195,7 @@ export default function SourcesClaimsIndexPage() {
                           <Link href={`/chapter/${item.chapterSlug}`}><span style={{ color: "#94a3b8", fontFamily: "Cinzel, serif", fontSize: 10, letterSpacing: "0.12em", cursor: "pointer" }}>RELATED CHAPTER →</span></Link>
                         </div>
                       </article>
-                      {(index + 1) % 4 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ display: "flex", alignItems: "center", gap: 10, margin: "18px 0", color: "#d4af37", opacity: 0.55 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontSize: 12 }}>✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                      {(index + 1) % 3 === 0 && index + 1 < items.length && <div aria-hidden="true" style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 10, margin: "20px 0 2px", color: "#d4af37", opacity: 0.62 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.2em" }}>CATALOGUE BAY {String(Math.floor((index + 1) / 3) + 1).padStart(2, "0")}</span><span style={{ fontSize: 12 }}>✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                     </div>;
                   })}
                 </div>

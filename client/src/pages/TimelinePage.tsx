@@ -130,6 +130,11 @@ function getCategory(event: string): string {
   return "legislation";
 }
 
+function splitTimelineEvent(event: string): [string, string] {
+  const separator = event.indexOf(" — ");
+  return separator === -1 ? [event, ""] : [event.slice(0, separator), event.slice(separator + 3)];
+}
+
 const CATEGORY_COLORS: Record<string, string> = {
   legislation: "#d4af37",
   violence: "#8b1a1a",
@@ -201,10 +206,10 @@ export default function TimelinePage() {
     <div style={{ backgroundColor: "#0a1118", minHeight: "100vh" }}>
       <Navigation />
       <section style={{ paddingTop: 100, paddingBottom: 80 }}>
-        <div className="container" style={{ maxWidth: 960 }}>
+        <div className="container" style={{ maxWidth: 1180 }}>
 
           {/* Header */}
-          <header style={{ border: "1px solid rgba(212,175,55,0.42)", background: "linear-gradient(120deg, rgba(212,175,55,0.08), rgba(10,17,24,0.1) 52%, rgba(139,26,26,0.12))", padding: "clamp(26px, 5vw, 46px)", marginBottom: 36, position: "relative", overflow: "hidden" }}>
+          <header style={{ border: "1px solid rgba(212,175,55,0.58)", background: "radial-gradient(circle at 80% 20%, rgba(212,175,55,0.16), transparent 31%), linear-gradient(120deg, rgba(212,175,55,0.1), rgba(10,17,24,0.1) 52%, rgba(139,26,26,0.14))", padding: "clamp(34px, 5vw, 64px)", marginBottom: 18, position: "relative", overflow: "hidden" }}>
             <div aria-hidden="true" style={{ position: "absolute", top: 14, left: 18, right: 18, display: "flex", alignItems: "center", gap: 10, color: "#d4af37", opacity: 0.62 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.32em" }}>CHRONOLOGICAL EXHIBITION</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>
             <div className="flex flex-col gap-6 md:flex-row md:items-center">
               <div aria-hidden="true" style={{ width: 84, height: 84, border: "2px solid #d4af37", borderRadius: "50%", boxShadow: "0 0 0 6px rgba(212,175,55,0.07), inset 0 0 24px rgba(212,175,55,0.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 26, flexShrink: 0 }}>✦</div>
@@ -223,6 +228,17 @@ export default function TimelinePage() {
               </aside>
             </div>
           </header>
+
+          <section aria-label="Chronology scope" className="grid gap-px md:grid-cols-3" style={{ border: "1px solid rgba(212,175,55,0.28)", background: "rgba(212,175,55,0.22)", marginBottom: 32 }}>
+            {[
+              ["SCOPE THRESHOLD", "850 CE begins detailed navigation; it is not the beginning of Indigenous history."],
+              ["RECORD METHOD", "Open a record for its source, mechanism, enforcement path, and documented limit."],
+              ["CURATORIAL RULE", "Chronology orders records in time without converting law or category into personal proof."],
+            ].map(([label, copy], index) => <div key={label} style={{ background: index === 1 ? "#101c27" : "#0d1721", padding: "18px 20px" }}>
+              <div style={{ color: "#d4af37", fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.2em", marginBottom: 8 }}>{String(index + 1).padStart(2, "0")} · {label}</div>
+              <p style={{ color: "#b7c2cf", fontFamily: "Cormorant Garamond, serif", fontSize: "1.02rem", lineHeight: 1.45, margin: 0 }}>{copy}</p>
+            </div>)}
+          </section>
 
           {/* Search and Filter Bar */}
           <div style={{ background: "#0f1923", border: "1px solid rgba(212,175,55,0.2)", padding: "20px 24px", marginBottom: 32 }}>
@@ -339,11 +355,12 @@ export default function TimelinePage() {
                 const catColor = CATEGORY_COLORS[event.category];
                 const isExpanded = expandedEvent === i;
                 const isCopied = copiedIndex === i;
+                const [recordTitle, recordAbstract] = splitTimelineEvent(event.event);
 
                 return (
                   <>
                   {showEraBanner && (
-                    <div style={{ marginLeft: -48, marginBottom: 32, marginTop: i > 0 ? 52 : 0, position: "relative", overflow: "hidden", height: 220, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80` }}>
+                    <div style={{ marginLeft: -48, marginBottom: 32, marginTop: i > 0 ? 58 : 0, position: "relative", overflow: "hidden", height: 252, borderTop: `1px solid ${eraColors[event.era - 1]}80`, borderBottom: `1px solid ${eraColors[event.era - 1]}80` }}>
                       <img
                         src={eraBanners[event.era - 1]}
                         alt={`Era ${event.era}`}
@@ -363,7 +380,7 @@ export default function TimelinePage() {
                       </div>
                     </div>
                   )}
-                  <div key={i} id={`event-${event.year}-${i}`} style={{ position: "relative", marginBottom: 20 }}>
+                  <div key={i} id={`event-${event.year}-${i}`} style={{ position: "relative", marginBottom: 24 }}>
                     {/* Timeline dot */}
                     <div style={{
                       position: "absolute",
@@ -382,13 +399,13 @@ export default function TimelinePage() {
                       background: "linear-gradient(100deg, #0f1923 0%, #101b27 100%)",
                       border: `1px solid ${catColor}30`,
                       borderLeft: `3px solid ${catColor}`,
-                      padding: "14px 16px",
+                      padding: "20px 22px",
                       transition: "all 0.2s",
                     }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
                         <div style={{ flex: 1 }}>
                           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, flexWrap: "wrap" }}>
-                            <span style={{ fontFamily: "Cinzel, serif", color: "#d4af37", fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
+                            <span style={{ fontFamily: "Cinzel, serif", color: "#e7c454", fontSize: 22, fontWeight: 700, lineHeight: 1, flexShrink: 0 }}>
                               {event.year}
                             </span>
                             <span style={{ color: "#475569", fontFamily: "Cinzel, serif", fontSize: 8, letterSpacing: "0.14em" }}>ARCHIVE ENTRY</span>
@@ -399,9 +416,8 @@ export default function TimelinePage() {
                               ERA {["I","II","III","IV","V"][event.era - 1]}
                             </span>
                           </div>
-                          <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#e2e8f0", fontSize: "1rem", lineHeight: 1.6, margin: 0 }}>
-                            {event.event}
-                          </p>
+                          <h2 style={{ color: "#f0e3bc", fontFamily: "Cinzel, serif", fontSize: "1.13rem", lineHeight: 1.35, margin: "0 0 9px" }}>{recordTitle}</h2>
+                          {recordAbstract && <p style={{ fontFamily: "Cormorant Garamond, serif", color: "#b8c4d2", fontSize: "1.04rem", lineHeight: 1.62, margin: 0 }}>{recordAbstract}</p>}
                         </div>
 
                         {/* Action buttons */}
@@ -527,7 +543,7 @@ export default function TimelinePage() {
                       })()}
                     </div>
                   </div>
-                  {(i + 1) % 14 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "30px 0 42px -48px", display: "flex", alignItems: "center", gap: 12, color: "#d4af37", opacity: 0.55 }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>ARCHIVE INTERLUDE</span><span style={{ fontSize: 12 }}>✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
+                  {(i + 1) % 10 === 0 && i + 1 < filteredEvents.length && <div aria-hidden="true" style={{ margin: "38px 0 50px -48px", padding: "18px 22px", display: "flex", alignItems: "center", gap: 12, color: "#d4af37", borderTop: "1px solid rgba(212,175,55,0.42)", borderBottom: "1px solid rgba(212,175,55,0.26)", background: "linear-gradient(90deg, rgba(212,175,55,0.11), transparent)" }}><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /><span style={{ fontFamily: "Cinzel, serif", fontSize: 9, letterSpacing: "0.18em" }}>GALLERY ROOM · NEXT RECORD SEQUENCE</span><span style={{ fontSize: 12 }}>✦</span><span style={{ flex: 1, borderTop: "1px solid currentColor" }} /></div>}
                   </>
                 );
               })}

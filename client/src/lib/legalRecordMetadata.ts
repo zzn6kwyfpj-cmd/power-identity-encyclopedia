@@ -1,7 +1,7 @@
 // Royal Archive legal-record registry: normalizes jurisdiction, mechanism, and enforcement limits.
 // Each entry describes what the named record establishes; it does not convert a legal rule into proof of uniform outcome.
 
-export type LegalRecordType = "Statute" | "Constitutional amendment" | "Constitution" | "Treaty" | "Court decision" | "Executive / military order" | "Administrative circular";
+export type LegalRecordType = "Statute" | "Constitutional amendment" | "Constitution" | "Treaty" | "Court decision" | "Executive / military order" | "Administrative circular" | "Federal administrative instruction";
 
 export interface LegalRecordMetadata {
   recordType: LegalRecordType;
@@ -76,6 +76,15 @@ export const LEGAL_RECORDS: Record<string, LegalRecordMetadata> = {
     enforcementPath: "Virginia Bureau of Vital Statistics, local clerks, marriage-license administration, and associated vital-record processes.",
     documentedLimit: "The law documents a state classification regime; it does not prove a person’s ancestry, erase a community’s self-identification, or determine sovereign tribal citizenship.",
     sourceUrl: "https://www.lva.virginia.gov/collections/educator-resources/dbva/items/show/226"
+  },
+  "1930_census_instructions": {
+    recordType: "Federal administrative instruction",
+    jurisdiction: "United States; decennial census enumeration",
+    citation: "1930 Census Instructions to Enumerators, racial-classification instructions",
+    mechanism: "Directed enumerators to apply different racial-sorting tests to mixed White–Negro, Indian–Negro, and White–Indian ancestry, including a default Negro return for mixed Indian–Negro ancestry unless stated blood and community-acceptance conditions applied.",
+    enforcementPath: "Population-schedule enumeration under the Census Bureau’s decennial census administration.",
+    documentedLimit: "The instruction establishes an administrative coding rule; it does not prove individual ancestry, quantify its total effect, determine community affiliation, or decide sovereign tribal citizenship.",
+    sourceUrl: "https://www.census.gov/programs-surveys/decennial-census/technical-documentation/questionnaires/1930/1930-instructions.html"
   },
   "1865_field_order": {
     recordType: "Executive / military order",

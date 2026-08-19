@@ -56,3 +56,4 @@
 - Source records use a fixed reading order: evidence tier, date and source type, catalogue record label, title, verification route, what the source establishes, and documented limit.
 - Crimson is reserved for harmful or contested-history material and Tier 3 community theory; green signals verified Tier 1 evidence; gold remains the structural material of the archive.
 - Long chronology and source lists include restrained ornamental interludes in addition to named sections so the reader moves through curated rooms rather than an uninterrupted record wall.
+- Gallery-room plates use a ceremonial scope statement and a featured lead record at the start of each catalogue sequence; only evidence meaning—not decorative variation—uses green or crimson.

@@ -148,4 +148,11 @@
 - [x] Extract consequential claims and distinguish traceable primary or institutional records, scholarly interpretations, community historical traditions, and speculative or unverified propositions.
 - [x] Build a source-traceability coverage model so each public timeline record and source card displays a source route or an explicit evidence tier, attribution, and limitation.
 - [x] Integrate only attributable, evidence-limited findings and preserve author credit for works and claims represented in the encyclopedia.
-- [ ] Type-check, visually verify, checkpoint, and update the canonical roadmap after the research intake and traceability release.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after the research intake and traceability release.
+
+# Next Three Evidence Releases — Authorized August 2026
+
+- [x] Build source-critical civil-rights campaign records for Birmingham, Freedom Summer, Selma/Bloody Sunday, voting-registration campaigns, and Medgar Evers; distinguish campaign action, official response, legal consequence, and documented limit.
+- [x] Establish a pre-850 chronology rationale and deepen the Turtle Island/Niji frame with nation-specific Indigenous sources, archaeology, and explicit knowledge-category boundaries.
+- [x] Verify state classification statutes, relevant census instructions, institutional records for Aleš Hrdlička and Melville Herskovits, and the A00/Perry-family genetic finding before any public integration; preserve unsupported labels as deferred rather than factual claims.
+- [x] Type-check, visually verify, checkpoint, and update the canonical roadmap after all three releases are complete.

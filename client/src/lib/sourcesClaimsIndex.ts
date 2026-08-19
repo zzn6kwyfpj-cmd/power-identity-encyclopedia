@@ -15,7 +15,7 @@ export type SourceClaimIndexItem = {
   topic: string;
   region: string;
   sourceType: string;
-  verification: "Institutional record" | "Stable facsimile / edition route" | "Linked chapter evidence card" | "Author-attributed research";
+  verification: "Institutional record" | "Nation-authored record" | "Stable facsimile / edition route" | "Linked chapter evidence card" | "Author-attributed research";
   establishes: string;
   limitation: string;
   citation: string;
@@ -193,7 +193,80 @@ const leeMcQueenEvidenceItems: SourceClaimIndexItem[] = [
   },
 ];
 
-export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems].sort(
+const pre850TurtleIslandEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "oneida-haudenosaunee-creation-account",
+    yearLabel: "Undated tradition; public page accessed 2026",
+    sortYear: 0,
+    title: "Oneida Indian Nation: Haudenosaunee creation account",
+    tier: "Tier 1 — Primary record",
+    topic: "Indigenous Knowledge Traditions",
+    region: "Oneida Indian Nation / Haudenosaunee",
+    sourceType: "Nation-authored history",
+    verification: "Nation-authored record",
+    establishes: "The Oneida Indian Nation publicly presents a Haudenosaunee creation account, attributed on the page to Keller George’s maternal great-grandmother’s telling, in which Sky Woman, water animals, and turtle-backed earth form North America as a great island.",
+    limitation: "A nation-specific sacred/traditional account is not archaeological evidence, a universal Indigenous name for the Americas, or a factual geological chronology. The archive does not use it to infer a universal origin, phenotype, ancestry, or citizenship conclusion.",
+    citation: "Oneida Indian Nation, ‘The Haudenosaunee creation story’",
+    sourceUrl: "https://www.oneidaindiannation.com/the-haudenosaunee-creation-story",
+    chapterSlug: "turtle-island-niji",
+  },
+  {
+    id: "nps-indigenous-archaeological-deep-history",
+    yearLabel: "Institutional overview accessed 2026",
+    sortYear: 0,
+    title: "National Park Service: Indigenous archaeological deep-history frame",
+    tier: "Tier 2 — Scholarly analysis",
+    topic: "Pre-850 Chronology",
+    region: "Americas",
+    sourceType: "Institutional archaeological overview",
+    verification: "Institutional record",
+    establishes: "The National Park Service states that archaeologists and Native Americans generally agree that a sustainable population lived in the Americas by the end of the last ice age, about 15,000 years before present, while recognizing disagreement about when and how the peopling of the Americas occurred.",
+    limitation: "This is an archaeological overview, not a substitute for individual nations’ histories or knowledge traditions. It does not establish a universal origin story, a single population history, a person’s ancestry, or current citizenship.",
+    citation: "National Park Service, ‘Native Americans – Archeology’",
+    sourceUrl: "https://www.nps.gov/subjects/archeology/native-americans.htm",
+    chapterSlug: "turtle-island-niji",
+  },
+];
+
+const censusInstructionEvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "1930-census-racial-classification-instructions",
+    yearLabel: "1930",
+    sortYear: 1930,
+    title: "1930 Census racial-classification instructions",
+    tier: "Tier 1 — Primary record",
+    topic: "Census Classification",
+    region: "United States",
+    sourceType: "Federal administrative instruction",
+    verification: "Institutional record",
+    establishes: "The Census Bureau directed enumerators to return mixed White–Negro ancestry as Negro regardless of percentage; mixed Indian–Negro ancestry as Negro unless Indian blood predominated and the person was generally accepted as Indian in the community; and mixed White–Indian ancestry as Indian subject to stated exceptions.",
+    limitation: "The instructions are evidence of federal administrative sorting. They do not establish a person’s complete genealogy, quantify their aggregate impact, determine community affiliation, or decide sovereign tribal citizenship.",
+    citation: "U.S. Census Bureau, ‘1930 Census Instructions to Enumerators’",
+    sourceUrl: "https://www.census.gov/programs-surveys/decennial-census/technical-documentation/questionnaires/1930/1930-instructions.html",
+    chapterSlug: "black-native-american-identity",
+  },
+];
+
+const a00EvidenceItems: SourceClaimIndexItem[] = [
+  {
+    id: "mendez-2013-a00-y-chromosome",
+    yearLabel: "2013",
+    sortYear: 2013,
+    title: "A00 Y-chromosome lineage in an African American sample",
+    tier: "Tier 2 — Scholarly analysis",
+    topic: "Genetics & Evidence Limits",
+    region: "African diaspora; western Cameroon comparison sample",
+    sourceType: "Peer-reviewed genetic study",
+    verification: "Institutional record",
+    establishes: "Mendez and colleagues reported an A00 Y chromosome in an African American consumer sample, sequenced approximately 240 kb, and identified related A00 lineages in a sampled Mbo population in western Cameroon. The paper acknowledges descendants of Albert Perry of South Carolina among contributors.",
+    limitation: "A Y chromosome follows one direct paternal line only. The study cautions that a single locus cannot establish geographic population origins; it does not prove Indigenous ancestry in the Americas, nationality, tribal affiliation, citizenship, or a universal origin story. Its time estimates are model-dependent.",
+    citation: "Mendez et al., American Journal of Human Genetics 92(3), 2013, PMCID: PMC3591855",
+    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3591855/",
+    chapterSlug: "counter-narrative",
+  },
+];
+
+export const SOURCES_CLAIMS_INDEX: SourceClaimIndexItem[] = [...legalItems, ...colonialItems, ...chapterEvidenceItems, ...leeMcQueenEvidenceItems, ...pre850TurtleIslandEvidenceItems, ...censusInstructionEvidenceItems, ...a00EvidenceItems].sort(
   (a, b) => a.sortYear - b.sortYear || a.title.localeCompare(b.title),
 );
 
